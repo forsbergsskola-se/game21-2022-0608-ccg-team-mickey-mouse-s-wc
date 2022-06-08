@@ -13,9 +13,11 @@
 
 ### Engineers:
 
-Benjamin Ting - [Website](http://benjaminting.com)
+* Benjamin Ting - [Website](http://benjaminting.com)
 
-Oliver Källerfors - [Portfolio](https://oliverkallerfors.wordpress.com/projects/), [LinkedIn](https://www.linkedin.com/in/oliver-källerfors-358bb21b3/), [Instagram](https://www.instagram.com/partisanprogrammer/)
+* Oliver Källerfors - [Portfolio](https://oliverkallerfors.wordpress.com/projects/), [LinkedIn](https://www.linkedin.com/in/oliver-källerfors-358bb21b3/), [Instagram](https://www.instagram.com/partisanprogrammer/)
+
+* Jesper Danielsson, engineer [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
  
 ### Sound Designers:
 
