@@ -19,7 +19,7 @@
 
 * Jesper Danielsson - [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
 
-* Armin Afazeli - [LinkedIn](https://www.https://www.linkedin.com/in/arminafazeli/)
+* Armin Afazeli - [LinkedIn](https://www.linkedin.com/in/arminafazeli/)
  
 ### Sound Designers:
 
