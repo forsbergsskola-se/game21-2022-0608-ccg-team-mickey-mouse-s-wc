@@ -26,7 +26,7 @@
 ### Sound Designers:
 
 * Robert "Printa" Larsson - [SoundCloud](https://soundcloud.com/dj-printa), [LinkedIn](https://www.linkedin.com/in/robert-larsson-36029a51/)
-* Troy "Ljudet" Davis 
+
 
 ## Design Documents
 
@@ -36,7 +36,7 @@
 
 {art-bible}
 
-{Sound Bibel} (https://docs.google.com/document/d/18PY-dpNfLUJP1xOxJfeFoZ_azDpY1gn8c94XdTX9ZZ0/edit?usp=sharing)
+[Sound Bibel] (https://docs.google.com/document/d/18PY-dpNfLUJP1xOxJfeFoZ_azDpY1gn8c94XdTX9ZZ0/edit?usp=sharing)
 
 
 ## Media
