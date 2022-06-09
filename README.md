@@ -20,6 +20,7 @@
 * Jesper Danielsson - [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
 
 * Armin Afazeli - [LinkedIn](https://www.linkedin.com/in/arminafazeli/)
+* Cecilija Simic Rihtnesberg - [LinkedIn](https://www.linkedin.com/in/cecilija-%C5%A1imi%C4%87-rihtnesberg-53961b33/), [Website](http://cecilijas.com/)
  
 ### Sound Designers:
 
