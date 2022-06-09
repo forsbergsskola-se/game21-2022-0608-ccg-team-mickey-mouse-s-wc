@@ -36,7 +36,7 @@
 
 {art-bible}
 
-[Sound Bibel] (https://docs.google.com/document/d/18PY-dpNfLUJP1xOxJfeFoZ_azDpY1gn8c94XdTX9ZZ0/edit?usp=sharing)
+[Sound Bibel](https://docs.google.com/document/d/18PY-dpNfLUJP1xOxJfeFoZ_azDpY1gn8c94XdTX9ZZ0/edit?usp=sharing)
 
 
 ## Media
