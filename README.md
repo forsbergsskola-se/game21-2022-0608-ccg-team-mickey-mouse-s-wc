@@ -23,8 +23,9 @@
 * Cecilija Simic Rihtnesberg - [LinkedIn](https://www.linkedin.com/in/cecilija-%C5%A1imi%C4%87-rihtnesberg-53961b33/), [Website](http://cecilijas.com/)
  
 ### Sound Designers:
+* Robert "Printa" Larsson [LinkedIn](https://www.linkedin.com/in/robert-larsson-36029a51/) [Soundcloud] (https://soundcloud.com/dj-printa
 
-Feel free to link any existing Linked.in Profiles or Portfolio Websites.
+
 
 ## Design Documents
 
