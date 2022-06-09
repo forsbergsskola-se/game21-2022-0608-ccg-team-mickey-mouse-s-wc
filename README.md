@@ -13,14 +13,15 @@
 
 ### Engineers:
 
+* Armin Afazeli - [LinkedIn](https://www.linkedin.com/in/arminafazeli/)
+
 * Benjamin Ting - [Website](http://benjaminting.com)
 
-* Oliver Källerfors - [Portfolio](https://oliverkallerfors.wordpress.com/projects/), [LinkedIn](https://www.linkedin.com/in/oliver-källerfors-358bb21b3/), [Instagram](https://www.instagram.com/partisanprogrammer/)
+* Cecilija Simic Rihtnesberg - [LinkedIn](https://www.linkedin.com/in/cecilija-%C5%A1imi%C4%87-rihtnesberg-53961b33/), [Website](http://cecilijas.com/)
 
 * Jesper Danielsson - [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
 
-* Armin Afazeli - [LinkedIn](https://www.linkedin.com/in/arminafazeli/)
-* Cecilija Simic Rihtnesberg - [LinkedIn](https://www.linkedin.com/in/cecilija-%C5%A1imi%C4%87-rihtnesberg-53961b33/), [Website](http://cecilijas.com/)
+* Oliver Källerfors - [Portfolio](https://oliverkallerfors.wordpress.com/projects/), [LinkedIn](https://www.linkedin.com/in/oliver-källerfors-358bb21b3/), [Instagram](https://www.instagram.com/partisanprogrammer/)
  
 ### Sound Designers:
 
