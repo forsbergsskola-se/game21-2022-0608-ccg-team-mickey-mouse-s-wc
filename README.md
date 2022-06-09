@@ -27,6 +27,7 @@
 
 * Robert "Printa" Larsson - [SoundCloud](https://soundcloud.com/dj-printa), [LinkedIn](https://www.linkedin.com/in/robert-larsson-36029a51/)
 
+* Troy "Ljudet" Davis 
 
 ## Design Documents
 
@@ -35,8 +36,6 @@
 [TDD](https://docs.google.com/document/d/1DB8ToSPN3eIpCEHIM7u5phE0HH7FTMCWWbqABSX8FuA/edit?usp=sharing)
 
 {art-bible}
-
-[Sound Bibel](https://docs.google.com/document/d/18PY-dpNfLUJP1xOxJfeFoZ_azDpY1gn8c94XdTX9ZZ0/edit?usp=sharing)
 
 
 ## Media
