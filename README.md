@@ -25,7 +25,8 @@
  
 ### Sound Designers:
 
-Feel free to link any existing Linked.in Profiles or Portfolio Websites.
+* Robert "Printa" Larsson - [SoundCloud](https://soundcloud.com/dj-printa), [LinkedIn](https://www.linkedin.com/in/robert-larsson-36029a51/)
+
 
 ## Design Documents
 
@@ -34,5 +35,6 @@ Feel free to link any existing Linked.in Profiles or Portfolio Websites.
 [TDD](https://docs.google.com/document/d/1DB8ToSPN3eIpCEHIM7u5phE0HH7FTMCWWbqABSX8FuA/edit?usp=sharing)
 
 {art-bible}
+
 
 ## Media
