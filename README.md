@@ -26,7 +26,7 @@
 ### Sound Designers:
 
 * Robert "Printa" Larsson - [SoundCloud](https://soundcloud.com/dj-printa), [LinkedIn](https://www.linkedin.com/in/robert-larsson-36029a51/)
-
+* Troy "Ljudet" Davis 
 
 ## Design Documents
 
