@@ -30,7 +30,7 @@ Feel free to link any existing Linked.in Profiles or Portfolio Websites.
 
 {gdd}
 
-{tdd}
+[TDD](https://docs.google.com/document/d/1DB8ToSPN3eIpCEHIM7u5phE0HH7FTMCWWbqABSX8FuA/edit?usp=sharing)
 
 {art-bible}
 
