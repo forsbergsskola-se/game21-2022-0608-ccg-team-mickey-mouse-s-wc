@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FighterSelectionInstantiator : MonoBehaviour{
+public class CardContentFiller : MonoBehaviour{
 	private int id, level;
 	private float health, attack, speed;
 	private string rarity, name;
@@ -11,11 +11,10 @@ public class FighterSelectionInstantiator : MonoBehaviour{
 
 	public TextMeshProUGUI nameText, rarityText, alignmentText, levelText, attackText, healthText, speedText;
 	public Image fighterImage;
-	private void Awake() {
-		Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
-	}
 
-	private void OnFighterMessageReceived(FighterMessage fighterMessage) {
+	private FighterMessage fighterMessage = new FighterMessage();
+
+	private void Awake() {
 		id = fighterMessage.ID;
 		health = fighterMessage.Health;
 		attack = fighterMessage.Attack;
@@ -39,7 +38,5 @@ public class FighterSelectionInstantiator : MonoBehaviour{
 		fighterImage.sprite = fighterSprite;
 	}
 
-	private void OnDestroy(){
-		Broker.Unsubscribe<FighterMessage>(OnFighterMessageReceived);
-	}
+	
 }
