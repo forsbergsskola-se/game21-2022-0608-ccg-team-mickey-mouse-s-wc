@@ -2,13 +2,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CardCreator : MonoBehaviour{
-    private List<FighterMessage> fighters = new List<FighterMessage>();
+    public GameObject card;
+    private List<FighterInfo> fighters = new List<FighterInfo>();
     private void Awake(){
         Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
     }
 
     private void OnFighterMessageReceived(FighterMessage obj){
-        fighters.Add(obj);
+        fighters.Add(obj.fighterInfo);
+    }
+
+    private void AllFightersGathered(){
+        foreach (var fighter in fighters){
+            Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+        Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity);
     }
     
     private void OnDestroy(){
