@@ -12,8 +12,9 @@ public class FighterSO : ScriptableObject{
     public string Name;
     public FamilyType Type;
     public Rarity Rarity;
-    [Min(0)]public int Level;
+    [Min(1)]public int Level;
     [Min(0)]public float Attack;
-    [Min(0)]public float MaxHealth;
+    [Min(1)]public float MaxHealth;
+    [Min(1)]public float Speed;
     public Image FighterImage; //TODO: Sprite or image?
 }
