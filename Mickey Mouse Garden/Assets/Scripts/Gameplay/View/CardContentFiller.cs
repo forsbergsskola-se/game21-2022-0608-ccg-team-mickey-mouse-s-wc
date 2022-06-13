@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FighterSelectionInstantiator : MonoBehaviour{
+public class CardContentFiller : MonoBehaviour{
 	private int id, level;
 	private float health, attack, speed;
 	private string rarity, name;
@@ -11,20 +11,19 @@ public class FighterSelectionInstantiator : MonoBehaviour{
 
 	public TextMeshProUGUI nameText, rarityText, alignmentText, levelText, attackText, healthText, speedText;
 	public Image fighterImage;
-	private void Awake() {
-		Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
-	}
 
-	private void OnFighterMessageReceived(FighterMessage fighterMessage) {
-		id = fighterMessage.ID;
-		health = fighterMessage.Health;
-		attack = fighterMessage.Attack;
-		speed = fighterMessage.Speed;
-		level = fighterMessage.Level;
-		rarity = fighterMessage.Rarity;
-		name = fighterMessage.Name;
-		alignment = fighterMessage.Alignment;
-		fighterSprite = fighterMessage.Sprite;
+	private FighterInfo fighterInfo = new FighterInfo();
+
+	private void Awake() {
+		id = fighterInfo.ID;
+		health = fighterInfo.MaxHealth;
+		attack = fighterInfo.Attack;
+		speed = fighterInfo.Speed;
+		level = fighterInfo.Level;
+		rarity = fighterInfo.Rarity;
+		name = fighterInfo.Name;
+		alignment = fighterInfo.Alignment;
+		fighterSprite = fighterInfo.Sprite;
 		AssignProperties();
 	}
 
@@ -39,7 +38,5 @@ public class FighterSelectionInstantiator : MonoBehaviour{
 		fighterImage.sprite = fighterSprite;
 	}
 
-	private void OnDestroy(){
-		Broker.Unsubscribe<FighterMessage>(OnFighterMessageReceived);
-	}
+	
 }
