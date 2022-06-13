@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-
+//Used for base items, but not created fighters
 [CreateAssetMenu(fileName = "New Fighter", menuName = "Fighter/Fighter Data")]
 public class FighterSO : ScriptableObject{
     [Header("Displayable Information")]
@@ -17,5 +17,6 @@ public class FighterSO : ScriptableObject{
     [Min(1)]public float MaxHealth;
     [Min(1)]public float Speed;
     public Image FighterImage; //TODO: Sprite or image?
+    public Guid ID{ get; } = Guid.NewGuid();
     
 }
