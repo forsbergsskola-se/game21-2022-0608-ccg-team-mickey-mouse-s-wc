@@ -12,18 +12,18 @@ public class CardContentFiller : MonoBehaviour{
 	public TextMeshProUGUI nameText, rarityText, alignmentText, levelText, attackText, healthText, speedText;
 	public Image fighterImage;
 
-	private FighterMessage fighterMessage = new FighterMessage();
+	private FighterInfo fighterInfo = new FighterInfo();
 
 	private void Awake() {
-		id = fighterMessage.ID;
-		health = fighterMessage.Health;
-		attack = fighterMessage.Attack;
-		speed = fighterMessage.Speed;
-		level = fighterMessage.Level;
-		rarity = fighterMessage.Rarity;
-		name = fighterMessage.Name;
-		alignment = fighterMessage.Alignment;
-		fighterSprite = fighterMessage.Sprite;
+		id = fighterInfo.ID;
+		health = fighterInfo.MaxHealth;
+		attack = fighterInfo.Attack;
+		speed = fighterInfo.Speed;
+		level = fighterInfo.Level;
+		rarity = fighterInfo.Rarity;
+		name = fighterInfo.Name;
+		alignment = fighterInfo.Alignment;
+		fighterSprite = fighterInfo.Sprite;
 		AssignProperties();
 	}
 

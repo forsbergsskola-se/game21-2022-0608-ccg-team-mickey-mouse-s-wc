@@ -10,10 +10,10 @@ public class SelectTeam : MonoBehaviour{
    }
 
    private void OnFighterMessageReceived(FighterMessage obj){
-      selectedFighter.Attack = obj.Attack;
-      selectedFighter.MaxHealth = obj.Health;
-      selectedFighter.Speed = obj.Speed;
-      selectedFighter.Alignment = obj.Alignment;
+      selectedFighter.Attack = obj.fighterInfo.Attack;
+      selectedFighter.MaxHealth = obj.fighterInfo.MaxHealth;
+      selectedFighter.Speed = obj.fighterInfo.Speed;
+      selectedFighter.Alignment = obj.fighterInfo.Alignment;
    }
 
    public void SelectFighter(){
