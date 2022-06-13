@@ -31,7 +31,7 @@
 
 ## Design Documents
 
-{gdd}
+[GDD](https://docs.google.com/document/d/1ZmLMIoW-BaO2kRY8HdyzSgboAmBVQf1dbhDmFxXjx0g/edit#heading=h.uf4x7twgw8lg)
 
 [TDD](https://docs.google.com/document/d/1DB8ToSPN3eIpCEHIM7u5phE0HH7FTMCWWbqABSX8FuA/edit?usp=sharing)
 
