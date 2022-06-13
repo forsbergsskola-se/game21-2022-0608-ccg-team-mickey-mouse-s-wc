@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: TestFighterCarrot
   m_EditorClassIdentifier: 
   Name: Test Fighter Carrot
-  Type: 1
+  Alignment: 0
   Rarity: 1
-  Level: 0
+  Level: 1
   Attack: 9.3
   MaxHealth: 46
+  Speed: 133
   FighterImage: {fileID: 0}
