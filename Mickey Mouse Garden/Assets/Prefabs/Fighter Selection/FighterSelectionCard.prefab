@@ -760,6 +760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3644468809649215188}
+  - component: {fileID: 2685684348913820696}
   m_Layer: 5
   m_Name: FighterSelectionCard
   m_TagString: Untagged
@@ -796,6 +797,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 2.118805}
   m_SizeDelta: {x: 280.0949, y: 506.8028}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2685684348913820696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644468809649215195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc00bbcd1dbeda45af90a88b1280832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 3644468809374175108}
+  rarityText: {fileID: 3644468808800525206}
+  alignmentText: {fileID: 3644468809502782243}
+  levelText: {fileID: 3644468809020086596}
+  damageText: {fileID: 3644468810514335216}
+  healthText: {fileID: 3644468810682125754}
+  speedText: {fileID: 3644468809578377612}
 --- !u!1 &3644468810514335222
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +828,7 @@ GameObject:
   - component: {fileID: 3644468810514335217}
   - component: {fileID: 3644468810514335216}
   m_Layer: 5
-  m_Name: Attack
+  m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack
+  m_text: Damage
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
