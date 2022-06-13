@@ -6,7 +6,7 @@ public class FighterSelectionInstantiator : MonoBehaviour{
 	private int id, level;
 	private float health, attack, speed;
 	private string rarity, name;
-	private FamilyType alignment;
+	private Alignment alignment;
 	private Sprite fighterSprite;
 
 	public TextMeshProUGUI nameText, rarityText, alignmentText, levelText, attackText, healthText, speedText;

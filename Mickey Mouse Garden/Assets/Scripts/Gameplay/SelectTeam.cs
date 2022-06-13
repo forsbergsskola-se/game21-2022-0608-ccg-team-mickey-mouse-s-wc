@@ -13,7 +13,7 @@ public class SelectTeam : MonoBehaviour{
       selectedFighter.Attack = obj.Attack;
       selectedFighter.MaxHealth = obj.Health;
       selectedFighter.Speed = obj.Speed;
-      selectedFighter.Type = obj.Alignment;
+      selectedFighter.Alignment = obj.Alignment;
    }
 
    public void SelectFighter(){

@@ -8,6 +8,6 @@ public class FighterMessage : IMessage{ //TODO: make sure its the correct types.
    public int Level  { get; private set;}
    public string Rarity  { get; private set;}
    public string Name { get; private set;}
-   public FamilyType Alignment { get; private set;}
+   public Alignment Alignment { get; private set;}
    public Sprite Sprite { get; private set;}
 }
