@@ -813,7 +813,7 @@ MonoBehaviour:
   rarityText: {fileID: 3644468808800525206}
   alignmentText: {fileID: 3644468809502782243}
   levelText: {fileID: 3644468809020086596}
-  damageText: {fileID: 3644468810514335216}
+  attackText: {fileID: 3644468810514335216}
   healthText: {fileID: 3644468810682125754}
   speedText: {fileID: 3644468809578377612}
   fighterImage: {fileID: 3644468809330403761}
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 3644468810514335217}
   - component: {fileID: 3644468810514335216}
   m_Layer: 5
-  m_Name: Damage
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Damage
+  m_text: Attack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
