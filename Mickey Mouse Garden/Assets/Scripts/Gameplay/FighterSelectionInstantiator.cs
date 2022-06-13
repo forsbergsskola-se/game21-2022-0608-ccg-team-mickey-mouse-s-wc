@@ -3,11 +3,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FighterSelectionInstantiator : MonoBehaviour{
-	private int id, health, damage, speed, level;
-	private string rarity, name, alignment;
+	private int id, level;
+	private float health, attack, speed;
+	private string rarity, name;
+	private Alignment alignment;
 	private Sprite fighterSprite;
 
-	public TextMeshProUGUI nameText, rarityText, alignmentText, levelText, damageText, healthText, speedText;
+	public TextMeshProUGUI nameText, rarityText, alignmentText, levelText, attackText, healthText, speedText;
 	public Image fighterImage;
 	private void Awake() {
 		Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
@@ -16,7 +18,7 @@ public class FighterSelectionInstantiator : MonoBehaviour{
 	private void OnFighterMessageReceived(FighterMessage fighterMessage) {
 		id = fighterMessage.ID;
 		health = fighterMessage.Health;
-		damage = fighterMessage.Damage;
+		attack = fighterMessage.Attack;
 		speed = fighterMessage.Speed;
 		level = fighterMessage.Level;
 		rarity = fighterMessage.Rarity;
@@ -29,11 +31,15 @@ public class FighterSelectionInstantiator : MonoBehaviour{
 	private void AssignProperties() {
 		nameText.text = name;
 		rarityText.text = rarity;
-		alignmentText.text = alignment;
+		alignmentText.text = alignment.ToString(); //TODO: this is an enum..
 		levelText.text = level.ToString();
-		damageText.text = damage.ToString();
+		attackText.text = attack.ToString();
 		healthText.text = health.ToString();
 		speedText.text = speed.ToString();
 		fighterImage.sprite = fighterSprite;
+	}
+
+	private void OnDestroy(){
+		Broker.Unsubscribe<FighterMessage>(OnFighterMessageReceived);
 	}
 }
