@@ -57,8 +57,14 @@ public class SaveManager : MonoBehaviour{
         }
     }
     
-    [ContextMenu("DeleteAllSaves")]
-    public async Task DeleteAllSaves(){
+    
+    
+    /// <summary>
+    /// Deletes Local save Directory with all saved files.
+    /// </summary>
+    /// <exception cref="Exception"></exception>
+    [ContextMenu("DeleteAllSaves")] //TODO: Remove Context Menu when Saving system is fully implemented.
+    public async Task DeleteAllSaves(){ 
         Debug.Log($"Deleting directory: {SavePath}", this);
         try{
             Directory.Delete(@$"{SavePath}",true);
