@@ -816,6 +816,7 @@ MonoBehaviour:
   damageText: {fileID: 3644468810514335216}
   healthText: {fileID: 3644468810682125754}
   speedText: {fileID: 3644468809578377612}
+  fighterImage: {fileID: 3644468809330403761}
 --- !u!1 &3644468810514335222
 GameObject:
   m_ObjectHideFlags: 0
