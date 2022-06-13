@@ -351,7 +351,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: ../../fmodMobileGame/fmodMobileGame.fspro
-  sourceBankPath: Assets/StreamingAssets
+  sourceBankPath: Assets/StreamingAssets/Desktop
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -374,7 +374,6 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
   - Mobile/Master
   Banks: []
   BanksToLoad: []
