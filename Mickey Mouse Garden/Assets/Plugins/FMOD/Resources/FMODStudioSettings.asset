@@ -376,7 +376,11 @@ MonoBehaviour:
   MasterBanks:
   - Desktop/Master
   - Mobile/Master
-  Banks: []
+  Banks:
+  - Desktop/Arena
+  - Desktop/Meta
+  - Mobile/Arena
+  - Mobile/Meta
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

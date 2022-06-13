@@ -15,7 +15,7 @@ using Task = System.Threading.Tasks.Task;
 
 public class SaveManager : MonoBehaviour{
     
-    private static string SavePath => @$"{Application.persistentDataPath}\SaveData";
+    private static string SavePath => @$"{Application.persistentDataPath}/SaveData";
 
 
     void Start(){
@@ -39,11 +39,30 @@ public class SaveManager : MonoBehaviour{
     public void StartSaveTask(SaveMessage saveMessage){
         Save(saveMessage);
     }
-    public static async Task Save(SaveMessage saveMessage){
-        Debug.Log("Saving!");
+    public async Task Save(SaveMessage saveMessage){
+        Debug.Log("Saving!", this);
+        if (!Directory.Exists(SavePath)){
+            Debug.Log($"Directory {SavePath}: does not exist, Creating New Directory.");
+            Directory.CreateDirectory(SavePath);
+            Save(saveMessage);
+            return;
+        }
         try{
             var seializedDataBaseObject = JsonUtility.ToJson(saveMessage.saveData);
             await System.IO.File.WriteAllTextAsync(@$"{SavePath}\{saveMessage.saveData.ID}", seializedDataBaseObject);
+            Debug.Log("Saved Successfully!", this);
+        }
+        catch (Exception e){
+            throw e;
+        }
+    }
+    
+    [ContextMenu("DeleteAllSaves")]
+    public async Task DeleteAllSaves(){
+        Debug.Log($"Deleting directory: {SavePath}", this);
+        try{
+            Directory.Delete(@$"{SavePath}",true);
+            Debug.Log("Deleting all files Successfully!", this);
         }
         catch (Exception e){
             throw e;

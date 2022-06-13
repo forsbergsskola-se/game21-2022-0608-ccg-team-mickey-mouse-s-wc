@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Daaw
   alignment: 0
   rarity: 25
-  level: 1
+  level: 3
   attack: 11
   maxHealth: 1
   speed: 11
