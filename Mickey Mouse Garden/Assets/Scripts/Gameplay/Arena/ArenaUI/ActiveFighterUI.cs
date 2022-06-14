@@ -31,10 +31,12 @@ public class ActiveFighterUI : MonoBehaviour{
 			case -132182:
 				fainted2.SetActive(true);
 				greyMask2.SetActive(true);
+				activeFighter2.GetComponent<PlayerFighterSimulator>().PlayerDedEvent.RemoveListener(ShowDeath);
 				break;
 			case -137220:
 				fainted3.SetActive(true);
 				greyMask3.SetActive(true);
+				activeFighter3.GetComponent<PlayerFighterSimulator>().PlayerDedEvent.RemoveListener(ShowDeath);
 				break;
 		}
 	}
