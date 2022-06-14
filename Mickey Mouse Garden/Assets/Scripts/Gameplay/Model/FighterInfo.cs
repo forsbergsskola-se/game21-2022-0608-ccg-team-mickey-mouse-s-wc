@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FighterInfo {
@@ -12,4 +10,17 @@ public class FighterInfo {
     public string Name { get; private set;}
     public Alignment Alignment { get; private set;}
     public Sprite Sprite { get; private set;}
+    
+    public FighterInfo CreateFighterInfo(int id, float maxHealth, float attack, float speed, int level, string rarity, string name, Alignment alignment, Sprite sprite){
+        ID = id;
+        MaxHealth = maxHealth;
+        Attack = attack;
+        Speed = speed;
+        Level = level;
+        Rarity = rarity;
+        Name = name;
+        Alignment = alignment;
+        Sprite = sprite;
+        return this;
+    }
 }
