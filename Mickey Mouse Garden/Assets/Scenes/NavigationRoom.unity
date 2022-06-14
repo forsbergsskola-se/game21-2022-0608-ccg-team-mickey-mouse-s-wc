@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 89758797}
   - component: {fileID: 89758796}
   - component: {fileID: 89758795}
+  - component: {fileID: 89758799}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -225,6 +226,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &89758799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89758794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d613802609126409b04bc2ab3dc13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonLeft: {fileID: 2020499382}
+  buttonRight: {fileID: 642029783}
+  clickable1: {fileID: 1338549125}
+  clickable2: {fileID: 714698940}
+  clickable3: {fileID: 2137233702}
 --- !u!1 &254056190
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +354,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5128a2f6fdaf7fe459132d2a9e14f8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newZoom: 0
   rotationAngle: 30
+  clickable1: {fileID: 0}
+  clickable2: {fileID: 0}
+  clickable3: {fileID: 0}
 --- !u!1 &538727439
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +792,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5128a2f6fdaf7fe459132d2a9e14f8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newZoom: 20
   rotationAngle: 30
+  clickable1: {fileID: 1338549125}
+  clickable2: {fileID: 714698940}
+  clickable3: {fileID: 2137233702}
 --- !u!1 &714698940
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714698940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 3.27, y: 3.27, z: 3.27}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -881,7 +907,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newZoom: 20
+  zoomedInEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  zoomedOutEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1190595056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newZoom: 20
+  zoomedInEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  zoomedOutEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1966124940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137233702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 3.27, y: 3.27, z: 3.27}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1466,4 +1502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newZoom: 20
+  zoomedInEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  zoomedOutEvent:
+    m_PersistentCalls:
+      m_Calls: []

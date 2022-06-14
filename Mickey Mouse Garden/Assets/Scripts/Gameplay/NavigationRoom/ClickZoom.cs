@@ -2,39 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClickZoom : MonoBehaviour {
 
-	public float newZoom;
+	public UnityEvent<Vector3> zoomedInEvent;
+	public UnityEvent zoomedOutEvent;
+	
 	private bool zoomed;
-	private float originalZoom;
 	private Vector3 touchPosition;
+	
 
-	private TouchPhase touchPhase = TouchPhase.Ended;
-	private void Start(){
-		originalZoom = Camera.main.fieldOfView;
-	}
 	private void OnMouseDown(){
 		if (!zoomed){
-			LookAtTarget();
-			ZoomIn();
 			Debug.Log("Store!");
+			zoomedInEvent.Invoke(transform.position);
 			zoomed = true;
 		} else {
-			ZoomOut();
+			zoomedOutEvent.Invoke();
 			zoomed = false;
 		}
-	}
-
-	private void LookAtTarget(){
-		Camera.main.transform.LookAt(transform.position);
-	}
-
-	private void ZoomIn(){
-		Camera.main.fieldOfView = newZoom;
-	}
-	
-	private void ZoomOut(){
-		Camera.main.fieldOfView = originalZoom;
 	}
 }
