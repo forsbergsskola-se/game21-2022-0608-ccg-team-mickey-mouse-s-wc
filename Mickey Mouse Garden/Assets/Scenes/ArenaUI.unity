@@ -696,7 +696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &868534446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 1081946147}
   - component: {fileID: 1081946146}
   m_Layer: 5
-  m_Name: Fighter2
+  m_Name: Portrait2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1191733601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1019,6 +1019,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 1
+  isActive: 0
+  sprite: {fileID: 21300000, guid: b282783fb6fddc946a8c085b1f184e01, type: 3}
 --- !u!1 &1272630055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1127,7 @@ GameObject:
   - component: {fileID: 1390865925}
   - component: {fileID: 1390865924}
   m_Layer: 5
-  m_Name: Fighter1
+  m_Name: Portrait1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1171,7 +1173,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b282783fb6fddc946a8c085b1f184e01, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1201,7 +1203,7 @@ GameObject:
   - component: {fileID: 1468779458}
   - component: {fileID: 1468779457}
   m_Layer: 5
-  m_Name: Fighter3
+  m_Name: Portrait3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1458,6 +1460,7 @@ GameObject:
   - component: {fileID: 2109247726}
   - component: {fileID: 2109247725}
   - component: {fileID: 2109247729}
+  - component: {fileID: 2109247730}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1563,6 +1566,20 @@ MonoBehaviour:
   activeFighter1: {fileID: 1214642720}
   fainted1: {fileID: 523755346}
   greyMask1: {fileID: 1191733600}
+--- !u!114 &2109247730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109247724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343fa9c9fbcd7ed4093a8f42707cbda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeFighter1: {fileID: 1214642720}
+  portrait1: {fileID: 1390865922}
 --- !u!1 &2111730067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2111730068
 RectTransform:
   m_ObjectHideFlags: 0
