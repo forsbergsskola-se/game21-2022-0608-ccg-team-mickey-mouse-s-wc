@@ -1,5 +1,7 @@
+using System;
 using Meta.Enums;
 using Meta.Interfaces;
+using Meta.Inventory;
 using UnityEngine;
 
 namespace Meta.Seeds {
@@ -10,22 +12,38 @@ namespace Meta.Seeds {
             get => inventorySprite;
             set => inventorySprite = value;
         }
+        
+        //TODO: Method for being picked up/harvested
+        // Destroy game object
+        //Invoke subscribers
 
-        public SeedQuality SeedQuality;
-
-        public float GrowthTime {
-            get;
-            private set;
+        private void OnMouseDown() {
+            var collectedMessage = new ItemCollectedMessage<Seed>(this);
+            Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
+            Destroy(gameObject);
         }
 
-        private void SetGrowthTime() {
+
+        //TODO: Implement things below when more info has been given by the designers
+        /*
+        public SeedQuality SeedQuality;
+        [SerializeField] private float growthTime;
+
+        public float GrowthTime {
+            get => growthTime;
+            set {
+                growthTime = value;
+                growthTime = SetGrowthTime();
+            }
+        }
+
+        private float SetGrowthTime() {
             //TODO: Implement based on seedQuality
             switch (SeedQuality) {
                 //Return different times
             }
-        }
-        public virtual void OnReceived() {
-            
-        }
+
+            return 1;
+        }*/
     }
 }
