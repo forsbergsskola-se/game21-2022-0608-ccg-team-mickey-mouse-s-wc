@@ -9,15 +9,15 @@ public class PlayerFighterSimulator : MonoBehaviour{
 	public bool isActive;
 	public Sprite sprite;
 
-	public event EventHandler PlayerDedEvent;
-	public event EventHandler PlayerActiveEvent;
+	public UnityEvent<int> PlayerDedEvent, PlayerActiveEvent;
 	
 	private void Update(){
 		if (!isAlive){
-			PlayerDedEvent?.Invoke(this, EventArgs.Empty);
+			PlayerDedEvent?.Invoke(GetInstanceID());
+			isActive = false;
 		}
 		if (isActive){
-			PlayerActiveEvent?.Invoke(this, EventArgs.Empty);
+			PlayerActiveEvent?.Invoke(GetInstanceID());
 		}
 	}
 }
