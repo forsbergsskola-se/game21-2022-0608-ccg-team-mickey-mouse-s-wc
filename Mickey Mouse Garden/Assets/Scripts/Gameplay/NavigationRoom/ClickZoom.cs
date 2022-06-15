@@ -12,7 +12,7 @@ public class ClickZoom : MonoBehaviour {
 	
 	private void OnMouseDown(){
 		if (!zoomed){
-			Debug.Log("Store!");
+			Debug.Log("Clicked!");
 			zoomChangedEvent.Invoke(transform.position, 20);
 			zoomed = true;
 		} else {

@@ -4,19 +4,20 @@ using UnityEngine;
 public class UIHider : MonoBehaviour {
 
 	public GameObject buttonLeft, buttonRight;
-	public GameObject clickable1, clickable2, clickable3;
+	public GameObject pShop, shop, shed, greenHouse, arena;
 
 	private void Awake(){
-		clickable1.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
-		clickable2.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
-		clickable3.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
+		pShop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
+		shop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
+		shed.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
+		greenHouse.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
+		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
 	}
 	private void DisableButton(Vector3 position, int zoomLevel){
 		if (zoomLevel == 20){
 			buttonLeft.SetActive(false);
 			buttonRight.SetActive(false);
-		}
-		else{
+		} else {
 			buttonLeft.SetActive(true);
 			buttonRight.SetActive(true);
 		}
