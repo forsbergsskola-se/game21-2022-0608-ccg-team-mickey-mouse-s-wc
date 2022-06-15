@@ -1,26 +1,23 @@
 using UnityEngine;
 
 public class SelectTeam : MonoBehaviour{
-   private FighterSO selectedFighter;
-   private FighterSO[] fighters = new FighterSO[3];
+   private FighterInfo hoveredFighter;
+   private FighterInfo[] fighters = new FighterInfo[3];
    private int incrementor;
 
    private void Start(){
       Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
    }
 
-   private void OnFighterMessageReceived(FighterMessage obj){
-      selectedFighter.Attack = obj.fighterInfo.Attack;
-      selectedFighter.MaxHealth = obj.fighterInfo.MaxHealth;
-      selectedFighter.Speed = obj.fighterInfo.Speed;
-      selectedFighter.Alignment = obj.fighterInfo.Alignment;
+   private void OnFighterMessageReceived(FighterMessage obj){ //everytime you hover a card this is called
+      hoveredFighter = obj.fighterInfo;
    }
 
    public void SelectFighter(){
-      fighters[incrementor++] = selectedFighter;
+      fighters[incrementor++] = hoveredFighter;
    }
 
-   public void UnselectFighter(){
-      fighters[incrementor--] = null;
+   public void ClearFighters(){
+      fighters = new FighterInfo[3];
    }
 }
