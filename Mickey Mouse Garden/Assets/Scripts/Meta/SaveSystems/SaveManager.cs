@@ -1,32 +1,20 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
-
 using Newtonsoft.Json;
-using OpenCover.Framework.Model;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using File = UnityEngine.Windows.File;
-using FileMode = System.IO.FileMode;
 using Task = System.Threading.Tasks.Task;
 
 public static class SaveManager{
     
     private static string SavePath => @$"{Application.persistentDataPath}/SaveData";
-
-
-    // void Start(){
-    //     Broker.Subscribe<SaveMessage>(StartSaveTask);
-    //    // Broker.Subscribe<LoadMessage>(StartLoadTask);
-    // }
-    // public void StartLoadTask(LoadMessage saveMessage){
-    //     Load(saveMessage);
-    // }
     public static async Task<T> Load<T>(Guid id){
+        if (!File.Exists(@$"{SavePath}\{id}")){
+            Debug.Log(@$"File does not exist : {SavePath}\{id}");
+            return default;
+        }
         try{
             var readString = await System.IO.File.ReadAllLinesAsync(@$"{SavePath}\{id}", Encoding.ASCII);
             string completeReadString = default;
