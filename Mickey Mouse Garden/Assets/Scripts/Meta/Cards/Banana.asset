@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Banana
   m_EditorClassIdentifier: 
   ID: TestID
+  Name: Banana
+  Alignment: 2
+  FighterImage: {fileID: 0}
