@@ -5,26 +5,27 @@ using UnityEngine;
 
 namespace Meta.Inventory {
     public class SeedInventoryUI : MonoBehaviour {
-        private SeedSlot[] UISlots;
+        private SeedSlot[] seedSlots;
+        private GrowSlot[] growSlots;
+        [SerializeField] private GameObject growSlotPrefab;
         
         private void Start() {
-            UISlots = GetComponentsInChildren<SeedSlot>();
-            Debug.Log("UI slots count " + UISlots.Length);
+            seedSlots = GetComponentsInChildren<SeedSlot>();
         }
 
-        public void UpdateUISlotCount(int count, Rarity rarity) {
+        public void UpdateSeedCount(int count, Rarity rarity) {
             SeedSlot slotToUpdate = null;
-            
-            for (int i = 0; i < UISlots.Length; i++) {
-                if (UISlots[i].Rarity == rarity) {
-                    slotToUpdate = UISlots[i];
+
+            for (int i = 0; i < seedSlots.Length; i++) {
+                if (seedSlots[i].Rarity == rarity) {
+                    slotToUpdate = seedSlots[i];
                     break;
                 }
             }
             
             slotToUpdate.UpdateCountText(count);
         }
-        
+
         //TODO: Set up icon correctly in inspector
     }
 }

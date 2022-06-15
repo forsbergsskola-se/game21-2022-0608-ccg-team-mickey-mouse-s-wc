@@ -30,29 +30,42 @@ namespace Meta.Inventory {
         }
 
         public override void CollectOperations(Seed objInventoryItem) {
-            seedInventoryUIInventory.UpdateUISlotCount(GetSeedCountOfRarity(objInventoryItem.rarity), objInventoryItem.rarity);
+            seedInventoryUIInventory.UpdateSeedCount(GetSeedCountOfRarity(objInventoryItem.rarity), objInventoryItem.rarity);
         }
 
         private int GetSeedCountOfRarity(Rarity rarity) {
             return inventory.Count(seed => seed.rarity == rarity);
         }
         
-        public void PlantSeed(PlantSeedMessage obj) {
-            Rarity rarity = obj.SeedRarity;
-            Debug.Log(name + " got a message that a seed should be planted");
-            //Could use linq find
-            
-            //Use rarity to move an object from inventory to growing seeds
+        public void PlantSeed(PlantSeedMessage objInventoryItem) {
+            Rarity rarity = objInventoryItem.SeedRarity;
+            Seed seedToPlant = null;
+
+            try {
+                seedToPlant = inventory.First(seed => seed.rarity == rarity);
+            }
+            catch (Exception e) {
+                Debug.Log("Seed didn't exist in inventory"); //TODO: Display error message to player
+                return;
+            }
+
+            inventory.Remove(seedToPlant); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
+            seedInventoryUIInventory.UpdateSeedCount(GetSeedCountOfRarity(rarity), rarity);
+            growingSeeds.Add(seedToPlant);
         }
-        
-        //(Inventory resp) move to the groowingseedlist
-        
-        
+
+
         //TODO list
-        //PlantSeed should move the first instance of a type found and set it to the growingseeds
-        //For now only display with debug log that it was moved, that the grow list has correct count, worry about displaying it nicely later
+        //Instaniate slot w timer set
+        //Scrollbox for grow slots
+        //Remove sliding for slider
+        //Show progress in slider
+        //Remove from growing list onHarvest ( called on onclick), maybe enable button first when growth timer reached 0
+        //
         
-        //TODO: Move seedinventory elsewhere in scene shouldn't be on the UI
+
+
+
         //TODO: Unsubscribe from broker
     }
 }
