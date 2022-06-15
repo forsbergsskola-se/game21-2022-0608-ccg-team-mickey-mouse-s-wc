@@ -14,13 +14,14 @@ public class CameraController : MonoBehaviour {
 	public float cameraMoveSpeed;
 	public float cameraRotateSpeed;
 	private void Awake() {
+		targetView = lookAt1.transform;
+		targetTransform = viewpoint1.transform;
 		pShop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
 		shop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
 		shed.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
 		greenHouse.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
 		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		targetView = lookAt1.transform;
-		targetTransform = viewpoint1.transform;
+
 	}
 
 	private void Update(){
