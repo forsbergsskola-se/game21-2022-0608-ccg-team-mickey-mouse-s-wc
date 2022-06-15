@@ -6,17 +6,10 @@ using UnityEngine;
 namespace Meta.Inventory {
     public abstract class Inventory<T> : MonoBehaviour where T : IInventoryItem {
         public abstract List<T> inventory { get; set; }
-        //Title
-        //Inventory pace??
 
         protected void Init() {
             SubscribeToBrokerMessage();
         }
-
-        /*public void Start() {
-            Debug.Log("In inventory start");
-            SubscribeToBrokerMessage();
-        }*/
 
         public void SubscribeToBrokerMessage() {
             Broker.Subscribe<ItemCollectedMessage<T>>(OnItemCollected);
@@ -33,12 +26,9 @@ namespace Meta.Inventory {
         public void Remove(T item) {
             inventory.Remove(item);
         }
-
-        //TODO: Ask if this is correct way to unsubscribe
-        /*
+        
         private void OnDestroy() {
             Broker.Unsubscribe<ItemCollectedMessage<T>>(OnItemCollected);
         }
-        */
     }
 }
