@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2563491}
   - component: {fileID: 2563495}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UISeedInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bf2d073cba4c568868ef466724e806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  growingSeeds: []
 --- !u!222 &311182179
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -884,7 +885,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Name
-      value: SeedSlot (1)
+      value: Rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 450416022}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlantSeedOfRarityType
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Meta.Inventory.SeedUISlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3635544411119496294, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Type
@@ -1009,6 +1038,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3635544411119496295, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
   m_PrefabInstance: {fileID: 450416019}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &450416021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+  m_PrefabInstance: {fileID: 450416019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &450416022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450416021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458603bccd6b416f974756cfdb861699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rarity: 1
 --- !u!1 &538467838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1450,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Name
-      value: SeedSlot
+      value: Common
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 803614997}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlantSeedOfRarityType
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Meta.Inventory.SeedUISlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3635544411119496294, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Type
@@ -1528,6 +1603,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3635544411119496295, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
   m_PrefabInstance: {fileID: 803614994}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &803614996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+  m_PrefabInstance: {fileID: 803614994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &803614997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803614996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458603bccd6b416f974756cfdb861699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rarity: 0
 --- !u!1001 &948132564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2148,7 +2241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1320219431}
   - component: {fileID: 1320219432}
-  - component: {fileID: 1320219433}
   m_Layer: 5
   m_Name: PlantedSlots
   m_TagString: Untagged
@@ -2185,18 +2277,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320219430}
   m_CullTransparentMesh: 1
---- !u!114 &1320219433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320219430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4bf2d073cba4c568868ef466724e806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1329293470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2423,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Name
-      value: SeedSlot (2)
+      value: Epic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1332712184}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlantSeedOfRarityType
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Meta.Inventory.SeedUISlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3635544411119496294, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Type
@@ -2468,6 +2576,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3635544411119496295, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
   m_PrefabInstance: {fileID: 1332712181}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1332712183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+  m_PrefabInstance: {fileID: 1332712181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1332712184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332712183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458603bccd6b416f974756cfdb861699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rarity: 2
 --- !u!1 &1349738673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,7 +3084,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Name
-      value: SeedSlot (3)
+      value: Legendary
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1635311885}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlantSeedOfRarityType
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Meta.Inventory.SeedUISlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635544411119496292, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3635544411119496294, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
       propertyPath: m_Type
@@ -3083,6 +3237,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3635544411119496295, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
   m_PrefabInstance: {fileID: 1635311882}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1635311884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3635544411119496288, guid: 204a6b7fac6f14ca9b3b13bdfed959d3, type: 3}
+  m_PrefabInstance: {fileID: 1635311882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1635311885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635311884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458603bccd6b416f974756cfdb861699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rarity: 3
 --- !u!1 &1788847001
 GameObject:
   m_ObjectHideFlags: 0
