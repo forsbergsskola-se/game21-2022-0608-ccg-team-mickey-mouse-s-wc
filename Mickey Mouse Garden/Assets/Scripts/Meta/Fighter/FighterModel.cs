@@ -17,5 +17,11 @@ public class FighterModel : ScriptableObject,ISaveData
     [Min(1)]public float speed;
     public Image fighterImage; //TODO: Sprite or image?
     public Guid ID{ get; } = Guid.NewGuid();
-    
+    public void TryLoadData(){
+        throw new NotImplementedException();
+    }
+
+    public void Save(){
+        throw new NotImplementedException();
+    }
 }

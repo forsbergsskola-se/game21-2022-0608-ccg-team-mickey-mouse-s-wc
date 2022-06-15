@@ -1,18 +1,23 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEditor.VersionControl;
 
-public class CardCollection : MonoBehaviour
+
+public class CardCollection : ISaveData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public Dictionary<Guid, OwnedCard> ownedCards;
+
+    internal CardCollection(){
+        ownedCards = new Dictionary<Guid, OwnedCard>();
+        TryLoadData();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public Guid ID{ get; }
+    public void TryLoadData(){
+        //Try load data, if data found, override current data, otherwise, do nothing.
+    }
+
+    public void Save(){
+        throw new NotImplementedException();
     }
 }
