@@ -16,7 +16,7 @@ public class FighterInfoTester : MonoBehaviour{
         fighter.Rarity = "epic";
         fighter.Name = "Feona";
         fighter.Level = 2;
-        fighter.Alignment = Alignment.Flora;
+        fighter.Alignment = Alignment.Rock;
         fighter.Sprite = sprite;
         fighterMessage.fighterInfo = fighter;
     }
