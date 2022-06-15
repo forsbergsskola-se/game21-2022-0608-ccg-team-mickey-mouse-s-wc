@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Alignment
 {
-    Lush,
-    Flora,
-    Verdure
+    Rock,
+    Paper,
+    Scissors
 }

@@ -20,6 +20,6 @@ public class Fighter : MonoBehaviour{
       var saveMessage = new SaveMessage(FighterModel);
          Debug.Log("Invoking Test");
          Broker.InvokeSubscribers(saveMessage.GetType(),saveMessage); //Implement at better place
-      FighterModel.alignment = Alignment.Flora;
+      FighterModel.alignment = Alignment.Rock;
    }
 }

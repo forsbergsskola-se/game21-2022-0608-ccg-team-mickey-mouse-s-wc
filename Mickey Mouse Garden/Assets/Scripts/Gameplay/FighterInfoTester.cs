@@ -13,10 +13,10 @@ public class FighterInfoTester : MonoBehaviour{
         fighter.MaxHealth = 10;
         fighter.Attack = 5;
         fighter.Speed = 7;
-        fighter.Rarity = "epic";
+        fighter.Rarity = Rarity.Epic;
         fighter.Name = "Feona";
         fighter.Level = 2;
-        fighter.Alignment = Alignment.Flora;
+        fighter.Alignment = Alignment.Paper;
         fighter.Sprite = sprite;
         fighterMessage.fighterInfo = fighter;
     }

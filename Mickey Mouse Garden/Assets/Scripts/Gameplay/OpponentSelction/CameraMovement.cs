@@ -20,6 +20,8 @@ public class CameraMovement : MonoBehaviour{
 		targetPosition += new Vector3(0, 0, 5);
 	}
 	public void StepBackward() {
-		targetPosition -= new Vector3(0, 0, 5);
+		if (targetPosition.z >= 1){
+			targetPosition -= new Vector3(0, 0, 5);
+		}
 	}
 }
