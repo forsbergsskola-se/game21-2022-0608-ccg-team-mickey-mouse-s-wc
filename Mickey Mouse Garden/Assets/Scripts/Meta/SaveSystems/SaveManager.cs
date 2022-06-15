@@ -13,44 +13,41 @@ using File = UnityEngine.Windows.File;
 using FileMode = System.IO.FileMode;
 using Task = System.Threading.Tasks.Task;
 
-public class SaveManager : MonoBehaviour{
+public static class SaveManager{
     
     private static string SavePath => @$"{Application.persistentDataPath}/SaveData";
 
 
-    void Start(){
-        Broker.Subscribe<SaveMessage>(StartSaveTask);
-       // Broker.Subscribe<LoadMessage>(StartLoadTask);
-    }
+    // void Start(){
+    //     Broker.Subscribe<SaveMessage>(StartSaveTask);
+    //    // Broker.Subscribe<LoadMessage>(StartLoadTask);
+    // }
     // public void StartLoadTask(LoadMessage saveMessage){
     //     Load(saveMessage);
     // }
-    // public static async Task Load(LoadMessage loadMessage){
-    //     try{
-    //         var readString = await System.IO.File.ReadAllLinesAsync(@$"{SavePath}\{loadMessage.saveData.ID}", Encoding.ASCII);
-    //         var type = loadMessage.saveData.GetType(); //Type has to be an implemented class to deserialize saved file.
-    //         var dataBaseObject = JsonUtility.FromJson<type>(readString.ToString()); 
-    //         return  dataBaseObject;
-    //     }
-    //     catch (Exception e){ //Happens twice?? CW and Throw
-    //         throw e;
-    //     }
-    // }
-    public void StartSaveTask(SaveMessage saveMessage){
-        Save(saveMessage);
+    public static async Task<T> Load<T>(Guid id){
+        try{
+            var readString = await System.IO.File.ReadAllLinesAsync(@$"{SavePath}\{id}", Encoding.ASCII);
+            var dataBaseObject = JsonUtility.FromJson<T>(readString.ToString()); 
+            return dataBaseObject;
+        }
+        catch (Exception e){
+            throw e;
+        }
     }
-    public async Task Save(SaveMessage saveMessage){
-        Debug.Log("Saving!", this);
+   
+    public static async Task Save(ISaveData saveData){
+        Debug.Log("Saving!");
         if (!Directory.Exists(SavePath)){
             Debug.Log($"Directory {SavePath}: does not exist, Creating New Directory.");
             Directory.CreateDirectory(SavePath);
-            Save(saveMessage);
+            Save(saveData);
             return;
         }
         try{
-            var seializedDataBaseObject = JsonUtility.ToJson(saveMessage.saveData);
-            await System.IO.File.WriteAllTextAsync(@$"{SavePath}\{saveMessage.saveData.ID}", seializedDataBaseObject);
-            Debug.Log("Saved Successfully!", this);
+            var seializedDataBaseObject = JsonUtility.ToJson(saveData);
+            await System.IO.File.WriteAllTextAsync(@$"{SavePath}\{saveData.ID}", seializedDataBaseObject);
+            Debug.Log("Saved Successfully!");
         }
         catch (Exception e){
             throw e;
@@ -64,11 +61,11 @@ public class SaveManager : MonoBehaviour{
     /// </summary>
     /// <exception cref="Exception"></exception>
     [ContextMenu("DeleteAllSaves")] //TODO: Remove Context Menu when Saving system is fully implemented.
-    public async Task DeleteAllSaves(){ 
-        Debug.Log($"Deleting directory: {SavePath}", this);
+    public static async Task DeleteAllSaves(){ 
+        Debug.Log($"Deleting directory: {SavePath}");
         try{
             Directory.Delete(@$"{SavePath}",true);
-            Debug.Log("Deleting all files Successfully!", this);
+            Debug.Log("Deleting all files Successfully!");
         }
         catch (Exception e){
             throw e;

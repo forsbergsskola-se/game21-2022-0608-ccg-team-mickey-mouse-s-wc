@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Player Save Data", menuName = "Player/Player Save Data")]
 public class PlayerSaveData : ScriptableObject,ISaveData{
      public Guid ID{ get; }
-     public void TryLoadData(){
+     public Task TryLoadData(){
          throw new NotImplementedException();
      }
 

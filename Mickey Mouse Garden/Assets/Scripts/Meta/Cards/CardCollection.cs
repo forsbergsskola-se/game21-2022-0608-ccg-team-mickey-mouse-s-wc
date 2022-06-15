@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
+using Task = System.Threading.Tasks.Task;
 
 
 public class CardCollection : ISaveData
@@ -9,12 +10,13 @@ public class CardCollection : ISaveData
 
     internal CardCollection(){
         ownedCards = new Dictionary<Guid, OwnedCard>();
-        TryLoadData();
+        TryLoadData(); // TODO: Probably needs to be awaited.
     }
 
     public Guid ID{ get; }
-    public void TryLoadData(){
-        //Try load data, if data found, override current data, otherwise, do nothing.
+    public async Task TryLoadData(){ //Try load data, if data found, override current data, otherwise, do nothing.
+      var savedDictionary =  await SaveManager.Load<Dictionary<Guid, OwnedCard>>(ID);
+      ownedCards = savedDictionary;
     }
 
     public void Save(){

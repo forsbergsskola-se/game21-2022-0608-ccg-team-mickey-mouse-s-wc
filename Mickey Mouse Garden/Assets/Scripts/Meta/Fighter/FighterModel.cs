@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class FighterModel : ScriptableObject,ISaveData
     [Min(1)]public float speed;
     public Image fighterImage; //TODO: Sprite or image?
     public Guid ID{ get; } = Guid.NewGuid();
-    public void TryLoadData(){
+    public Task TryLoadData(){
         throw new NotImplementedException();
     }
 
