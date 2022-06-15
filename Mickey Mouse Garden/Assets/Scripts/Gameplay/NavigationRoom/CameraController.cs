@@ -1,23 +1,16 @@
 using UnityEngine;
 
-public class CameraController : MonoBehaviour{
-	public float newZoom;
+public class CameraController : MonoBehaviour {
 	public float rotationAngle = 30;
 	public GameObject clickable1, clickable2, clickable3;
 	
-	private float originalZoom;
-
 	private void Start(){
-			
-		clickable1.GetComponent<ClickZoom>().zoomedInEvent.AddListener(ZoomIn);
-		clickable1.GetComponent<ClickZoom>().zoomedOutEvent.AddListener(ZoomOut);
-		clickable2.GetComponent<ClickZoom>().zoomedInEvent.AddListener(ZoomIn);
-		clickable2.GetComponent<ClickZoom>().zoomedOutEvent.AddListener(ZoomOut);
-		clickable3.GetComponent<ClickZoom>().zoomedInEvent.AddListener(ZoomIn);
-		clickable3.GetComponent<ClickZoom>().zoomedOutEvent.AddListener(ZoomOut);
-		
-		originalZoom = Camera.main.fieldOfView;
+		clickable1.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomIn);
+		clickable2.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomIn);
+		clickable3.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomIn);
 	}
+	
+	// Needs to change to fixed positions and angles in scene with smooth damp.
 	public void CameraRotateRight(){
 		transform.RotateAround(Vector3.zero, Vector3.down, rotationAngle);
 	}
@@ -25,12 +18,10 @@ public class CameraController : MonoBehaviour{
 		transform.RotateAround(Vector3.zero, Vector3.up, rotationAngle);
 	}
 	
-	private void ZoomIn(Vector3 position){
+	// Used to transition to store or feature. May discard if navigation arrows are in world space.
+	private void ZoomIn(Vector3 position, int newZoom){
 		Camera.main.transform.LookAt(position);
 		Camera.main.fieldOfView = newZoom;
 	}
 	
-	private void ZoomOut(){
-		Camera.main.fieldOfView = originalZoom;
-	}
 }

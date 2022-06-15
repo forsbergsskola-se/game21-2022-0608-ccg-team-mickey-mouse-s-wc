@@ -6,20 +6,17 @@ using UnityEngine.Events;
 
 public class ClickZoom : MonoBehaviour {
 
-	public UnityEvent<Vector3> zoomedInEvent;
-	public UnityEvent zoomedOutEvent;
-	
+	public UnityEvent<Vector3, int> zoomChangedEvent;
 	private bool zoomed;
 	private Vector3 touchPosition;
 	
-
 	private void OnMouseDown(){
 		if (!zoomed){
 			Debug.Log("Store!");
-			zoomedInEvent.Invoke(transform.position);
+			zoomChangedEvent.Invoke(transform.position, 20);
 			zoomed = true;
 		} else {
-			zoomedOutEvent.Invoke();
+			zoomChangedEvent.Invoke(transform.position, 60);
 			zoomed = false;
 		}
 	}
