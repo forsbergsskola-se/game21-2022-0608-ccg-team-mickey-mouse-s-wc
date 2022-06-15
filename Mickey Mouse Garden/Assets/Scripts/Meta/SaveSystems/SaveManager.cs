@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+
 using Newtonsoft.Json;
 using OpenCover.Framework.Model;
 using UnityEditor.VersionControl;
@@ -15,7 +16,7 @@ using Task = System.Threading.Tasks.Task;
 
 public static class SaveManager{
     
-    private static readonly string SavePath = @$"{Application.persistentDataPath}/SaveData";
+    private static string SavePath => @$"{Application.persistentDataPath}/SaveData";
 
 
     // void Start(){
@@ -28,7 +29,7 @@ public static class SaveManager{
     public static async Task<T> Load<T>(Guid id){
         try{
             var readString = await System.IO.File.ReadAllLinesAsync(@$"{SavePath}\{id}", Encoding.ASCII);
-            var dataBaseObject = JsonUtility.FromJson<T>(readString.ToString()); 
+            var dataBaseObject = JsonConvert.DeserializeObject<T>(readString.ToString()); 
             return dataBaseObject;
         }
         catch (Exception e){
@@ -45,8 +46,8 @@ public static class SaveManager{
             return;
         }
         try{
-            var seializedDataBaseObject = JsonUtility.ToJson(saveData);
-            await System.IO.File.WriteAllTextAsync(@$"{SavePath}\{saveData.ID}", seializedDataBaseObject);
+            var stringSerialized = JsonConvert.SerializeObject(saveData);
+            await System.IO.File.WriteAllTextAsync(@$"{SavePath}\{saveData.ID}", stringSerialized);
             Debug.Log("Saved Successfully!");
         }
         catch (Exception e){

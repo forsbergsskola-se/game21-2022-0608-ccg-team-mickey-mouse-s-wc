@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-
+[Serializable]
 public record OwnedCard : ISaveData{
     readonly Card Card;
     public Rarity Rarity;

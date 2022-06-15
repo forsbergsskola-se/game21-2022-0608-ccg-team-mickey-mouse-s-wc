@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour{
-    public CardCollection cardCollection = new CardCollection();
+    public CardCollection cardCollection = new CardCollection(new Guid("11111111-1111-1111-1111-000000000000")); //ID for test rn
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
     }
