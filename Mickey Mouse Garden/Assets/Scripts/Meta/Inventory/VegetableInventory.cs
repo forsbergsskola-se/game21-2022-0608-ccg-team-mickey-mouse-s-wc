@@ -8,7 +8,10 @@ namespace Meta.Inventory {
     public class VegetableInventory : Inventory<Vegetable> {
         public static VegetableInventory Instance;
         public override List<Vegetable> inventory { get; set; } = new();
-        
+        public override void CollectOperations(Vegetable objInventoryItem) {
+            throw new NotImplementedException();
+        }
+
         #region Singleton
         private void Awake() {
             if (Instance != null) {
@@ -22,7 +25,7 @@ namespace Meta.Inventory {
         #endregion
 
         private void Start() {
-            Init();
+            InitBase();
         }
     }
 }
