@@ -7,10 +7,9 @@ namespace Meta.Inventory {
         public Rarity Rarity;
         [SerializeField] private TextMeshProUGUI countText;
 
-        public void PlantSeedOfRarityType() {
+        public void PlantSeed() {
             var plantSeedMessage = new PlantSeedMessage(Rarity);
             Broker.InvokeSubscribers(plantSeedMessage.GetType(), plantSeedMessage);
-            Debug.Log(Rarity + ": seed was requested to be planted");
         }
 
         public void UpdateCountText(int count) {

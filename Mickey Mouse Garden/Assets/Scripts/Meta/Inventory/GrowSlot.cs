@@ -1,5 +1,7 @@
+using UnityEngine;
+
 namespace Meta.Inventory {
-    public class GrowSlot {
+    public class GrowSlot : MonoBehaviour {
         
     }
 }

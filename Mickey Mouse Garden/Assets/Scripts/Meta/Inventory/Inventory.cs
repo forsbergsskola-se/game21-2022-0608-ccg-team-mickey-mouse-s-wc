@@ -21,6 +21,9 @@ namespace Meta.Inventory {
             CollectOperations(obj.InventoryItem);
         }
         
+        //Onitemremoved
+            // RemoveOperations
+        
         public abstract void CollectOperations(T objInventoryItem);         //TODO: Change name to something better
 
         public void Add(T item) {
