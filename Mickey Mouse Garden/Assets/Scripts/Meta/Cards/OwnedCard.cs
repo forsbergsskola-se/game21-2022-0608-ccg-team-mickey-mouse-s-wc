@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public record OwnedCard : ISaveData{
     [Min(1)]public float MaxHealth;
     [Min(1)]public float Speed;
     public Guid ID{ get; }
-    public void TryLoadData(){
+    public Task TryLoadData(){
         throw new NotImplementedException(); // This probably will never be called.
     }
 
