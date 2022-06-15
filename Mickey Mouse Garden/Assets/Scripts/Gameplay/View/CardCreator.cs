@@ -16,21 +16,25 @@ public class CardCreator : MonoBehaviour{
 
     private void InstantiateAllFightersGathered(){
         foreach (var fighter in fighters){
-            Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity);
-            var componentInChildren = card.GetComponentInChildren<CardContentFiller>();
-            componentInChildren.Name = fighter.Name;
-            componentInChildren.ID = fighter.ID;
-            componentInChildren.MaxHealth = fighter.MaxHealth;
-            componentInChildren.Attack = fighter.Attack;
-            componentInChildren.Speed = fighter.Speed;
-            componentInChildren.Level = fighter.Level;
-            componentInChildren.Rarity = fighter.Rarity;
-            componentInChildren.Name = fighter.Name;
-            componentInChildren.Alignment = fighter.Alignment;
-            componentInChildren.Sprite = fighter.Sprite;
+            InstantiateFighter(fighter);
         }
     }
-    
+
+    private void InstantiateFighter(FighterInfo fighter){
+        Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity);
+        var componentInChildren = card.GetComponentInChildren<CardContentFiller>();
+        componentInChildren.Name = fighter.Name;
+        componentInChildren.ID = fighter.ID;
+        componentInChildren.MaxHealth = fighter.MaxHealth;
+        componentInChildren.Attack = fighter.Attack;
+        componentInChildren.Speed = fighter.Speed;
+        componentInChildren.Level = fighter.Level;
+        componentInChildren.Rarity = fighter.Rarity;
+        componentInChildren.Name = fighter.Name;
+        componentInChildren.Alignment = fighter.Alignment;
+        componentInChildren.Sprite = fighter.Sprite;
+    }
+
     private void OnDestroy(){
         Broker.Unsubscribe<FighterMessage>(OnFighterMessageReceived);
     }
