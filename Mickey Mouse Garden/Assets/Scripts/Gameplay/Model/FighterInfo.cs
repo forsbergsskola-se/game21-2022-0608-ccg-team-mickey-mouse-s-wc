@@ -6,7 +6,7 @@ public record FighterInfo {
     public float Attack { get; set;}
     public float Speed { get; set;}
     public int Level  { get; set;}
-    public string Rarity  { get; set;}
+    public Rarity Rarity  { get; set;}
     public string Name { get; set;}
     public Alignment Alignment { get; set;}
     public Sprite Sprite { get; set;}

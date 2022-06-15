@@ -14,7 +14,7 @@ public class CardContentFiller : MonoBehaviour{
 	
 	public void AssignTextFields(FighterInfo fighter){
 		nameText.text = fighter.Name;
-		rarityText.text = fighter.Rarity;
+		rarityText.text = fighter.Rarity.ToString();
 		alignmentText.text = fighter.Alignment.ToString();
 		levelText.text = fighter.Level.ToString();
 		attackText.text = fighter.Attack.ToString();
