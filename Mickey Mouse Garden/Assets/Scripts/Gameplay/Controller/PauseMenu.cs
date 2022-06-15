@@ -24,6 +24,6 @@ public class PauseMenu : MonoBehaviour{
         SceneManager.LoadScene("Market");
     }
     public void MainMenu(){
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("NavigationRoom");
     }
 }
