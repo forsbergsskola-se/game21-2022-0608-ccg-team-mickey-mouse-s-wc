@@ -1,7 +1,7 @@
 using UnityEngine;
 
-// Disables navigation buttons when zoomed into store or feature.
-public class UIHider : MonoBehaviour{
+// Disables navigation buttons when zoomed into store or feature. May discard if navigation arrows are in world space.
+public class UIHider : MonoBehaviour {
 
 	public GameObject buttonLeft, buttonRight;
 	public GameObject clickable1, clickable2, clickable3;
