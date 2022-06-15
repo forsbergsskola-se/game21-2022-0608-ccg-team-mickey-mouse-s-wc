@@ -4,7 +4,7 @@ using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 [Serializable]
 public record OwnedCard : ISaveData{
-    readonly Card Card;
+    public Card Card{ get; }
     public Rarity Rarity;
     [Min(1)]public int Level;
     [Min(0)]public float Attack;

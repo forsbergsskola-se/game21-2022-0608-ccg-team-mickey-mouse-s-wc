@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Player : MonoBehaviour{
@@ -8,16 +9,15 @@ public class Player : MonoBehaviour{
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
     }
-
     
-    void LoadAllData(){
-        cardCollection.TryLoadData();
-    }
     [ContextMenu("LoadCardCollection")]
-    void LoadCardCollection(){
+    async Task LoadCardCollection(){
         Debug.Log("Loading cards for Card Collections...", this);
-        cardCollection.TryLoadData();
-        Debug.Log("Loaded Cards in Card Collections: " +cardCollection.ownedCards,this);
+        await cardCollection.TryLoadData();
+        Debug.Log("Loaded Cards in Card Collections: ",this);
+        foreach (var KeyValuePair in cardCollection.ownedCards){
+            Debug.Log($"Key: ({KeyValuePair.Key}), Value: ({KeyValuePair.Value})");
+        }
     }
     [ContextMenu("SaveCardCollection")]
     void SaveCardCollection(){
@@ -25,6 +25,7 @@ public class Player : MonoBehaviour{
     }
     [ContextMenu("AddCardToCollection")]
     void AddCardToCollection(){
-        cardCollection.AddCard(Guid.NewGuid(),new OwnedCard(Guid.NewGuid(),(Card) ScriptableObject.CreateInstance("Card"),Rarity.Common,50,40,30,20));
+        var newCardID = Guid.NewGuid();
+        cardCollection.AddCard(newCardID,new OwnedCard(newCardID,(Card) ScriptableObject.CreateInstance("Card"),Rarity.Common,50,40,30,20));
     }
 }

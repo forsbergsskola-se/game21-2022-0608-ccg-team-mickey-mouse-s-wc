@@ -29,7 +29,12 @@ public static class SaveManager{
     public static async Task<T> Load<T>(Guid id){
         try{
             var readString = await System.IO.File.ReadAllLinesAsync(@$"{SavePath}\{id}", Encoding.ASCII);
-            var dataBaseObject = JsonConvert.DeserializeObject<T>(readString.ToString()); 
+            string completeReadString = default;
+            foreach (var _string in readString){
+                completeReadString += _string;
+            }
+           
+            var dataBaseObject = JsonConvert.DeserializeObject<T>(completeReadString); 
             return dataBaseObject;
         }
         catch (Exception e){

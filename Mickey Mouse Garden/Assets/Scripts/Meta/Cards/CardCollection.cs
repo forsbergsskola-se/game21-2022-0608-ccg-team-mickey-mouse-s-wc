@@ -6,12 +6,12 @@ using Task = System.Threading.Tasks.Task;
 [Serializable]
 public class CardCollection : ISaveData
 {
-     public SerializableDictionary2<Guid, OwnedCard> ownedCards{ get; private set; }
+     public Dictionary<Guid, OwnedCard> ownedCards{ get; private set; }
 
-    internal CardCollection(Guid id){
+     public CardCollection(Guid id){
         ID = id;
-        ownedCards = new SerializableDictionary2<Guid, OwnedCard>();
-        TryLoadData(); // TODO: Probably needs to be awaited.
+        ownedCards = new Dictionary<Guid, OwnedCard>();
+       // TryLoadData(); // TODO: Probably needs to be awaited.
     }
 
     public Guid ID{ get; }

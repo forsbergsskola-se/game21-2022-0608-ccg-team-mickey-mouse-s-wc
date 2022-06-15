@@ -9,5 +9,5 @@ public class Card : ScriptableObject{
    public string ID;
    public string Name;
    public Alignment Alignment;
-   public Image FighterImage; //TODO: Sprite or image?
+   public Sprite FighterImage; //TODO: Sprite or image?
 }
