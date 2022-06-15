@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2563491}
   - component: {fileID: 2563495}
   m_Layer: 5
-  m_Name: UISeedInventory
+  m_Name: SeedInventoryUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1752,7 +1752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bf2d073cba4c568868ef466724e806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiInventory: {fileID: 2563495}
+  seedInventoryUIInventory: {fileID: 2563495}
   growingSeeds: []
 --- !u!4 &859395012
 Transform:

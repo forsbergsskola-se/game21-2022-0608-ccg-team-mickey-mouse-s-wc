@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Meta.Inventory {
     public class SeedInventory : Inventory<Seed> {
-        [SerializeField] private UISeedInventory uiInventory;
+        [SerializeField] private SeedInventoryUI seedInventoryUIInventory;
         public static SeedInventory Instance;
         public override List<Seed> inventory { get; set; } = new();
         public List<Seed> growingSeeds = new();
@@ -29,13 +29,8 @@ namespace Meta.Inventory {
             Broker.Subscribe<PlantSeedMessage>(PlantSeed); // Maybe move to own method later
         }
 
-        //Seed inven vet att den fått en mer
-        //När den fått en mer behöver den säga till UI att uppdatera sig
-        //Ui vill säga till sin slot att uppdatera sig
-        //Behövs inventory ui??
-        
         public override void CollectOperations(Seed objInventoryItem) {
-            uiInventory.UpdateUISlotCount(GetSeedCountOfRarity(objInventoryItem.rarity), objInventoryItem.rarity);
+            seedInventoryUIInventory.UpdateUISlotCount(GetSeedCountOfRarity(objInventoryItem.rarity), objInventoryItem.rarity);
         }
 
         private int GetSeedCountOfRarity(Rarity rarity) {
@@ -50,9 +45,6 @@ namespace Meta.Inventory {
             //Use rarity to move an object from inventory to growing seeds
         }
         
-
-
-        //UI should send click event to activate move
         //(Inventory resp) move to the groowingseedlist
         
         

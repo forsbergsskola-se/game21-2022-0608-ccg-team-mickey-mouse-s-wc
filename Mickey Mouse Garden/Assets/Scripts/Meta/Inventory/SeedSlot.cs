@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 namespace Meta.Inventory {
-    public class SeedUISlot : MonoBehaviour {
+    public class SeedSlot : MonoBehaviour {
         public Rarity Rarity;
         [SerializeField] private TextMeshProUGUI countText;
 

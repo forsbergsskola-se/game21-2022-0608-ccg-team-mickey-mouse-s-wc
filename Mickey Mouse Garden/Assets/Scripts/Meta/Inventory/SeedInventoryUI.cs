@@ -4,16 +4,16 @@ using TMPro;
 using UnityEngine;
 
 namespace Meta.Inventory {
-    public class UISeedInventory : MonoBehaviour {
-        private SeedUISlot[] UISlots;
+    public class SeedInventoryUI : MonoBehaviour {
+        private SeedSlot[] UISlots;
         
         private void Start() {
-            UISlots = GetComponentsInChildren<SeedUISlot>();
+            UISlots = GetComponentsInChildren<SeedSlot>();
             Debug.Log("UI slots count " + UISlots.Length);
         }
 
         public void UpdateUISlotCount(int count, Rarity rarity) {
-            SeedUISlot slotToUpdate = null;
+            SeedSlot slotToUpdate = null;
             
             for (int i = 0; i < UISlots.Length; i++) {
                 if (UISlots[i].Rarity == rarity) {
