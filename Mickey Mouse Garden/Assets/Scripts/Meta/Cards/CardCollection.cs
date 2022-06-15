@@ -11,8 +11,7 @@ public class CardCollection : ISaveData
      public CardCollection(Guid id){
         ID = id;
         ownedCards = new Dictionary<Guid, OwnedCard>();
-       // TryLoadData(); // TODO: Probably needs to be awaited.
-    }
+     }
 
     public Guid ID{ get; }
     public async Task TryLoadData(){ //Try load data, if data found, override current data, otherwise, do nothing.

@@ -6,7 +6,7 @@ using UnityEngine;
 public record OwnedCard : ISaveData{
     public Card Card{ get; }
     public Rarity Rarity;
-    [Min(1)]public int Level;
+    [Min(1)]public short Level;
     [Min(0)]public float Attack;
     [Min(1)]public float MaxHealth;
     [Min(1)]public float Speed;
@@ -19,7 +19,7 @@ public record OwnedCard : ISaveData{
         throw new NotImplementedException(); //TODO: Implement Save, should be called whenever card gets changed.
     }
 
-    public OwnedCard(Guid id, Card card, Rarity rarity, int level, float attack, float maxHealth, float speed){
+    public OwnedCard(Guid id, Card card, Rarity rarity, short level, float attack, float maxHealth, float speed){
         ID = id;
         Card = card;
         Rarity = rarity;

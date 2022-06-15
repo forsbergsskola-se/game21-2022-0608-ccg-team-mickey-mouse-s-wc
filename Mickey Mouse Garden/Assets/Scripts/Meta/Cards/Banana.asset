@@ -15,4 +15,4 @@ MonoBehaviour:
   ID: TestID
   Name: Banana
   Alignment: 2
-  FighterImage: {fileID: 0}
+  FighterImage: {fileID: 21300000, guid: d17017e42ba1c4660afd95bbec5b21b8, type: 3}
