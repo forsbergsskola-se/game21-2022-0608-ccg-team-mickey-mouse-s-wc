@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ClickZoom : MonoBehaviour {
+public class ClickZoom : MonoBehaviour{
 
-	public UnityEvent<Vector3, int> zoomChangedEvent;
-	private bool zoomed;
-	private Vector3 touchPosition;
+	[SerializeField] private int cameraAngleZoomed, cameraAngleNormal;
+	public UnityEvent<Vector3, int, int> zoomChangedEvent;
 	
+	private bool zoomed;
+
+	// Invokes event when object is clicked or touched (needs testing).
 	private void OnMouseDown(){
 		if (!zoomed){
-			Debug.Log("Store!");
-			zoomChangedEvent.Invoke(transform.position, 20);
+			Debug.Log("Clicked!");
+			zoomChangedEvent.Invoke(transform.position, cameraAngleZoomed, GetInstanceID());
 			zoomed = true;
 		} else {
-			zoomChangedEvent.Invoke(transform.position, 60);
+			zoomChangedEvent.Invoke(transform.position, cameraAngleNormal, GetInstanceID());
 			zoomed = false;
 		}
 	}
