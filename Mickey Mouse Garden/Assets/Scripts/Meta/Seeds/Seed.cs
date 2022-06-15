@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Meta.Seeds {
     public abstract class Seed : MonoBehaviour, IInventoryItem {
         [SerializeField] private Sprite inventorySprite;
+        public Rarity rarity;
 
         public Sprite InventorySprite {
             get => inventorySprite;
