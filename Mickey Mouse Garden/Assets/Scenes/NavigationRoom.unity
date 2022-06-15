@@ -257,7 +257,6 @@ GameObject:
   - component: {fileID: 254056193}
   - component: {fileID: 254056192}
   - component: {fileID: 254056191}
-  - component: {fileID: 254056195}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -344,31 +343,6 @@ Transform:
   m_Father: {fileID: 695552061}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &254056195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254056190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5128a2f6fdaf7fe459132d2a9e14f8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pShop: {fileID: 0}
-  shop: {fileID: 0}
-  shed: {fileID: 0}
-  greenhouse: {fileID: 0}
-  arena: {fileID: 0}
-  viewpoint1: {fileID: 0}
-  viewpoint2: {fileID: 0}
-  viewpoint3: {fileID: 0}
-  lookAt1: {fileID: 0}
-  lookAt2: {fileID: 0}
-  lookAt3: {fileID: 0}
-  cameraMoveSpeed: 0
-  cameraRotateSpeed: 0
 --- !u!1 &538727439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraAngleZoomed: 20
+  cameraAngleNormal: 60
   zoomChangedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1291,6 +1267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraAngleZoomed: 20
+  cameraAngleNormal: 60
   zoomChangedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1502,6 +1480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraAngleZoomed: 20
+  cameraAngleNormal: 60
   zoomChangedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1828,6 +1808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraAngleZoomed: 20
+  cameraAngleNormal: 60
   zoomChangedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2402,6 +2384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1dd3b66f3f9b498e44bc3ab6de85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraAngleZoomed: 20
+  cameraAngleNormal: 60
   zoomChangedEvent:
     m_PersistentCalls:
       m_Calls: []

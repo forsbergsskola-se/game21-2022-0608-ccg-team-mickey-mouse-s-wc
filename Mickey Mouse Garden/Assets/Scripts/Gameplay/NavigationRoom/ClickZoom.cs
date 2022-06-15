@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ClickZoom : MonoBehaviour {
+public class ClickZoom : MonoBehaviour{
 
+	[SerializeField] private int cameraAngleZoomed, cameraAngleNormal;
 	public UnityEvent<Vector3, int> zoomChangedEvent;
 	
 	private bool zoomed;
@@ -14,10 +15,10 @@ public class ClickZoom : MonoBehaviour {
 	private void OnMouseDown(){
 		if (!zoomed){
 			Debug.Log("Clicked!");
-			zoomChangedEvent.Invoke(transform.position, 20);
+			zoomChangedEvent.Invoke(transform.position, cameraAngleZoomed);
 			zoomed = true;
 		} else {
-			zoomChangedEvent.Invoke(transform.position, 60);
+			zoomChangedEvent.Invoke(transform.position, cameraAngleNormal);
 			zoomed = false;
 		}
 	}
