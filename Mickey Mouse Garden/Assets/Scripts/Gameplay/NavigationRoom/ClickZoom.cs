@@ -7,9 +7,10 @@ using UnityEngine.Events;
 public class ClickZoom : MonoBehaviour {
 
 	public UnityEvent<Vector3, int> zoomChangedEvent;
-	private bool zoomed;
-	private Vector3 touchPosition;
 	
+	private bool zoomed;
+
+	// Invokes event when object is clicked or touched (needs testing).
 	private void OnMouseDown(){
 		if (!zoomed){
 			Debug.Log("Clicked!");

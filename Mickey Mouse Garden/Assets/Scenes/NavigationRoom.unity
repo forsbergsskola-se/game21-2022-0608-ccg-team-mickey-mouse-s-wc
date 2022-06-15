@@ -243,7 +243,7 @@ MonoBehaviour:
   pShop: {fileID: 714698940}
   shop: {fileID: 1146769909}
   shed: {fileID: 1338549125}
-  greenHouse: {fileID: 923202447}
+  greenhouse: {fileID: 923202447}
   arena: {fileID: 2137233702}
 --- !u!1 &254056190
 GameObject:
@@ -359,7 +359,7 @@ MonoBehaviour:
   pShop: {fileID: 0}
   shop: {fileID: 0}
   shed: {fileID: 0}
-  greenHouse: {fileID: 0}
+  greenhouse: {fileID: 0}
   arena: {fileID: 0}
   viewpoint1: {fileID: 0}
   viewpoint2: {fileID: 0}
@@ -805,7 +805,7 @@ MonoBehaviour:
   pShop: {fileID: 714698940}
   shop: {fileID: 1146769909}
   shed: {fileID: 1338549125}
-  greenHouse: {fileID: 923202447}
+  greenhouse: {fileID: 923202447}
   arena: {fileID: 2137233702}
   viewpoint1: {fileID: 735691661}
   viewpoint2: {fileID: 701842056}
