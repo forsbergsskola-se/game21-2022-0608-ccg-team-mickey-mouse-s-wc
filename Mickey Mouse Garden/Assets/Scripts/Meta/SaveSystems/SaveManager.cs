@@ -15,7 +15,7 @@ using Task = System.Threading.Tasks.Task;
 
 public static class SaveManager{
     
-    private static string SavePath => @$"{Application.persistentDataPath}/SaveData";
+    private static readonly string SavePath = @$"{Application.persistentDataPath}/SaveData";
 
 
     // void Start(){
@@ -60,7 +60,6 @@ public static class SaveManager{
     /// Deletes Local save Directory with all saved files.
     /// </summary>
     /// <exception cref="Exception"></exception>
-    [ContextMenu("DeleteAllSaves")] //TODO: Remove Context Menu when Saving system is fully implemented.
     public static async Task DeleteAllSaves(){ 
         Debug.Log($"Deleting directory: {SavePath}");
         try{
