@@ -84,7 +84,7 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	// Used to transition to store or feature. 
-	private void ZoomChanged(Vector3 position, int newZoom){
+	private void ZoomChanged(Vector3 position, int newZoom, int instanceID){
 		if (!zoomed) {
 			targetView.position = position;
 			Camera.main.fieldOfView = newZoom;
