@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour {
 	[SerializeField] private GameObject viewpoint1, viewpoint2, viewpoint3;
 	[SerializeField] private GameObject lookAt1, lookAt2, lookAt3;
 	[SerializeField] private float cameraMoveSpeed, cameraRotateSpeed;
+	[SerializeField] private Camera thisCamera;
 	
 	private int viewPointNumber = 1;
 	private bool zoomed;
@@ -94,13 +95,13 @@ public class CameraController : MonoBehaviour {
 	private void LookAtSelection(Transform objectTransform, string clickName){
 		if (!zoomed) {
 			targetView = objectTransform;
-			Camera.main.fieldOfView = 20;
+			thisCamera.fieldOfView = 20;
 			zoomed = true;
 		}
 	}
 	private void LookAway(){
 		// Resets to previous viewpoint. Stupid but it works.
-		Camera.main.fieldOfView = 60;
+		thisCamera.fieldOfView = 60;
 		GoToLeftViewPoint(); 
 		GoToRightViewPoint();
 		zoomed = false;
