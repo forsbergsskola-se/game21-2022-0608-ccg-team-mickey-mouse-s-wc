@@ -1359,6 +1359,7 @@ MonoBehaviour:
   lookAt3: {fileID: 698613089}
   cameraMoveSpeed: 0.5
   cameraRotateSpeed: 3
+  thisCamera: {fileID: 651590930}
 --- !u!1 &695552060
 GameObject:
   m_ObjectHideFlags: 0
