@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class NavSceneLauncher : MonoBehaviour {
 	
 	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
+	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
 
 	private void Awake(){
 		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
@@ -19,18 +20,19 @@ public class NavSceneLauncher : MonoBehaviour {
 		switch (itemTag) {
 			// pShop
 			case "PShop":
+				pShopUI.SetActive(true);
 				break;
 			// shop
 			case "Shop":
-				
+				shopUI.SetActive(true);
 				break;
 			// shed
 			case "Shed":
-				
+				shedUI.SetActive(true);
 				break;
 			// greenhouse
 			case "Garden":
-				
+				greenhouseUI.SetActive(true);
 				break;
 				
 			// arena
