@@ -23,7 +23,7 @@
 
 * Oliver Källerfors - [Portfolio](https://oliverkallerfors.wordpress.com/projects/), [LinkedIn](https://www.linkedin.com/in/oliver-källerfors-358bb21b3/), [Instagram](https://www.instagram.com/partisanprogrammer/)
  
-### Sound Designers:
+### Sound & Music Designers:
 
 * Robert "Printa" Larsson - [SoundCloud](https://soundcloud.com/dj-printa), [LinkedIn](https://www.linkedin.com/in/robert-larsson-36029a51/)
 
