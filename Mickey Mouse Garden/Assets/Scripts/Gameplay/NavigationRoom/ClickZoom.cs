@@ -3,20 +3,19 @@ using UnityEngine.Events;
 
 public class ClickZoom : MonoBehaviour {
 
-	[SerializeField] private int cameraAngleZoomed, cameraAngleNormal;
-	public UnityEvent<Vector3, int, string> zoomChangedEvent;
+	public UnityEvent<Transform, string> selectedEvent;
 	
-	private bool zoomed;
+	private bool selected;
 
 	// Invokes event when object is clicked or touched (needs testing).
 	private void OnMouseDown() {
-		if (!zoomed){
+		if (!selected){
 			Debug.Log("Clicked!");
-			zoomChangedEvent.Invoke(transform.position, cameraAngleZoomed, gameObject.tag);
-			zoomed = true;
+			selectedEvent.Invoke(transform, gameObject.tag);
+			selected = true;
 		} else {
-			zoomChangedEvent.Invoke(transform.position, cameraAngleNormal, gameObject.name);
-			zoomed = false;
+			selectedEvent.Invoke(transform, gameObject.name);
+			selected = false;
 		}
 	}
 }

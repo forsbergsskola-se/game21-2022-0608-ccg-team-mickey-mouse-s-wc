@@ -14,11 +14,11 @@ public class CameraController : MonoBehaviour {
 	private void Awake() {
 		targetView = lookAt1.transform;
 		targetTransform = viewpoint1.transform;
-		pShop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		shop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		shed.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		greenhouse.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
+		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		shed.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		greenhouse.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		arena.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
 
 	}
 
@@ -84,16 +84,16 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	// Used to transition to store or feature. 
-	private void ZoomChanged(Vector3 position, int newZoom, string clickName){
+	private void LookAtSelection(Transform objectTransform, string clickName){
 		if (!zoomed) {
-			targetView.position = position;
-			Camera.main.fieldOfView = newZoom;
+			targetView = objectTransform;
+			Camera.main.fieldOfView = 20;
 			zoomed = true;
 		} else {
 			// Resets to previous viewpoint. Stupid but it works.
-			GoToLeftViewPoint();
+			Camera.main.fieldOfView = 60;
+			GoToLeftViewPoint(); 
 			GoToRightViewPoint();
-			Camera.main.fieldOfView = newZoom;
 			zoomed = false;
 		}
 	}

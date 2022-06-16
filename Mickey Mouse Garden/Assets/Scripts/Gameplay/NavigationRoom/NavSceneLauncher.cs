@@ -6,20 +6,19 @@ public class NavSceneLauncher : MonoBehaviour {
 	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
 
 	private void Awake(){
-		pShop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		shop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		shed.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		greenhouse.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
+		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		shed.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		greenhouse.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		arena.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
 	}
 
-	private void LaunchScene(Vector3 position, int newZoom, string itemTag){
+	private void LaunchScene(Transform objectTransform, string itemTag){
 		Debug.Log(itemTag);
 
 		switch (itemTag) {
 			// pShop
 			case "PShop":
-				SceneManager.LoadScene("ArenaUI", LoadSceneMode.Additive);
 				break;
 			// shop
 			case "Shop":
