@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,7 +6,7 @@ public class NavSceneLauncher : MonoBehaviour {
 	
 	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
 	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
-
+	
 	private void Awake(){
 		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
 		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
@@ -16,7 +17,15 @@ public class NavSceneLauncher : MonoBehaviour {
 
 	private void LaunchScene(Transform objectTransform, string itemTag){
 		Debug.Log(itemTag);
+		StartCoroutine(WaitForZoom(itemTag));
+		
+	}
+	private IEnumerator WaitForZoom(string itemTag){
+		yield return new WaitForSeconds(0.75f);
+		Launch(itemTag);
+	}
 
+	private void Launch(string itemTag){
 		switch (itemTag) {
 			// pShop
 			case "PShop":

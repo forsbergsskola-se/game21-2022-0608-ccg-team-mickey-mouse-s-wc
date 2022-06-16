@@ -1358,7 +1358,8 @@ MonoBehaviour:
   lookAt2: {fileID: 1116218471}
   lookAt3: {fileID: 698613089}
   cameraMoveSpeed: 0.5
-  cameraRotateSpeed: 3
+  cameraRotateSpeed: 5
+  cameraZoomSpeed: 5
   thisCamera: {fileID: 651590930}
 --- !u!1 &695552060
 GameObject:

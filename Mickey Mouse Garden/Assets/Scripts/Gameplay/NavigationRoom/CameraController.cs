@@ -6,13 +6,14 @@ public class CameraController : MonoBehaviour {
 
 	[SerializeField] private GameObject viewpoint1, viewpoint2, viewpoint3;
 	[SerializeField] private GameObject lookAt1, lookAt2, lookAt3;
-	[SerializeField] private float cameraMoveSpeed, cameraRotateSpeed;
+	[SerializeField] private float cameraMoveSpeed, cameraRotateSpeed, cameraZoomSpeed;
 	[SerializeField] private Camera thisCamera;
 	
 	private int viewPointNumber = 1;
 	private bool zoomed;
 	private Vector3 velocity = Vector3.zero;
 	private Transform targetTransform, targetView;
+	private float newFOV = 60;
 	
 	private void Awake() {
 		targetView = lookAt1.transform;
@@ -37,6 +38,9 @@ public class CameraController : MonoBehaviour {
 
 		var targetRotation = Quaternion.LookRotation(targetView.position - position);
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, cameraRotateSpeed * Time.deltaTime);
+
+		var currentFOV = thisCamera.fieldOfView;
+		thisCamera.fieldOfView = Mathf.Lerp(currentFOV, newFOV, cameraZoomSpeed * Time.deltaTime);
 	}
 	
 	public void GoToRightViewPoint() {
@@ -95,13 +99,13 @@ public class CameraController : MonoBehaviour {
 	private void LookAtSelection(Transform objectTransform, string clickName){
 		if (!zoomed) {
 			targetView = objectTransform;
-			thisCamera.fieldOfView = 20;
+			newFOV = 20;
 			zoomed = true;
 		}
 	}
 	private void LookAway(){
 		// Resets to previous viewpoint. Stupid but it works.
-		thisCamera.fieldOfView = 60;
+		newFOV = 60;
 		GoToLeftViewPoint(); 
 		GoToRightViewPoint();
 		zoomed = false;
