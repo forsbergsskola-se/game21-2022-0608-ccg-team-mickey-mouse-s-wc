@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Store
+  - Shed
+  - Garden
+  - Arena
+  - PShop
+  - Shop
   layers:
   - Default
   - TransparentFX

@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ClickZoom : MonoBehaviour{
+public class ClickZoom : MonoBehaviour {
 
 	[SerializeField] private int cameraAngleZoomed, cameraAngleNormal;
-	public UnityEvent<Vector3, int, int> zoomChangedEvent;
+	public UnityEvent<Vector3, int, string> zoomChangedEvent;
 	
 	private bool zoomed;
 
@@ -12,10 +12,10 @@ public class ClickZoom : MonoBehaviour{
 	private void OnMouseDown() {
 		if (!zoomed){
 			Debug.Log("Clicked!");
-			zoomChangedEvent.Invoke(transform.position, cameraAngleZoomed, GetInstanceID());
+			zoomChangedEvent.Invoke(transform.position, cameraAngleZoomed, gameObject.tag);
 			zoomed = true;
 		} else {
-			zoomChangedEvent.Invoke(transform.position, cameraAngleNormal, GetInstanceID());
+			zoomChangedEvent.Invoke(transform.position, cameraAngleNormal, gameObject.name);
 			zoomed = false;
 		}
 	}

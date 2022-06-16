@@ -234,10 +234,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a240b1280657fda4f8bc47d2f814b7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationBox: {fileID: 1147153441847237207, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
+  confirmationBox: {fileID: 258103516}
   opponentSelectedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &258103516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1147153441847237207, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
+  m_PrefabInstance: {fileID: 1147153441698185867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &258103517 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1147153441847237206, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
@@ -489,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a240b1280657fda4f8bc47d2f814b7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationBox: {fileID: 1147153441847237207, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
+  confirmationBox: {fileID: 258103516}
   opponentSelectedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -738,7 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a240b1280657fda4f8bc47d2f814b7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationBox: {fileID: 1147153441847237207, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
+  confirmationBox: {fileID: 258103516}
   opponentSelectedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1121,7 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a240b1280657fda4f8bc47d2f814b7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationBox: {fileID: 1147153441847237207, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
+  confirmationBox: {fileID: 258103516}
   opponentSelectedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1371,7 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a240b1280657fda4f8bc47d2f814b7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationBox: {fileID: 1147153441847237207, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
+  confirmationBox: {fileID: 258103516}
   opponentSelectedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1486,7 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a240b1280657fda4f8bc47d2f814b7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationBox: {fileID: 1147153441847237207, guid: f37d270afd248e54dba703c01cbfd2bb, type: 3}
+  confirmationBox: {fileID: 258103516}
   opponentSelectedEvent:
     m_PersistentCalls:
       m_Calls: []

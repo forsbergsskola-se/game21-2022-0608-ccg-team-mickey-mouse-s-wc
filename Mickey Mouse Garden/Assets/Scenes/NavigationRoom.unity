@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 714698945}
   m_Layer: 6
   m_Name: PremiumShop
-  m_TagString: Store
+  m_TagString: PShop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 923202448}
   m_Layer: 6
   m_Name: Greenhouse
-  m_TagString: Store
+  m_TagString: Garden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1481,7 +1481,7 @@ GameObject:
   - component: {fileID: 1146769910}
   m_Layer: 6
   m_Name: Shop
-  m_TagString: Store
+  m_TagString: Shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1731,7 +1731,7 @@ GameObject:
   - component: {fileID: 1338549130}
   m_Layer: 6
   m_Name: Shed
-  m_TagString: Store
+  m_TagString: Shed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2307,7 +2307,7 @@ GameObject:
   - component: {fileID: 2137233707}
   m_Layer: 6
   m_Name: Arena
-  m_TagString: Store
+  m_TagString: Arena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

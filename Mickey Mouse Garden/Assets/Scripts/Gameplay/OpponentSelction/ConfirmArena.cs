@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class ConfirmArena : MonoBehaviour{
 
 	[SerializeField] private GameObject confirmationBox;
-	public UnityEvent<Vector3, int> opponentSelectedEvent;
 	
 	private bool shown;
 

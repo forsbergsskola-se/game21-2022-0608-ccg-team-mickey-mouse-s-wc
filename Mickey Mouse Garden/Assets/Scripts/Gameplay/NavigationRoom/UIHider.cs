@@ -14,7 +14,7 @@ public class UIHider : MonoBehaviour {
 		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
 	}
 	// Disables navigation buttons when zoomed in.
-	private void DisableButton(Vector3 position, int zoomLevel, int instance) {
+	private void DisableButton(Vector3 position, int zoomLevel, string clickName) {
 		if (zoomLevel == 20) {
 			buttonLeft.SetActive(false);
 			buttonRight.SetActive(false);

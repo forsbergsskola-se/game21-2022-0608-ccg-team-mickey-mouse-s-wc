@@ -13,30 +13,30 @@ public class NavSceneLauncher : MonoBehaviour {
 		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
 	}
 
-	private void LaunchScene(Vector3 position, int newZoom, int instanceID){
-		Debug.Log(instanceID);
+	private void LaunchScene(Vector3 position, int newZoom, string itemTag){
+		Debug.Log(itemTag);
 
-		switch (instanceID) {
+		switch (itemTag) {
 			// pShop
-			case 43876:
+			case "PShop":
 				SceneManager.LoadScene("ArenaUI", LoadSceneMode.Additive);
 				break;
 			// shop
-			case 43912:
+			case "Shop":
 				
 				break;
 			// shed
-			case 43890:
+			case "Shed":
 				
 				break;
 			// greenhouse
-			case 43940:
+			case "Garden":
 				
 				break;
 				
 			// arena
-			case 43992:
-				SceneManager.LoadScene("Arena");
+			case "Arena":
+				SceneManager.LoadScene("OpponentSelection");
 				break;
 		}
 	}

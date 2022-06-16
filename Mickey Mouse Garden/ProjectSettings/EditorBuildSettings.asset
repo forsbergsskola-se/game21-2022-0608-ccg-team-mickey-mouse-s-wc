@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ArenaUI.unity
     guid: a1af29b482fd9994196347e135fdb0e4
+  - enabled: 1
+    path: Assets/Scenes/FighterSelection.unity
+    guid: 6bbdecde82ae2a94ab1c33481bafc9a7
+  - enabled: 1
+    path: Assets/Scenes/OpponentSelection.unity
+    guid: e622c907cd3a33547b12b342200f532b
   m_configObjects: {}
