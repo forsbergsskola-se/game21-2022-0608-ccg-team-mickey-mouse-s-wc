@@ -9,6 +9,9 @@ TagManager:
   - Arena
   - PShop
   - Shop
+  - FF1
+  - FF2
+  - FF3
   layers:
   - Default
   - TransparentFX
