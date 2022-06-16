@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Arena.unity
     guid: 62cadf44e6f50f848b116ae3d5bbeb0b
   - enabled: 1
-    path: Assets/Scenes/ArenaUI.unity
+    path: Assets/Scenes/XArenaUI.unity
     guid: a1af29b482fd9994196347e135fdb0e4
   - enabled: 1
     path: Assets/Scenes/FighterSelection.unity
