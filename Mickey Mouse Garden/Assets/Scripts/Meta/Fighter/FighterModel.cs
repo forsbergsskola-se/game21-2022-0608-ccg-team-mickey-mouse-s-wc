@@ -17,7 +17,7 @@ public class FighterModel : ScriptableObject,ISaveData
     [Min(1)]public float maxHealth;
     [Min(1)]public float speed;
     public Image fighterImage; //TODO: Sprite or image?
-    public Guid ID{ get; } = Guid.NewGuid();
+    public int ID{ get; } = 1234;
     public Task TryLoadData(){
         throw new NotImplementedException();
     }

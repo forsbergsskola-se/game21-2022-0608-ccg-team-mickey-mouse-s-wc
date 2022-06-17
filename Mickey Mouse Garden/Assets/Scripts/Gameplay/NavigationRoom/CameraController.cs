@@ -2,24 +2,33 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
+	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
+
 	[SerializeField] private GameObject viewpoint1, viewpoint2, viewpoint3;
 	[SerializeField] private GameObject lookAt1, lookAt2, lookAt3;
-	[SerializeField] private float cameraMoveSpeed, cameraRotateSpeed;
+	[SerializeField] private float cameraMoveSpeed, cameraRotateSpeed, cameraZoomSpeed;
+	[SerializeField] private Camera thisCamera;
 	
 	private int viewPointNumber = 1;
 	private bool zoomed;
 	private Vector3 velocity = Vector3.zero;
 	private Transform targetTransform, targetView;
+	private float newFOV = 60;
 	
 	private void Awake() {
 		targetView = lookAt1.transform;
 		targetTransform = viewpoint1.transform;
-		pShop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		shop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		shed.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		greenhouse.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
-		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(ZoomChanged);
+		
+		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		shed.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		greenhouse.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		arena.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
 
+		pShopUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
+		shopUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
+		shedUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
+		greenhouseUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
 	}
 
 	private void Update() {
@@ -29,6 +38,9 @@ public class CameraController : MonoBehaviour {
 
 		var targetRotation = Quaternion.LookRotation(targetView.position - position);
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, cameraRotateSpeed * Time.deltaTime);
+
+		var currentFOV = thisCamera.fieldOfView;
+		thisCamera.fieldOfView = Mathf.Lerp(currentFOV, newFOV, cameraZoomSpeed * Time.deltaTime);
 	}
 	
 	public void GoToRightViewPoint() {
@@ -84,17 +96,18 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	// Used to transition to store or feature. 
-	private void ZoomChanged(Vector3 position, int newZoom, string clickName){
+	private void LookAtSelection(Transform objectTransform, string clickName){
 		if (!zoomed) {
-			targetView.position = position;
-			Camera.main.fieldOfView = newZoom;
+			targetView = objectTransform;
+			newFOV = 20;
 			zoomed = true;
-		} else {
-			// Resets to previous viewpoint. Stupid but it works.
-			GoToLeftViewPoint();
-			GoToRightViewPoint();
-			Camera.main.fieldOfView = newZoom;
-			zoomed = false;
 		}
+	}
+	private void LookAway(){
+		// Resets to previous viewpoint. Stupid but it works.
+		newFOV = 60;
+		GoToLeftViewPoint(); 
+		GoToRightViewPoint();
+		zoomed = false;
 	}
 }

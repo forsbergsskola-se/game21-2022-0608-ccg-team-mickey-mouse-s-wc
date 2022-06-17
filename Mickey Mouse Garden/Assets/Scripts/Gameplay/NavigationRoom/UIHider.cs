@@ -4,23 +4,36 @@ using UnityEngine;
 public class UIHider : MonoBehaviour {
 
 	[SerializeField] private GameObject buttonLeft, buttonRight;
+	
 	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
+	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
+
+
+	private bool selected;
 
 	private void Awake() {
-		pShop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
-		shop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
-		shed.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
-		greenhouse.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
-		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(DisableButton);
+		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(DisableButton);
+		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(DisableButton);
+		shed.GetComponent<ClickZoom>().selectedEvent.AddListener(DisableButton);
+		greenhouse.GetComponent<ClickZoom>().selectedEvent.AddListener(DisableButton);
+		arena.GetComponent<ClickZoom>().selectedEvent.AddListener(DisableButton);
+		
+		pShopUI.GetComponent<ExitUI>().exitUIEvent.AddListener(EnableButton);
+		shopUI.GetComponent<ExitUI>().exitUIEvent.AddListener(EnableButton);
+		shedUI.GetComponent<ExitUI>().exitUIEvent.AddListener(EnableButton);
+		greenhouseUI.GetComponent<ExitUI>().exitUIEvent.AddListener(EnableButton);
 	}
 	// Disables navigation buttons when zoomed in.
-	private void DisableButton(Vector3 position, int zoomLevel, string clickName) {
-		if (zoomLevel == 20) {
+	private void DisableButton(Transform objectTransform, string clickName){
+		if (!selected){
 			buttonLeft.SetActive(false);
 			buttonRight.SetActive(false);
-		} else {
-			buttonLeft.SetActive(true);
-			buttonRight.SetActive(true);
+			selected = true;
 		}
+	}
+	private void EnableButton(){
+		buttonLeft.SetActive(true);
+		buttonRight.SetActive(true);
+		selected = false;
 	}
 }

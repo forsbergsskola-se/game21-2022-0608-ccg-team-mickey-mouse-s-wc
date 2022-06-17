@@ -1,37 +1,47 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NavSceneLauncher : MonoBehaviour {
 	
 	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
-
+	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
+	
 	private void Awake(){
-		pShop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		shop.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		shed.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		greenhouse.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
-		arena.GetComponent<ClickZoom>().zoomChangedEvent.AddListener(LaunchScene);
+		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		shed.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		greenhouse.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		arena.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
 	}
 
-	private void LaunchScene(Vector3 position, int newZoom, string itemTag){
+	private void LaunchScene(Transform objectTransform, string itemTag){
 		Debug.Log(itemTag);
+		StartCoroutine(WaitForZoom(itemTag));
+		
+	}
+	private IEnumerator WaitForZoom(string itemTag){
+		yield return new WaitForSeconds(0.75f);
+		Launch(itemTag);
+	}
 
+	private void Launch(string itemTag){
 		switch (itemTag) {
 			// pShop
 			case "PShop":
-				SceneManager.LoadScene("ArenaUI", LoadSceneMode.Additive);
+				pShopUI.SetActive(true);
 				break;
 			// shop
 			case "Shop":
-				
+				shopUI.SetActive(true);
 				break;
 			// shed
 			case "Shed":
-				
+				shedUI.SetActive(true);
 				break;
 			// greenhouse
 			case "Garden":
-				
+				greenhouseUI.SetActive(true);
 				break;
 				
 			// arena

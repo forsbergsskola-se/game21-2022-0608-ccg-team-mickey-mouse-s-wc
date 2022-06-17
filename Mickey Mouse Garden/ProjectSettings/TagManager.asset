@@ -9,6 +9,12 @@ TagManager:
   - Arena
   - PShop
   - Shop
+  - FF1
+  - FF2
+  - FF3
+  - EF1
+  - EF2
+  - EF3
   layers:
   - Default
   - TransparentFX
@@ -17,7 +23,7 @@ TagManager:
   - Water
   - UI
   - InteractiveGO
-  - 
+  - InvisibleToCamera
   - 
   - 
   - 
