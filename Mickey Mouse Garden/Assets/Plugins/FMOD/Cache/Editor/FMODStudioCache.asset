@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Meta.bank
   Name: Desktop/Meta
   StudioPath: bank:/Meta
-  lastModified: 637907941120289012
+  lastModified: 637908803062517802
   FileSizes: []
   Exists: 1
 --- !u!114 &-7875379675789570385
@@ -33,10 +33,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637907941120289012
+  lastModified: 637908803062457964
   FileSizes:
   - Name: 
-    Value: 1624
+    Value: 1444
   Exists: 1
 --- !u!114 &-7598187671744280482
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Arena.bank
   Name: Mobile/Arena
   StudioPath: bank:/Arena
-  lastModified: 637907941120369024
+  lastModified: 637908803062527784
   FileSizes: []
   Exists: 1
 --- !u!114 &-6508787761709274923
@@ -127,7 +127,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637907941120289012
+  lastModified: 637908803062457964
   FileSizes: []
   Exists: 1
 --- !u!114 &-5853932569502996584
@@ -177,8 +177,8 @@ MonoBehaviour:
     Data3: 538437052
     Data4: 165456243
   Banks:
-  - {fileID: -8344870584322449604}
-  - {fileID: -673763022981866690}
+  - {fileID: -6508787761709274923}
+  - {fileID: 3046298691143302364}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -230,99 +230,16 @@ MonoBehaviour:
     Data3: -556244313
     Data4: 1564834969
   Banks:
-  - {fileID: 4673368224384811591}
-  - {fileID: -6590124358900339339}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4110766696560467471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Garden/GardenMusic
-  m_EditorClassIdentifier: 
-  Path: event:/Garden/GardenMusic
-  Guid:
-    Data1: 1183302312
-    Data2: 1082488610
-    Data3: -936473410
-    Data4: 1707567148
-  Banks:
-  - {fileID: -8344870584322449604}
-  - {fileID: -673763022981866690}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3517751446749763622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Market/Purchase
-  m_EditorClassIdentifier: 
-  Path: event:/Market/Purchase
-  Guid:
-    Data1: 784616282
-    Data2: 1101648975
-    Data3: 1189409979
-    Data4: -785313610
-  Banks:
-  - {fileID: -8344870584322449604}
-  - {fileID: -673763022981866690}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2706645456115302113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Click
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Click
-  Guid:
-    Data1: -1705445315
-    Data2: 1098616020
-    Data3: -523933289
-    Data4: 1062866524
-  Banks:
   - {fileID: -6508787761709274923}
   - {fileID: 3046298691143302364}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6798028155932300104}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 16000
 --- !u!114 &-673763022981866690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +255,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Meta.bank
   Name: Mobile/Meta
   StudioPath: bank:/Meta
-  lastModified: 637907941120369024
+  lastModified: 637908803062567678
   FileSizes: []
   Exists: 1
 --- !u!114 &-271953876732117770
@@ -390,8 +307,6 @@ MonoBehaviour:
   - {fileID: -6590124358900339339}
   - {fileID: -673763022981866690}
   EditorEvents:
-  - {fileID: -2706645456115302113}
-  - {fileID: 4695473004998355214}
   - {fileID: -4260556522598304785}
   - {fileID: -271953876732117770}
   - {fileID: -7598187671744280482}
@@ -403,15 +318,13 @@ MonoBehaviour:
   - {fileID: 3805106426160384696}
   - {fileID: -5853932569502996584}
   - {fileID: -4664650808335439025}
-  - {fileID: -3517751446749763622}
-  - {fileID: -4110766696560467471}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6508787761709274923}
   - {fileID: 3046298691143302364}
   StringsBanks:
   - {fileID: -7875379675789570385}
-  cacheTime: 637907941120369024
+  cacheTime: 637908803062567678
   cacheVersion: 131591
 --- !u!114 &729971773503333408
 MonoBehaviour:
@@ -476,7 +389,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.bank
   Name: Mobile/Master
   StudioPath: bank:/Master
-  lastModified: 637907941120369024
+  lastModified: 637908803062557716
   FileSizes: []
   Exists: 1
 --- !u!114 &3805106426160384696
@@ -522,37 +435,9 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Arena.bank
   Name: Desktop/Arena
   StudioPath: bank:/Arena
-  lastModified: 637907941120289012
+  lastModified: 637908803062388214
   FileSizes: []
   Exists: 1
---- !u!114 &4695473004998355214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Arena/ArenaMusic
-  m_EditorClassIdentifier: 
-  Path: event:/Arena/ArenaMusic
-  Guid:
-    Data1: 810807723
-    Data2: 1198609710
-    Data3: 53697709
-    Data4: 371470360
-  Banks:
-  - {fileID: 4673368224384811591}
-  - {fileID: -6590124358900339339}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6648706139114055671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +466,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6798028155932300104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ArenaAmbience/Rain
+  m_EditorClassIdentifier: 
+  Name: Rain
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 4266910170
+    data2: 3723736515
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7863435473528003681
 MonoBehaviour:
   m_ObjectHideFlags: 0

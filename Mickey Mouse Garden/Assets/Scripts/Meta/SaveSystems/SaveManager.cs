@@ -10,7 +10,7 @@ using Task = System.Threading.Tasks.Task;
 public static class SaveManager{
     
     private static string SavePath => @$"{Application.persistentDataPath}/SaveData";
-    public static async Task<T> Load<T>(Guid id){
+    public static async Task<T> Load<T>(int id){
         if (!File.Exists(@$"{SavePath}\{id}")){
             Debug.Log(@$"File does not exist : {SavePath}\{id}");
             return default;
@@ -44,6 +44,7 @@ public static class SaveManager{
             Debug.Log("Saved Successfully!");
         }
         catch (Exception e){
+            Debug.Log("Failed to save.");
             throw e;
         }
     }

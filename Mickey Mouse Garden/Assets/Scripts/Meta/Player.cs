@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class Player : MonoBehaviour{
-    public CardCollection cardCollection = new CardCollection(new Guid("11111111-1111-1111-1111-000000000000")); //ID for test rn
+    public CardCollection cardCollection = new CardCollection(1); //ID for test rn
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
     }
@@ -25,7 +25,19 @@ public class Player : MonoBehaviour{
     }
     [ContextMenu("AddCardToCollection")]
     void AddCardToCollection(){
-        var newCardID = Guid.NewGuid();
-        cardCollection.AddCard(newCardID,new OwnedCard(newCardID,(Card) ScriptableObject.CreateInstance("Card"),Rarity.Common,50,40,30,20));
+        var newCardID = 2;
+        //cardCollection.AddCard(newCardID,new OwnedCard(newCardID,(Card) ScriptableObject.CreateInstance("Card"),Rarity.Common,50,40,30,20));
+    }
+    
+    [ContextMenu("LoadSPECIALCardToCollection")]
+    async Task LoadSPECIALCardToCollection(){
+        OwnedCard card = new OwnedCard();
+        card.ID = 66;
+        await card.TryLoadData();
+        cardCollection.ownedCards.Add(card.ID,card);
+        foreach (var propertyInfo in cardCollection.ownedCards[card.ID].GetType().GetProperties()){
+            Debug.Log($"{propertyInfo.Name}: {propertyInfo.GetValue(card)}", this);
+        }
+        Debug.Log(cardCollection.ownedCards[card.ID]);
     }
 }
