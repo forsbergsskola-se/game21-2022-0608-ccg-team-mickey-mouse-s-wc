@@ -291,8 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d593e39e4294049a06bf3bc404f1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   rarity: 0
+  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!135 &72681427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -389,12 +389,12 @@ RectTransform:
   m_Children:
   - {fileID: 1543291907}
   m_Father: {fileID: 1320219431}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -788}
-  m_SizeDelta: {x: 20, y: 160}
+  m_AnchoredPosition: {x: -37.2, y: -939.6}
+  m_SizeDelta: {x: 20, y: 520.8613}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &143683351
 MonoBehaviour:
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2117042455}
   m_HandleRect: {fileID: 2117042454}
   m_Direction: 3
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1129,8 +1129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d593e39e4294049a06bf3bc404f1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   rarity: 0
+  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!135 &783687054
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1404,8 +1404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bf2d073cba4c568868ef466724e806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedInventoryUI: {fileID: 2563495}
   growingSeeds: []
+  seedInventoryUI: {fileID: 2563495}
 --- !u!4 &859395012
 Transform:
   m_ObjectHideFlags: 0
@@ -1778,6 +1778,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1978384256}
   - {fileID: 1461886511}
   - {fileID: 143683350}
   m_Father: {fileID: 2563494}
@@ -2268,7 +2269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1461886511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2280,10 +2281,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1992436306}
+  m_Children: []
   m_Father: {fileID: 1320219431}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2690,8 +2690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d593e39e4294049a06bf3bc404f1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   rarity: 2
+  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!135 &1625459632
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3006,8 +3006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d593e39e4294049a06bf3bc404f1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   rarity: 2
+  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!135 &1895526811
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3208,6 +3208,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901550236}
   m_CullTransparentMesh: 1
+--- !u!1 &1978384255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1978384256}
+  - component: {fileID: 1978384258}
+  - component: {fileID: 1978384257}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1978384256
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978384255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1992436306}
+  m_Father: {fileID: 1320219431}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -657.5533}
+  m_SizeDelta: {x: 0, y: -1315.1066}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1978384257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978384255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.14690253, g: 0.33962262, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1978384258
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978384255}
+  m_CullTransparentMesh: 1
 --- !u!1 &1992436305
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,6 +3298,7 @@ GameObject:
   - component: {fileID: 1992436307}
   - component: {fileID: 1992436309}
   - component: {fileID: 1992436310}
+  - component: {fileID: 1992436311}
   m_Layer: 5
   m_Name: ItemsParent
   m_TagString: Untagged
@@ -3240,14 +3318,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1461886511}
+  m_Father: {fileID: 1978384256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 565}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.25, y: -0.00082397}
+  m_SizeDelta: {x: 0, y: 604.89}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992436307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,7 +3339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42686927, g: 0.4716981, b: 0.33597365, a: 1}
+  m_Color: {r: 0.42686927, g: 0.4716981, b: 0.33597365, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3324,6 +3402,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 0
+--- !u!114 &1992436311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992436305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 1992436306}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 0
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 1978384256}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 143683351}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2018550044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3612,8 +3720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d593e39e4294049a06bf3bc404f1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   rarity: 3
+  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!135 &2076661135
 SphereCollider:
   m_ObjectHideFlags: 0
