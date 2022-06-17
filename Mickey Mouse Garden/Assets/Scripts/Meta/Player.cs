@@ -6,14 +6,39 @@ using UnityEngine;
 
 public class Player : MonoBehaviour{
     public static StringGUID testCollectionGuid = new StringGUID("0e4b39c1-75e0-4f21-b3c1-b017dce032e0");
-    
     public CardCollection cardCollection = new CardCollection(testCollectionGuid); //ID for test rn
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
     }
+
+    void Start(){
+        cardCollection.TryLoadData();
+        foreach (var propertyInfo in cardCollection.GetType().GetProperties()){
+            Debug.Log($"{propertyInfo.Name}: {propertyInfo.GetValue(cardCollection)}", this);
+        }
+    }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     [ContextMenu("LoadCardCollection")]
-    async Task LoadCardCollection(){
+    async Task LoadCardCollection1(){
         Debug.Log("Loading cards for Card Collections...", this);
         await cardCollection.TryLoadData();
         Debug.Log("Loaded Cards in Card Collections: ",this);

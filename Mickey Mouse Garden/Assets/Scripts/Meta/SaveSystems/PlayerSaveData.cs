@@ -15,9 +15,7 @@ public class PlayerSaveData : ScriptableObject,ISaveData{
      }
      
      public event Action<Guid> saveData;
-
-
-     public List<FighterSO> fighters;
+    
     //SoftCurrency
     //Fertalizer
     //Seeds;
