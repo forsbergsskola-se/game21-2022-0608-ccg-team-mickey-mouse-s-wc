@@ -19,6 +19,9 @@ public class Player : MonoBehaviour{
         Debug.Log("Loaded Cards in Card Collections: ",this);
         foreach (var KeyValuePair in cardCollection.ownedCards){
             Debug.Log($"Key: ({KeyValuePair.Key}), Value: ({KeyValuePair.Value})");
+            foreach (var propertyInfo in KeyValuePair.Value.GetType().GetProperties()){
+                Debug.Log($"{propertyInfo.Name}: {propertyInfo.GetValue(KeyValuePair.Value)}", this);
+            }
         }
     }
     [ContextMenu("SaveCardCollection")]
