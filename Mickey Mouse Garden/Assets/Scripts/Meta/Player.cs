@@ -18,23 +18,7 @@ public class Player : MonoBehaviour{
         }
     }
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
     [ContextMenu("LoadCardCollection")]
@@ -73,6 +57,6 @@ public class Player : MonoBehaviour{
     
     [ContextMenu("IDIncrementorTest")]
     void IDIncrementorTest(){
-        IDIncrementor.Instance.IncrementID();
+      //  IDIncrementor.Instance.IncrementID();
     }
 }
