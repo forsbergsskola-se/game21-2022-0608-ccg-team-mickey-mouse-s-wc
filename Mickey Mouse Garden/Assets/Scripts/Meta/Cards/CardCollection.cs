@@ -6,11 +6,11 @@ using Task = System.Threading.Tasks.Task;
 [Serializable]
 public class CardCollection : ISaveData
 {
-     public SerializableDictionary<StringGUID, OwnedCard> ownedCards{ get; private set; }
+     public Dictionary<StringGUID, OwnedCard> ownedCards{ get; private set; }
 
      public CardCollection(StringGUID id){
         ID = id;
-        ownedCards = new SerializableDictionary<StringGUID, OwnedCard>();
+        ownedCards = new Dictionary<StringGUID, OwnedCard>();
      }
 
     public StringGUID ID{ get; }
