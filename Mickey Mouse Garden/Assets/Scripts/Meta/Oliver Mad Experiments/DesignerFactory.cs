@@ -22,7 +22,7 @@ namespace Meta.Oliver_Mad_Experiments{
                 EditorGUILayout.LabelField("-Factory-");
                 EditorGUILayout.Space();
 
-                ownedCard.ID = EditorGUILayout.IntField("ID", ownedCard.id);
+                //ownedCard.ID = EditorGUILayout.TextField("ID", ownedCard.ID);
                 ownedCard.Attack = EditorGUILayout.FloatField("Attack", ownedCard.Attack);
                 ownedCard.Speed= EditorGUILayout.FloatField("Speed", ownedCard.Speed);
                 ownedCard.MaxHealth= EditorGUILayout.FloatField("MaxHealth", ownedCard.MaxHealth);
@@ -30,7 +30,7 @@ namespace Meta.Oliver_Mad_Experiments{
                 ownedCard.Level=(short) EditorGUILayout.IntField("Level", ownedCard.Level);
                 ownedCard.Name= EditorGUILayout.TextField("Name", ownedCard.Name);
                 ownedCard.Rarity= (Rarity)EditorGUILayout.EnumPopup("Rarity", ownedCard.Rarity);
-                ownedCard.InstanceID= EditorGUILayout.IntField("InstanceID", ownedCard.InstanceID);
+                //ownedCard.InstanceID= EditorGUILayout.IntField("InstanceID", ownedCard.InstanceID);
                 ownedCard.SpriteName = EditorGUILayout.TextField("SpriteName", ownedCard.SpriteName);
                 //ownedCard.FighterImage = (Sprite) EditorGUILayout.ObjectField("Sprite",  ownedCard.FighterImage, typeof(Sprite), true);
 

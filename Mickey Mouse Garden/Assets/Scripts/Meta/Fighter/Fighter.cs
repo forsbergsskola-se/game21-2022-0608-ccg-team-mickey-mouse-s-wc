@@ -14,12 +14,4 @@ public class Fighter : MonoBehaviour{
          //Invoke call - Probably doesnt work
       }
    }
-
-   [ContextMenu("Test")]
-   void Test(){
-      var saveMessage = new SaveMessage(FighterModel);
-         Debug.Log("Invoking Test");
-         Broker.InvokeSubscribers(saveMessage.GetType(),saveMessage); //Implement at better place
-      FighterModel.alignment = Alignment.Rock;
-   }
 }

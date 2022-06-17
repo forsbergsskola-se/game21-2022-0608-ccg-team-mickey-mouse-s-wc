@@ -7,7 +7,7 @@ using UnityEngine;
 using Task = UnityEditor.VersionControl.Task;
 
 public interface ISaveData{
-    public int ID{ get; }
+    public StringGUID ID{ get; }
     public System.Threading.Tasks.Task TryLoadData();
     public void Save();
 }

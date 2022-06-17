@@ -6,14 +6,14 @@ using Task = System.Threading.Tasks.Task;
 [Serializable]
 public class CardCollection : ISaveData
 {
-     public Dictionary<int, OwnedCard> ownedCards{ get; private set; }
+     public SerializableDictionary<StringGUID, OwnedCard> ownedCards{ get; private set; }
 
-     public CardCollection(int id){
+     public CardCollection(StringGUID id){
         ID = id;
-        ownedCards = new Dictionary<int, OwnedCard>();
+        ownedCards = new SerializableDictionary<StringGUID, OwnedCard>();
      }
 
-    public int ID{ get; }
+    public StringGUID ID{ get; }
     public async Task TryLoadData(){ //Try load data, if data found, override current data, otherwise, do nothing.
       var savedDictionary =  await SaveManager.Load<CardCollection>(ID);
       ownedCards = savedDictionary.ownedCards;
@@ -23,7 +23,7 @@ public class CardCollection : ISaveData
         SaveManager.Save(this);
     }
 
-    public void AddCard(int id, OwnedCard card){
+    public void AddCard(StringGUID id, OwnedCard card){
         ownedCards.Add(id,card);
         Save();
     }
