@@ -13,12 +13,14 @@ namespace Meta.Inventory {
         [SerializeField] private Slider timeSlider;
         [SerializeField] private TextMeshProUGUI growthTimerText;
         [SerializeField] private Sprite seedSprite;
-        
+
+        private string rarityText;
         private bool readyToHarvest;
         private float timeUntilToHarvest;
 
         //TODO: Make slider not clickable
         private void Awake() {
+            rarityText = rarityType.ToString();
             timeSlider.maxValue = growTime;
             timeSlider.value = growTime;
             timeUntilToHarvest = growTime;
@@ -40,7 +42,7 @@ namespace Meta.Inventory {
         }
 
         private void UpdateTimerText(float timeLeft) {
-            growthTimerText.text = timeLeft.ToString();
+            growthTimerText.text = $"{rarityType.ToString()} - {timeLeft.ToString()}";
         }
 
         public void Harvest() {
