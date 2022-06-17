@@ -5,16 +5,13 @@ using UnityEngine;
 
 namespace Meta.Seeds {
     public abstract class Seed : MonoBehaviour, IInventoryItem {
-        [SerializeField] private Sprite inventorySprite;         //TODO: Hardcode inventory sprite based on rarity
         public Rarity rarity;
-        private float growthTime;
+        public float GrowthTime { get; private set; }
         
-        public float GrowthTime {
-            get => growthTime;
-            set {
-                growthTime = value;
-                growthTime = SetGrowthTime();
-            }
+        [SerializeField] private Sprite inventorySprite;         //TODO: Hardcode inventory sprite based on rarity
+        
+        private void Start() {
+            GrowthTime = SetGrowthTime();
         }
 
         public Sprite InventorySprite {
@@ -30,10 +27,10 @@ namespace Meta.Seeds {
         
         private float SetGrowthTime() {
             return rarity switch {             //TODO: Check exact values with designers
-                Rarity.Common => 2,
-                Rarity.Rare => 3,
-                Rarity.Epic => 4,
-                Rarity.Legendary => 5,
+                Rarity.Common => 6,
+                Rarity.Rare => 8,
+                Rarity.Epic => 12,
+                Rarity.Legendary => 15,
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
