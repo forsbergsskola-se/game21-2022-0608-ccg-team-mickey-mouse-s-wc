@@ -10,7 +10,7 @@ using Task = System.Threading.Tasks.Task;
 public static class SaveManager{
     
     private static string SavePath => @$"{Application.persistentDataPath}/SaveData";
-    public static async Task<T> Load<T>(int id){
+    public static async Task<T> Load<T>(StringGUID id){
         if (!File.Exists(@$"{SavePath}\{id}")){
             Debug.Log(@$"File does not exist : {SavePath}\{id}");
             return default;
@@ -23,6 +23,9 @@ public static class SaveManager{
             }
            
             var dataBaseObject = JsonConvert.DeserializeObject<T>(completeReadString); 
+            foreach (var propertyInfo in dataBaseObject.GetType().GetProperties()){
+                Debug.Log(propertyInfo.GetValue(dataBaseObject));
+            }
             return dataBaseObject;
         }
         catch (Exception e){

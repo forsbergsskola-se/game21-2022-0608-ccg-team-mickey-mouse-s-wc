@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatController : MonoBehaviour{
-    private Fighter[] playerFighters;
-    private Fighter[] enemyFighters;
+   // private Fighter[] playerFighters;
+   // private Fighter[] enemyFighters;
     
     //TODO: use the command-pattern for this!
     
