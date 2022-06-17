@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarityType: 0
+  readyToHarvest: 0
   growTime: 3
   timeSlider: {fileID: 3798395370789779997}
   growthTimerText: {fileID: 3798395371418641451}
@@ -240,7 +241,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8102502565683474567}
         m_TargetAssemblyTypeName: Meta.Inventory.GrowSlot, Assembly-CSharp
-        m_MethodName: Harvest
+        m_MethodName: RequestHarvest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

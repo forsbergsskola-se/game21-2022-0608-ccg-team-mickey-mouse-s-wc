@@ -13,7 +13,7 @@ namespace Meta.Inventory {
         [SerializeField] private SeedInventoryUI seedInventoryUI;
 
         private static SeedInventory instance;
-
+        private List<GrowSlot> harvestable = new();
 
         #region Singleton
         private void Awake() {
@@ -30,6 +30,8 @@ namespace Meta.Inventory {
         private void Start() {
             InitBase();
             Broker.Subscribe<PlantSeedMessage>(PlantSeed);
+            Broker.Subscribe<ReadyToHarvestMessage>(AddToHarvestableList);
+            Broker.Subscribe<RequestHarvestMessage>(Harvest);
         }
 
         public override void CollectOperations(Seed objInventoryItem) {
@@ -48,7 +50,7 @@ namespace Meta.Inventory {
                 seedToPlant = inventory.First(seed => seed.rarity == rarity);
             }
             catch (Exception e) {
-                Debug.Log("You have no seeds to plant"); //TODO: Display error message to player
+                Debug.Log("You have no seeds to plant");
                 return;
             }
 
@@ -59,6 +61,30 @@ namespace Meta.Inventory {
             seedInventoryUI.PlantSeedOfType(seedToPlant.rarity);
         }
 
-        //TODO: Unsubscribe from broker
+        private void AddToHarvestableList(ReadyToHarvestMessage readyToHarvestMessage) {
+            harvestable.Add(readyToHarvestMessage.HarvestableGrowSlot);
+        }
+
+        private void Harvest(RequestHarvestMessage requestHarvestMessage) {
+            requestHarvestMessage.GrowSlot.Harvest();
+        }
+
+        private void Harvest(GrowSlot growSlot) {
+            growSlot.Harvest();
+        }
+
+        public void HarvestAll() {
+            if (harvestable.Count > 0) {
+                for (int i = harvestable.Count - 1; i >= 0; i--) {
+                    if (!harvestable[i].readyToHarvest) continue;
+                    Harvest(harvestable[i]);
+                    harvestable.RemoveAt(i);
+                }
+            } else {
+                Debug.Log("No seeds to harvest");
+            }
+        }
+        
+        //TODO: Unsubscribe from events
     }
 }

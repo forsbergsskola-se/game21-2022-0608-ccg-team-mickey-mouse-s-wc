@@ -8,14 +8,14 @@ using Slider = UnityEngine.UI.Slider;
 namespace Meta.Inventory {
     public class GrowSlot : MonoBehaviour {
         public Rarity rarityType;
-        
+        public bool readyToHarvest;
+
         [SerializeField] private float growTime;
         [SerializeField] private Slider timeSlider;
         [SerializeField] private TextMeshProUGUI growthTimerText;
         [SerializeField] private Sprite seedSprite;
 
         private string rarityText;
-        private bool readyToHarvest;
         private float timeUntilToHarvest;
 
         //TODO: Make slider not clickable
@@ -35,6 +35,7 @@ namespace Meta.Inventory {
                 readyToHarvest = true;
                 timeUntilToHarvest = 0;
                 timeSlider.value = timeUntilToHarvest;
+                SendReadyToHarvestMessage();
             }
 
             UpdateTimerText(timeUntilToHarvest);
@@ -42,16 +43,25 @@ namespace Meta.Inventory {
         }
 
         private void UpdateTimerText(float timeLeft) {
-            growthTimerText.text = $"{rarityType.ToString()} - {timeLeft.ToString()}";
+            growthTimerText.text = $"{rarityText} - {timeLeft.ToString()}";
         }
 
-        public void Harvest() {
+        private void SendReadyToHarvestMessage() {
+            var harvestableMessage = new ReadyToHarvestMessage(this);
+            Broker.InvokeSubscribers(harvestableMessage.GetType(), harvestableMessage);
+        }
+
+        public void RequestHarvest() {
             if (readyToHarvest) {
-                Debug.Log("Harvest event");
-                Destroy(gameObject);
+                var requestHarvestMessage = new RequestHarvestMessage(this);
+                Broker.InvokeSubscribers(requestHarvestMessage.GetType(), requestHarvestMessage);
             } else {
                 Debug.Log("Not yet ready to be harvested!");
             }
+        }
+
+        public void Harvest() {
+            Destroy(gameObject);
         }
     }
 }
