@@ -17,8 +17,7 @@ public class CombatController : MonoBehaviour{
       if (Input.GetKeyDown(KeyCode.P)){
          AssertStrikeOrder();
          executor.Enqueue(new StrikeCommand(secondFighter, firstFighter));
-         Debug.Log($"I was hit!{secondFighter.Name}");
-         Debug.Log($"I hit it! {firstFighter.Name}");
+         executor.Enqueue(new StrikeCommand(firstFighter, secondFighter));
       }
    }
 
