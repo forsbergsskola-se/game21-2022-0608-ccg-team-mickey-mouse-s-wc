@@ -16,50 +16,24 @@ public class StrikeCommand : ICommand{
     }
 
     private void Strike(){
-        CheckAlignment();
-        target.MaxHealth -= striker.Attack * multiplier;
+        target.MaxHealth -= striker.Attack * CheckAlignment();
         Debug.Log(target.MaxHealth);
     }
 
-    private void CheckAlignment(){
-        if (target.Alignment == striker.Alignment){
-            return;
+    private float CheckAlignment(){ //TODO: make a dictionary of dictionaries kinda deal ala Marc
+        if (target.Alignment == striker.Alignment) return multiplier;
+        if (striker.Alignment == Alignment.Paper){
+            if (target.Alignment == Alignment.Rock) return multiplier += 0.5f;
+            if (target.Alignment == Alignment.Scissors) return multiplier -= 0.5f;
         }
-        switch (striker.Alignment){
-            case Alignment.Paper:{
-                switch (target.Alignment){
-                    case Alignment.Rock:
-                        multiplier += 0.5f;
-                        break;
-                    case Alignment.Scissors:
-                        multiplier -= 0.5f;
-                        break;
-                }
-                break;
-            }
-            case Alignment.Rock:{
-                switch (target.Alignment){
-                    case Alignment.Scissors:
-                        multiplier += 0.5f;
-                        break;
-                    case Alignment.Paper:
-                        multiplier -= 0.5f;
-                        break;
-                }
-                break;
-            }
-            case Alignment.Scissors:{
-                switch (target.Alignment){
-                    case Alignment.Paper:
-                        multiplier += 0.5f;
-                        break;
-                    case Alignment.Rock:
-                        multiplier -= 0.5f;
-                        break;
-                }
-                break;
-            }
+        else if (striker.Alignment == Alignment.Rock){
+            if (target.Alignment == Alignment.Scissors) return multiplier += 0.5f;
+            if (target.Alignment == Alignment.Paper) return multiplier -= 0.5f;
         }
+        else if (striker.Alignment == Alignment.Scissors)
+            if (target.Alignment == Alignment.Paper) return multiplier += 0.5f;
+            if (target.Alignment == Alignment.Rock) return multiplier -= 0.5f;
+            return multiplier;
     }
 
     public void Undo(){
