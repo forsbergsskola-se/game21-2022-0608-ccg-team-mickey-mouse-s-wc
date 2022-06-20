@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public record FighterInfo {
+public class FighterInfo : MonoBehaviour {
     public int ID { get; set;}
     public float MaxHealth { get; set;}
     public float Attack { get; set;}

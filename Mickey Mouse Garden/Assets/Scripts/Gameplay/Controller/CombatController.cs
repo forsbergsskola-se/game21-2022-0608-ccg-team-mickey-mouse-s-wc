@@ -4,8 +4,8 @@ public class CombatController : MonoBehaviour{
    private GameObject[] playerFighters;
    private GameObject[] enemyFighters;
 
-   [SerializeField] private GameObject activeFighter;
-   [SerializeField] private GameObject opposingFighter;
+   [SerializeField] private FighterInfo activeFighter;
+   [SerializeField] private FighterInfo opposingFighter;
 
    private Executor executor;
 

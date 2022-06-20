@@ -2,15 +2,18 @@
 using UnityEngine;
 
 public class StrikeCommand : ICommand{
-    private GameObject target;
-    private GameObject striker;
+    private FighterInfo target;
+    private FighterInfo striker;
 
-    public StrikeCommand(GameObject target, GameObject striker){
+    public StrikeCommand(FighterInfo target, FighterInfo striker){
         this.target = target;
         this.striker = striker;
     }
     public void Execute(){
-        Debug.Log($"{striker} hit {target}");
+        var targetHealth = target.MaxHealth;
+        var strikerDmg = striker.Attack;
+        targetHealth = targetHealth - strikerDmg;
+        target.MaxHealth = targetHealth;
     }
 
     public void Undo(){
