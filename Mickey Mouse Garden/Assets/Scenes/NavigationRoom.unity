@@ -3914,7 +3914,7 @@ GameObject:
   - component: {fileID: 1117609411}
   - component: {fileID: 1117609410}
   m_Layer: 5
-  m_Name: PShop
+  m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5232,8 +5232,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -458.42038}
-  m_SizeDelta: {x: 0, y: -916.8408}
+  m_AnchoredPosition: {x: 0, y: -325.17188}
+  m_SizeDelta: {x: 0, y: -650.344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461886512
 MonoBehaviour:

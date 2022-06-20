@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
-public class OwnedCard : ISaveData{
+public class OwnedCard : ISaveData{ // This class will be saved, Treat is as a scriptable object and dont change these values after creation. Create your copy
      public StringGUID ID{
             get;
             set;
