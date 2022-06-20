@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Meta.bank
   Name: Desktop/Meta
   StudioPath: bank:/Meta
-  lastModified: 637912812679915907
+  lastModified: 637913183024163447
   FileSizes: []
   Exists: 1
 --- !u!114 &-8316063889974076454
@@ -118,7 +118,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637912812679895897
+  lastModified: 637913183024123513
   FileSizes:
   - Name: 
     Value: 1516
@@ -166,7 +166,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Arena.bank
   Name: Mobile/Arena
   StudioPath: bank:/Arena
-  lastModified: 637912812679925903
+  lastModified: 637913183024223279
   FileSizes: []
   Exists: 1
 --- !u!114 &-6508787761709274923
@@ -184,9 +184,65 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637912812679895897
+  lastModified: 637913183024073637
   FileSizes: []
   Exists: 1
+--- !u!114 &-5808177775264557706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Market/Purchase
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Market/Purchase
+  Guid:
+    Data1: 784616282
+    Data2: 1101648975
+    Data3: 1189409979
+    Data4: -785313610
+  Banks:
+  - {fileID: -8344870584322449604}
+  - {fileID: -673763022981866690}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5162129383906684981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/MetaMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/MetaMusic
+  Guid:
+    Data1: 1183302312
+    Data2: 1082488610
+    Data3: -936473410
+    Data4: 1707567148
+  Banks:
+  - {fileID: -8344870584322449604}
+  - {fileID: -673763022981866690}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10666
 --- !u!114 &-5123944959283209115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +268,54 @@ MonoBehaviour:
   Labels: []
   Exists: 1
 --- !u!114 &-4393821585259328280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/Garden
+  m_EditorClassIdentifier: 
+  Name: Garden
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 283710940
+    data2: 1889862198
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3766308825479139776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/RockPaperScissor/RockPaperScissor
+  m_EditorClassIdentifier: 
+  Name: RockPaperScissor
+  StudioPath: 
+  Min: 1
+  Max: 3
+  Default: 1
+  ID:
+    data1: 1298524875
+    data2: 825374870
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3615028652269769121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,6 +367,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10666
+--- !u!114 &-2001294601402700095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/Rain
+  m_EditorClassIdentifier: 
+  Name: Rain
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 4266910170
+    data2: 3723736515
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1675970268034522120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience
+  Guid:
+    Data1: -2128843710
+    Data2: 1096574606
+    Data3: 538437052
+    Data4: 165456243
+  Banks:
+  - {fileID: -6508787761709274923}
+  - {fileID: 3046298691143302364}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3615028652269769121}
+  - {fileID: -2001294601402700095}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48000
 --- !u!114 &-673763022981866690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +436,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Meta.bank
   Name: Mobile/Meta
   StudioPath: bank:/Meta
-  lastModified: 637912812680009081
+  lastModified: 637913183024382888
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -302,22 +460,50 @@ MonoBehaviour:
   - {fileID: -6590124358900339339}
   - {fileID: -673763022981866690}
   EditorEvents:
-  - {fileID: -8233380818826898744}
-  - {fileID: 7722763804015918409}
-  - {fileID: 7726553146514221645}
-  - {fileID: 6261293679851827268}
-  - {fileID: -8316063889974076454}
-  - {fileID: -8116747959807363837}
-  - {fileID: -7092129520301043660}
-  - {fileID: -2440703456576133435}
+  - {fileID: 4653235707035283374}
+  - {fileID: 8190682847036027428}
+  - {fileID: 1794943133680559172}
+  - {fileID: -1675970268034522120}
+  - {fileID: 5573001163618879160}
+  - {fileID: -5808177775264557706}
+  - {fileID: 3851123925023783607}
+  - {fileID: -5162129383906684981}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6508787761709274923}
   - {fileID: 3046298691143302364}
   StringsBanks:
   - {fileID: -7875379675789570385}
-  cacheTime: 637912812680009081
+  cacheTime: 637913183024382888
   cacheVersion: 131591
+--- !u!114 &1794943133680559172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/MainClick
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MainClick
+  Guid:
+    Data1: -1705445315
+    Data2: 1098616020
+    Data3: -523933289
+    Data4: 1062866524
+  Banks:
+  - {fileID: -6508787761709274923}
+  - {fileID: 3046298691143302364}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1825391586170269849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +539,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.bank
   Name: Mobile/Master
   StudioPath: bank:/Master
-  lastModified: 637912812679989091
+  lastModified: 637913183024332984
   FileSizes: []
   Exists: 1
 --- !u!114 &3595896958087452308
@@ -380,6 +566,63 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3851123925023783607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/PlantSeeds
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/PlantSeeds
+  Guid:
+    Data1: -96271232
+    Data2: 1281085842
+    Data3: 1320727435
+    Data4: 54727336
+  Banks:
+  - {fileID: -8344870584322449604}
+  - {fileID: -673763022981866690}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4653235707035283374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arena/RockPaperScissor
+  m_EditorClassIdentifier: 
+  Path: event:/Arena/RockPaperScissor
+  Guid:
+    Data1: -1146453845
+    Data2: 1254271791
+    Data3: -1184953177
+    Data4: -1019587779
+  Banks:
+  - {fileID: 4673368224384811591}
+  - {fileID: -6590124358900339339}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3766308825479139776}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4673368224384811591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,9 +638,37 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Arena.bank
   Name: Desktop/Arena
   StudioPath: bank:/Arena
-  lastModified: 637912812679825888
+  lastModified: 637913183023963946
   FileSizes: []
   Exists: 1
+--- !u!114 &5573001163618879160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/swosh
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/swosh
+  Guid:
+    Data1: -1290898359
+    Data2: 1272303851
+    Data3: -1853693815
+    Data4: 1599520633
+  Banks:
+  - {fileID: -6508787761709274923}
+  - {fileID: 3046298691143302364}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6066395598003447933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +723,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 48000
---- !u!114 &6798028155932300104
+--- !u!114 &7635267849315947023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,16 +733,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ArenaAmbience/Rain
+  m_Name: parameter:/ArenaMusic/PreBattle
   m_EditorClassIdentifier: 
-  Name: Rain
+  Name: PreBattle
   StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
+  Min: 1
+  Max: 3
+  Default: 1
   ID:
-    data1: 4266910170
-    data2: 3723736515
+    data1: 2725853467
+    data2: 1542828687
   Type: 1
   IsGlobal: 0
   Labels: []
@@ -553,3 +824,32 @@ MonoBehaviour:
   - Name: Desktop
     Value: 712
   Exists: 1
+--- !u!114 &8190682847036027428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arena/ArenaMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Arena/ArenaMusic
+  Guid:
+    Data1: 810807723
+    Data2: 1198609710
+    Data3: 53697709
+    Data4: 371470360
+  Banks:
+  - {fileID: 4673368224384811591}
+  - {fileID: -6590124358900339339}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7635267849315947023}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
