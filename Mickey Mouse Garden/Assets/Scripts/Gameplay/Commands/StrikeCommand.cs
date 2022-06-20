@@ -14,6 +14,8 @@ public class StrikeCommand : ICommand{
         var strikerDmg = striker.Attack;
         targetHealth = targetHealth - strikerDmg;
         target.MaxHealth = targetHealth;
+        Debug.Log(targetHealth);
+        Debug.Log(strikerDmg);
     }
 
     public void Undo(){
