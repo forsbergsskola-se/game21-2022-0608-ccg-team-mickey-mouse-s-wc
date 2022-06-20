@@ -47,8 +47,8 @@ namespace Meta.Inventory {
         }
 
         private void SendReadyToHarvestMessage() {
-            var harvestableMessage = new ReadyToHarvestMessage(this);
-            Broker.InvokeSubscribers(harvestableMessage.GetType(), harvestableMessage);
+            var harvestMessage = new ReadyToHarvestMessage(this);
+            Broker.InvokeSubscribers(harvestMessage.GetType(), harvestMessage);
         }
 
         public void RequestHarvest() {
@@ -60,7 +60,7 @@ namespace Meta.Inventory {
             }
         }
 
-        public void Harvest() {
+        public void RemoveEmpty() {
             Destroy(gameObject);
         }
     }

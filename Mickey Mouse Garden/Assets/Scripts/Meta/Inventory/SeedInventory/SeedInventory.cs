@@ -12,8 +12,8 @@ namespace Meta.Inventory {
         
         [SerializeField] private SeedInventoryUI seedInventoryUI;
 
-        private static SeedInventory instance;
         private List<GrowSlot> harvestable = new();
+        private static SeedInventory instance;
 
         #region Singleton
         private void Awake() {
@@ -33,6 +33,25 @@ namespace Meta.Inventory {
             Broker.Subscribe<ReadyToHarvestMessage>(AddToHarvestableList);
             Broker.Subscribe<RequestHarvestMessage>(Harvest);
         }
+        
+        public void PlantSeed(PlantSeedMessage seedToPlant) {
+            Rarity rarity = seedToPlant.SeedRarity;
+            Seed seedOfRequestedRarity;
+
+            try {
+                seedOfRequestedRarity = inventory.First(seed => seed.rarity == rarity);
+            }
+            catch (Exception e) {
+                Debug.Log("You have no seeds to plant");
+                return;
+            }
+
+            inventory.Remove(seedOfRequestedRarity); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
+            seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(rarity), rarity);
+            
+            growingSeeds.Add(seedOfRequestedRarity);
+            seedInventoryUI.PlantSeedOfType(seedOfRequestedRarity.rarity);
+        }
 
         public override void CollectOperations(Seed objInventoryItem) {
             seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(objInventoryItem.rarity), objInventoryItem.rarity);
@@ -41,36 +60,17 @@ namespace Meta.Inventory {
         private int GetSeedCountOfRarity(Rarity rarity) {
             return inventory.Count(seed => seed.rarity == rarity);
         }
-        
-        public void PlantSeed(PlantSeedMessage objInventoryItem) {
-            Rarity rarity = objInventoryItem.SeedRarity;
-            Seed seedToPlant;
-
-            try {
-                seedToPlant = inventory.First(seed => seed.rarity == rarity);
-            }
-            catch (Exception e) {
-                Debug.Log("You have no seeds to plant");
-                return;
-            }
-
-            inventory.Remove(seedToPlant); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
-            seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(rarity), rarity);
-            
-            growingSeeds.Add(seedToPlant);
-            seedInventoryUI.PlantSeedOfType(seedToPlant.rarity);
-        }
 
         private void AddToHarvestableList(ReadyToHarvestMessage readyToHarvestMessage) {
             harvestable.Add(readyToHarvestMessage.HarvestableGrowSlot);
         }
 
         private void Harvest(RequestHarvestMessage requestHarvestMessage) {
-            requestHarvestMessage.GrowSlot.Harvest();
+            requestHarvestMessage.GrowSlot.RemoveEmpty();
         }
 
         private void Harvest(GrowSlot growSlot) {
-            growSlot.Harvest();
+            growSlot.RemoveEmpty();
         }
 
         public void HarvestAll() {
