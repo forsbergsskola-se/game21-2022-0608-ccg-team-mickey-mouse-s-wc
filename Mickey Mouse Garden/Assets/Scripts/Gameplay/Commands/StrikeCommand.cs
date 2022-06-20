@@ -12,7 +12,7 @@ public class StrikeCommand : ICommand{
     public void Execute(){
         var targetHealth = target.MaxHealth;
         var strikerDmg = striker.Attack;
-        targetHealth = targetHealth - strikerDmg;
+        targetHealth -= strikerDmg;
         target.MaxHealth = targetHealth;
         Debug.Log(targetHealth);
         Debug.Log(strikerDmg);
