@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Meta.Interfaces;
 using Newtonsoft.Json;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.Sqlite;
@@ -8,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
-public class OwnedCard : ISaveData{ // This class will be saved, Treat is as a scriptable object and dont change these values after creation. Create your copy
+public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved, Treat is as a scriptable object and dont change these values after creation. Create your copy
      public StringGUID ID{
             get;
             set;
@@ -66,5 +67,4 @@ public class OwnedCard : ISaveData{ // This class will be saved, Treat is as a s
     public void Save(){
         SaveManager.Save(this);
     }
-    
 }
