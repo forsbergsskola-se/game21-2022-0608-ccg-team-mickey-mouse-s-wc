@@ -10,4 +10,5 @@ public class FighterInfo : MonoBehaviour {
     public string Name { get; set;}
     public Alignment Alignment { get; set;}
     public Sprite Sprite { get; set;}
+    
 }

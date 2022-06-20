@@ -7,7 +7,7 @@ namespace Meta.Inventory {
         public Rarity Rarity;
         [SerializeField] private TextMeshProUGUI countText;
 
-        //TODO: Set up icon correctly in inspector
+        //TODO: Set up icon correctly in inspector when received from artists
         
         public void PlantSeed() {
             var plantSeedMessage = new PlantSeedMessage(Rarity);

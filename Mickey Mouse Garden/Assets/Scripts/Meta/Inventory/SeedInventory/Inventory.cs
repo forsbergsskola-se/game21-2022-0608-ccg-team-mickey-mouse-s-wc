@@ -8,12 +8,7 @@ namespace Meta.Inventory {
         public abstract List<T> inventory { get; set; }
 
         protected void InitBase() {
-            SubscribeToBrokerMessage();
-        }
-
-        public void SubscribeToBrokerMessage() {
             Broker.Subscribe<ItemCollectedMessage<T>>(OnItemCollected);
-            //TODO: Subscribe to sold item
         }
 
         public void OnItemCollected(ItemCollectedMessage<T> obj) {

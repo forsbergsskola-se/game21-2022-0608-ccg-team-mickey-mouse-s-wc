@@ -16,12 +16,11 @@ public class NavSceneLauncher : MonoBehaviour {
 	}
 
 	private void LaunchScene(Transform objectTransform, string itemTag){
-		Debug.Log(itemTag);
 		StartCoroutine(WaitForZoom(itemTag));
 		
 	}
 	private IEnumerator WaitForZoom(string itemTag){
-		yield return new WaitForSeconds(0.75f);
+		yield return new WaitForSeconds(0.25f);
 		Launch(itemTag);
 	}
 
