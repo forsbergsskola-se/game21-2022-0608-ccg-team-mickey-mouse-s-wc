@@ -809,12 +809,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1035598178585166804}
   rarityText: {fileID: 1035598177881462726}
-  alignmentText: {fileID: 0}
   levelText: {fileID: 1035598177593677076}
   attackText: {fileID: 1035598177443760544}
   healthText: {fileID: 1035598177074643434}
   speedText: {fileID: 1035598178118385116}
-  fighterImage: {fileID: 0}
+  fighterImage: {fileID: 1035598177486613767}
 --- !u!1 &1035598178585166810
 GameObject:
   m_ObjectHideFlags: 0
