@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CardCreator : MonoBehaviour{
-    public GameObject card;
+    public GameObject card, cardSlot;
     public Transform parent;
     private FighterInfo fighter;
     private void Awake(){
@@ -11,11 +11,11 @@ public class CardCreator : MonoBehaviour{
 
     private void OnFighterMessageReceived(FighterMessage obj){
         fighter = obj.fighterInfo;
-        InstantiateFighter(fighter);
+        InstantiateFighter(fighter, cardSlot);
     }
 
-    private void InstantiateFighter(FighterInfo fighter){
-        var createdCard = Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity, parent);
+    private void InstantiateFighter(FighterInfo fighter, GameObject cardSlot){
+        var createdCard = Instantiate(card, cardSlot.transform.position, Quaternion.identity, parent);
         var componentInChildren = createdCard.GetComponentInChildren<CardContentFiller>();
         var fighterInfo = createdCard.AddComponent<FighterInfo>();
         FillInInfo(fighterInfo);
