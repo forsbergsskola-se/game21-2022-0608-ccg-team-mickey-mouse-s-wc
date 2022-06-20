@@ -1,11 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatController : MonoBehaviour{
-   // private Fighter[] playerFighters;
-   // private Fighter[] enemyFighters;
-    
-    //TODO: use the command-pattern for this!
-    
+   private GameObject[] playerFighters;
+   private GameObject[] enemyFighters;
+
+   [SerializeField] private FighterInfo activeFighter;
+   [SerializeField] private FighterInfo opposingFighter;
+
+   private Executor executor;
+
+   private void Awake(){
+      executor = FindObjectOfType<Executor>();
+   }
+
+   private void Update(){
+      if (Input.GetKeyDown(KeyCode.P)){
+         Debug.Log("Testing combat");
+         executor.Enqueue(new StrikeCommand(activeFighter, opposingFighter));
+      }
+   }
 }

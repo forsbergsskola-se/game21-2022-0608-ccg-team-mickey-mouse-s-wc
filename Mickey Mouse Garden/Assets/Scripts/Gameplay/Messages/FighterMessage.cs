@@ -1,5 +1,3 @@
-using UnityEngine;
-
-public class FighterMessage : IMessage{ //TODO: make sure its the correct types.
+public class FighterMessage : IMessage{
    public FighterInfo fighterInfo{ get; set; }
 }
