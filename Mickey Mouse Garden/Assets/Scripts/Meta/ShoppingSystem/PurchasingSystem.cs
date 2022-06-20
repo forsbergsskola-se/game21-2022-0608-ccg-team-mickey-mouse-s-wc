@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using Meta.Interfaces;
-using Meta.Inventory;
 using UnityEngine;
+using UnityEngine.UDP;
 
-public class PurchasingSystem<T> : MonoBehaviour where T : IInventoryItem{
-    public Inventory<T> Inventory;
+public class PurchasingSystem : MonoBehaviour, ICurrency{
+    public Inventory Inventory;
+    public string Name{ get; }
+    public int Amount{ get; }
+    public string SpriteName{ get; }
+    public Sprite Sprite{ get; }
+    public void AddAmount(int value){
+        throw new System.NotImplementedException();
+    }
 }
