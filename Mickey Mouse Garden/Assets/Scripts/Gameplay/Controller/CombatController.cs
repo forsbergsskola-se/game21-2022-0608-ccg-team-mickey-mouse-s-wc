@@ -15,7 +15,6 @@ public class CombatController : MonoBehaviour{
 
    private void Update(){
       if (Input.GetKeyDown(KeyCode.P)){
-         Debug.Log("Testing combat");
          executor.Enqueue(new StrikeCommand(activeFighter, opposingFighter));
       }
    }
