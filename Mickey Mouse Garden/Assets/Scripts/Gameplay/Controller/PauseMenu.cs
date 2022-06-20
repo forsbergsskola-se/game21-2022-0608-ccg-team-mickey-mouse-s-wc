@@ -13,10 +13,8 @@ public class PauseMenu : MonoBehaviour{
     public void Pause(){
         pauseMenu.enabled = true;
         pauseButton.enabled = false;
-        Debug.Log("paused");
     }
     public void UnPause(){
-        Debug.Log("unpaused");
         pauseButton.enabled = true;
         pauseMenu.enabled = false;
     }
