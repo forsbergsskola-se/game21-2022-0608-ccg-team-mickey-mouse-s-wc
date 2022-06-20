@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 845694812}
   - component: {fileID: 845694811}
   - component: {fileID: 845694815}
+  - component: {fileID: 845694816}
   m_Layer: 0
   m_Name: EF1
   m_TagString: EF1
@@ -242,6 +243,18 @@ MonoBehaviour:
   playerActiveEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &845694816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845694810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97194402ea347645b2fefbc953186fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1124605885
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +541,8 @@ GameObject:
   - component: {fileID: 2004361161}
   - component: {fileID: 2004361164}
   - component: {fileID: 2004361165}
+  - component: {fileID: 2004361166}
+  - component: {fileID: 2004361167}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -625,6 +640,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a0c38feda19f248bc5862e764ab2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeFighter: {fileID: 2084602373}
+  opposingFighter: {fileID: 845694816}
+--- !u!114 &2004361166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004361160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e308b36af63194e4c989dae4c868d65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &2004361167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004361160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a97abdcf875fc4cb50a3e523893352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 6365057247691390579, guid: 8c422a5274c64864bb48b533b4c65568, type: 3}
 --- !u!1 &2084602367
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +681,7 @@ GameObject:
   - component: {fileID: 2084602369}
   - component: {fileID: 2084602368}
   - component: {fileID: 2084602372}
+  - component: {fileID: 2084602373}
   m_Layer: 0
   m_Name: F1
   m_TagString: FF1
@@ -744,3 +788,15 @@ MonoBehaviour:
   playerActiveEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2084602373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084602367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97194402ea347645b2fefbc953186fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

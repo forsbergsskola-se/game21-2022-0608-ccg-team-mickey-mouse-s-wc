@@ -1,21 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class StrikeCommand : ICommand{
-   public void Execute(){
-      Debug.Log("hit");
-   }
-
-   public void Undo(){
-      throw new NotImplementedException();
-   }
-}
 
 public class CombatController : MonoBehaviour{
    private GameObject[] playerFighters;
    private GameObject[] enemyFighters;
+
+   [SerializeField] private FighterInfo activeFighter;
+   [SerializeField] private FighterInfo opposingFighter;
 
    private Executor executor;
 
@@ -25,8 +15,7 @@ public class CombatController : MonoBehaviour{
 
    private void Update(){
       if (Input.GetKeyDown(KeyCode.P)){
-         Debug.Log("Testing combat");
-         executor.Enqueue(new StrikeCommand());
+         executor.Enqueue(new StrikeCommand(activeFighter, opposingFighter));
       }
    }
 }
