@@ -10,6 +10,7 @@ namespace Meta.Seeds {
         
         [SerializeField] private Sprite inventorySprite;         //TODO: Hardcode inventory sprite based on rarity
         
+        
         private void Start() {
             GrowthTime = SetGrowthTime();
         }
