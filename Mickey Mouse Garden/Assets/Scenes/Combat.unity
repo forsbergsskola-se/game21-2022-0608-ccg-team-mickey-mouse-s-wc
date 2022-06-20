@@ -625,6 +625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a0c38feda19f248bc5862e764ab2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeFighter: {fileID: 2084602367}
+  opposingFighter: {fileID: 845694810}
 --- !u!1 &2084602367
 GameObject:
   m_ObjectHideFlags: 0
