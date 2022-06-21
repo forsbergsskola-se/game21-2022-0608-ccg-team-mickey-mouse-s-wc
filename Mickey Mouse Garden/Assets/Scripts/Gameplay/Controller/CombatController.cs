@@ -14,10 +14,7 @@ public class CombatController : MonoBehaviour{
       executor = FindObjectOfType<Executor>();
       Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
    }
-
-   private void OnDeathMessageRecieved(FighterFaintMessage obj){
-      Debug.Log($"{obj.fighterInfo.Name} has died");
-   }
+   
 
    private void Update(){
       if (Input.GetKeyDown(KeyCode.P)){
@@ -27,6 +24,11 @@ public class CombatController : MonoBehaviour{
          executor.Enqueue(new StrikeCommand(firstFighter, secondFighter));
          executor.Enqueue(new CheckForFaintedCommand(secondFighter, firstFighter));
       }
+   }
+   
+   private void OnDeathMessageRecieved(FighterFaintMessage obj){
+      Debug.Log($"{obj.fighterInfo.Name} has died");
+      executor.Enqueue(new ChangeOpponentCommand(out var newFighter)); 
    }
 
    private void AssertStrikeOrder(){
