@@ -44,7 +44,11 @@ public class SoundManager : MonoBehaviour
     FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Market/Purchase");
   }
   
-  
+  public void swosh()
+  { 
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/swosh");
+  }
+ 
 }
 
 
