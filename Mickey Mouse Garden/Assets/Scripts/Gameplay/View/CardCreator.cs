@@ -5,7 +5,7 @@ public class CardCreator : MonoBehaviour{
     public Transform parent;
     private FighterInfo fighter;
     private Transform[] cardSlots;
-    private int cardCount = 1;
+    public int cardCount = 1;
     private void Awake(){
         Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
         // Gets cardSlots from Child GameObjects
