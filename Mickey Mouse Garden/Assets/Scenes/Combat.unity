@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 1035598178356861579, guid: 34da2170a325b5741a09b694cb03b188, type: 3}
+  cardSlot: {fileID: 458758362}
   parent: {fileID: 458758367}
 --- !u!114 &458758364
 MonoBehaviour:
@@ -622,8 +623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a0c38feda19f248bc5862e764ab2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeFighter: {fileID: 0}
-  opposingFighter: {fileID: 0}
+  firstFighter: {fileID: 0}
+  secondFighter: {fileID: 0}
 --- !u!114 &2004361166
 MonoBehaviour:
   m_ObjectHideFlags: 0
