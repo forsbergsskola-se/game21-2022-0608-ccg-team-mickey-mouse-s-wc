@@ -26,9 +26,10 @@ public class Money : ICurrency
     public async Task TryLoadData(){
         var loadedValue = await SaveManager.Load<Money>(ID);
         var loadedPropertyInfos = loadedValue.GetType().GetProperties();
-        var propertyInfos =GetType().GetProperties();
+        var gottenType = GetType();
+        var propertyInfos =gottenType.GetProperties();
         for (int i = 0; i < propertyInfos.Length; i++){
-            GetType().GetProperty(propertyInfos[i].Name)?.SetValue(this,loadedPropertyInfos[i].GetValue(loadedValue));
+            gottenType.GetProperty(propertyInfos[i].Name)?.SetValue(this,loadedPropertyInfos[i].GetValue(loadedValue));
         }
     }
 
