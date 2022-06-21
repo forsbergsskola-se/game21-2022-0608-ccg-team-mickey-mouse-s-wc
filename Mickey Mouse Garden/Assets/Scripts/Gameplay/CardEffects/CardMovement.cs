@@ -5,7 +5,7 @@ public class CardMovement : MonoBehaviour{
 	private CardCreator cardCreator;
 	private Transform[] positions;
 	private Vector3 velocity = Vector3.zero;
-	private bool fullDeck, returnCard1, returnCard4, returnCard2, returnCard5;
+	private bool fullDeck, returnPlayerCard1, returnEnemyCard1, returnPlayerCard2, returnEnemyCard2;
 
 	private void Awake(){
 		cardCreator = GetComponent<CardCreator>();
@@ -15,39 +15,43 @@ public class CardMovement : MonoBehaviour{
 		if (cardCreator.cardCount == 7){
 			fullDeck = true;
 		}
-		if (fullDeck && !returnCard1 && !returnCard4) {
+		if (fullDeck && !returnPlayerCard1 && !returnEnemyCard1) {
 			positions = GetComponentsInChildren<Transform>();
-			// Card 1 = [7], Card 2 = [15], Card 3 = [23]
+			// Left to Right Player: Card 1 = [7], Card 2 = [15], Card 3 = [23]
+			// Right to Left Enemy: Card 4 = [31], Card 5 = [39], Card 6 = [47]
 			MoveTo(combatPosition1, positions[23]);
-
-			// Card 4 = [31], Card 5 = [39], Card 6 = [47]
+			
 			MoveTo(combatPosition2, positions[47]);
 		}
+		// FighterDead(Player) Message
 		if (Input.GetKeyDown(KeyCode.A)){
-			returnCard1 = true;
+			returnPlayerCard1 = true;
 		}
-		if (returnCard1 && !returnCard2){
+		if (returnPlayerCard1 && !returnPlayerCard2){
 			MoveTo(positions[3], positions[23]);
 			MoveTo(combatPosition1, positions[15]);
 		}
+		// FighterDead(Enemy) Message
 		if (Input.GetKeyDown(KeyCode.S)){
-			returnCard4 = true;
+			returnEnemyCard1 = true;
 		}
-		if (returnCard4 && !returnCard5){
+		if (returnEnemyCard1 && !returnEnemyCard2){
 			MoveTo(positions[6], positions[47]);
 			MoveTo(combatPosition2, positions[39]);
 		}
+		// FighterDead(Player) Message
 		if (Input.GetKeyDown(KeyCode.D)){
-			returnCard2 = true;
+			returnPlayerCard2 = true;
 		}
-		if (returnCard2){
+		if (returnPlayerCard2){
 			MoveTo(positions[2], positions[15]);
 			MoveTo(combatPosition1, positions[7]);
 		}
+		// FighterDead(Enemy) Message
 		if (Input.GetKeyDown(KeyCode.F)){
-			returnCard5 = true;
+			returnEnemyCard2 = true;
 		}
-		if (returnCard5){
+		if (returnEnemyCard2){
 			MoveTo(positions[5], positions[39]);
 			MoveTo(combatPosition2, positions[31]);
 		}
