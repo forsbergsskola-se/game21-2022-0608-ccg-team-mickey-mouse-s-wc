@@ -12,8 +12,8 @@ namespace Meta.Inventory {
         }
 
         public void OnItemCollected(ItemCollectedMessage<T> obj) {
-            Add(obj.InventoryItem);
-            CollectOperations(obj.InventoryItem);
+            Add(obj.Item);
+            CollectOperations(obj.Item);
         }
         
         //Onitemremoved
