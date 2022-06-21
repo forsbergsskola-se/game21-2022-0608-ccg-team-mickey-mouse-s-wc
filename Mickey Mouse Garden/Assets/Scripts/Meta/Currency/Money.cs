@@ -16,10 +16,11 @@ public class Money : ICurrency
     public int Amount{ get; private set; }
     public string SpriteName{ get; } = "Money";
 
-   [DoNotSerialize] public Sprite Sprite{ get; }
+    [field: NonSerialized][DoNotSerialize] public Sprite Sprite{ get; }
 
     public void AddAmount(int value){
         Amount += value;
+        Save();
     }
 
     public StringGUID ID{ get; }
