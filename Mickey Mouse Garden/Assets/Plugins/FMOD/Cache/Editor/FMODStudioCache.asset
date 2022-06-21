@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Meta.bank
   Name: Desktop/Meta
   StudioPath: bank:/Meta
-  lastModified: 637913183024163447
+  lastModified: 637912812679915907
   FileSizes: []
   Exists: 1
 --- !u!114 &-8316063889974076454
@@ -118,7 +118,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637913183024123513
+  lastModified: 637912812679895897
   FileSizes:
   - Name: 
     Value: 1516
@@ -166,7 +166,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Arena.bank
   Name: Mobile/Arena
   StudioPath: bank:/Arena
-  lastModified: 637913183024223279
+  lastModified: 637912812679925903
   FileSizes: []
   Exists: 1
 --- !u!114 &-6508787761709274923
@@ -184,7 +184,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637913183024073637
+  lastModified: 637912812679895897
   FileSizes: []
   Exists: 1
 --- !u!114 &-5808177775264557706
@@ -436,7 +436,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Meta.bank
   Name: Mobile/Meta
   StudioPath: bank:/Meta
-  lastModified: 637913183024382888
+  lastModified: 637912812680009081
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -474,7 +474,7 @@ MonoBehaviour:
   - {fileID: 3046298691143302364}
   StringsBanks:
   - {fileID: -7875379675789570385}
-  cacheTime: 637913183024382888
+  cacheTime: 637912812680009081
   cacheVersion: 131591
 --- !u!114 &1794943133680559172
 MonoBehaviour:
@@ -539,7 +539,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.bank
   Name: Mobile/Master
   StudioPath: bank:/Master
-  lastModified: 637913183024332984
+  lastModified: 637912812679989091
   FileSizes: []
   Exists: 1
 --- !u!114 &3595896958087452308
@@ -638,7 +638,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Arena.bank
   Name: Desktop/Arena
   StudioPath: bank:/Arena
-  lastModified: 637913183023963946
+  lastModified: 637912812679825888
   FileSizes: []
   Exists: 1
 --- !u!114 &5573001163618879160
