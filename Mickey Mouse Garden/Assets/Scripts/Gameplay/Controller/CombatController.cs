@@ -17,8 +17,6 @@ public class CombatController : MonoBehaviour{
    private void Awake(){
       executor = FindObjectOfType<Executor>();
       Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
-      //playerFighter = playerFighters[playerTeamIncrementor];
-      //enemyFighter = enemyFighters[enemyTeamIncrementor];
    }
    
 
@@ -46,12 +44,12 @@ public class CombatController : MonoBehaviour{
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
       Debug.Log($"{obj.fighterInfo.Name} has died");
       if (obj.fighterInfo.ID == playerFighter.ID){
-         
+         playerTeamIncrementor++;
       }
       if (obj.fighterInfo.ID == enemyFighter.ID){
-         
+         enemyTeamIncrementor++;
       }
-      executor.Enqueue(new ChangeOpponentCommand());
+      executor.Enqueue(new ChangeOpponentCommand(this));
       AssertStrikeOrder();
 
    }
@@ -69,5 +67,10 @@ public class CombatController : MonoBehaviour{
             playerGoesFirst = true;
          }
       }
+   }
+
+   public void NextFighter(){
+      playerFighter = playerFighters[playerTeamIncrementor];
+      enemyFighter = enemyFighters[enemyTeamIncrementor];
    }
 }
