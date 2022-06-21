@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UDP;
 
-public class PurchasingSystem<T> : MonoBehaviour, ICurrency where T : IInventoryItem{
+public class PurchasingSystem<T> : MonoBehaviour where T : IInventoryItem{
     public Inventory<T> Inventory;
     private ShopItemList shopItems;
     public string Name{ get; }
@@ -19,12 +19,12 @@ public class PurchasingSystem<T> : MonoBehaviour, ICurrency where T : IInventory
     }
 
     public void BuyFromShop(Item item){
-        if (Amount - item.Price < 0)
+        if (Amount - item.price < 0)
         {
             return;
         }
 
-        Amount -= item.Price;
+        Amount -= item.price;
         RemoveItemFromList(shopItems, item);
         //.Add(item);
     }
