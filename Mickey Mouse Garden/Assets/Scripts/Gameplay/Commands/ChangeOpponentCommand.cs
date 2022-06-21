@@ -2,13 +2,13 @@
 using UnityEngine;
 
 public class ChangeOpponentCommand : ICommand{
-    private GameObject newTarget;
-
-    public ChangeOpponentCommand(GameObject newTarget){
-        this.newTarget = newTarget;
+    
+    public ChangeOpponentCommand(out FighterInfo nextFighter){
+        nextFighter = new FighterInfo();
     }
+
     public void Execute(){
-        newTarget = new GameObject();
+       Debug.Log("NextFighter!");
     }
 
     public void Undo(){
