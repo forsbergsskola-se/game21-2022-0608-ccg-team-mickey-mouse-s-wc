@@ -31,7 +31,7 @@ public class CombatController : MonoBehaviour{
       }
 
       if (playerTeamIncrementor > 2 || enemyTeamIncrementor > 2){
-         executor.Enqueue(new EndOfCombatCommand()); //TODO: 100% WIP, idea is that when all fighters are fainted something needs to happen.
+         executor.Enqueue(new EndOfCombatCommand()); //TODO: 100% WIP, idea is that when all fighters are fainted something needs to happen. 
       }
    }
 
