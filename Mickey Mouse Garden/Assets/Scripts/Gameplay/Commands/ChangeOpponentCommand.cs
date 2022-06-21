@@ -2,13 +2,8 @@
 using UnityEngine;
 
 public class ChangeOpponentCommand : ICommand{
-    private GameObject newTarget;
-
-    public ChangeOpponentCommand(GameObject newTarget){
-        this.newTarget = newTarget;
-    }
     public void Execute(){
-        newTarget = new GameObject();
+       Debug.Log("next command");
     }
 
     public void Undo(){
