@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class CombatController : MonoBehaviour{
@@ -11,12 +12,18 @@ public class CombatController : MonoBehaviour{
 
    private void Awake(){
       executor = FindObjectOfType<Executor>();
+      Broker.Subscribe<FighterDeathMessage>(OnDeathMessageRecieved);
+   }
+
+   private void OnDeathMessageRecieved(FighterDeathMessage obj){
+      Debug.Log($"{obj.fighterInfo.Name} has died");
    }
 
    private void Update(){
       if (Input.GetKeyDown(KeyCode.P)){
          AssertStrikeOrder();
          executor.Enqueue(new StrikeCommand(secondFighter, firstFighter));
+         executor.Enqueue(new CheckForDeathCommand(firstFighter, secondFighter));
          executor.Enqueue(new StrikeCommand(firstFighter, secondFighter));
       }
    }
