@@ -51,6 +51,7 @@ namespace Meta.Inventory {
             Broker.InvokeSubscribers(harvestMessage.GetType(), harvestMessage);
         }
 
+        //OnClick
         public void RequestHarvest() {
             if (readyToHarvest) {
                 var requestHarvestMessage = new RequestHarvestMessage(this);

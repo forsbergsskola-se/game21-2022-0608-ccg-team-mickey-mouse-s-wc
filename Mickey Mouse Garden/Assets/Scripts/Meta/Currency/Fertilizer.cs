@@ -2,22 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 [Serializable]
-public class Fertalizer : ICurrency
+public class Fertilizer : ICurrency
 {
-    public Fertalizer(){
+    public Fertilizer(StringGUID id){
         Sprite = Resources.Load<Sprite>($"Art/Sprites/{this.SpriteName}");
+        ID = id;
     }
 
-    public string Name{ get; } = "Fertalizer";
+    public string Name{ get; } = "Fertilizer";
     public int Amount{ get; private set; }
-    public string SpriteName{ get; } = "Fertalizer";
+    public string SpriteName{ get; } = "Fertilizer";
 
-    public Sprite Sprite{ get; }
+    [field: NonSerialized][DoNotSerialize]public Sprite Sprite{ get; }
 
     public void AddAmount(int value){
         Amount += value;
+        Save();
     }
 
     public StringGUID ID{ get; }
