@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-public class ChangeOpponnentCommand : ICommand{
+public class ChangeOpponentCommand : ICommand{
     private GameObject newTarget;
 
-    public ChangeOpponnentCommand(GameObject newTarget){
+    public ChangeOpponentCommand(GameObject newTarget){
         this.newTarget = newTarget;
     }
     public void Execute(){
