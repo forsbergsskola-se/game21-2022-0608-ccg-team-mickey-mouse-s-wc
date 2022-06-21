@@ -4,32 +4,49 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-  [Header("Impact")] public FMODUnity.EventReference ImpactEventReference;
+  [Header("Music and Ambience")] 
+  public FMODUnity.EventReference GardenMusicEventReference;
+  public FMODUnity.EventReference AmbienceEventReference;
 
-  private FMOD.Studio.EventInstance impactInstance;
+  private FMOD.Studio.EventInstance gardenmusicInstance;
+  private FMOD.Studio.EventInstance ambienceInstance; 
 
-
-  [Header("Music")] public FMODUnity.EventReference GardenMusicEventReference;
-
-  private FMOD.Studio.EventInstance gardenmusicInst;
-
-
-  //[Header("UI")]
-
-
-
-
+  //[Header("UI and Stuff")]
+  //private FMOD.Studio.EventInstance ; 
+  
   void Start()
   {
     //music
-    gardenmusicInst = FMODUnity.RuntimeManager.CreateInstance(GardenMusicEventReference);
-    gardenmusicInst.start();
+    gardenmusicInstance = FMODUnity.RuntimeManager.CreateInstance(GardenMusicEventReference);
+    gardenmusicInstance.start();
+    //ambience
+    ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(AmbienceEventReference);
+    ambienceInstance.start();
 
-    //UI
+    
 
 
   }
+  
+  public void plantSeeds() 
+  { 
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/PlantSeeds");
+  }
+
+  public void mainClick()
+  {
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/MainClick");
+  }
+
+
+  public void purchase()
+  { 
+    FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Market/Purchase");
+  }
+  
+  
 }
+
 
 
 
@@ -45,6 +62,9 @@ public void StartEvent()
 {
   myInstance.start();
 }
+
+
+
 
 public void SetParamByName()
 {
