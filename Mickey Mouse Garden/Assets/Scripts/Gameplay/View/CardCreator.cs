@@ -1,21 +1,26 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CardCreator : MonoBehaviour{
-    public GameObject card, cardSlot;
+    public GameObject card;
     public Transform parent;
     private FighterInfo fighter;
+    private Transform[] cardSlots;
+    private int cardCount = 1;
     private void Awake(){
         Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
+        // Gets cardSlots from Child GameObjects
+        cardSlots = GetComponentsInChildren<Transform>();
     }
 
     private void OnFighterMessageReceived(FighterMessage obj){
         fighter = obj.fighterInfo;
-        InstantiateFighter(fighter, cardSlot);
+        // Spawns card at incremental card slots starting from 1 (not 0).
+        InstantiateFighter(fighter, cardSlots[cardCount]);
+        cardCount++;
     }
 
-    private void InstantiateFighter(FighterInfo fighter, GameObject cardSlot){
-        var createdCard = Instantiate(card, cardSlot.transform.position, Quaternion.identity, parent);
+    private void InstantiateFighter(FighterInfo fighter, Transform cardSlot){
+        var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, parent);
         var componentInChildren = createdCard.GetComponentInChildren<CardContentFiller>();
         var fighterInfo = createdCard.AddComponent<FighterInfo>();
         FillInInfo(fighterInfo);
