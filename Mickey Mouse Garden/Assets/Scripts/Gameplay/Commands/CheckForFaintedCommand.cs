@@ -1,22 +1,15 @@
 ﻿using System;
 
 public class CheckForFaintedCommand : ICommand{
-    private FighterInfo firstFighter;
-    private FighterInfo secondFighter;
+    private FighterInfo targetedFighter;
 
-    public CheckForFaintedCommand(FighterInfo firstFighter, FighterInfo secondFighter){
-        this.firstFighter = firstFighter;
-        this.secondFighter = secondFighter;
+    public CheckForFaintedCommand(FighterInfo targetedFighter){
+        this.targetedFighter = targetedFighter;
     }
     public void Execute(){
         FighterFaintMessage faintMessage = new();
-        if (firstFighter.MaxHealth <= 0){
-            faintMessage.fighterInfo = firstFighter;
-            Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
-            return;
-        }
-        if (secondFighter.MaxHealth <= 0){
-            faintMessage.fighterInfo = secondFighter;
+        if (targetedFighter.MaxHealth <= 0){
+            faintMessage.fighterInfo = targetedFighter;
             Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
         }
     }

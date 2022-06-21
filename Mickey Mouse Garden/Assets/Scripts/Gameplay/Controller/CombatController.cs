@@ -2,46 +2,71 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class CombatController : MonoBehaviour{
-   private FighterInfo[] playerFighters;
-   private FighterInfo[] enemyFighters;
+   [SerializeField] private FighterInfo[] playerFighters;
+   [SerializeField] private FighterInfo[] enemyFighters;
 
-   [SerializeField] private FighterInfo firstFighter;
-   [SerializeField] private FighterInfo secondFighter;
+   private FighterInfo playerFighter;
+   private FighterInfo enemyFighter;
+   private int playerTeamIncrementor;
+   private int enemyTeamIncrementor;
 
+   private bool playerGoesFirst;
+   
    private Executor executor;
 
    private void Awake(){
       executor = FindObjectOfType<Executor>();
       Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
+      //playerFighter = playerFighters[playerTeamIncrementor];
+      //enemyFighter = enemyFighters[enemyTeamIncrementor];
    }
    
 
    private void Update(){
       if (Input.GetKeyDown(KeyCode.P)){
-         AssertStrikeOrder();
-         executor.Enqueue(new StrikeCommand(secondFighter, firstFighter));
-         executor.Enqueue(new CheckForFaintedCommand(firstFighter, secondFighter));
-         executor.Enqueue(new StrikeCommand(firstFighter, secondFighter));
-         executor.Enqueue(new CheckForFaintedCommand(secondFighter, firstFighter));
+         playerFighter = playerFighters[playerTeamIncrementor];
+         enemyFighter = enemyFighters[enemyTeamIncrementor];
+         Strike();
       }
    }
-   
+
+   private void Strike(){
+      if (playerGoesFirst){
+         executor.Enqueue(new StrikeCommand(enemyFighter, playerFighter));
+         executor.Enqueue(new CheckForFaintedCommand(enemyFighter));
+         playerGoesFirst = false;
+      }
+      else{
+         executor.Enqueue(new StrikeCommand(playerFighter, enemyFighter));
+         executor.Enqueue(new CheckForFaintedCommand(playerFighter));
+         playerGoesFirst = true;
+      }
+   }
+
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
       Debug.Log($"{obj.fighterInfo.Name} has died");
-      executor.Enqueue(new ChangeOpponentCommand(out var newFighter)); 
+      if (obj.fighterInfo.ID == playerFighter.ID){
+         
+      }
+      if (obj.fighterInfo.ID == enemyFighter.ID){
+         
+      }
+      executor.Enqueue(new ChangeOpponentCommand());
+      AssertStrikeOrder();
+
    }
 
    private void AssertStrikeOrder(){
-      if (firstFighter.Speed < secondFighter.Speed){
-         (secondFighter, firstFighter) = (firstFighter, secondFighter);
+      if (playerFighter.Speed < enemyFighter.Speed){
+         playerGoesFirst = false;
       }
-      else if (firstFighter.Speed > secondFighter.Speed){
-         return;
+      else if (playerFighter.Speed > enemyFighter.Speed){
+         playerGoesFirst = true;
       }
       else{
          var coinFlip = Random.Range(0, 2);
          if (coinFlip == 1){
-            (secondFighter, firstFighter) = (firstFighter, secondFighter);
+            playerGoesFirst = true;
          }
       }
    }

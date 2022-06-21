@@ -17,7 +17,7 @@ public class StrikeCommand : ICommand{
 
     private void Strike(){
         target.MaxHealth -= striker.Attack * CheckAlignment();
-        Debug.Log(target.MaxHealth);
+        Debug.Log($"{target.Name}s health is now {target.MaxHealth}");
     }
 
     private float CheckAlignment(){ //TODO: make a dictionary of dictionaries kinda deal ala Marc
