@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Meta.Cards;
 using Meta.Interfaces;
 using Meta.Seeds;
 using UnityEngine;
 
 namespace Meta.Inventory {
     public class SeedInventory : Inventory<Seed> {
-        public override List<Seed> inventory { get; set; } = new();
+        public override List<Seed> InventoryItems { get; set; } = new();
         public List<Seed> growingSeeds = new();
         
         [SerializeField] private SeedInventoryUI seedInventoryUI;
@@ -39,7 +40,7 @@ namespace Meta.Inventory {
             Seed seedOfRequestedRarity;
 
             try {
-                seedOfRequestedRarity = inventory.First(seed => seed.rarity == rarity);
+                seedOfRequestedRarity = InventoryItems.First(seed => seed.rarity == rarity);
             }
             catch (Exception e) {
                 e = new Exception("You have no seeds to plant");
@@ -47,19 +48,19 @@ namespace Meta.Inventory {
                 return;
             }
 
-            inventory.Remove(seedOfRequestedRarity); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
+            InventoryItems.Remove(seedOfRequestedRarity); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
             seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(rarity), rarity);
             
             growingSeeds.Add(seedOfRequestedRarity);
             seedInventoryUI.PlantSeedOfType(seedOfRequestedRarity.rarity);
         }
 
-        public override void CollectOperations(Seed objInventoryItem) {
-            seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(objInventoryItem.rarity), objInventoryItem.rarity);
+        public override void CollectOperations(Seed addedItem) {
+            seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(addedItem.rarity), addedItem.rarity);
         }
 
         private int GetSeedCountOfRarity(Rarity rarity) {
-            return inventory.Count(seed => seed.rarity == rarity);
+            return InventoryItems.Count(seed => seed.rarity == rarity);
         }
 
         private void AddToHarvestableList(ReadyToHarvestMessage readyToHarvestMessage) {
@@ -89,11 +90,12 @@ namespace Meta.Inventory {
 
         private void OnHarvest(GrowSlot growSlot) {
             growSlot.RemoveEmpty();
-            CardSpawner.SpawnFromSeed(growSlot.rarityType);
+            PlantSpawn(growSlot.rarityType);
         }
 
         private void PlantSpawn(Rarity rarity) {
-            CardSpawner.SpawnFromSeed(rarity);
+            var spawnMessage = new SpawnCardFromSeed(rarity);
+            Broker.InvokeSubscribers(spawnMessage.GetType(), spawnMessage);
         }
         
         private void OnDestroy() {

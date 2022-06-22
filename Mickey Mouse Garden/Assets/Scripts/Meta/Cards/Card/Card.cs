@@ -3,9 +3,25 @@ using Meta.Interfaces;
 using UnityEngine;
 
 namespace Meta.Inventory.FighterInventory {
+    /// <summary>
+    /// The serialized data model of a card.
+    /// </summary>
     [System.Serializable]
     public class Card : IInventoryItem, ISaveData {
-        public string Name{ get; set; }
+        public string cardId;
+        [SerializeField] private short level;
+
+        public short Level {
+            get => level;
+            set {
+                level = value;
+                value = level;
+            }
+        }
+
+
+        //BEFORE MENTORING
+        /*public string Name{ get; set; }
         public Alignment Alignment{ get; set; }
         public string SpriteName{ get; set; }
         public Texture2D FighterImage{ get; set; } //TODO: Sprite or image?
@@ -50,6 +66,14 @@ namespace Meta.Inventory.FighterInventory {
             MaxHealth = card.MaxHealth;
             Speed = card.Speed;
             ID = card.ID;
+        }*/
+        public StringGUID ID { get; }
+        public Task TryLoadData() {
+            throw new System.NotImplementedException();
+        }
+
+        public void Save() {
+            throw new System.NotImplementedException();
         }
     }
 }
