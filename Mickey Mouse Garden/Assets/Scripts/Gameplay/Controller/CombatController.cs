@@ -38,12 +38,12 @@ public class CombatController : MonoBehaviour{
    private void Strike(){
       if (playerGoesFirst){
          executor.Enqueue(new StrikeCommand(enemyFighter, playerFighter));
-         executor.Enqueue(new CheckForFaintedCommand(enemyFighter));
+         executor.Enqueue(new CheckForFaintedCommand(playerFighter, enemyFighter));
          playerGoesFirst = false;
       }
       else{
          executor.Enqueue(new StrikeCommand(playerFighter, enemyFighter));
-         executor.Enqueue(new CheckForFaintedCommand(playerFighter));
+         executor.Enqueue(new CheckForFaintedCommand(playerFighter, enemyFighter));
          playerGoesFirst = true;
       }
    }
