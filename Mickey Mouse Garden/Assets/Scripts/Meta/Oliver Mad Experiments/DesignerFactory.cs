@@ -1,14 +1,8 @@
 #if UNITY_EDITOR
-
-
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
-
 namespace Meta.Oliver_Mad_Experiments{
     public class DesignerFactory : MonoBehaviour{
-      
-    
         #region Editor
 #if UNITY_EDITOR
         [CustomEditor(typeof(DesignerFactory))]

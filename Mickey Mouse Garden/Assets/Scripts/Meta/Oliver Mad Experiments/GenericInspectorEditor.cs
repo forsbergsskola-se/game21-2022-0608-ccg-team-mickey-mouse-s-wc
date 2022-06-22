@@ -5,17 +5,10 @@ using UnityEditor;
 using UnityEngine;
 [CustomEditor(typeof(MonoBehaviour),editorForChildClasses:true)]
 public class GenericInspectorEditor : Editor{
-    static string unityNameSpace = "Unity";
-    static bool isUnityNameSpace;
+    
     CustomComponentAttribute customComponentAttribute;
     static GUIStyle titleStyle;
     protected virtual void OnEnable(){
-        string targetNamespace = target.GetType().Namespace;
-        
-        if (!string.IsNullOrEmpty(targetNamespace)){
-            isUnityNameSpace = targetNamespace.StartsWith(unityNameSpace);
-        }
-
         if (customComponentAttribute == null){
             customComponentAttribute = GetCustomComponentAttribute(target);
         }
@@ -26,9 +19,7 @@ public class GenericInspectorEditor : Editor{
             if (customComponentAttribute.State != default){
                 StateGUI(customComponentAttribute);
             }
-            if (!isUnityNameSpace){
-                HeaderGUI(customComponentAttribute);
-            }
+            HeaderGUI(customComponentAttribute);
         }
         base.OnInspectorGUI();
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44597632, g: 0.49572748, b: 0.5744316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4434307, g: 0.49248755, b: 0.57185614, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 458758365}
   - component: {fileID: 458758364}
   - component: {fileID: 458758363}
+  - component: {fileID: 458758368}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -317,6 +318,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &458758368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458758362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4745f14ddc36747be140f38062fdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PostCombatUIPrefab: {fileID: 4149195313653012410, guid: 10534e8ab74444f4e987aa5038987748, type: 3}
 --- !u!1 &1124605885
 GameObject:
   m_ObjectHideFlags: 0
