@@ -4,18 +4,17 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 [Serializable]
-public class Wallet: ISaveData{
-    public Dictionary<StringGUID,ICurrency> Currencies{ get; set; }
-    public StringGUID ID{ get; }
-
-    public Wallet(Dictionary<StringGUID,ICurrency> currencies ){
+public class PlayerWallet : ISaveData
+{
+    public List<ICurrency> Currencies{ get; set; }
+    public PlayerWallet(List<ICurrency> currencies){
         Currencies = currencies;
-        foreach (var currencyPair in Currencies){
-            currencyPair.Value.TryLoadData();
-        }
+        TryLoadData();
     }
+    public StringGUID ID{ get; }
+    
     public async Task TryLoadData(){
-        var loadedValue = await SaveManager.Load<Money>(ID);
+        var loadedValue = await SaveManager.Load<PlayerWallet>(ID);
         var loadedPropertyInfos = loadedValue.GetType().GetProperties();
         var gottenType = GetType();
         var propertyInfos =gottenType.GetProperties();

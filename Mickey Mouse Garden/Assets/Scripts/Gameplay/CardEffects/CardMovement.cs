@@ -1,67 +1,103 @@
 using UnityEngine;
 
-public class CardMovement : MonoBehaviour{
+public class CardMovement : MonoBehaviour {
 	[SerializeField] private Transform combatPosition1, combatPosition2;
 	private CardCreator cardCreator;
 	private Transform[] positions;
-	private Vector3 velocity = Vector3.zero;
-	private bool fullDeck, returnPlayerCard1, returnEnemyCard1, returnPlayerCard2, returnEnemyCard2;
-
+	private bool[] deadPlayer;
+	private bool[] deadEnemy;
+	private int playerNumber, enemyNumber;
+	private bool positionsGotten;
 	private void Awake(){
 		cardCreator = GetComponent<CardCreator>();
+		Broker.Subscribe<FighterFaintMessage>(OnFaintedMessageReceived);
+		deadPlayer = new[] {true, false, false, false};
+		deadEnemy = new[] {true, false, false, false};
 	}
 
 	private void Update(){
-		CheckForFullDeck();
-		if (fullDeck && !returnPlayerCard1 && !returnEnemyCard1){
-			positions = GetComponentsInChildren<Transform>();
+		if (cardCreator.cardCount == 7 && deadPlayer[0] && deadEnemy[0]){
+			GetPositions();
 			// Left to Right Player: Card 1 = [7], Card 2 = [15], Card 3 = [23]
 			// Right to Left Enemy: Card 4 = [31], Card 5 = [39], Card 6 = [47]
 			MoveTo(combatPosition1, positions[23]);
 			MoveTo(combatPosition2, positions[47]);
 		}
-		// FighterDead(Player1) Message
+		
+		// Player Fighter Dead Message
 		if (Input.GetKeyDown(KeyCode.A)){
-			returnPlayerCard1 = true;
+			// Stops current movement.
+			deadPlayer[playerNumber] = false;
+			// Goes to next bool.
+			playerNumber++;
+			// Starts next movement.
+			deadPlayer[playerNumber] = true;
 		}
-		if (returnPlayerCard1 && !returnPlayerCard2){
+		// Enemy Fighter Dead Message
+		if (Input.GetKeyDown(KeyCode.S)){
+			deadEnemy[enemyNumber] = false;
+			enemyNumber++;
+			deadEnemy[enemyNumber] = true;
+		}
+		
+		// Player Fighter 1 Dead
+		if (deadPlayer[1]){
 			MoveTo(positions[3], positions[23]);
 			MoveTo(combatPosition1, positions[15]);
 		}
 		
-		// FighterDead(Enemy1) Message
-		if (Input.GetKeyDown(KeyCode.S)){
-			returnEnemyCard1 = true;
-		}
-		if (returnEnemyCard1 && !returnEnemyCard2){
+		// Enemy Fighter 1 Dead
+		if (deadEnemy[1]){
 			MoveTo(positions[6], positions[47]);
 			MoveTo(combatPosition2, positions[39]);
 		}
 		
-		// FighterDead(Player2) Message
-		if (Input.GetKeyDown(KeyCode.D)){
-			returnPlayerCard2 = true;
-		}
-		if (returnPlayerCard2){
+		// Player Fighter 2 Dead
+		if (deadPlayer[2]){
 			MoveTo(positions[2], positions[15]);
 			MoveTo(combatPosition1, positions[7]);
 		}
 		
-		// FighterDead(Enemy2) Message
-		if (Input.GetKeyDown(KeyCode.F)){
-			returnEnemyCard2 = true;
-		}
-		if (returnEnemyCard2){
+		// Enemy Fighter 2 Dead
+		if (deadEnemy[2]) {
 			MoveTo(positions[5], positions[39]);
 			MoveTo(combatPosition2, positions[31]);
 		}
-	}
-	private void CheckForFullDeck(){
-		if (cardCreator.cardCount == 7){
-			fullDeck = true;
+		
+		// Player Fighter 3 Dead
+		if (deadPlayer[3]){
+			MoveTo(positions[1], positions[7]);
+		}
+		
+		// Enemy Fighter 3 Dead
+		if (deadEnemy[3]){
+			MoveTo(positions[4], positions[31]);
 		}
 	}
-	private void MoveTo(Transform combatPosition, Transform card){
-		card.position = Vector3.MoveTowards(card.position, combatPosition.position, 500f * Time.deltaTime);
+	
+	private void GetPositions(){
+		if (!positionsGotten){
+			positions = GetComponentsInChildren<Transform>();
+			positionsGotten = true;
+		}
+	}
+	
+	private void MoveTo(Transform targetTransform, Transform cardTransform){
+		cardTransform.position = Vector3.MoveTowards(cardTransform.position, targetTransform.position, 500f * Time.deltaTime);
+	}
+
+	private void OnFaintedMessageReceived(FighterFaintMessage obj){
+		if (obj.wasPlayerFighter){
+			// Stops current movement.
+			deadPlayer[playerNumber] = false;
+			// Goes to next bool.
+			playerNumber++;
+			// Starts next movement.
+			deadPlayer[playerNumber] = true;
+		} else {
+			deadEnemy[enemyNumber] = false;
+			enemyNumber++;
+			deadEnemy[enemyNumber] = true;
+		}
 	}
 }

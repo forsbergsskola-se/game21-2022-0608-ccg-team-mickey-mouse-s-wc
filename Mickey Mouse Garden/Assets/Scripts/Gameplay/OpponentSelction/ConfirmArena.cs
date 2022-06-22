@@ -8,7 +8,6 @@ public class ConfirmArena : MonoBehaviour{
 	
 	private bool shown;
 
-	// Invokes event when object is clicked or touched (needs testing).
 	private void OnMouseDown() {
 		if (!shown) {
 			Debug.Log("Opponent!"); 

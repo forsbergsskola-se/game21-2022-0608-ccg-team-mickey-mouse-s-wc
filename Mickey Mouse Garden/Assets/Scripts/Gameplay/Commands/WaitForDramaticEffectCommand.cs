@@ -8,21 +8,17 @@ public class WaitForDramaticEffectCommand : ICommand{
     public WaitForDramaticEffectCommand(int duration){
         this.duration = duration;
     }
-    
-    //TODO: WIP, currently waiting in the task not for the task, command pattern needs to be async for that.
 
-    public void Execute(){
-        Wait();
+    public async Task ExecuteAsync(){
+        await WaitForSecondsAsync();
     }
 
-    private void Wait(){
-    var t = Task.Run(async delegate{
-        await Task.Delay(duration * 1000);
-        Task.Yield();
-    });
+    private async Task WaitForSecondsAsync(){
+        var startTime = Time.time;
+        var desiredTime = startTime + duration;
+        await Task.CompletedTask; //TODO: implement actual timer without freesing..?
     }
-    
-    
+
     public void Undo(){
         throw new NotImplementedException();
     }
