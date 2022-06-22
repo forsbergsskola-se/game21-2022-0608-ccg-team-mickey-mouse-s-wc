@@ -9,6 +9,7 @@ namespace Meta.Inventory {
             //Method that does calculation and returns a card should be here
 
             Card testCard = new Card(new StringGUID(), "Leona", Alignment.Paper, "123", Rarity.Common, 1, 2f, 100f, 2f);
+            
             var cardCollectedMessage = new ItemCollectedMessage<Card>(testCard);
             Broker.InvokeSubscribers(cardCollectedMessage.GetType(), cardCollectedMessage);
         }

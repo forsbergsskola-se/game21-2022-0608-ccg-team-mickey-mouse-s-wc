@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class CardTranslationCommand : ICommand{
@@ -13,6 +14,12 @@ public class CardTranslationCommand : ICommand{
 	public void Execute() {
 		Move();
 	}
+
+	public Task ExecuteAsync(){
+		Move();
+		return Task.CompletedTask;
+	}
+
 	public void Undo(){
 		throw new System.NotImplementedException();
 	}

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 public class CheckForFaintedCommand : ICommand{
     private FighterInfo playerFighter;
@@ -8,7 +9,8 @@ public class CheckForFaintedCommand : ICommand{
         this.playerFighter = playerFighter;
         this.enemyFighter = enemyFighter;
     }
-    public void Execute(){ //TODO: this still isnt really working as it should..
+
+    public Task ExecuteAsync(){
         if (playerFighter.MaxHealth <= 0){
             FighterFaintMessage faintMessage = new(){fighterInfo = playerFighter, wasPlayerFighter = true};
             Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
@@ -17,6 +19,7 @@ public class CheckForFaintedCommand : ICommand{
             FighterFaintMessage faintMessage = new(){fighterInfo = enemyFighter, wasPlayerFighter = false};
             Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
         }
+        return Task.CompletedTask;
     }
 
     public void Undo(){

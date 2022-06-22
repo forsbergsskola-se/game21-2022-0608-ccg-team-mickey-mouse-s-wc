@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 public class EndOfCombatCommand : ICommand{
     private int playerTeamIncrementor;
@@ -7,8 +8,7 @@ public class EndOfCombatCommand : ICommand{
         this.playerTeamIncrementor = playerTeamIncrementor;
         this.enemyTeamIncrementor = enemyTeamIncrementor;
     }
-
-    public void Execute(){
+    public Task ExecuteAsync(){
         if (playerTeamIncrementor > 2){
             //TODO: celebrate the win
             Debug.Log("player wins!");
@@ -18,6 +18,7 @@ public class EndOfCombatCommand : ICommand{
             //TODO: cry about defeat
             Debug.Log("enemy wins!");
         }
+        return Task.CompletedTask;
     }
 
     public void Undo(){

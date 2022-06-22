@@ -3,11 +3,12 @@ using Meta.Interfaces;
 using UnityEngine;
 
 namespace Meta.Inventory.FighterInventory {
+    [System.Serializable]
     public class Card : IInventoryItem, ISaveData {
         public string Name{ get; set; }
         public Alignment Alignment{ get; set; }
         public string SpriteName{ get; set; }
-        public Sprite FighterImage{ get; private set; } //TODO: Sprite or image?
+        public Texture2D FighterImage{ get; set; } //TODO: Sprite or image?
         public Rarity Rarity{ get; set; }
         public short Level{ get; set; }
         public float Attack{ get; set; }
@@ -42,7 +43,7 @@ namespace Meta.Inventory.FighterInventory {
             Name = card.Name;
             Alignment = card.Alignment;
             SpriteName = card.SpriteName;
-            FighterImage = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");
+            FighterImage = Resources.Load<Texture2D>($"Art/Sprites/{card.SpriteName}");
             Rarity = card.Rarity;
             Level = card.Level;
             Attack = card.Attack;

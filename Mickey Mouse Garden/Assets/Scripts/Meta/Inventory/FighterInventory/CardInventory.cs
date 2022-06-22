@@ -25,7 +25,6 @@ namespace Meta.Inventory.FighterInventory {
         }
         
         public override void CollectOperations(Card objInventoryItem) {
-            //TODO: Recieve from harvested seeds
             Debug.Log("This was collected" + objInventoryItem.Name);
             Debug.Log("Inventory count is" + inventory.Count);
         }
