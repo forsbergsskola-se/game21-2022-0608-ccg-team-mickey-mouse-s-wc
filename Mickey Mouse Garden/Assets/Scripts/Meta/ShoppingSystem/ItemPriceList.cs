@@ -49,10 +49,15 @@ public class ItemPriceList : MonoBehaviour
         // if (seed.rarity == Rarity.Legendary){
         //     
         // }else{}
-        SetPrice(commonSeedPriceValue);
-        SetPrice(rareSeedPriceValue);
-        SetPrice(epicSeedPriceValue);
-        SetPrice(legendarySeedPriceValue);
+        //SetPrice(commonSeedPriceValue);
+        //SetPrice(rareSeedPriceValue);
+        //SetPrice(epicSeedPriceValue);
+        //SetPrice(legendarySeedPriceValue);
+        commonSeedPriceText.text = commonSeedPriceValue.ToString();
+        rareSeedPriceText.text = rareSeedPriceValue.ToString();
+        epicSeedPriceText.text = epicSeedPriceValue.ToString();
+        legendarySeedPriceText.text = legendarySeedPriceValue.ToString();
+
     }
 }
 

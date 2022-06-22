@@ -20,11 +20,11 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         _adUnitId = _androidAdUnitId;
 #endif
 
-        //Disable the button until the ad is ready to show:
+        //Disable the button until the ad is ready to show: 
         _showAdButton.interactable = false;
     }
  
-    // Load content to the Ad Unit:
+    // Load content to the Ad Unit: (This is called from the UnityAds script)
     public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
