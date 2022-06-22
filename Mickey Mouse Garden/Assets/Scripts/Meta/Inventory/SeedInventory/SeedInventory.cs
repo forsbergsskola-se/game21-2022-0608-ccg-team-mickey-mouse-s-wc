@@ -42,7 +42,8 @@ namespace Meta.Inventory {
                 seedOfRequestedRarity = inventory.First(seed => seed.rarity == rarity);
             }
             catch (Exception e) {
-                Debug.Log("You have no seeds to plant");
+                e = new Exception("You have no seeds to plant");
+                Debug.LogException(e);
                 return;
             }
 
