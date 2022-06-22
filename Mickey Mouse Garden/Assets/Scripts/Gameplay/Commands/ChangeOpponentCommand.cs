@@ -1,14 +1,14 @@
 ﻿using System;
-using UnityEngine;
 
 public class ChangeOpponentCommand : ICommand{
-    
-    public ChangeOpponentCommand(out FighterInfo nextFighter){
-        nextFighter = new FighterInfo();
+    private CombatController combatController;
+
+    public ChangeOpponentCommand(CombatController combatController){
+        this.combatController = combatController;
     }
 
     public void Execute(){
-       Debug.Log("NextFighter!");
+        combatController.NextFighter();
     }
 
     public void Undo(){

@@ -66,25 +66,39 @@ namespace Meta.Inventory {
         }
 
         private void Harvest(RequestHarvestMessage requestHarvestMessage) {
-            requestHarvestMessage.GrowSlot.RemoveEmpty();
+            OnHarvest(requestHarvestMessage.GrowSlot);
+
         }
 
         private void Harvest(GrowSlot growSlot) {
-            growSlot.RemoveEmpty();
+            OnHarvest(growSlot);
         }
 
         public void HarvestAll() {
             if (harvestable.Count > 0) {
                 for (int i = harvestable.Count - 1; i >= 0; i--) {
                     if (!harvestable[i].readyToHarvest) continue;
-                    Harvest(harvestable[i]);
+                    Harvest(harvestable[i]); //TODO: Gives null ref, should be fixed
                     harvestable.RemoveAt(i);
                 }
             } else {
                 Debug.Log("No seeds to harvest");
             }
         }
+
+        private void OnHarvest(GrowSlot growSlot) {
+            growSlot.RemoveEmpty();
+            CardSpawner.SpawnFromSeed(growSlot.rarityType);
+        }
+
+        private void PlantSpawn(Rarity rarity) {
+            CardSpawner.SpawnFromSeed(rarity);
+        }
         
-        //TODO: Unsubscribe from events
+        private void OnDestroy() {
+            Broker.Unsubscribe<PlantSeedMessage>(PlantSeed);
+            Broker.Unsubscribe<ReadyToHarvestMessage>(AddToHarvestableList);
+            Broker.Unsubscribe<RequestHarvestMessage>(Harvest);
+        }
     }
 }
