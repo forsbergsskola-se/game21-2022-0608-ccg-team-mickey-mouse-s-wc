@@ -7,9 +7,8 @@ using UnityEngine;
 [Serializable]
 public class Fertilizer : ICurrency
 {
-    public Fertilizer(StringGUID id){
+    public Fertilizer(){
         Sprite = Resources.Load<Sprite>($"Art/Sprites/{this.SpriteName}");
-        ID = id;
     }
 
     public string Name{ get; } = "Fertilizer";
@@ -20,20 +19,5 @@ public class Fertilizer : ICurrency
 
     public void AddAmount(int value){
         Amount += value;
-        Save();
-    }
-
-    public StringGUID ID{ get; }
-    public async Task TryLoadData(){
-        var loadedValue = await SaveManager.Load<Money>(ID);
-        var loadedPropertyInfos = loadedValue.GetType().GetProperties();
-        var propertyInfos =GetType().GetProperties();
-        for (int i = 0; i < propertyInfos.Length; i++){
-            GetType().GetProperty(propertyInfos[i].Name)?.SetValue(this,loadedPropertyInfos[i].GetValue(loadedValue));
-        }
-    }
-
-    public void Save(){
-        SaveManager.Save(this);
     }
 }

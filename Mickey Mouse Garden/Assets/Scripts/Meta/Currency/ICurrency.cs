@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ICurrency : ISaveData
+public interface ICurrency
 {
    public string Name{ get; }
    public int Amount{ get; }
