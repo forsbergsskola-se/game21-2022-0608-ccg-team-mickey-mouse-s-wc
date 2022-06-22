@@ -33,7 +33,7 @@ public static class SaveManager{
         }
     }
    
-    public static async Task Save(ISaveData saveData){
+    public static async void Save(ISaveData saveData){
         Debug.Log("Saving!");
         if (!Directory.Exists(SavePath)){
             Debug.Log($"Directory {SavePath}: does not exist, Creating New Directory.");
@@ -58,7 +58,7 @@ public static class SaveManager{
     /// Deletes Local save Directory with all saved files.
     /// </summary>
     /// <exception cref="Exception"></exception>
-    public static async Task DeleteAllSaves(){ 
+    public static void DeleteAllSaves(){ 
         Debug.Log($"Deleting directory: {SavePath}");
         try{
             Directory.Delete(@$"{SavePath}",true);
