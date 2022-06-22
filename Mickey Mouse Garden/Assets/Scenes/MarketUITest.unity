@@ -2018,7 +2018,6 @@ GameObject:
   - component: {fileID: 572872605}
   - component: {fileID: 572872604}
   - component: {fileID: 572872603}
-  - component: {fileID: 572872606}
   m_Layer: 5
   m_Name: Seeds
   m_TagString: Untagged
@@ -2153,27 +2152,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572872601}
   m_CullTransparentMesh: 1
---- !u!114 &572872606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572872601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05622c1b05cec44cbfa46d3df8c317c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  commonSeedPriceText: {fileID: 781560017}
-  rareSeedPriceText: {fileID: 1289074713}
-  epicSeedPriceText: {fileID: 2040347186}
-  legendarySeedPriceText: {fileID: 340067537}
-  commonSeedPriceValue: 50
-  rareSeedPriceValue: 100
-  epicSeedPriceValue: 50
-  legendarySeedPriceValue: 100
-  seed: {fileID: 0}
 --- !u!1 &601283232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,6 +2554,7 @@ GameObject:
   - component: {fileID: 661509065}
   - component: {fileID: 661509067}
   - component: {fileID: 661509066}
+  - component: {fileID: 661509068}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -2651,6 +2630,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661509064}
   m_CullTransparentMesh: 1
+--- !u!114 &661509068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661509064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05622c1b05cec44cbfa46d3df8c317c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonSeedPriceText: {fileID: 781560017}
+  rareSeedPriceText: {fileID: 1289074713}
+  epicSeedPriceText: {fileID: 2040347186}
+  legendarySeedPriceText: {fileID: 340067537}
+  commonSeedPriceValue: 50
+  rareSeedPriceValue: 100
+  epicSeedPriceValue: 50
+  legendarySeedPriceValue: 100
 --- !u!1 &725626237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,7 +3763,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 909237608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1213136281}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 661509064}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &909237608
 MonoBehaviour:
   m_ObjectHideFlags: 0

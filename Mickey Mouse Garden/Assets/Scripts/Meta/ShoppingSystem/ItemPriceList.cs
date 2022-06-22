@@ -22,7 +22,7 @@ public class ItemPriceList : MonoBehaviour
     [SerializeField] private float epicSeedPriceValue;
     [SerializeField] private float legendarySeedPriceValue;
 
-    private Seed seed;
+    //public Seed seed;
 
     private void SetPrice(float price)
     {
@@ -40,16 +40,15 @@ public class ItemPriceList : MonoBehaviour
     }
 
     private void Awake(){
-        switch (seed.rarity){
-            case Rarity.Common:
-                break;
-            case Rarity.Rare:
-                break;
-        }
-
-        if (seed.rarity == Rarity.Legendary){
-            
-        }else{}
+        // if (seed.rarity == Rarity.Common){
+        //     
+        // }
+        // if (seed.rarity == Rarity.Rare){
+        //     
+        // }
+        // if (seed.rarity == Rarity.Legendary){
+        //     
+        // }else{}
         SetPrice(commonSeedPriceValue);
         SetPrice(rareSeedPriceValue);
         SetPrice(epicSeedPriceValue);
