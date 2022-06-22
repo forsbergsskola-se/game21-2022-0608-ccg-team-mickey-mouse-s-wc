@@ -51,7 +51,11 @@ public class SoundManager : MonoBehaviour
     FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Market/Sell");
   }
 
-  public void 
+  public void harvest()
+  {
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Market");
+  }
+  
 }
 
 
