@@ -74,12 +74,14 @@ public class CardMovement : MonoBehaviour {
 			MoveTo(positions[4], positions[31]);
 		}
 	}
+	
 	private void GetPositions(){
 		if (!positionsGotten){
 			positions = GetComponentsInChildren<Transform>();
 			positionsGotten = true;
 		}
 	}
+	
 	private void MoveTo(Transform targetTransform, Transform cardTransform){
 		cardTransform.position = Vector3.MoveTowards(cardTransform.position, targetTransform.position, 500f * Time.deltaTime);
 	}
