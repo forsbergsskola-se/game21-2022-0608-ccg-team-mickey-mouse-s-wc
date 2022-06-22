@@ -23,8 +23,6 @@ namespace Mickey{
         public void SetCurrency(CurrencyRewardMessage message){
             textMeshPro.text = $@"{message?.Currency.Amount.ToString()} {message?.Currency.Name}";
         }
-        
-        
         [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
         public void TestSendCurrencyRewardMessage(){
             var moneh = new Money();
