@@ -8,6 +8,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     [SerializeField] string _iOSGameId;
     [SerializeField] bool _testMode = true;
     private string _gameId;
+    // Use this for initialization of Unity Ads system button
     [SerializeField] RewardedAdsButton rewardedAdsButton;
 
     void Awake()
@@ -20,12 +21,14 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
         _gameId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? _iOSGameId
             : _androidGameId;
+        
         Advertisement.Initialize(_gameId, _testMode, this);
     }
  
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
+        // Set up the button to show Unity Ads
         rewardedAdsButton.LoadAd();
     }
  
