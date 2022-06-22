@@ -1,15 +1,22 @@
 ﻿using System;
 
 public class CheckForFaintedCommand : ICommand{
-    private FighterInfo targetedFighter;
+    private FighterInfo playerFighter;
+    private FighterInfo enemyFighter;
 
-    public CheckForFaintedCommand(FighterInfo targetedFighter){
-        this.targetedFighter = targetedFighter;
+    public CheckForFaintedCommand(FighterInfo playerFighter, FighterInfo enemyFighter){
+        this.playerFighter = playerFighter;
+        this.enemyFighter = enemyFighter;
     }
-    public void Execute(){
-        if (!(targetedFighter.MaxHealth <= 0)) return;
-        FighterFaintMessage faintMessage = new(){fighterInfo = targetedFighter};
-        Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
+    public void Execute(){ //TODO: this still isnt really working as it should..
+        if (playerFighter.MaxHealth <= 0){
+            FighterFaintMessage faintMessage = new(){fighterInfo = playerFighter, wasPlayerFighter = true};
+            Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
+        }
+        if (enemyFighter.MaxHealth <= 0){
+            FighterFaintMessage faintMessage = new(){fighterInfo = enemyFighter, wasPlayerFighter = false};
+            Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
+        }
     }
 
     public void Undo(){
