@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-[CustomComponent("Post Combat UI Component","Small manager to control what UI elements shows up after combat","WIP")]
+[CustomComponent("Post Combat UI Component","Small manager to control what UI elements shows up after combat",CustomComponentAttributeType.WIP)]
 public class PostCombatUIComponent : MonoBehaviour{
     [SerializeField] GameObject rewardUI;
     [SerializeField] GameObject rewardAmountFieldObject;

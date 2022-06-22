@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CustomComponent("Create Post Combat UI", "Listens to CreatePostCombatUIMessage and creates UI when invoked.", "Finished")]
+[CustomComponent("Create Post Combat UI", "Listens to CreatePostCombatUIMessage and creates UI when invoked.", CustomComponentAttributeType.Finished)]
 public class CreatePostCombatUI : MonoBehaviour{
     [SerializeField] GameObject PostCombatUIPrefab;
 

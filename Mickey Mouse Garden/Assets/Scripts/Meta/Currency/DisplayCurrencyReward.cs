@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Mickey{
     
 
-    [CustomComponent("Display Currency Reward", "Will be used to display a currency reward to the player","Finished")]
+    [CustomComponent("Display Currency Reward", "Will be used to display a currency reward to the player",CustomComponentAttributeType.Finished)]
     public class DisplayCurrencyReward : MonoBehaviour 
     {
         [SerializeField]GameObject amountFieldObject;

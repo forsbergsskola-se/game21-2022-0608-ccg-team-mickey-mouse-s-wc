@@ -6,7 +6,7 @@ using Color = System.Drawing.Color;
 
 
 namespace Experiment{
-    [CustomComponent("Player Wallet Component", "Will be used to store player currencies.","Experimental")]
+    [CustomComponent("Player Wallet Component", "Will be used to store player currencies.",CustomComponentAttributeType.Experimental)]
     public class PlayerWalletComponent : MonoBehaviour{
         public PlayerWallet wallet;
 

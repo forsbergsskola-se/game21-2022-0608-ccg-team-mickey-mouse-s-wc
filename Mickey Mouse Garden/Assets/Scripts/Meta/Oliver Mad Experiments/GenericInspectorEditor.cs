@@ -1,5 +1,6 @@
 using System.Reflection;
 #if UNITY_EDITOR
+using System;
 using UnityEditor;
 
 using UnityEngine;
@@ -35,7 +36,7 @@ public class GenericInspectorEditor : Editor{
         GUILayout.FlexibleSpace();
         var savedColor = GUI.contentColor;
         GUI.contentColor = Color.yellow;
-        GUILayout.Label(componentAttribute.State);
+        GUILayout.Label(Enum.GetName(typeof(CustomComponentAttributeType),componentAttribute.State));
         GUI.contentColor = savedColor;
         GUILayout.FlexibleSpace();
         
