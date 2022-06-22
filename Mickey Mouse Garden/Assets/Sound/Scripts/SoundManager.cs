@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -22,10 +23,6 @@ public class SoundManager : MonoBehaviour
     //ambience
     ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(AmbienceEventReference);
     ambienceInstance.start();
-
-    
-
-
   }
   
   public void plantSeeds() 
@@ -48,7 +45,13 @@ public class SoundManager : MonoBehaviour
   { 
     FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/swosh");
   }
- 
+
+  public void sell()
+  {
+    FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Market/Sell");
+  }
+
+  public void 
 }
 
 
