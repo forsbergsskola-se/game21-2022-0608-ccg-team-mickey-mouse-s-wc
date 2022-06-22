@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
-using Task = System.Threading.Tasks.Task;
-
 [Serializable]
 public class CardCollection : ISaveData
 {

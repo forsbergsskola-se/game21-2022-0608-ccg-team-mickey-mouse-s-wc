@@ -4,8 +4,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using UnityEngine;
-using File = UnityEngine.Windows.File;
-using Task = System.Threading.Tasks.Task;
 
 public static class SaveManager{
     

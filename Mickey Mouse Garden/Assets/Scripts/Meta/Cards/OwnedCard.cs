@@ -1,12 +1,6 @@
 using System;
-using System.Threading.Tasks;
 using Meta.Interfaces;
-using Newtonsoft.Json;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.Sqlite;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved, Treat is as a scriptable object and dont change these values after creation. Create your copy
@@ -17,7 +11,7 @@ public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved
     public string Name{ get; set; }
     public Alignment Alignment{ get; set; }
     public string SpriteName{ get; set; }
-    public Sprite FighterImage{ get; private set; } //TODO: Sprite or image?
+    public Sprite FighterImage{ get; private set; } //TODO: Sprite or image? //TODO: Change to Texture 2D?
     public Rarity Rarity{ get; set; }
     public short Level{ get; set; }
     public float Attack{ get; set; }
@@ -51,7 +45,6 @@ public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved
     
     public async void TryLoadData(){
         var card = await SaveManager.Load<OwnedCard>(ID);
-        //InstanceID = card.InstanceID;
         Name = card.Name;
         Alignment = card.Alignment;
         SpriteName = card.SpriteName;

@@ -1,7 +1,7 @@
 using System.Reflection;
 #if UNITY_EDITOR
 using UnityEditor;
-#endif
+
 using UnityEngine;
 [CustomEditor(typeof(MonoBehaviour),editorForChildClasses:true)]
 public class GenericInspectorEditor : Editor{
@@ -87,3 +87,4 @@ public class GenericInspectorEditor : Editor{
         return obj.GetType().GetCustomAttribute<CustomComponentAttribute>();
     }
 }
+#endif
