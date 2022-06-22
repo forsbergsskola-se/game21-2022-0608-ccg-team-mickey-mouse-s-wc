@@ -49,7 +49,7 @@ public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved
         Speed = default;
     }
     
-    public async Task TryLoadData(){
+    public async void TryLoadData(){
         var card = await SaveManager.Load<OwnedCard>(ID);
         //InstanceID = card.InstanceID;
         Name = card.Name;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public abstract class CurrencyMessage : IMessage{ 
-    public ICurrency Currency{ get; }
+    public ICurrency Currency{ get; set;}
 }
 
 public abstract class CurrenciesMessage : IMessage{
@@ -15,7 +15,7 @@ public class DisplayPlayerCurrencyMessage : CurrenciesMessage // Idea is to disp
 }
 public class AddPlayerCurrencyMessage : CurrenciesMessage{}
 
-public class CurrencyRewardMessage : CurrenciesMessage // Idea is to use this to send rewards to the player. Also 
+public class CurrencyRewardMessage : CurrencyMessage // Idea is to use this to send rewards to the player. Also 
 // to display the Reward with this message.
 {
 }

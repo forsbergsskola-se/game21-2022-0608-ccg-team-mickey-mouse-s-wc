@@ -14,7 +14,7 @@ public class CardCollection : ISaveData
      }
 
     public StringGUID ID{ get; }
-    public async Task TryLoadData(){ //Try load data, if data found, override current data, otherwise, do nothing.
+    public async void TryLoadData(){ //Try load data, if data found, override current data, otherwise, do nothing.
       var savedDictionary =  await SaveManager.Load<CardCollection>(ID);
       ownedCards = savedDictionary.ownedCards;
     }

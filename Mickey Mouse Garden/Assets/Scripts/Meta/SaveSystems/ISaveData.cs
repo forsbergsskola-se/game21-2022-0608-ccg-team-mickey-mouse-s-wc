@@ -8,6 +8,6 @@ using Task = UnityEditor.VersionControl.Task;
 
 public interface ISaveData{
     public StringGUID ID{ get; }
-    public System.Threading.Tasks.Task TryLoadData();
+    public void TryLoadData();
     public void Save();
 }

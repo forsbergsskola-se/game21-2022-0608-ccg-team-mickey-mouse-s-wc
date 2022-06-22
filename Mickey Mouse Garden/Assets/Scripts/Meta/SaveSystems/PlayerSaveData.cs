@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Player Save Data", menuName = "Player/Player Save Data")]
 public class PlayerSaveData : ScriptableObject,ISaveData{
      public StringGUID ID{ get; }
-     public Task TryLoadData(){
+     public void TryLoadData(){
          throw new NotImplementedException();
      }
 

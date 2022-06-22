@@ -22,9 +22,9 @@ public class Player : MonoBehaviour{
 
 
     [ContextMenu("LoadCardCollection")]
-    async Task LoadCardCollection1(){
+    async void  LoadCardCollection1(){
         Debug.Log("Loading cards for Card Collections...", this);
-        await cardCollection.TryLoadData();
+         cardCollection.TryLoadData();
         Debug.Log("Loaded Cards in Card Collections: ",this);
         foreach (var KeyValuePair in cardCollection.ownedCards){
             Debug.Log($"Key: ({KeyValuePair.Key}), Value: ({KeyValuePair.Value})");
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour{
     async Task LoadSPECIALCardToCollection(){
         OwnedCard card = new OwnedCard();
         card.ID = new StringGUID().NewGuid(); // Does this work?
-        await card.TryLoadData();
+         card.TryLoadData();
         cardCollection.ownedCards.Add(card.ID,card);
         foreach (var propertyInfo in cardCollection.ownedCards[card.ID].GetType().GetProperties()){
             Debug.Log($"{propertyInfo.Name}: {propertyInfo.GetValue(card)}", this);

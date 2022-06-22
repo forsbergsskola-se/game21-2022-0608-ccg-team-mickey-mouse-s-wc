@@ -6,7 +6,9 @@ public class CustomComponentAttribute : Attribute
 {
     public string Name{ get; private set; }
     public string Description{ get; private set; }
-    [Tooltip("Used to communicate with the designers about the state of the Script, example is In Progress")]
+    /// <summary>
+    /// "Used to communicate with the designers about the state of the Script, example is In Progress"
+    /// </summary>
     public string State;
     public CustomComponentAttribute(string name){
         Name = name;

@@ -13,7 +13,7 @@ public class PlayerWallet : ISaveData
     }
     public StringGUID ID{ get; }
     
-    public async Task TryLoadData(){
+    public async void TryLoadData(){
         var loadedValue = await SaveManager.Load<PlayerWallet>(ID);
         var loadedPropertyInfos = loadedValue.GetType().GetProperties();
         var gottenType = GetType();

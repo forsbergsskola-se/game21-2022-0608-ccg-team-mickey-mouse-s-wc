@@ -5,7 +5,7 @@ public class ShopItemList : ISaveData{
     public Dictionary<StringGUID, ShopItemList> ShopItemLists{ get; private set; }
     public StringGUID ID{ get; }
 
-    public Task TryLoadData(){
+    public void TryLoadData(){
         throw new System.NotImplementedException();
     }
 
