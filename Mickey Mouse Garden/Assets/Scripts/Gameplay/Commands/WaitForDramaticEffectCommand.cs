@@ -16,6 +16,7 @@ public class WaitForDramaticEffectCommand : ICommand{
     private async Task WaitForSecondsAsync(){
         var startTime = Time.time;
         var desiredTime = startTime + duration;
+        await Task.CompletedTask; //TODO: implement actual timer without freesing..?
     }
 
     public void Undo(){

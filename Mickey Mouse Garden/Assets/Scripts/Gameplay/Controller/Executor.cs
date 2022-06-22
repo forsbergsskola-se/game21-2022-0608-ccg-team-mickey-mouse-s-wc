@@ -15,8 +15,8 @@ public class Executor : MonoBehaviour{
         queue.Enqueue(command);
     }
 
-    private void Update(){
-        ProcessCommandsAsync();
+    private async void Update(){
+        await ProcessCommandsAsync();
     }
     
     private async Task ProcessCommandsAsync(){
