@@ -28,6 +28,7 @@ public class CombatController : MonoBehaviour{
       if (Input.GetKeyDown(KeyCode.P)){ //Main Combat-loop, still need to fix the delay
          Strike();
          executor.Enqueue(new WaitForDramaticEffectCommand(5));
+         Debug.Log("waited");
       }
    }
 
