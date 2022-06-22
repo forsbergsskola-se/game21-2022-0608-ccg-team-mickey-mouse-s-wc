@@ -10,7 +10,7 @@ public class FighterInfoTester : MonoBehaviour{
 
     private void CreateFighter(){
         fighterMessage = new FighterMessage();
-        var fighter = new FighterInfo();
+        var fighter = gameObject.AddComponent<FighterInfo>();
         fighter.ID = autoid++;
         fighter.MaxHealth = 10;
         fighter.Attack = 5;
@@ -31,7 +31,7 @@ public class FighterInfoTester : MonoBehaviour{
 
     private void CreateFighter2(){
         fighterMessage = new FighterMessage();
-        var fighter = new FighterInfo();
+        var fighter = gameObject.AddComponent<FighterInfo>();
         fighter.ID = autoid++;
         fighter.MaxHealth = 10;
         fighter.Attack = 5;

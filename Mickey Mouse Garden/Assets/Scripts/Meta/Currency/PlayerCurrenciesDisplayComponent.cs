@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+[CustomComponent("Player Currencies Display Component", "Used to Display Player Currencies.","Finished")]
 public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
     [SerializeField]GameObject[] AmountFieldObjects;
     TextMeshProUGUI[] textMeshPros;
