@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
@@ -7,6 +8,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
+    [SerializeField] int rewardAmount;
     string _adUnitId = null; // This will remain null for unsupported platforms
  
     void Awake()
@@ -60,7 +62,15 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-            Debug.Log("You have gained 10 premium currency!");
+            
+            var currencies = new List<ICurrency>();
+            var PremiumCurrency = new Fertilizer();
+            Debug.Log($"You have gained {rewardAmount} {PremiumCurrency.Name}!");
+            PremiumCurrency.AddAmount(rewardAmount);
+            currencies.Add(PremiumCurrency);
+            var message = new AddPlayerCurrencyMessage();
+            message.Currencies = currencies;
+            Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
 
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
