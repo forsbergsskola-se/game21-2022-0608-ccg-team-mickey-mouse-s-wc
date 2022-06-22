@@ -10,6 +10,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     private string _gameId;
     // Use this for initialization of Unity Ads system button
     [SerializeField] RewardedAdsButton rewardedAdsButton;
+    //[SerializeField] InterstitialAdsButton interstitialAdsButton;
 
     void Awake()
     {
@@ -30,6 +31,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
         Debug.Log("Unity Ads initialization complete.");
         // Set up the button to show Unity Ads
         rewardedAdsButton.LoadAd();
+        //interstitialAdsButton.LoadAd();
     }
  
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
