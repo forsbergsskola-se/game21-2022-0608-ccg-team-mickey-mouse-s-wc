@@ -54,7 +54,7 @@ public class CombatController : MonoBehaviour{
          enemyTeamIncrementor++;
       }
       if (playerTeamIncrementor > 2 || enemyTeamIncrementor > 2){
-         executor.Enqueue(new EndOfCombatCommand(playerTeamIncrementor, enemyTeamIncrementor));  
+         executor.Enqueue(new EndOfCombatCommand(playerTeamIncrementor, enemyTeamIncrementor, new Money()));  
       }
       executor.Enqueue(new ChangeOpponentCommand(this));
       AssertStrikeOrder();

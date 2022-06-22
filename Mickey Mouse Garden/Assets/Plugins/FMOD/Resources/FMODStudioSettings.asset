@@ -374,8 +374,8 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
   - Mobile/Master
+  - Desktop/Master
   Banks:
   - Desktop/Arena
   - Desktop/Meta

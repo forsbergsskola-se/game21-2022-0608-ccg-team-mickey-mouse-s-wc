@@ -53,7 +53,7 @@ namespace Meta.Inventory.FighterInventory {
             SaveManager.Save(this);
         }
 
-        public async Task TryLoadData(){
+        public async void TryLoadData(){
             var card = await SaveManager.Load<OwnedCard>(ID);
             //InstanceID = card.InstanceID;
             Name = card.Name;

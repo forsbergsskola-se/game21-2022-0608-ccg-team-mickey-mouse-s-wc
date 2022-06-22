@@ -24,6 +24,8 @@ public class StrikeCommand : ICommand{
     private void Strike(){
         target.MaxHealth -= striker.Attack * CheckAlignment();
         Debug.Log($"{target.Name}s health is now {target.MaxHealth}");
+        FighterStrikeMessage strikeMessage = new(){FighterInfo = target};
+        Broker.InvokeSubscribers(typeof(FighterStrikeMessage), strikeMessage);
     }
 
     private float CheckAlignment(){ //TODO: make a dictionary of dictionaries kinda deal ala Marc

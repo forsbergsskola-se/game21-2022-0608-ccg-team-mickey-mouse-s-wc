@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,15 @@ public class CardContentFiller : MonoBehaviour{
 	
 	public TextMeshProUGUI nameText, rarityText, levelText, attackText, healthText, speedText;
 	public Image fighterImage;
-	
+
+	private void Awake(){
+		Broker.Subscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
+	}
+	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
+		if (id == obj.FighterInfo.ID){
+			AssignTextFields(obj.FighterInfo);
+		}
+	}
 	public void AssignTextFields(FighterInfo fighter){
 		nameText.text = fighter.Name;
 		rarityText.text = fighter.Rarity.ToString();

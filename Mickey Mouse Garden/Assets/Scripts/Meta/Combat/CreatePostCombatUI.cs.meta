@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 7f4745f14ddc36747be140f38062fdb0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PostCombatUIPrefab: {fileID: 4149195313653012410, guid: 10534e8ab74444f4e987aa5038987748, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

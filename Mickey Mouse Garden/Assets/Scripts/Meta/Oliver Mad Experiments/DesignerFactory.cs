@@ -1,21 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
-
 namespace Meta.Oliver_Mad_Experiments{
     public class DesignerFactory : MonoBehaviour{
-      
-    
         #region Editor
 #if UNITY_EDITOR
         [CustomEditor(typeof(DesignerFactory))]
         public class DesignerFactoryEditor : Editor{
             static OwnedCard ownedCard = new OwnedCard();
-             string guid = "";
+            string guid = "";
             public override void OnInspectorGUI(){
                 base.OnInspectorGUI();
                 DesignerFactory factory = (DesignerFactory) target;
@@ -43,7 +36,7 @@ namespace Meta.Oliver_Mad_Experiments{
             }
 
             public void CreateNewOwnedCard(OwnedCard _ownedCard){
-                  ownedCard.ID = new StringGUID(guid);
+                ownedCard.ID = new StringGUID(guid);
                 ownedCard.Save();
             }
         }
@@ -56,3 +49,5 @@ namespace Meta.Oliver_Mad_Experiments{
     
     }
 }
+
+#endif
