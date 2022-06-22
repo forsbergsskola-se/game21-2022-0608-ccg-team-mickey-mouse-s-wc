@@ -8,7 +8,7 @@ public class CheckForFaintedCommand : ICommand{
         this.playerFighter = playerFighter;
         this.enemyFighter = enemyFighter;
     }
-    public void Execute(){
+    public void Execute(){ //TODO: this still isnt really working as it should..
         if (playerFighter.MaxHealth <= 0){
             FighterFaintMessage faintMessage = new(){fighterInfo = playerFighter, wasPlayerFighter = true};
             Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);

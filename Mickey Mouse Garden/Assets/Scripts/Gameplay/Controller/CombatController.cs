@@ -21,17 +21,13 @@ public class CombatController : MonoBehaviour{
    
 
    private void Update(){
-      if (Input.GetKeyDown(KeyCode.O)){
+      if (Input.GetKeyDown(KeyCode.O)){ //this will be done automatically in the end, for now stage by pressing O
          playerFighter = playerFighters[playerTeamIncrementor];
          enemyFighter = enemyFighters[enemyTeamIncrementor]; 
       }
-      if (Input.GetKeyDown(KeyCode.P)){
+      if (Input.GetKeyDown(KeyCode.P)){ //Main Combat-loop, still need to fix the delay
          Strike();
          executor.Enqueue(new WaitForDramaticEffectCommand(5));
-      }
-
-      if (playerTeamIncrementor > 2 || enemyTeamIncrementor > 2){
-         executor.Enqueue(new EndOfCombatCommand()); //TODO: 100% WIP, idea is that when all fighters are fainted something needs to happen. 
       }
    }
 
@@ -50,11 +46,14 @@ public class CombatController : MonoBehaviour{
 
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
       Debug.Log($"{obj.fighterInfo.Name} has died");
-      if (obj.fighterInfo.ID == playerFighter.ID){
+      if (obj.wasPlayerFighter){
          playerTeamIncrementor++;
       }
-      if (obj.fighterInfo.ID == enemyFighter.ID){
+      else{
          enemyTeamIncrementor++;
+      }
+      if (playerTeamIncrementor > 2 || enemyTeamIncrementor > 2){
+         executor.Enqueue(new EndOfCombatCommand(playerTeamIncrementor, enemyTeamIncrementor));  
       }
       executor.Enqueue(new ChangeOpponentCommand(this));
       AssertStrikeOrder();
