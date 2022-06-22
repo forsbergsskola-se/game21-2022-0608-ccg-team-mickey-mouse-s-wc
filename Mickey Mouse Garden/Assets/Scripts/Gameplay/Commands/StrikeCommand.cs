@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class StrikeCommand : ICommand{
@@ -13,6 +14,11 @@ public class StrikeCommand : ICommand{
     }
     public void Execute(){
         Strike();
+    }
+
+    public Task ExecuteAsync(){
+        Strike();
+        return Task.CompletedTask;
     }
 
     private void Strike(){

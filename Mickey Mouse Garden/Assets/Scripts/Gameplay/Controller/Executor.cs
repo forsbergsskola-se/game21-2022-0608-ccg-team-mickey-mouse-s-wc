@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public interface ICommand{
-    public void Execute();
+    //public void Execute();
+    public Task ExecuteAsync();
     public void Undo();
 }
 public class Executor : MonoBehaviour{
@@ -14,9 +16,13 @@ public class Executor : MonoBehaviour{
     }
 
     private void Update(){
-        while (queue.Count > 0){
+        ProcessCommandsAsync();
+    }
+    
+    private async Task ProcessCommandsAsync(){
+        while(queue.Count > 0){
             var command = queue.Dequeue();
-            command.Execute();
+            await command.ExecuteAsync();
             undo.Push(command);
         }
     }
