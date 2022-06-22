@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/NavigationRoom.unity
     guid: 5809362996ac6e44193cba9c4f3b6218
   - enabled: 1
-    path: Assets/Scenes/Arena.unity
-    guid: 62cadf44e6f50f848b116ae3d5bbeb0b
-  - enabled: 1
     path: Assets/Scenes/FighterSelection.unity
     guid: 6bbdecde82ae2a94ab1c33481bafc9a7
   - enabled: 1
     path: Assets/Scenes/OpponentSelection.unity
     guid: e622c907cd3a33547b12b342200f532b
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: 62cadf44e6f50f848b116ae3d5bbeb0b
   m_configObjects: {}
