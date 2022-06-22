@@ -17,7 +17,9 @@ public class CardContentFiller : MonoBehaviour{
 		Broker.Subscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
 	}
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
-		AssignTextFields(obj.FighterInfo);
+		if (id == obj.FighterInfo.ID){
+			AssignTextFields(obj.FighterInfo);
+		}
 	}
 	public void AssignTextFields(FighterInfo fighter){
 		nameText.text = fighter.Name;
