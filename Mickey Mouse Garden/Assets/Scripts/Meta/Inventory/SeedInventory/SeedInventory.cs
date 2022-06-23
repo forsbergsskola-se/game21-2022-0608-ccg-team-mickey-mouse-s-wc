@@ -80,7 +80,8 @@ namespace Meta.Inventory {
             if (harvestable.Count > 0) {
                 for (int i = harvestable.Count - 1; i >= 0; i--) {
                     if (!harvestable[i].readyToHarvest) continue;
-                    Harvest(harvestable[i]); //TODO: Gives null ref, should be fixed
+                    if (harvestable[i] == null) continue;
+                    Harvest(harvestable[i]);
                     harvestable.RemoveAt(i);
                 }
             } else {
