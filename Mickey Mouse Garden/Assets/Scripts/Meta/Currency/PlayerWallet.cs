@@ -15,6 +15,9 @@ public class PlayerWallet : ISaveData
     
     public async void TryLoadData(){
         var loadedValue = await SaveManager.Load<PlayerWallet>(ID);
+        if (loadedValue == null){
+            return;
+        }
         var loadedPropertyInfos = loadedValue.GetType().GetProperties();
         var gottenType = GetType();
         var propertyInfos =gottenType.GetProperties();
