@@ -4,11 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CardContentFiller : MonoBehaviour{
-	private int id, level;
-	private float health, attack, speed;
-	private string rarity, fighterName;
-	private Alignment alignment;
-	private Sprite fighterSprite;
+	private int id;
 	
 	public TextMeshProUGUI nameText, rarityText, levelText, attackText, healthText, speedText;
 	public Image fighterImage;
@@ -16,12 +12,25 @@ public class CardContentFiller : MonoBehaviour{
 	private void Awake(){
 		Broker.Subscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
 	}
+
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
 		if (id == obj.FighterInfo.ID){
-			AssignTextFields(obj.FighterInfo);
+			UpdateUIFields(obj.FighterInfo);
 		}
 	}
+
+	private void UpdateUIFields(FighterInfo fighter){
+		nameText.text = fighter.Name;
+		rarityText.text = fighter.Rarity.ToString();
+		levelText.text = fighter.Level.ToString();
+		attackText.text = fighter.Attack.ToString();
+		healthText.text = fighter.MaxHealth.ToString();
+		speedText.text = fighter.Speed.ToString();
+		fighterImage.sprite = fighter.Sprite;
+	}
+
 	public void AssignTextFields(FighterInfo fighter){
+		id = fighter.ID;
 		nameText.text = fighter.Name;
 		rarityText.text = fighter.Rarity.ToString();
 		levelText.text = fighter.Level.ToString();
