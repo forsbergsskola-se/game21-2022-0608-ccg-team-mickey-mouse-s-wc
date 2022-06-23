@@ -68,7 +68,7 @@ namespace Meta.Inventory.FighterInventory {
             ID = card.ID;
         }*/
         public StringGUID ID { get; }
-        public Task TryLoadData() {
+        public void TryLoadData() {
             throw new System.NotImplementedException();
         }
 
