@@ -9,10 +9,10 @@ namespace Meta.Cards {
     /// The view that's visible on a prefab and makes the card inventory interactable (input and output)
     /// </summary>
     [System.Serializable]
-    public class CardInventoryBehaviour : MonoBehaviour {
-        public CardBehaviour cardPrefab;
-        public List<CardBehaviour> cards;
-        public CardLibraryValues cardLibrary; //TODO: Break out in "data manager" (singleton), monobehaviour
+    public class CardInventoryView : MonoBehaviour {
+        public CardView cardPrefab;
+        public List<CardView> cards;
+        public CardLibraryConfig cardLibrary; //TODO: Break out in "data manager" (singleton), monobehaviour
 
         private void Start() {
             var cardInventory = CardInventory.Instance;
@@ -29,13 +29,13 @@ namespace Meta.Cards {
             var cardInstance = Instantiate(cardPrefab, transform);
             var card = cardMessage.Card;
             var cardValues = cardLibrary.cards.Single(it => it.id == card.cardId);
-            cardInstance.Configure(card, cardValues);
+            cardInstance.Configure(cardValues);
         }
         
         private void OnCardAdded(Card card) {
             var cardInstance = Instantiate(cardPrefab, transform);
             var cardValues = cardLibrary.cards.Single(it => it.id == card.cardId);
-            cardInstance.Configure(card, cardValues);
+            cardInstance.Configure(cardValues);
         }
     }
 }

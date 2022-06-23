@@ -17,7 +17,7 @@ namespace Meta.Inventory.FighterInventory {
             if (Instance != null) {
                 Debug.LogWarning("More than one instance of CardInventory found! This is not allowed.");
             } else {
-                /*TODO: Implement marc's way
+                /*TODO: Implement marc's way <- For Oliver
                 if (instance == null) {
                     //if (has saved inventory)
                     //load that

@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Meta.Inventory {
     public class CardSpawner : MonoBehaviour {
-        public CardLibraryValues cardLibrary;
+        public CardLibraryConfig cardLibrary;
 
         private void Awake() {
             Broker.Subscribe<SpawnCardFromSeed>(CollectRandomCard);

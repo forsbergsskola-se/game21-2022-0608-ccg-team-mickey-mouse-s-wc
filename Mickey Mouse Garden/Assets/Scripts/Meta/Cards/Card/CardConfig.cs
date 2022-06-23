@@ -6,7 +6,7 @@ namespace Meta.Cards {
     /// Class for designers to configure values for a kind of card.
     /// </summary>
     [CreateAssetMenu]
-    public class CardValues : ScriptableObject {
+    public class CardConfig : ScriptableObject {
         public Sprite image;
         public string name;
         public string id;

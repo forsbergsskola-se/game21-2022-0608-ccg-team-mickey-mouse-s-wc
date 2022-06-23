@@ -7,7 +7,7 @@ namespace Meta.Cards {
     /// <summary>
     /// The view that's visible on a prefab and makes cards interactable (input and output)
     /// </summary>
-    public class CardBehaviour : MonoBehaviour {
+    public class CardView : MonoBehaviour {
         public Sprite image;
         public TextMeshProUGUI name;
         public TextMeshProUGUI maxHealth;
@@ -17,13 +17,13 @@ namespace Meta.Cards {
         public TextMeshProUGUI rarity;
         //TODO: Add level
 
-        public void Configure(Card card, CardValues cardValues) {
-            name.text = cardValues.name;
-            maxHealth.text = "Health: " + cardValues.maxHealth.ToString();
-            attack.text = "Attack: " + cardValues.attack.ToString();
-            speed.text = "Speed: " + cardValues.speed.ToString();
-            alignment.text = "Alignment: " + cardValues.alignment.ToString();
-            rarity.text = "Rarity: " + cardValues.rarity.ToString();
+        public void Configure(CardConfig cardConfig) {
+            name.text = cardConfig.name;
+            maxHealth.text = "Health: " + cardConfig.maxHealth.ToString();
+            attack.text = "Attack: " + cardConfig.attack.ToString();
+            speed.text = "Speed: " + cardConfig.speed.ToString();
+            alignment.text = "Alignment: " + cardConfig.alignment.ToString();
+            rarity.text = "Rarity: " + cardConfig.rarity.ToString();
             //TODO: Subscribe to level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }
