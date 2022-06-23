@@ -8,7 +8,7 @@ public interface ICurrency
    public string Name{ get; }
    public int Amount{ get; }
    public string SpriteName{ get; }
-   Sprite Sprite{ get;  } 
+   Sprite Sprite{ get; } 
    public void AddAmount(int value);
   
 }
