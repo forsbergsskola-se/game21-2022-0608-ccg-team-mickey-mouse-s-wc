@@ -1,4 +1,6 @@
 public class FighterStrikeMessage : IMessage {
-    public FighterInfo FighterInfo { get; set; }
+    public int ID{ get; set; }
+    public float Targethealth { get; set; }
+    public float DamageDealt { get; set; }
 
 }

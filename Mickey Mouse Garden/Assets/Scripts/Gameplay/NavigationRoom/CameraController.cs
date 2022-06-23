@@ -1,9 +1,7 @@
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
-	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
-
+	
 	[SerializeField] private GameObject viewpoint1, viewpoint2, viewpoint3;
 	[SerializeField] private GameObject lookAt1, lookAt2, lookAt3;
 	[SerializeField] private float cameraMoveSpeed, cameraRotateSpeed, cameraZoomSpeed;
@@ -18,17 +16,16 @@ public class CameraController : MonoBehaviour {
 	private void Awake() {
 		targetView = lookAt1.transform;
 		targetTransform = viewpoint1.transform;
-		
-		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
-		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
-		shed.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
-		greenhouse.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
-		arena.GetComponent<ClickZoom>().selectedEvent.AddListener(LookAtSelection);
+		Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
+	}
 
-		pShopUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
-		shopUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
-		shedUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
-		greenhouseUI.GetComponent<ExitUI>().exitUIEvent.AddListener(LookAway);
+	private void OnUIChangedMessageReceived(UIChangedMessage obj){
+		if (obj.TaskToDo == 1){
+			LookAtSelection(obj.ObjectTransform);
+		}
+		if (obj.TaskToDo == 2){
+			LookAway();
+		}
 	}
 
 	private void Update() {
@@ -96,7 +93,7 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	// Used to transition to store or feature. 
-	private void LookAtSelection(Transform objectTransform, string clickName){
+	private void LookAtSelection(Transform objectTransform){
 		if (!zoomed) {
 			targetView = objectTransform;
 			newFOV = 20;
