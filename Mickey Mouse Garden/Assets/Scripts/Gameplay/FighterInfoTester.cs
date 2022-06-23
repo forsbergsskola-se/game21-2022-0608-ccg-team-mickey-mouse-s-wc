@@ -10,17 +10,16 @@ public class FighterInfoTester : MonoBehaviour{
 
     private void CreateFighter(){
         fighterMessage = new FighterMessage();
-        var fighter = gameObject.AddComponent<FighterInfo>();
-        fighter.ID = autoid++;
-        fighter.MaxHealth = 10;
-        fighter.Attack = 5;
-        fighter.Speed = 10;
-        fighter.Rarity = Rarity.Epic;
-        fighter.Name = "Feona";
-        fighter.Level = 2;
-        fighter.Alignment = Alignment.Scissors;
-        fighter.Sprite = sprite;
-        fighterMessage.fighterInfo = fighter;
+        fighterMessage.fighterInfo = new FighterInfo();
+        fighterMessage.fighterInfo.ID = autoid++;
+        fighterMessage.fighterInfo.MaxHealth = 10;
+        fighterMessage.fighterInfo.Attack = 5;
+        fighterMessage.fighterInfo.Speed = 10;
+        fighterMessage.fighterInfo.Rarity = Rarity.Epic;
+        fighterMessage.fighterInfo.Name = "Foo";
+        fighterMessage.fighterInfo.Level = 2;
+        fighterMessage.fighterInfo.Alignment = Alignment.Scissors;
+        fighterMessage.fighterInfo.Sprite = sprite;
     }
 
     [ContextMenu("Send Fighter Message")]
@@ -30,17 +29,14 @@ public class FighterInfoTester : MonoBehaviour{
     }
 
     private void CreateFighter2(){
-        fighterMessage = new FighterMessage();
-        var fighter = gameObject.AddComponent<FighterInfo>();
-        fighter.ID = autoid++;
-        fighter.MaxHealth = 10;
-        fighter.Attack = 5;
-        fighter.Speed = 5;
-        fighter.Rarity = Rarity.Legendary;
-        fighter.Name = "Foo";
-        fighter.Level = 3;
-        fighter.Alignment = Alignment.Rock;
-        fighter.Sprite = sprite;
-        fighterMessage.fighterInfo = fighter;
+        fighterMessage.fighterInfo.ID = autoid++;
+        fighterMessage.fighterInfo.MaxHealth = 15;
+        fighterMessage.fighterInfo.Attack = 3;
+        fighterMessage.fighterInfo.Speed = 5;
+        fighterMessage.fighterInfo.Rarity = Rarity.Legendary;
+        fighterMessage.fighterInfo.Name = "Bar";
+        fighterMessage.fighterInfo.Level = 3;
+        fighterMessage.fighterInfo.Alignment = Alignment.Rock;
+        fighterMessage.fighterInfo.Sprite = sprite;
     }
 }

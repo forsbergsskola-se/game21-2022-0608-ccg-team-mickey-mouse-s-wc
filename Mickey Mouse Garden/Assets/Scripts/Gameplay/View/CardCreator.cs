@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class CardCreator : MonoBehaviour{
     public GameObject card;
-    public Transform parent;
     private FighterInfo fighter;
     private Transform[] cardSlots;
-    public int cardCount = 1;
+    [HideInInspector] public int cardCount = 1;
     private void Awake(){
         Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
         // Gets cardSlots from Child GameObjects
@@ -20,7 +19,7 @@ public class CardCreator : MonoBehaviour{
     }
 
     private void InstantiateFighter(FighterInfo fighter, Transform cardSlot){
-        var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, parent);
+        var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, cardSlots[0]);
         var componentInChildren = createdCard.GetComponentInChildren<CardContentFiller>();
         var fighterInfo = createdCard.AddComponent<FighterInfo>();
         FillInInfo(fighterInfo);

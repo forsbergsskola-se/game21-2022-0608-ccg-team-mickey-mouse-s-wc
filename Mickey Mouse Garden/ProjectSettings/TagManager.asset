@@ -15,6 +15,7 @@ TagManager:
   - EF1
   - EF2
   - EF3
+  - cardslot
   layers:
   - Default
   - TransparentFX
