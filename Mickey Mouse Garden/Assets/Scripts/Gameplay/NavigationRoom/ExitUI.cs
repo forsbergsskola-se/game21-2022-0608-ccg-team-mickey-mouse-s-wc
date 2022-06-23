@@ -1,11 +1,15 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ExitUI : MonoBehaviour{
 
-	public UnityEvent exitUIEvent;
-	public void EscapeUI(){
-		exitUIEvent.Invoke();
-		gameObject.SetActive(false);
+	private void Awake(){
+		Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
+	}
+	
+	private void OnUIChangedMessageReceived(UIChangedMessage obj){
+
+		if (obj.TaskToDo == 2){
+			gameObject.SetActive(false);
+		}
 	}
 }

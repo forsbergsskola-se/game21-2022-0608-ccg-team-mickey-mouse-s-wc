@@ -4,18 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class NavSceneLauncher : MonoBehaviour {
 	
-	[SerializeField] private GameObject pShop, shop, shed, greenhouse, arena;
 	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
 	
 	private void Awake(){
-		pShop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
-		shop.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
-		shed.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
-		greenhouse.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
-		arena.GetComponent<ClickZoom>().selectedEvent.AddListener(LaunchScene);
+		Broker.Subscribe<UIChangedMessage>(onUIChangedMessageReceived);
 	}
 
-	private void LaunchScene(Transform objectTransform, string itemTag){
+	private void onUIChangedMessageReceived(UIChangedMessage obj){
+		if (obj.TaskToDo == 1){
+			LaunchScene(obj.ObjectTag);
+		}
+	}
+
+	private void LaunchScene(string itemTag){
 		StartCoroutine(WaitForZoom(itemTag));
 		
 	}
