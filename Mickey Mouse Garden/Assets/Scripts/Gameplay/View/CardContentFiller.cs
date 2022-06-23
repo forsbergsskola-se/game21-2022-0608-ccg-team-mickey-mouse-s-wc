@@ -14,17 +14,17 @@ public class CardContentFiller : MonoBehaviour{
 	}
 
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
-		if (id == obj.FighterInfo.ID){
-			UpdateHealthUI(obj.FighterInfo);
+		if (id == obj.ID){
+			UpdateHealthUI(obj.Targethealth);
 		}
 	}
 
-	private void UpdateHealthUI(FighterInfo fighter){
-		if (fighter.MaxHealth <= 0){
+	private void UpdateHealthUI(float health){
+		if (health <= 0){
 			healthText.text = "0";
 			return; //TODO: add more UI effects on death in here!
 		}
-		healthText.text = fighter.MaxHealth.ToString();
+		healthText.text = health.ToString();
 	}
 
 	public void AssignTextFields(FighterInfo fighter){

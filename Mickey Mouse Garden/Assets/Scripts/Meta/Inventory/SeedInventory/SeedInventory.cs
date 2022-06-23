@@ -47,6 +47,8 @@ namespace Meta.Inventory {
                 Debug.LogException(e);
                 return;
             }
+            
+            //TODO: Remove dependency on seedInventoryUI and use broker instead
 
             InventoryItems.Remove(seedOfRequestedRarity); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
             seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(rarity), rarity);
