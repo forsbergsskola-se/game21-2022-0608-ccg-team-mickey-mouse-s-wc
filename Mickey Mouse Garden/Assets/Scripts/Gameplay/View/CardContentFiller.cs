@@ -15,18 +15,16 @@ public class CardContentFiller : MonoBehaviour{
 
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
 		if (id == obj.FighterInfo.ID){
-			UpdateUIFields(obj.FighterInfo);
+			UpdateHealthUI(obj.FighterInfo);
 		}
 	}
 
-	private void UpdateUIFields(FighterInfo fighter){
-		nameText.text = fighter.Name;
-		rarityText.text = fighter.Rarity.ToString();
-		levelText.text = fighter.Level.ToString();
-		attackText.text = fighter.Attack.ToString();
+	private void UpdateHealthUI(FighterInfo fighter){
+		if (fighter.MaxHealth <= 0){
+			healthText.text = "0";
+			return; //TODO: add more UI effects on death in here!
+		}
 		healthText.text = fighter.MaxHealth.ToString();
-		speedText.text = fighter.Speed.ToString();
-		fighterImage.sprite = fighter.Sprite;
 	}
 
 	public void AssignTextFields(FighterInfo fighter){
