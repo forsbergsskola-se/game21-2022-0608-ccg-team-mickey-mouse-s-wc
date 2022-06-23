@@ -4,13 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class NavSceneLauncher : MonoBehaviour {
 	
-	[SerializeField] private GameObject pShopUI, shopUI, shedUI, greenhouseUI;
 	
 	private void Awake(){
-		Broker.Subscribe<UIChangedMessage>(onUIChangedMessageReceived);
+		Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
 	}
 
-	private void onUIChangedMessageReceived(UIChangedMessage obj){
+	private void OnUIChangedMessageReceived(UIChangedMessage obj){
 		if (obj.TaskToDo == 1){
 			LaunchScene(obj.ObjectTag);
 		}
@@ -29,24 +28,25 @@ public class NavSceneLauncher : MonoBehaviour {
 		switch (itemTag) {
 			// pShop
 			case "PShop":
-				pShopUI.SetActive(true);
+				SceneManager.LoadScene("PShop", LoadSceneMode.Additive);
 				break;
 			// shop
 			case "Shop":
-				shopUI.SetActive(true);
+				SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
 				break;
 			// shed
 			case "Shed":
-				shedUI.SetActive(true);
+				SceneManager.LoadScene("Shed", LoadSceneMode.Additive);
 				break;
 			// greenhouse
 			case "Garden":
-				greenhouseUI.SetActive(true);
+				SceneManager.LoadScene("InventoryTestScene", LoadSceneMode.Additive);
+				// greenhouseUI.SetActive(true);
 				break;
 				
 			// arena
 			case "Arena":
-				SceneManager.LoadScene("OpponentSelection");
+				SceneManager.LoadScene("OpponentSelection", LoadSceneMode.Additive);
 				break;
 		}
 	}
