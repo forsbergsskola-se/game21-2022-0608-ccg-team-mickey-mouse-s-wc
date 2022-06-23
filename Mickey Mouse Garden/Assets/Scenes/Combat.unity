@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4434307, g: 0.49248755, b: 0.57185614, a: 1}
+  m_IndirectSpecularColor: {r: 0.44597632, g: 0.49572748, b: 0.5744316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 178604970}
   m_Layer: 5
   m_Name: cardslot (3)
-  m_TagString: Untagged
+  m_TagString: cardslot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 305548361}
   m_Layer: 5
   m_Name: cardslot
-  m_TagString: Untagged
+  m_TagString: cardslot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 1035598178356861579, guid: 34da2170a325b5741a09b694cb03b188, type: 3}
-  parent: {fileID: 458758367}
   cardCount: 1
 --- !u!114 &458758364
 MonoBehaviour:
@@ -327,7 +326,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1124605887}
   - component: {fileID: 1124605886}
-  - component: {fileID: 1124605888}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -412,19 +410,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 51.7, y: -30, z: 0}
---- !u!114 &1124605888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124605885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e308b36af63194e4c989dae4c868d65d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &1331938181
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +421,7 @@ GameObject:
   - component: {fileID: 1331938182}
   m_Layer: 5
   m_Name: cardslot
-  m_TagString: Untagged
+  m_TagString: cardslot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,7 +524,7 @@ GameObject:
   - component: {fileID: 1680876275}
   m_Layer: 5
   m_Name: cardslot (2)
-  m_TagString: Untagged
+  m_TagString: cardslot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +560,7 @@ GameObject:
   - component: {fileID: 1956687542}
   m_Layer: 5
   m_Name: cardslot (1)
-  m_TagString: Untagged
+  m_TagString: cardslot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,7 +722,7 @@ GameObject:
   - component: {fileID: 2139050658}
   m_Layer: 5
   m_Name: cardslot (4)
-  m_TagString: Untagged
+  m_TagString: cardslot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
