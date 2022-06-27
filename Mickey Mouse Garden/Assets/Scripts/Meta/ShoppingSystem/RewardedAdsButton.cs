@@ -62,14 +62,11 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-            
-            var currencies = new List<ICurrency>();
             var PremiumCurrency = new Fertilizer();
             Debug.Log($"You have gained {rewardAmount} {PremiumCurrency.Name}!");
             PremiumCurrency.AddAmount(rewardAmount);
-            currencies.Add(PremiumCurrency);
             var message = new AddPlayerCurrencyMessage();
-            message.Currencies = currencies;
+            message.fertilizer = PremiumCurrency;
             Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
 
             // Load another ad:

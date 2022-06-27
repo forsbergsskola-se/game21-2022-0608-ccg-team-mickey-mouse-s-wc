@@ -21,16 +21,16 @@ namespace Mickey{
             Broker.Unsubscribe<CurrencyRewardMessage>(SetCurrency);
         }
         public void SetCurrency(CurrencyRewardMessage message){
-            textMeshPro.text = $@"{message?.Currency.Amount.ToString()} {message?.Currency.Name}";
+            textMeshPro.text = $@"{message?.money?.Amount.ToString()} {message?.money?.Name}";
         }
-        [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
-        public void TestSendCurrencyRewardMessage(){
-            var moneh = new Money();
-            moneh.AddAmount(150);
-            var message = new CurrencyRewardMessage();
-            message.Currency = moneh;
-
-            Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
-        }
+        // [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
+        // public void TestSendCurrencyRewardMessage(){
+        //     var moneh = new Money();
+        //     moneh.AddAmount(150);
+        //     var message = new CurrencyRewardMessage();
+        //     message.Currency = moneh;
+        //
+        //     Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
+        // }
     }
 }

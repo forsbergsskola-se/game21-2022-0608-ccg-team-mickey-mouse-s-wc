@@ -2,9 +2,10 @@
 using UnityEngine;
 
 public class EndOfCombatCommand : ICommand{
+
     private bool playerWinner;
-    private ICurrency reward;
-    public EndOfCombatCommand(bool playerWinner, ICurrency reward){
+    private  Money reward;
+    public EndOfCombatCommand(bool playerWinner, Money reward){
         this.playerWinner = playerWinner;
         this.reward = reward;
     }
@@ -16,7 +17,7 @@ public class EndOfCombatCommand : ICommand{
             
             SendPostCombatStateMessage(PostCombatState.Victory);
             var message = new CurrencyRewardMessage();
-            message.Currency = reward;
+            message.money = reward;
             Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
             
         }

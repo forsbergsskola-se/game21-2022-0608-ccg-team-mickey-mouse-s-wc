@@ -34,7 +34,7 @@ public class PostCombatUIComponent : MonoBehaviour{
     }
     
     public void SetCurrency(CurrencyRewardMessage message){
-        amountFieldObjecttextMeshPro.text = $@"{message?.Currency.Amount.ToString()} {message?.Currency.Name}";
+        amountFieldObjecttextMeshPro.text = $@"{message?.money?.Amount.ToString()} {message?.money?.Name}";
     }
 
     #region Tests
@@ -48,15 +48,15 @@ public class PostCombatUIComponent : MonoBehaviour{
         Broker.InvokeSubscribers(typeof(PostCombatStateMessage), message);
     }
     
-    [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
-    public void TestSendCurrencyRewardMessage(){
-        var moneh = new Money();
-        moneh.AddAmount(150);
-        var message = new CurrencyRewardMessage();
-        message.Currency = moneh;
-
-        Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
-    }
+    // [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
+    // public void TestSendCurrencyRewardMessage(){
+    //     var moneh = new Money();
+    //     moneh.AddAmount(150);
+    //     var message = new CurrencyRewardMessage();
+    //     message.Currency = moneh;
+    //
+    //     Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
+    // }
 #endif
 
     #endregion

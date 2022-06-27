@@ -6,17 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 [CustomComponent("Player Currencies Display Component", "Used to Display Player Currencies.",CustomComponentAttributeType.Finished)]
 public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
-    [SerializeField]GameObject[] AmountFieldObjects;
-    TextMeshProUGUI[] textMeshPros;
-
+    [SerializeField]GameObject moneyAmountFieldObjects;
+    [SerializeField]GameObject fertilizerAmountFieldObjects;
+    TextMeshProUGUI moneyTextMeshProUGUI;
+    TextMeshProUGUI fertilizerTextMeshProUGUI;
 
     void Awake(){
-        Debug.Log(AmountFieldObjects.Length);
-        textMeshPros = new TextMeshProUGUI[AmountFieldObjects.Length];
-
-        for (int i = 0; i < AmountFieldObjects.Length; i++){
-            textMeshPros[i] = AmountFieldObjects[i].GetComponent<TextMeshProUGUI>();
-        }
+        moneyTextMeshProUGUI = moneyAmountFieldObjects.GetComponent<TextMeshProUGUI>();
+        fertilizerTextMeshProUGUI =  fertilizerAmountFieldObjects.GetComponent<TextMeshProUGUI>();
         Broker.Subscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
     }
 
@@ -28,25 +25,24 @@ public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
     }
 
     public void SetCurrency(DisplayPlayerCurrencyMessage message){
-        Debug.Log(message.Currencies.Count);
-        for (int i = 0; i < textMeshPros.Length; i++){
-            var currentMessageCurrency = message.Currencies[i];
-            textMeshPros[i].text = $@"{currentMessageCurrency?.Amount.ToString()} {currentMessageCurrency?.Name}";
-        }
+        if (message.money != null)
+            moneyTextMeshProUGUI.text = $@"{message?.money?.Amount.ToString()} {message?.money?.Name}";
+        if (message.fertilizer != null)
+            fertilizerTextMeshProUGUI.text = $@"{message?.fertilizer?.Amount.ToString()} {message?.fertilizer?.Name}";
     }
 
-    [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
-    public void TestSendDisplayPlayerCurrencyMessage(){
-        var currencies = new List<ICurrency>();
-        var moneh = new Money();
-        moneh.AddAmount(150);
-        currencies.Add(moneh);
-        var fert = new Fertilizer();
-        fert.AddAmount(150);
-        currencies.Add(fert);
-        var message = new DisplayPlayerCurrencyMessage();
-        message.Currencies = currencies;
-
-        Broker.InvokeSubscribers(typeof(DisplayPlayerCurrencyMessage), message);
-    }
+    // [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
+    // public void TestSendDisplayPlayerCurrencyMessage(){
+    //     var currencies = new List<ICurrency>();
+    //     var moneh = new Money();
+    //     moneh.AddAmount(150);
+    //     currencies.Add(moneh);
+    //     var fert = new Fertilizer();
+    //     fert.AddAmount(150);
+    //     currencies.Add(fert);
+    //     var message = new DisplayPlayerCurrencyMessage();
+    //     message.Currencies = currencies;
+    //
+    //     Broker.InvokeSubscribers(typeof(DisplayPlayerCurrencyMessage), message);
+    // }
 }
