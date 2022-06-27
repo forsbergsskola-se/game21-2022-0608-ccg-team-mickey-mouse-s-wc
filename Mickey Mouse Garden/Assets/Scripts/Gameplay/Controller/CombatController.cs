@@ -4,8 +4,8 @@ using Random = UnityEngine.Random;
 using Timer = System.Threading.Timer;
 
 public class CombatController : MonoBehaviour{
-   private Stack<FighterInfo> playerFighters = new Stack<FighterInfo>();
-   private Stack<FighterInfo> enemyFighters = new Stack<FighterInfo>();
+   private Stack<FighterInfo> playerFighters = new();
+   private Stack<FighterInfo> enemyFighters = new();
 
    [SerializeField] private int duration;
 

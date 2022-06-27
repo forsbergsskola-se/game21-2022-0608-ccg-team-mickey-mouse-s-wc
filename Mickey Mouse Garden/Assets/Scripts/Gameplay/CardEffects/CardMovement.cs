@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CardMovement : MonoBehaviour {
@@ -87,6 +88,12 @@ public class CardMovement : MonoBehaviour {
 	}
 
 	private void OnFaintedMessageReceived(FighterFaintMessage obj){
+		StartCoroutine(Fainting(obj));
+		
+	}
+	
+	private IEnumerator Fainting(FighterFaintMessage obj){
+		yield return new WaitForSeconds(0.75f);
 		if (obj.wasPlayerFighter){
 			// Stops current movement.
 			deadPlayer[playerNumber] = false;
@@ -98,6 +105,5 @@ public class CardMovement : MonoBehaviour {
 			deadEnemy[enemyNumber] = false;
 			enemyNumber++;
 			deadEnemy[enemyNumber] = true;
-		}
-	}
+		}	}
 }
