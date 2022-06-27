@@ -1,6 +1,3 @@
-using System;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Timer = System.Threading.Timer;
@@ -29,6 +26,7 @@ public class CombatController : MonoBehaviour{
 
    private void OnFighterReceived(FighterMessage obj){
       //TODO: add the fighters to correct teams and then start combat.
+      
       playerFighter = playerFighters[playerTeamIncrementor];
       enemyFighter = enemyFighters[enemyTeamIncrementor];
       StartCombat();
