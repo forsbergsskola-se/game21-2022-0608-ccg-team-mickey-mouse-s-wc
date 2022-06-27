@@ -42,7 +42,7 @@ public class CardContentFiller : MonoBehaviour{
 		fighterImage.sprite = fighter.Sprite;
 	}
 	private void ShowDamage(float damage){
-		Instantiate(damageText, damageTextTransform.position, Quaternion.identity );
+		Instantiate(damageText, damageTextTransform.position, Quaternion.identity);
 		damageText.GetComponent<TextMeshProUGUI>().text = damage.ToString(CultureInfo.InvariantCulture);
 	}
 }
