@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CardContentFiller : MonoBehaviour{
 	private int id;
 	public TextMeshProUGUI nameText, rarityText, levelText, attackText, healthText, speedText;
-	public GameObject damageText;
+	public GameObject damageText, faintedImage;
 	public Image fighterImage;
 	public Transform damageTextTransform, parent;
 
@@ -24,11 +24,10 @@ public class CardContentFiller : MonoBehaviour{
 	private void UpdateHealthUI(float health, float damage){
 		if (health <= 0){
 			healthText.text = "0";
-			return; //TODO: add more UI effects on death in here!
+			MakeCardFaint();
 		}
 		healthText.text = health.ToString(CultureInfo.InvariantCulture);
 		ShowDamage(damage);
-		//TODO: add more more UI effects
 	}
 
 	public void AssignTextFields(FighterInfo fighter){
@@ -44,5 +43,8 @@ public class CardContentFiller : MonoBehaviour{
 	private void ShowDamage(float damage){
 		Instantiate(damageText, damageTextTransform.position, Quaternion.identity, parent);
 		damageText.GetComponent<TextMeshProUGUI>().text = damage.ToString(CultureInfo.InvariantCulture);
+	}
+	private void MakeCardFaint(){
+		faintedImage.SetActive(true);
 	}
 }
