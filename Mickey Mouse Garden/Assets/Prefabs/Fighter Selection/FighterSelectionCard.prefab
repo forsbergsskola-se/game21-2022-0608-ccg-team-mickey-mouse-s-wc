@@ -816,6 +816,7 @@ MonoBehaviour:
   damageText: {fileID: 2872401663269930181, guid: 4d21eaa0a3a228243aa9f36d9396eb75, type: 3}
   fighterImage: {fileID: 1035598177486613767}
   damageTextTransform: {fileID: 1035598177486613766}
+  parent: {fileID: 1035598178356861572}
 --- !u!1 &1035598178585166810
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +910,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.65
+  m_fontSize: 27.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

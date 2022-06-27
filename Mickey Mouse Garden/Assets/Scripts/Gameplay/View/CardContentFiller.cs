@@ -9,7 +9,7 @@ public class CardContentFiller : MonoBehaviour{
 	public TextMeshProUGUI nameText, rarityText, levelText, attackText, healthText, speedText;
 	public GameObject damageText;
 	public Image fighterImage;
-	public Transform damageTextTransform;
+	public Transform damageTextTransform, parent;
 
 	private void Awake(){
 		Broker.Subscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
@@ -42,7 +42,7 @@ public class CardContentFiller : MonoBehaviour{
 		fighterImage.sprite = fighter.Sprite;
 	}
 	private void ShowDamage(float damage){
-		Instantiate(damageText, damageTextTransform.position, Quaternion.identity);
+		Instantiate(damageText, damageTextTransform.position, Quaternion.identity, parent);
 		damageText.GetComponent<TextMeshProUGUI>().text = damage.ToString(CultureInfo.InvariantCulture);
 	}
 }
