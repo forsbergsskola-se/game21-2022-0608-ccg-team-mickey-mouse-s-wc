@@ -365,6 +365,8 @@ GameObject:
   - component: {fileID: 458758364}
   - component: {fileID: 458758363}
   - component: {fileID: 458758368}
+  - component: {fileID: 458758370}
+  - component: {fileID: 458758369}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -487,6 +489,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatPosition1: {fileID: 1264307363}
   combatPosition2: {fileID: 247546934}
+--- !u!114 &458758369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458758362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4745f14ddc36747be140f38062fdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PostCombatUIPrefab: {fileID: 4149195313653012410, guid: 10534e8ab74444f4e987aa5038987748, type: 3}
+--- !u!114 &458758370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458758362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b378be8863a8c84fa68e9c4ec40a94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 7120deecf3ee4054a8e013f9b9a8f334, type: 3}
 --- !u!1 &535829728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,9 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a0c38feda19f248bc5862e764ab2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFighters: []
-  enemyFighters: []
-  duration: 0
+  duration: 2
 --- !u!114 &2004361166
 MonoBehaviour:
   m_ObjectHideFlags: 0
