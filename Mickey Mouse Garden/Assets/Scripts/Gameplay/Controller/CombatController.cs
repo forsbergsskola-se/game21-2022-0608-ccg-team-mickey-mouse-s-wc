@@ -1,36 +1,50 @@
-using System.Threading.Tasks;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+using Timer = System.Threading.Timer;
 
 public class CombatController : MonoBehaviour{
-   [SerializeField] private FighterInfo[] playerFighters;
-   [SerializeField] private FighterInfo[] enemyFighters;
+   private Stack<FighterInfo> playerFighters = new Stack<FighterInfo>();
+   private Stack<FighterInfo> enemyFighters = new Stack<FighterInfo>();
+
+   [SerializeField] private int duration;
 
    private FighterInfo playerFighter;
    private FighterInfo enemyFighter;
-   private int playerTeamIncrementor;
-   private int enemyTeamIncrementor;
-
+   
    private bool playerGoesFirst;
    
    private Executor executor;
+   private Timer timer;
 
    private void Awake(){
       executor = FindObjectOfType<Executor>();
       Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
-   }
-   
-
-   private void Update(){
-      if (Input.GetKeyDown(KeyCode.O)){ //this will be done automatically in the end, for now stage by pressing O
-         playerFighter = playerFighters[playerTeamIncrementor];
-         enemyFighter = enemyFighters[enemyTeamIncrementor]; 
-      }
-      if (Input.GetKeyDown(KeyCode.P)){ //Main Combat-loop, still need to fix the delay
-         Strike();
-      }
+      Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamReceived);
    }
 
-   private void Strike(){
+   private void OnFighterTeamReceived(SelectedFighterTeamMessage obj){
+      if (obj.PlayerTeam){
+         playerFighters = obj.FighterTeam;
+      }
+      else{
+         enemyFighters = obj.FighterTeam;
+      }
+      
+      if (enemyFighters.Count > 1){
+         StartCombat();
+      }
+   }
+
+   private void StartCombat(){
+      NextFighter();
+      timer = new Timer(Tick, null, 1000* duration,1000* duration);
+   }
+
+   private void Tick(object state){
+      StrikeInOrder();
+   }
+   private void StrikeInOrder(){
       if (playerGoesFirst){
          executor.Enqueue(new StrikeCommand(enemyFighter, playerFighter));
          executor.Enqueue(new CheckForFaintedCommand(playerFighter, enemyFighter));
@@ -41,19 +55,19 @@ public class CombatController : MonoBehaviour{
          executor.Enqueue(new CheckForFaintedCommand(playerFighter, enemyFighter));
          playerGoesFirst = true;
       }
-      executor.Enqueue(new WaitForDramaticEffectCommand(5));
    }
 
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
       Debug.Log($"{obj.fighterInfo.Name} has died");
       if (obj.wasPlayerFighter){
-         playerTeamIncrementor++;
+         playerFighter = playerFighters.Pop();
       }
       else{
-         enemyTeamIncrementor++;
+         enemyFighter = enemyFighters.Pop();
       }
-      if (playerTeamIncrementor > 2 || enemyTeamIncrementor > 2){
-         executor.Enqueue(new EndOfCombatCommand(playerTeamIncrementor, enemyTeamIncrementor, new Money()));  
+      if (playerFighters.Count == 0 || enemyFighters.Count == 0){
+         timer.Dispose();
+         executor.Enqueue(new EndOfCombatCommand(enemyFighters.Count == 0 ,new Money()));  
       }
       executor.Enqueue(new ChangeOpponentCommand(this));
       AssertStrikeOrder();
@@ -76,7 +90,7 @@ public class CombatController : MonoBehaviour{
    }
 
    public void NextFighter(){
-      playerFighter = playerFighters[playerTeamIncrementor];
-      enemyFighter = enemyFighters[enemyTeamIncrementor];
+      playerFighters.TryPop(out playerFighter);
+      enemyFighters.TryPop(out enemyFighter);
    }
 }

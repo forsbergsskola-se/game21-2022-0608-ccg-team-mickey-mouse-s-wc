@@ -1,11 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopItemTest : MonoBehaviour{
-    private float money = 10;
-    public void ShopItemTestClick(){
-        money -= 1;
-        Debug.Log("Item Sold");
-    }
+[CreateAssetMenu(fileName = "New Item", menuName = "Game Objects/Shop Item",order = 0)]
+
+public class ShopItemTest : ScriptableObject{
+    public string Name = "Default";
+    public string description = "Description";
+    public ICurrency[] Cost;
+    public ObjectType type;
+    public Sprite icon;
+    public GameObject prefab;
 }
+
+
+public enum ObjectType{
+    CommonSeed,
+    RareSeed,
+    EpicSeed,
+    LegendarySeed,
+    Song,
+}
+

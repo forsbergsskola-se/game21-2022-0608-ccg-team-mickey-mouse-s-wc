@@ -375,10 +375,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Mobile/Master
-  - Desktop/Master
   Banks:
-  - Desktop/Arena
-  - Desktop/Meta
   - Mobile/Arena
   - Mobile/Meta
   BanksToLoad: []
