@@ -6,19 +6,18 @@ using Color = System.Drawing.Color;
 
 
 namespace Experiment{
-    [CustomComponent("Player Wallet Component", "Will be used to store player currencies.",CustomComponentAttributeType.Experimental)]
+    [CustomComponent("Player Wallet Component", "Will be used to store player currencies.",CustomComponentAttributeType.Almost_Finished)]
     public class PlayerWalletComponent : MonoBehaviour{
         public PlayerWallet wallet;
 
         void Awake(){
-            var Money = new Money();
-            var Fertilizer = new Fertilizer();
-            List<ICurrency> currencies = new List<ICurrency>();
-            currencies.Add(Money);
-            currencies.Add(Fertilizer);
-        
-            wallet = new PlayerWallet(currencies);
-        
+            var walletID = new StringGUID().CreateStringGuid(13);
+            wallet = new PlayerWallet(walletID);
+            
+            wallet.TryLoadData();
+            wallet.Save();
+            wallet.Fertilizer.LoadSprite();
+            wallet.Money.LoadSprite();
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
             Broker.Subscribe<CurrencyRewardMessage>(ChangeCurrencies);
@@ -33,7 +32,8 @@ namespace Experiment{
         }
         void UpdateDisplayCurrencies(){
             var displayMessage = new DisplayPlayerCurrencyMessage();
-            displayMessage.Currencies = wallet.Currencies;
+            displayMessage.money = wallet.Money;
+            displayMessage.fertilizer = wallet.Fertilizer;
             Broker.InvokeSubscribers(typeof(DisplayPlayerCurrencyMessage), displayMessage);
         }
         public void SendDisplayInfo(AskForPlayerCurrencyMessage message){
@@ -41,24 +41,14 @@ namespace Experiment{
         }
         
         public void ChangeCurrencies(AddPlayerCurrencyMessage message){ //Doesnt work if not in right order..
-            for (int i = 0; i < message.Currencies.Count; i++){
-                var walletCurrency = wallet?.Currencies[i];
-                var messageCurrency = message.Currencies[i];
-                if (walletCurrency?.Name == messageCurrency.Name){
-                    walletCurrency?.AddAmount(messageCurrency.Amount);
-                    UpdateDisplayCurrencies();
-                }
-            }
+            if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
+            if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
+            UpdateDisplayCurrencies();
         }
         void ChangeCurrencies(CurrencyRewardMessage message){
-            var messageCurrency = message.Currency;
-            foreach (var currency in wallet.Currencies){
-                if (currency.Name == messageCurrency.Name){
-                    currency.AddAmount(messageCurrency.Amount);
-                    UpdateDisplayCurrencies();
-                    break;
-                }
-            }
+            if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
+            if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
+            UpdateDisplayCurrencies();
         }
     }
 }

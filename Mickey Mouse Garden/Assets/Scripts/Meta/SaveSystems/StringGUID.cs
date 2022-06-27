@@ -24,7 +24,18 @@ public class StringGUID{
       var guid = Guid.NewGuid().ToString();
       return new StringGUID(guid) ;
    }
-   
+
+   public StringGUID CreateStringGuid(int value){
+      var newGuid = new StringGUID();
+      char[] newCharArray = newGuid.GUIDAsString.ToCharArray();
+      for (int i = 0; i < value.ToString().Length; i++){
+         newCharArray[i] = value.ToString()[i];
+      }
+
+      string idk = new string(newCharArray);
+      return new StringGUID(idk);
+   }
+
    public override string ToString(){
       return GUIDAsString;
    }
