@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Common Seed
   description: Description
+  money: 10
+  fertilizer: 5
   type: 0
   icon: {fileID: 21300000, guid: b4fed386dcb93e641b2c22b6ff168d58, type: 3}
-  prefab: {fileID: 0}
