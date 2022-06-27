@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardCreator : MonoBehaviour{
@@ -6,16 +8,20 @@ public class CardCreator : MonoBehaviour{
     private Transform[] cardSlots;
     [HideInInspector] public int cardCount = 1;
     private void Awake(){
-        Broker.Subscribe<FighterMessage>(OnFighterMessageReceived);
+        Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterMessageReceived);
         // Gets cardSlots from Child GameObjects
         cardSlots = GetComponentsInChildren<Transform>();
     }
 
-    private void OnFighterMessageReceived(FighterMessage obj){
-        fighter = obj.fighterInfo;
-        // Spawns card at incremental card slots starting from 1 (not 0).
-        InstantiateFighter(fighter, cardSlots[cardCount]);
-        cardCount++;
+    private void OnFighterMessageReceived(SelectedFighterTeamMessage obj){
+        FighterInfo[] cards = new FighterInfo[3];
+        obj.FighterTeam.CopyTo(cards,0);
+        for (int i = 0; i < cards.Length;i++){
+            fighter = cards[i];
+            // Spawns card at incremental card slots starting from 1 (not 0).
+            InstantiateFighter(fighter, cardSlots[cardCount]);
+            cardCount++;
+        }
     }
 
     private void InstantiateFighter(FighterInfo fighter, Transform cardSlot){
@@ -40,6 +46,6 @@ public class CardCreator : MonoBehaviour{
     }
 
     private void OnDestroy(){
-        Broker.Unsubscribe<FighterMessage>(OnFighterMessageReceived);
+        Broker.Unsubscribe<SelectedFighterTeamMessage>(OnFighterMessageReceived);
     }
 }

@@ -1,18 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Timer = System.Threading.Timer;
 
 public class CombatController : MonoBehaviour{
-   [SerializeField] private FighterInfo[] playerFighters;
-   [SerializeField] private FighterInfo[] enemyFighters;
+   private Stack<FighterInfo> playerFighters = new Stack<FighterInfo>();
+   private Stack<FighterInfo> enemyFighters = new Stack<FighterInfo>();
 
    [SerializeField] private int duration;
 
    private FighterInfo playerFighter;
    private FighterInfo enemyFighter;
    
-   private int playerTeamIncrementor;
-   private int enemyTeamIncrementor;
    private bool playerGoesFirst;
    
    private Executor executor;
@@ -21,18 +20,24 @@ public class CombatController : MonoBehaviour{
    private void Awake(){
       executor = FindObjectOfType<Executor>();
       Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
-      Broker.Subscribe<FighterMessage>(OnFighterReceived);
+      Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamReceived);
    }
 
-   private void OnFighterReceived(FighterMessage obj){
-      //TODO: add the fighters to correct teams and then start combat.
+   private void OnFighterTeamReceived(SelectedFighterTeamMessage obj){
+      if (obj.PlayerTeam){
+         playerFighters = obj.FighterTeam;
+      }
+      else{
+         enemyFighters = obj.FighterTeam;
+      }
       
-      playerFighter = playerFighters[playerTeamIncrementor];
-      enemyFighter = enemyFighters[enemyTeamIncrementor];
-      StartCombat();
+      if (enemyFighters.Count > 1){
+         StartCombat();
+      }
    }
 
    private void StartCombat(){
+      NextFighter();
       timer = new Timer(Tick, null, 1000* duration,1000* duration);
    }
 
@@ -55,14 +60,14 @@ public class CombatController : MonoBehaviour{
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
       Debug.Log($"{obj.fighterInfo.Name} has died");
       if (obj.wasPlayerFighter){
-         playerTeamIncrementor++;
+         playerFighter = playerFighters.Pop();
       }
       else{
-         enemyTeamIncrementor++;
+         enemyFighter = enemyFighters.Pop();
       }
-      if (playerTeamIncrementor > 2 || enemyTeamIncrementor > 2){
+      if (playerFighters.Count == 0 || enemyFighters.Count == 0){
          timer.Dispose();
-         executor.Enqueue(new EndOfCombatCommand(playerTeamIncrementor, enemyTeamIncrementor, new Money()));  
+         executor.Enqueue(new EndOfCombatCommand(enemyFighters.Count == 0 ,new Money()));  
       }
       executor.Enqueue(new ChangeOpponentCommand(this));
       AssertStrikeOrder();
@@ -85,7 +90,7 @@ public class CombatController : MonoBehaviour{
    }
 
    public void NextFighter(){
-      playerFighter = playerFighters[playerTeamIncrementor];
-      enemyFighter = enemyFighters[enemyTeamIncrementor];
+      playerFighters.TryPop(out playerFighter);
+      enemyFighters.TryPop(out enemyFighter);
    }
 }
