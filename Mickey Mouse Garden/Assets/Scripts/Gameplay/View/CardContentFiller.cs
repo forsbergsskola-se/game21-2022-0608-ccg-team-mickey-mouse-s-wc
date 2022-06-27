@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class CardContentFiller : MonoBehaviour{
 	private int id;
+	private bool faintDelay;
 	public TextMeshProUGUI nameText, rarityText, levelText, attackText, healthText, speedText;
 	public GameObject damageText, faintedImage;
 	public Image fighterImage;
@@ -45,6 +47,10 @@ public class CardContentFiller : MonoBehaviour{
 		damageText.GetComponent<TextMeshProUGUI>().text = damage.ToString(CultureInfo.InvariantCulture);
 	}
 	private void MakeCardFaint(){
-		faintedImage.SetActive(true);
+		StartCoroutine(Fainting());
+	}
+	private IEnumerator Fainting(){
+		yield return new WaitForSeconds(0.75f);
+		faintedImage.SetActive(true);	
 	}
 }

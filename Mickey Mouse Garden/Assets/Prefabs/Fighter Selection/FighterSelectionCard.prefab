@@ -808,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc00bbcd1dbeda45af90a88b1280832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faintDelay: 0.5
   nameText: {fileID: 1035598178585166804}
   rarityText: {fileID: 1035598177881462726}
   levelText: {fileID: 1035598177593677076}
