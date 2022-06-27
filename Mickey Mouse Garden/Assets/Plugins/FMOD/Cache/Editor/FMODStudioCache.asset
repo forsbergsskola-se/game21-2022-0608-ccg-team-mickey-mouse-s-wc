@@ -85,6 +85,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7964208590172717253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Garden/Fusion
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Garden/Fusion
+  Guid:
+    Data1: 71940673
+    Data2: 1124188879
+    Data3: -947050827
+    Data4: -714496887
+  Banks:
+  - {fileID: -673763022981866690}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-7544344950706330311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +133,7 @@ MonoBehaviour:
     data1: 283710940
     data2: 1889862198
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
   - Garden
   - Collection
@@ -160,36 +187,9 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Arena.bank
   Name: Mobile/Arena
   StudioPath: bank:/Arena
-  lastModified: 637919402839612899
+  lastModified: 637919437382524727
   FileSizes: []
   Exists: 1
---- !u!114 &-5808177775264557706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Market/Purchase
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Market/Purchase
-  Guid:
-    Data1: 784616282
-    Data2: 1101648975
-    Data3: 1189409979
-    Data4: -785313610
-  Banks:
-  - {fileID: -673763022981866690}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-5772367059082711840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,10 +318,11 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 6221427059214090196}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 16000
 --- !u!114 &-4393821585259328280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +347,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4297093118810024082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Market/Purchase
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Market/Purchase
+  Guid:
+    Data1: 784616282
+    Data2: 1101648975
+    Data3: 1189409979
+    Data4: -785313610
+  Banks:
+  - {fileID: -673763022981866690}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2440703456576133435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +402,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10666
+--- !u!114 &-1835154975664281433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Garden/Harvest
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Garden/Harvest
+  Guid:
+    Data1: -1076181467
+    Data2: 1207266230
+    Data3: -1981227635
+    Data4: -1777761233
+  Banks:
+  - {fileID: 3046298691143302364}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1713124836221967882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,34 +479,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-1094789715249766728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Market/Sell
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Market/Sell
-  Guid:
-    Data1: 796577806
-    Data2: 1269386481
-    Data3: 598218885
-    Data4: 2104817685
-  Banks:
-  - {fileID: -673763022981866690}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Length: 2000
 --- !u!114 &-673763022981866690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +495,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Meta.bank
   Name: Mobile/Meta
   StudioPath: bank:/Meta
-  lastModified: 637919402839720914
+  lastModified: 637919437386659231
   FileSizes: []
   Exists: 1
 --- !u!114 &-635811835393278366
@@ -494,6 +522,38 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-601116044545342632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Garden
+  m_EditorClassIdentifier: 
+  Name: Garden
+  StudioPath: parameter:/Garden
+  Min: 0
+  Max: 7
+  Default: 0
+  ID:
+    data1: 283710940
+    data2: 1889862198
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Garden
+  - Collection
+  - CollectionCard
+  - CollectionMusic
+  - GreenHouse
+  - Market
+  - Shop
+  - PreShop
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,28 +573,30 @@ MonoBehaviour:
   - {fileID: 2897341411068378389}
   EditorEvents:
   - {fileID: 1794943133680559172}
-  - {fileID: 5573001163618879160}
-  - {fileID: -5808177775264557706}
-  - {fileID: 3851123925023783607}
   - {fileID: -5162129383906684981}
   - {fileID: -5772367059082711840}
-  - {fileID: 5777424915852935581}
-  - {fileID: -1094789715249766728}
   - {fileID: 1490362390322565528}
   - {fileID: -4818814047910173868}
   - {fileID: -1125239614209057175}
   - {fileID: 7362545123267726508}
-  - {fileID: 7871580766282926522}
   - {fileID: 2071870943570164367}
   - {fileID: 4557369683626071741}
+  - {fileID: -1835154975664281433}
+  - {fileID: 8665297390057919941}
+  - {fileID: 7455690956545562594}
+  - {fileID: -7964208590172717253}
+  - {fileID: -4297093118810024082}
+  - {fileID: 7621208460846003542}
   EditorParameters:
   - {fileID: -1713124836221967882}
   - {fileID: -635811835393278366}
+  - {fileID: -601116044545342632}
+  - {fileID: 7144637614310837720}
   MasterBanks:
   - {fileID: 3046298691143302364}
   StringsBanks:
   - {fileID: 2897341411068378389}
-  cacheTime: 637919402839720914
+  cacheTime: 637919437386659231
   cacheVersion: 131591
 --- !u!114 &320870834220729361
 MonoBehaviour:
@@ -660,7 +722,31 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2000
+--- !u!114 &2396409579463286500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LevelUp/Rarity
+  m_EditorClassIdentifier: 
+  Name: Rarity
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2049205034
+    data2: 12120533
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &2897341411068378389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,10 +762,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.strings.bank
   Name: Mobile/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637919402839622888
+  lastModified: 637919437383163453
   FileSizes:
   - Name: 
-    Value: 1732
+    Value: 1848
   Exists: 1
 --- !u!114 &3046298691143302364
 MonoBehaviour:
@@ -696,7 +782,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.bank
   Name: Mobile/Master
   StudioPath: bank:/Master
-  lastModified: 637919402839622888
+  lastModified: 637919437383153413
   FileSizes: []
   Exists: 1
 --- !u!114 &3595896958087452308
@@ -723,33 +809,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &3851123925023783607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Meta/PlantSeeds
-  m_EditorClassIdentifier: 
-  Path: event:/Meta/PlantSeeds
-  Guid:
-    Data1: -96271232
-    Data2: 1281085842
-    Data3: 1320727435
-    Data4: 54727336
-  Banks:
-  - {fileID: -673763022981866690}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &4557369683626071741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,64 +832,11 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 2396409579463286500}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &5573001163618879160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Meta/swosh
-  m_EditorClassIdentifier: 
-  Path: event:/Meta/swosh
-  Guid:
-    Data1: -1290898359
-    Data2: 1272303851
-    Data3: -1853693815
-    Data4: 1599520633
-  Banks:
-  - {fileID: 3046298691143302364}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5777424915852935581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Meta/Harvest
-  m_EditorClassIdentifier: 
-  Path: event:/Meta/Harvest
-  Guid:
-    Data1: -1076181467
-    Data2: 1207266230
-    Data3: -1981227635
-    Data4: -1777761233
-  Banks:
-  - {fileID: 3046298691143302364}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Length: 7875
 --- !u!114 &6066395598003447933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +860,34 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &6221427059214090196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Pre Battel/PreBattle
+  m_EditorClassIdentifier: 
+  Name: PreBattle
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2725853467
+    data2: 1542828687
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Arena
+  - Choose
+  - Combat S
+  - Tap To
   Exists: 1
 --- !u!114 &6261293679851827268
 MonoBehaviour:
@@ -885,6 +919,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 48000
+--- !u!114 &7144637614310837720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PreBattle
+  m_EditorClassIdentifier: 
+  Name: PreBattle
+  StudioPath: parameter:/PreBattle
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2725853467
+    data2: 1542828687
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Arena
+  - Choose
+  - Combat S
+  - Tap To
+  Exists: 1
 --- !u!114 &7362545123267726508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,6 +974,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16000
+--- !u!114 &7455690956545562594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Market/Sell
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Market/Sell
+  Guid:
+    Data1: 796577806
+    Data2: 1269386481
+    Data3: 598218885
+    Data4: 2104817685
+  Banks:
+  - {fileID: -673763022981866690}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7621208460846003542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Garden/PlantSeeds
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Garden/PlantSeeds
+  Guid:
+    Data1: -96271232
+    Data2: 1281085842
+    Data3: 1320727435
+    Data4: 54727336
+  Banks:
+  - {fileID: -673763022981866690}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7722763804015918409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,7 +1105,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 712
   Exists: 1
---- !u!114 &7871580766282926522
+--- !u!114 &8665297390057919941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -999,16 +1115,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Meta/Fusion
+  m_Name: event:/UI/swosh
   m_EditorClassIdentifier: 
-  Path: event:/Meta/Fusion
+  Path: event:/UI/swosh
   Guid:
-    Data1: 71940673
-    Data2: 1124188879
-    Data3: -947050827
-    Data4: -714496887
+    Data1: -1290898359
+    Data2: 1272303851
+    Data3: -1853693815
+    Data4: 1599520633
   Banks:
-  - {fileID: -673763022981866690}
+  - {fileID: 3046298691143302364}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
