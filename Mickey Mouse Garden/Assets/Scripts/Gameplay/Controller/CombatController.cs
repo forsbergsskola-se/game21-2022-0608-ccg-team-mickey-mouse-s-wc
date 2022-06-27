@@ -38,6 +38,7 @@ public class CombatController : MonoBehaviour{
 
    private void StartCombat(){
       NextFighter();
+      AssertStrikeOrder();
       timer = new Timer(Tick, null, 1000* duration,1000* duration);
    }
 
@@ -60,16 +61,19 @@ public class CombatController : MonoBehaviour{
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
       Debug.Log($"{obj.fighterInfo.Name} has died");
       if (obj.wasPlayerFighter){
-         playerFighter = playerFighters.Pop();
+         if (playerFighters.TryPop(out var temp)){
+            playerFighter = temp;
+         }
       }
       else{
-         enemyFighter = enemyFighters.Pop();
+         if (enemyFighters.TryPop(out var temp)){
+            enemyFighter = temp;
+         }
       }
-      if (playerFighters.Count == 0 || enemyFighters.Count == 0){
+      if (playerFighter.MaxHealth <= 0 || enemyFighter.MaxHealth <= 0){
          timer.Dispose();
-         executor.Enqueue(new EndOfCombatCommand(enemyFighters.Count == 0 ,new Money()));  
+         executor.Enqueue(new EndOfCombatCommand(enemyFighter.MaxHealth <= 0 ,new Money()));  
       }
-      executor.Enqueue(new ChangeOpponentCommand(this));
       AssertStrikeOrder();
 
    }
