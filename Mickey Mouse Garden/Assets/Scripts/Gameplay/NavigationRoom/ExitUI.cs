@@ -17,7 +17,6 @@ public class ExitUI : MonoBehaviour{
 		if (obj.TaskToDo == 2){
 			Debug.Log(gameObjectTag);
 			UnLaunch(gameObjectTag);
-			EditorUtility.UnloadUnusedAssetsImmediate();
 		}
 	}
 	private void UnLaunch(string itemTag){
