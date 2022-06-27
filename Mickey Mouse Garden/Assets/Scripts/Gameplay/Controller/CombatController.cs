@@ -1,6 +1,9 @@
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
+using Timer = System.Threading.Timer;
 
 public class CombatController : MonoBehaviour{
    [SerializeField] private FighterInfo[] playerFighters;
@@ -21,20 +24,24 @@ public class CombatController : MonoBehaviour{
    private void Awake(){
       executor = FindObjectOfType<Executor>();
       Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
-      timer = new Timer(Tick, null, 1000* duration,1000* duration);
-   }
-   
-   private void Tick(object state){
-      Strike();
-   }
-   private void Update(){
-      if (Input.GetKeyDown(KeyCode.O)){ //this will be done automatically in the end, for now stage by pressing O
-         playerFighter = playerFighters[playerTeamIncrementor];
-         enemyFighter = enemyFighters[enemyTeamIncrementor]; 
-      }
+      Broker.Subscribe<FighterMessage>(OnFighterReceived);
    }
 
-   private void Strike(){
+   private void OnFighterReceived(FighterMessage obj){
+      //TODO: add the fighters to correct teams and then start combat.
+      playerFighter = playerFighters[playerTeamIncrementor];
+      enemyFighter = enemyFighters[enemyTeamIncrementor];
+      StartCombat();
+   }
+
+   private void StartCombat(){
+      timer = new Timer(Tick, null, 1000* duration,1000* duration);
+   }
+
+   private void Tick(object state){
+      StrikeInOrder();
+   }
+   private void StrikeInOrder(){
       if (playerGoesFirst){
          executor.Enqueue(new StrikeCommand(enemyFighter, playerFighter));
          executor.Enqueue(new CheckForFaintedCommand(playerFighter, enemyFighter));
