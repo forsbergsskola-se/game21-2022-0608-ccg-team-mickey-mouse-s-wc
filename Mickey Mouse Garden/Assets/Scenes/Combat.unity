@@ -712,6 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFighters: []
   enemyFighters: []
+  duration: 5
 --- !u!114 &2004361166
 MonoBehaviour:
   m_ObjectHideFlags: 0

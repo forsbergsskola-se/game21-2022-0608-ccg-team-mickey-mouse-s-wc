@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -5,28 +6,31 @@ public class CombatController : MonoBehaviour{
    [SerializeField] private FighterInfo[] playerFighters;
    [SerializeField] private FighterInfo[] enemyFighters;
 
+   [SerializeField] private int duration;
+
    private FighterInfo playerFighter;
    private FighterInfo enemyFighter;
+   
    private int playerTeamIncrementor;
    private int enemyTeamIncrementor;
-
    private bool playerGoesFirst;
    
    private Executor executor;
+   private Timer timer;
 
    private void Awake(){
       executor = FindObjectOfType<Executor>();
       Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
+      timer = new Timer(Tick, null, 1000* duration,1000* duration);
    }
    
-
+   private void Tick(object state){
+      Strike();
+   }
    private void Update(){
       if (Input.GetKeyDown(KeyCode.O)){ //this will be done automatically in the end, for now stage by pressing O
          playerFighter = playerFighters[playerTeamIncrementor];
          enemyFighter = enemyFighters[enemyTeamIncrementor]; 
-      }
-      if (Input.GetKeyDown(KeyCode.P)){ //Main Combat-loop, still need to fix the delay
-         Strike();
       }
    }
 
@@ -41,7 +45,6 @@ public class CombatController : MonoBehaviour{
          executor.Enqueue(new CheckForFaintedCommand(playerFighter, enemyFighter));
          playerGoesFirst = true;
       }
-      executor.Enqueue(new WaitForDramaticEffectCommand(5));
    }
 
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
@@ -53,6 +56,7 @@ public class CombatController : MonoBehaviour{
          enemyTeamIncrementor++;
       }
       if (playerTeamIncrementor > 2 || enemyTeamIncrementor > 2){
+         timer.Dispose();
          executor.Enqueue(new EndOfCombatCommand(playerTeamIncrementor, enemyTeamIncrementor, new Money()));  
       }
       executor.Enqueue(new ChangeOpponentCommand(this));
