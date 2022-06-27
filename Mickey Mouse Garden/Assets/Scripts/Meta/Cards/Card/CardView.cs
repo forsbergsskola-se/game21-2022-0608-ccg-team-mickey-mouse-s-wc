@@ -8,7 +8,7 @@ namespace Meta.Cards {
     /// The view that's visible on a prefab and makes cards interactable (input and output)
     /// </summary>
     public class CardView : MonoBehaviour {
-        public Sprite image;
+        public Image image;
         public TextMeshProUGUI name;
         public TextMeshProUGUI maxHealth;
         public TextMeshProUGUI attack;
@@ -18,6 +18,7 @@ namespace Meta.Cards {
         //TODO: Add level
 
         public void Configure(CardConfig cardConfig) {
+            image.sprite = cardConfig.image;
             name.text = cardConfig.name;
             maxHealth.text = "Health: " + cardConfig.maxHealth.ToString();
             attack.text = "Attack: " + cardConfig.attack.ToString();
