@@ -7,10 +7,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class SeedStoreList : MonoBehaviour{ 
-    public ScriptableObject commonSeed;
-    public ScriptableObject rareSeed;
-    public ScriptableObject epicSeed;
-    public ScriptableObject legendarySeed;
+    public ShopItemTest commonSeed;
+    public ShopItemTest rareSeed;
+    public ShopItemTest epicSeed;
+    public ShopItemTest legendarySeed;
     [SerializeField] 
     private TextMeshProUGUI commonSeedPriceText;
     [SerializeField] 
@@ -20,5 +20,10 @@ public class SeedStoreList : MonoBehaviour{
     [SerializeField] 
     private TextMeshProUGUI legendarySeedPriceText;
 
-    
+    private void Awake(){
+        commonSeedPriceText.text = commonSeed.money.ToString();
+        rareSeedPriceText.text = rareSeed.money.ToString();
+        epicSeedPriceText.text = epicSeed.money.ToString();
+        legendarySeedPriceText.text = legendarySeed.money.ToString();
+    }
 }
