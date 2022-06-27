@@ -4,8 +4,8 @@ using UnityEngine;
 public class EndOfCombatCommand : ICommand{
     private int playerTeamIncrementor;
     private int enemyTeamIncrementor;
-    ICurrency reward;
-    public EndOfCombatCommand(int playerTeamIncrementor, int enemyTeamIncrementor, ICurrency reward){
+    Money reward;
+    public EndOfCombatCommand(int playerTeamIncrementor, int enemyTeamIncrementor, Money reward){
         this.playerTeamIncrementor = playerTeamIncrementor;
         this.enemyTeamIncrementor = enemyTeamIncrementor;
         this.reward = reward;
@@ -18,7 +18,7 @@ public class EndOfCombatCommand : ICommand{
             
             SendPostCombatStateMessage(PostCombatState.Victory);
             var message = new CurrencyRewardMessage();
-            message.Currency = reward;
+            message.money = reward;
             Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
             
         }
