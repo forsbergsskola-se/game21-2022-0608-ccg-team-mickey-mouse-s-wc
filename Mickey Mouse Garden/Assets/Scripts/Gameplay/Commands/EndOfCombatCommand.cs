@@ -2,17 +2,15 @@
 using UnityEngine;
 
 public class EndOfCombatCommand : ICommand{
-    private int playerTeamIncrementor;
-    private int enemyTeamIncrementor;
-    ICurrency reward;
-    public EndOfCombatCommand(int playerTeamIncrementor, int enemyTeamIncrementor, ICurrency reward){
-        this.playerTeamIncrementor = playerTeamIncrementor;
-        this.enemyTeamIncrementor = enemyTeamIncrementor;
+    private bool playerWinner;
+    private ICurrency reward;
+    public EndOfCombatCommand(bool playerWinner, ICurrency reward){
+        this.playerWinner = playerWinner;
         this.reward = reward;
     }
     public Task ExecuteAsync(){
         Broker.InvokeSubscribers(typeof(CreatePostCombatUIMessage), new CreatePostCombatUIMessage());
-        if (playerTeamIncrementor > 2){
+        if (playerWinner){
             //TODO: celebrate the win
             Debug.Log("player wins!");
             
@@ -23,7 +21,7 @@ public class EndOfCombatCommand : ICommand{
             
         }
 
-        if (enemyTeamIncrementor > 2){
+        if (!playerWinner){
             //TODO: cry about defeat
             Debug.Log("enemy wins!");
             SendPostCombatStateMessage(PostCombatState.Defeat);
