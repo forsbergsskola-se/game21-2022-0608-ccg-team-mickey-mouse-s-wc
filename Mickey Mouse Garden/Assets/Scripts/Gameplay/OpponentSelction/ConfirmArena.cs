@@ -29,6 +29,7 @@ public class ConfirmArena : MonoBehaviour{
 
 	// TODO: Change to teambuilding scene
 	private void GoToArena(){
-		SceneManager.LoadScene("Arena");
+		SceneManager.LoadScene("Arena", LoadSceneMode.Additive);
+		SceneManager.UnloadSceneAsync("OpponentSelection");
 	}
 }

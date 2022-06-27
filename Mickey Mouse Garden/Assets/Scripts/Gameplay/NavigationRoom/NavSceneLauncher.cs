@@ -17,7 +17,6 @@ public class NavSceneLauncher : MonoBehaviour {
 
 	private void LaunchScene(string itemTag){
 		StartCoroutine(WaitForZoom(itemTag));
-		
 	}
 	private IEnumerator WaitForZoom(string itemTag){
 		yield return new WaitForSeconds(0.25f);

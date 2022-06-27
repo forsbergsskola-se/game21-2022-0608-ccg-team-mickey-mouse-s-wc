@@ -22,6 +22,6 @@ public class PauseMenu : MonoBehaviour{
         SceneManager.LoadScene("Market");
     }
     public void MainMenu(){
-        SceneManager.LoadScene("NavigationRoom");
+        SceneManager.UnloadSceneAsync("Arena");
     }
 }
