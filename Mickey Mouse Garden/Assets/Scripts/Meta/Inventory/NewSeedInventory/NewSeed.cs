@@ -11,7 +11,7 @@ namespace Meta.Inventory.NewSeedInventory {
             Rarity = rarity;
         }
 
-        //TODO: Only monobehaviour for quick testing
+        //TODO: Only monobehaviour for quick testing, should be abstract
         //Currently made for the test spheres in the game, this method can be changed, and should be switched from OnMouseDown (unity event function) to something else
         private void OnMouseDown() {
             var collectedMessage = new ItemCollectedMessage<NewSeed>(this); //<--- Needed

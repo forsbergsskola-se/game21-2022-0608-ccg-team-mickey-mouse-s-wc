@@ -1,6 +1,5 @@
 using System;
 using Meta.Inventory.NewSeedInventory.Messages;
-using Meta.Seeds;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,12 +8,10 @@ namespace Meta.Inventory.NewSeedInventory {
     public class NewGrowSlot : MonoBehaviour {
         public Rarity rarity;
         [SerializeField] private float growthTimeInSeconds;
-        
-        public bool readyToHarvest;
-        
         [SerializeField] private Slider timeSlider;
         [SerializeField] private TextMeshProUGUI growthTimerText;
-
+        
+        [HideInInspector] public bool ReadyToHarvest;
         private NewSeed seed;
         private string rarityText;
 
@@ -25,8 +22,6 @@ namespace Meta.Inventory.NewSeedInventory {
                 return Mathf.Max(secondsRemaining, 0);
             }
         }
-
-        //TODO: Make slider not clickable
 
         public void SetUp(NewSeed seedInSlot) {
             if (seedInSlot.HarvestTime == DateTime.MinValue) {
@@ -40,10 +35,10 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         private void Update() {
-            if (readyToHarvest) return;
+            if (ReadyToHarvest) return;
             
             if (DateTime.Now > seed.HarvestTime) {
-                readyToHarvest = true;
+                ReadyToHarvest = true;
                 SendReadyToHarvestMessage();
             }
             
@@ -62,7 +57,7 @@ namespace Meta.Inventory.NewSeedInventory {
 
         //OnClick
         public void RequestHarvest() {
-            if (readyToHarvest) {
+            if (ReadyToHarvest) {
                 var harvestMessage = new HarvestSlotMessage(this);
                 Broker.InvokeSubscribers(harvestMessage.GetType(), harvestMessage);
             } else {
