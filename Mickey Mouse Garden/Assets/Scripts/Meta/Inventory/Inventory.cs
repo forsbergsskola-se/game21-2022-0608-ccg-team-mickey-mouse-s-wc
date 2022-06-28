@@ -11,17 +11,14 @@ namespace Meta.Inventory {
             Broker.Subscribe<ItemCollectedMessage<T>>(OnItemCollected);
         }
 
-        public void OnItemCollected(ItemCollectedMessage<T> obj) {
+        private void OnItemCollected(ItemCollectedMessage<T> obj) {
             Add(obj.Item);
             CollectOperations(obj.Item);
         }
-        
-        //Onitemremoved
-            // RemoveOperations
-        
+
         public abstract void CollectOperations(T addedItem);         //TODO: Change name to something better
 
-        public void Add(T item) {
+        private void Add(T item) {
             Items.Add(item);
         }
 

@@ -9,7 +9,7 @@ using UnityEngine;
 public class Fertilizer : ICurrency
 {
     public string Name{ get; } = "Fertilizer";
-    public int Amount{ get; private set; }
+    public int Amount{ get; internal set; }
     public string SpriteName{ get; } = "Fertilizer";
 
     [field: NonSerialized][DoNotSerialize]public Sprite Sprite{ get; set; }

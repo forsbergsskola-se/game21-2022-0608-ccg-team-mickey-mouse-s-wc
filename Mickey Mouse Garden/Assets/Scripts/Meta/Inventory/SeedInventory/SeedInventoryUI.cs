@@ -9,17 +9,17 @@ namespace Meta.Inventory {
         [SerializeField] private GameObject growSlotItemParent;
         [SerializeField] private GameObject[] growSlotPrefabs;
         
-        private SeedInventorySlotPrefabs[] seedSlots;
+        private SeedSlotContainer[] seedSlots;
         private GrowSlot[] growSlots;
         
         private void Start() {
-            seedSlots = GetComponentsInChildren<SeedInventorySlotPrefabs>();
+            seedSlots = GetComponentsInChildren<SeedSlotContainer>();
         }
 
         public void UpdateSeedCount(int count, Rarity rarity) {
-            SeedInventorySlotPrefabs inventorySlotPrefabsToUpdate = seedSlots.FirstOrDefault(slot => slot.Rarity == rarity);
-            Debug.Log(inventorySlotPrefabsToUpdate.Rarity);
-            inventorySlotPrefabsToUpdate.UpdateCountText(count);
+            SeedSlotContainer slotContainerToUpdate = seedSlots.FirstOrDefault(slot => slot.Rarity == rarity);
+            Debug.Log(slotContainerToUpdate.Rarity);
+            slotContainerToUpdate.UpdateCountText(count);
         }
 
         public void PlantSeedOfType(Rarity rarity) {

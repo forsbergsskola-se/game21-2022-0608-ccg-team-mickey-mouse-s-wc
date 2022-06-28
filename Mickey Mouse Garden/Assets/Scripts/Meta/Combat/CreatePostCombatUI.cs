@@ -15,6 +15,10 @@ public class CreatePostCombatUI : MonoBehaviour{
     }
 
     void CreateUI(CreatePostCombatUIMessage message){
+        StartCoroutine(DelayUI());
+    }
+    private IEnumerator DelayUI(){
+        yield return new WaitForSeconds(2f);
         Instantiate(PostCombatUIPrefab, this.transform);
     }
    

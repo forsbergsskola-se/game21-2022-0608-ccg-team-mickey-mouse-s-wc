@@ -1,23 +1,21 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CombatTester : MonoBehaviour{
-    private Stack<FighterInfo> playerFighters = new Stack<FighterInfo>();
-    private Stack<FighterInfo> enemyFighters = new Stack<FighterInfo>();
-
     public Sprite sprite;
 
     private int id;
 
     private SelectedFighterTeamMessage MakeAFighterTeam(bool playerteam){
-        SelectedFighterTeamMessage team = new SelectedFighterTeamMessage();
-        Stack<FighterInfo> fighterStack = new Stack<FighterInfo>();
+        //Creating the message and the stack.
+        var team = new SelectedFighterTeamMessage();
+        var fighterStack = new Stack<FighterInfo>();
        
+        //pushing all the singularfighters into the stack
         for (int i = 0; i < 3; i++){
             fighterStack.Push(createFighterInfo());
         }
+        //set values for the team and the bool if it's the players team or the opponents.
         team.FighterTeam = fighterStack;
         team.PlayerTeam = playerteam;
         return team;
@@ -25,27 +23,34 @@ public class CombatTester : MonoBehaviour{
 
     private void Update(){
         if (Input.GetKeyDown(KeyCode.F)){
-            SelectedFighterTeamMessage playerteam = MakeAFighterTeam(true);
-            Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), playerteam);
+            //when button F is pressed the playerteam is selected and then the message is sent over to actual combat.
+            var playerTeam = MakeAFighterTeam(true);
+            Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), playerTeam);
         }
         if (Input.GetKeyDown(KeyCode.G)){
-            SelectedFighterTeamMessage enemyteam = MakeAFighterTeam(false);
-            Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), enemyteam);
+            //when button G is pressed the enemy team is selected and then the message is sent over to actual combat.
+            var enemyTeam = MakeAFighterTeam(false);
+            Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), enemyTeam);
         }
     }
 
     private FighterInfo createFighterInfo(){
-        var fighterMessage = new FighterMessage();
-        fighterMessage.fighterInfo = new FighterInfo();
-        fighterMessage.fighterInfo.ID = id++;
-        fighterMessage.fighterInfo.MaxHealth = 10;
-        fighterMessage.fighterInfo.Attack = 5;
-        fighterMessage.fighterInfo.Speed = 10;
-        fighterMessage.fighterInfo.Rarity = Rarity.Epic;
-        fighterMessage.fighterInfo.Name = "Foo";
-        fighterMessage.fighterInfo.Level = 2;
-        fighterMessage.fighterInfo.Alignment = Alignment.Scissors;
-        fighterMessage.fighterInfo.Sprite = sprite;
+        //since fighterInfo is monobehaviour you have to create it inside the message when testing.
+        var fighterMessage = new FighterMessage{
+            
+            //This is where the actual fighter values are assigned, this will be taken from the inventory when selected.
+            fighterInfo = new FighterInfo{ // this is for testing, dont change even though its recommended.
+                ID = id++,
+                MaxHealth = 10,
+                Attack = 5,
+                Speed = 10,
+                Rarity = Rarity.Epic,
+                Name = "Foo",
+                Level = 2,
+                Alignment = Alignment.Scissors,
+                Sprite = sprite
+            }
+        };
         return fighterMessage.fighterInfo;
     }
 }

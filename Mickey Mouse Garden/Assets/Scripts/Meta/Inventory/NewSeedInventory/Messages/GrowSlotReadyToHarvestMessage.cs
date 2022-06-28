@@ -1,9 +1,9 @@
 namespace Meta.Inventory.NewSeedInventory.Messages {
     public class GrowSlotReadyToHarvestMessage : IMessage {
-        public NewGrowSlotPrefabs GrowSlotPrefabs;
+        public NewGrowSlot GrowSlot;
 
-        public GrowSlotReadyToHarvestMessage(NewGrowSlotPrefabs growSlotPrefabs) {
-            GrowSlotPrefabs = growSlotPrefabs;
+        public GrowSlotReadyToHarvestMessage(NewGrowSlot growSlot) {
+            GrowSlot = growSlot;
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CardContentFiller : MonoBehaviour{
-	private int id;
+	[HideInInspector] public int id;
 	private bool faintDelay;
 	public TextMeshProUGUI nameText, rarityText, levelText, attackText, healthText, speedText;
 	public GameObject damageText, faintedImage;
@@ -18,8 +18,8 @@ public class CardContentFiller : MonoBehaviour{
 	}
 
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
-		if (id == obj.ID){
-			UpdateHealthUI(obj.Targethealth, obj.DamageDealt);
+		if (id == obj.TargetID){
+			UpdateHealthUI(obj.TargetHealth, obj.DamageDealt);
 		}
 	}
 
@@ -32,7 +32,7 @@ public class CardContentFiller : MonoBehaviour{
 		ShowDamage(damage);
 	}
 
-	public void AssignTextFields(FighterInfo fighter){
+	public void AssignTextFields(FighterInfo fighter){ //TODO: add discriptive text to the values eg. health: 5
 		id = fighter.ID;
 		nameText.text = fighter.Name;
 		rarityText.text = fighter.Rarity.ToString();
@@ -51,6 +51,6 @@ public class CardContentFiller : MonoBehaviour{
 	}
 	private IEnumerator Fainting(){
 		yield return new WaitForSeconds(0.75f);
-		faintedImage.SetActive(true);	
+		faintedImage.SetActive(true);
 	}
 }
