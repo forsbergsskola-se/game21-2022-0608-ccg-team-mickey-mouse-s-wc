@@ -27,6 +27,7 @@ public class StrikeCommand : ICommand{
     }
 
     private float CheckAlignment(FighterInfo striker, FighterInfo target){
+        multiplier = 1;
         var strengths = new Dictionary<Alignment, Alignment>{
             [Alignment.Scissors] = Alignment.Paper,
             [Alignment.Rock] = Alignment.Scissors,

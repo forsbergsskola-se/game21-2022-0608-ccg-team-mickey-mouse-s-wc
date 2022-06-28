@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Meta.Inventory.NewSeedInventory {
-    public class NewGrowSlotPrefabs : MonoBehaviour {
+    public class NewGrowSlot : MonoBehaviour {
         public Rarity rarity;
         [SerializeField] private float growthTimeInSeconds;
         
