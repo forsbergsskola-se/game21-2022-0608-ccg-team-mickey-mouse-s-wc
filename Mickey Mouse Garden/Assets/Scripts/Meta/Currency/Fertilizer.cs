@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Unity.VisualScripting;
 using UnityEngine;
-[Serializable]
+[Serializable][JsonObject]
 public class Fertilizer : ICurrency
 {
     public string Name{ get; } = "Fertilizer";
