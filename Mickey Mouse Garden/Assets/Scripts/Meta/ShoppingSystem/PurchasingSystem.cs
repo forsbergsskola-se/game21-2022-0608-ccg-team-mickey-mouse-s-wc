@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using Meta.Interfaces;
 using Meta.Inventory;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UDP;
 
-public class PurchasingSystem : MonoBehaviour{  
+public class PurchasingSystem : MonoBehaviour{
+
     
     private ShopItemList shopItems;
     //public string Name{ get; }
@@ -27,8 +29,19 @@ public class PurchasingSystem : MonoBehaviour{
         }
     }
     
-
-    private void RemoveItemFromShop(object shopItems, Item item){
-        throw new System.NotImplementedException();
+    public void BuySeedWithMoneyAndFertilizer(int value, int value2){
+        if (PlayerMoney >= value && PlayerFertilizer >= value2){
+            PlayerMoney -= value;
+            PlayerFertilizer -= value2;
+        }
     }
+    
+    public void BuyMusicWithFertilizer(int value){
+        if (PlayerFertilizer >= value){
+            PlayerFertilizer -= value;
+        }
+    }
+    
+
+    
 }
