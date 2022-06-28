@@ -11,6 +11,8 @@ public class PurchasingSystem : MonoBehaviour{
 
     
     private ShopItemList shopItems;
+
+    private bool alreadyPurchased;
     //public string Name{ get; }
 
     public int PlayerMoney{ get; private set; } = 10000;
@@ -36,7 +38,7 @@ public class PurchasingSystem : MonoBehaviour{
     }
     
     public void BuyMusicWithFertilizer(int value){
-        if (PlayerFertilizer >= value){
+        if (PlayerFertilizer >= value && !alreadyPurchased){
             PlayerFertilizer -= value;
         }
     }
