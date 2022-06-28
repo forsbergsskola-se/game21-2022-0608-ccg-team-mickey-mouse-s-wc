@@ -3,7 +3,7 @@ public class FighterStrikeMessage : IMessage {
     
     public int SelfID{ get; set; }
 
-    public float Targethealth { get; set; }
+    public float TargetHealth { get; set; }
     public float DamageDealt { get; set; }
 
 }
