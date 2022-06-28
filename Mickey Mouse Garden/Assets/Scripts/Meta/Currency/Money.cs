@@ -2,16 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Unity.VisualScripting;
 using UnityEngine;
-[Serializable]
+[Serializable][JsonObject]
 public class Money : ICurrency
 {
     public string Name{ get; } = "Money";
-    public int Amount{ get; internal set; }
+    public int Amount{ get; set; }
     public string SpriteName{ get; } = "Money";
 
-    [field: NonSerialized][DoNotSerialize] public Sprite Sprite{ get; set; }
+    [DoNotSerialize] public Sprite Sprite{ get; set; }
 
     public void AddAmount(int value){
         Amount += value;
