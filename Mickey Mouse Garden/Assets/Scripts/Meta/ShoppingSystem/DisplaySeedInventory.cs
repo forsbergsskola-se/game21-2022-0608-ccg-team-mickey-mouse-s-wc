@@ -7,10 +7,6 @@ using UnityEngine;
 
 public class DisplaySeedInventory : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI seedDisplayText;
-    int commonSeed = 0;
-    int rareSeed = 0;
-    int epicSeed = 0;
-    int legendarySeed = 0;
 
 
     private void Awake(){
@@ -26,29 +22,34 @@ public class DisplaySeedInventory : MonoBehaviour{
     }
 
     private void UpdateUi(UpdateSeedUi message){
-        
+        int commonSeed = 0;
+        int rareSeed = 0;
+        int epicSeed = 0;
+        int legendarySeed = 0;
         
         foreach (var seed in message.Seeds) {
+            Debug.Log(seed.rarity,this);
             switch (seed.Rarity) {
                 case Rarity.Common:
                     commonSeed++;
-                    continue;
+                    break;
                 case Rarity.Rare :
                     rareSeed++;
-                    continue;
+                    break;
                 case Rarity.Epic:
                     epicSeed++;
-                    continue;
+                    break;
                 case Rarity.Legendary:
                     legendarySeed++;
-                    continue;
+                    break;
             }
         }
-        DisplayUi();
+        DisplayUi(commonSeed, rareSeed, epicSeed, legendarySeed);
     }
     
-    private void DisplayUi(){
-            seedDisplayText.text = "Common: " + commonSeed + " | Rare: " + rareSeed + " | Epic: " + epicSeed + " | Legendary: " + legendarySeed;
+    private void DisplayUi(int commonSeed, int rareSeed, int epicSeed, int legendarySeed){
+            seedDisplayText.text = @"Seeds:
+Common: " + commonSeed + " | Rare: " + rareSeed + " | Epic: " + epicSeed + " | Legendary: " + legendarySeed;
         }
     }
 

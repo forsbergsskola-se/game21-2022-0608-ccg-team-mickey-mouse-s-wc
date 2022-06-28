@@ -6,7 +6,12 @@ namespace Meta.Inventory.NewSeedInventory {
     [System.Serializable]
     public class NewSeed :  IInventoryItem, ISaveData {
         public Rarity rarity;
-        public Rarity Rarity { get; set; }
+
+        public Rarity Rarity{
+            get => rarity;
+            set => rarity = value;
+        }
+
         public DateTime HarvestTime { get; set; }
         public bool ReadyToHarvest { get; set; } //TODO: Check if timer handles setting bool correctly or if seed needs to set
         public StringGUID ID { get; }

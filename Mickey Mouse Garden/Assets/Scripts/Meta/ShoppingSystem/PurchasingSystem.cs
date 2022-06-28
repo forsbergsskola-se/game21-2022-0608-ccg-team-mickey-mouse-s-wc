@@ -25,7 +25,11 @@ public class PurchasingSystem : MonoBehaviour{
         Broker.Subscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
 
     }
-    
+
+    void OnDisable(){
+        Broker.Unsubscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
+    }
+
     public void RequestCurrency(){
         Broker.InvokeSubscribers(typeof(AskForPlayerCurrencyMessage),new AskForPlayerCurrencyMessage());
     }
@@ -39,6 +43,7 @@ public class PurchasingSystem : MonoBehaviour{
     #region Seeds
 
     public void BuyItem(ShopItemTest SO){
+        RequestCurrency();
         if (PlayerMoney.Amount < SO.money || PlayerFertilizer.Amount < SO.fertilizer) return;
         PlayerMoney.Amount -= SO.money;
         PlayerFertilizer.Amount -= SO.fertilizer;

@@ -18,6 +18,7 @@ namespace Experiment{
             wallet.Save();
             wallet.Fertilizer.LoadSprite();
             wallet.Money.LoadSprite();
+            Debug.Log("Subscribing to AskForPlayerCurrencyMessage",this);
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
             Broker.Subscribe<CurrencyRewardMessage>(ChangeCurrencies);
@@ -34,6 +35,7 @@ namespace Experiment{
             var displayMessage = new DisplayPlayerCurrencyMessage();
             displayMessage.money = wallet.Money;
             displayMessage.fertilizer = wallet.Fertilizer;
+            Debug.Log("Invoking DisplayPlayerCurrencyMessage",this);
             Broker.InvokeSubscribers(typeof(DisplayPlayerCurrencyMessage), displayMessage);
         }
         public void SendDisplayInfo(AskForPlayerCurrencyMessage message){
@@ -43,11 +45,13 @@ namespace Experiment{
         public void ChangeCurrencies(AddPlayerCurrencyMessage message){ //Doesnt work if not in right order..
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
+            wallet?.Save();
             UpdateDisplayCurrencies();
         }
         void ChangeCurrencies(CurrencyRewardMessage message){
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
+            wallet?.Save();
             UpdateDisplayCurrencies();
         }
         [ContextMenu("TestAddCurrency")]
