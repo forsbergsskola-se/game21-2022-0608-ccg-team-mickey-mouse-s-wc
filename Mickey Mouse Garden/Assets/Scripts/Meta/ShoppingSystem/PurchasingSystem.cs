@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Meta.Interfaces;
 using Meta.Inventory;
@@ -5,21 +6,29 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UDP;
 
-public class PurchasingSystem<T> : MonoBehaviour where T : IInventoryItem{
-    public Inventory<T> Inventory;
+public class PurchasingSystem : MonoBehaviour{  
+    
     private ShopItemList shopItems;
-    public string Name{ get; }
+    //public string Name{ get; }
 
-    public int Amount{ get; private set; }
+    public int PlayerMoney{ get; private set; } = 10000;
+    public int PlayerFertilizer{ get; private set; } = 10000;
 
-    public string SpriteName{ get; }
-    public Sprite Sprite{ get; }
-    public void AddAmount(int value){
-        throw new System.NotImplementedException();
+    //public string SpriteName{ get; }
+    //public Sprite Sprite{ get; }
+    public void BuySeedWithMoney(int value){
+        if (PlayerMoney >= value){
+            PlayerMoney -= value;
+        }
+    }
+    public void BuySeedWithFertilizer(int value){
+        if (PlayerFertilizer >= value){
+            PlayerFertilizer -= value;
+        }
     }
     
 
-    private void RemoveItemFromList(object shopItems, Item item){
+    private void RemoveItemFromShop(object shopItems, Item item){
         throw new System.NotImplementedException();
     }
 }
