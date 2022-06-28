@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Globalization;
 using TMPro;
@@ -25,10 +24,10 @@ public class CardContentFiller : MonoBehaviour{
 
 	private void UpdateHealthUI(float health, float damage){
 		if (health <= 0){
-			healthText.text = "0";
+			healthText.text = "Health: 0";
 			MakeCardFaint();
 		}
-		healthText.text = health.ToString(CultureInfo.InvariantCulture);
+		healthText.text = $"Health: {health.ToString(CultureInfo.InvariantCulture)}";
 		ShowDamage(damage);
 	}
 
@@ -36,10 +35,10 @@ public class CardContentFiller : MonoBehaviour{
 		id = fighter.ID;
 		nameText.text = fighter.Name;
 		rarityText.text = fighter.Rarity.ToString();
-		levelText.text = fighter.Level.ToString();
-		attackText.text = fighter.Attack.ToString();
-		healthText.text = fighter.MaxHealth.ToString();
-		speedText.text = fighter.Speed.ToString();
+		levelText.text = $"Level: {fighter.Level.ToString()}";
+		attackText.text = $"Damage: {fighter.Attack.ToString(CultureInfo.InvariantCulture)}";
+		healthText.text = $"Health: {fighter.MaxHealth.ToString(CultureInfo.InvariantCulture)}";
+		speedText.text = $"Speed: {fighter.Speed.ToString(CultureInfo.InvariantCulture)}";
 		fighterImage.sprite = fighter.Sprite;
 	}
 	private void ShowDamage(float damage){
