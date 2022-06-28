@@ -17,7 +17,7 @@ public class CombatTester : MonoBehaviour{
         }
         //set values for the team and the bool if it's the players team or the opponents.
         team.FighterTeam = fighterStack;
-        team.PlayerTeam = playerteam;
+        team.IsPlayerTeam = playerteam;
         return team;
     }
 
@@ -40,7 +40,7 @@ public class CombatTester : MonoBehaviour{
             
             //This is where the actual fighter values are assigned, this will be taken from the inventory when selected.
             fighterInfo = new FighterInfo{ // this is for testing, dont change even though its recommended.
-                ID = id++,
+                ID = $"{id++}",
                 MaxHealth = 10,
                 Attack = 5,
                 Speed = 10,
