@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Meta.Cards;
 using Meta.Inventory.NewSeedInventory.Messages;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,9 +11,9 @@ namespace Meta.Inventory.NewSeedInventory {
         public SeedInventorySlotPrefabs[] SeedSlots;
         [SerializeField] private GameObject growSlotItemParent;
         
-        public NewGrowSlotPrefabs[] GrowSlots;
+        public NewGrowSlot[] GrowSlotsPrefabs;
         
-        private List<NewGrowSlotPrefabs> harvestableSlots;
+        private List<NewGrowSlot> harvestableSlots = new List<NewGrowSlot>();
         private NewSeedInventory _seedInventory;
 
         private void Start() {
@@ -48,17 +49,17 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         private void InstantiateGrowSlot(NewSeed seed) {
-            var slotToInstantiate = GrowSlots.First(prefab => prefab.rarity == seed.Rarity);
+            var slotToInstantiate = GrowSlotsPrefabs.First(prefab => prefab.rarity == seed.Rarity);
             var slotClone = Instantiate(slotToInstantiate, growSlotItemParent.transform, false);
             slotClone.SetUp(seed);
         }
 
         private void AddToHarvestable(GrowSlotReadyToHarvestMessage growSlotReadyToHarvestMessage) {
-            harvestableSlots.Add(growSlotReadyToHarvestMessage.GrowSlotPrefabs);
+            harvestableSlots.Add(growSlotReadyToHarvestMessage.GrowSlot);
         }
         
-        private void RemoveFromHarvestable(NewGrowSlotPrefabs growSlotPrefabs) {
-            harvestableSlots.Remove(growSlotPrefabs);
+        private void RemoveFromHarvestable(NewGrowSlot growSlot) {
+            harvestableSlots.Remove(growSlot);
         }
         
         public void HarvestAll() {
@@ -66,21 +67,30 @@ namespace Meta.Inventory.NewSeedInventory {
                 for (int i = harvestableSlots.Count - 1; i >= 0; i--) {
                     if (!harvestableSlots[i].readyToHarvest) continue;
                     if (harvestableSlots[i] == null) continue;
-                    Harvest(harvestableSlots[i]);
-                    harvestableSlots.RemoveAt(i);
-                    harvestableSlots[i].Destroy();
+                    HarvestOperations(harvestableSlots[i]);
                 }
             } else {
                 Debug.Log("No seeds to harvest");
             }
         }
 
-        private void Harvest(NewGrowSlotPrefabs growSlotPrefabs) {
-            RemoveFromHarvestable(growSlotPrefabs);
+        private void HarvestOperations(NewGrowSlot growSlot) {
+            RemoveFromHarvestable(growSlot);
+            growSlot.Destroy();
+            PlantSpawn(growSlot.rarity);
+        }
+        
+        private void PlantSpawn(Rarity rarity) {
+            var spawnMessage = new SpawnCardFromSeed(rarity);
+            Broker.InvokeSubscribers(spawnMessage.GetType(), spawnMessage);
+        }
+
+        private void Harvest(NewGrowSlot growSlot) {
+            HarvestOperations(growSlot);
         }
         
         private void Harvest(HarvestSlotMessage message) {
-            RemoveFromHarvestable(message.GrowSlotPrefabs);
+            HarvestOperations(message.GrowSlot);
         }
 
         private void OnSeedAdded(ItemCollectedMessage<NewSeed> message) {
