@@ -13,46 +13,60 @@ public class PurchasingSystem : MonoBehaviour{
     private ShopItemList shopItems;
 
     private bool alreadyPurchased;
-    //public string Name{ get; }
+    
+    
+    private Money PlayerMoney{ get; set;}
+    private Fertilizer PlayerFertilizer{ get; set;}
+    
 
-    public int PlayerMoney{ get; private set; } = 10000;
-    public int PlayerFertilizer{ get; private set; } = 10000;
+    private void Awake(){
+        Broker.Subscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
 
-    //public string SpriteName{ get; }
-    //public Sprite Sprite{ get; }
-    public void BuySeedWithMoney(int value){
-        if (PlayerMoney >= value){
-            PlayerMoney -= value;
-        }
-    }
-    public void BuySeedWithFertilizer(int value){
-        if (PlayerFertilizer >= value){
-            PlayerFertilizer -= value;
-        }
     }
     
-    public void BuySeedWithMoneyAndFertilizer(int value, int value2){
-        if (PlayerMoney < value || PlayerFertilizer < value2) return;
-        PlayerMoney -= value;
-        PlayerFertilizer -= value2;
+    public void RequestCurrency(){
+        Broker.InvokeSubscribers(typeof(AskForPlayerCurrencyMessage),new AskForPlayerCurrencyMessage());
+    }
+
+    public void SetCurrency(DisplayPlayerCurrencyMessage displayPlayerCurrencyMessage){
+        PlayerMoney = displayPlayerCurrencyMessage.money;
+        PlayerFertilizer = displayPlayerCurrencyMessage.fertilizer;
     }
     
-    public void BuyMusicWithFertilizer(int value){
-        if (PlayerFertilizer >= value && !alreadyPurchased){
-            PlayerFertilizer -= value;
+
+    public void BuyItemWithMoney(ShopItemTest SO){
+        if (PlayerMoney.Amount >= SO.money){
+            PlayerMoney.Amount -= SO.money;
         }
     }
-    
-    public void BuyMusicWithMoney(int value){
-        if (PlayerMoney >= value){
-            PlayerMoney -= value;
+    public void BuyItemWithFertilizer(ShopItemTest SO){
+        if (PlayerFertilizer.Amount >= SO.fertilizer){
+            PlayerFertilizer.Amount -= SO.fertilizer;
         }
     }
     
-    public void BuyMusicWithMoneyAndFertilizer(int value, int value2){
-        if (PlayerMoney < value || PlayerFertilizer < value2) return;
-        PlayerMoney -= value;
-        PlayerFertilizer -= value2;
+    public void BuyItemWithMoneyAndFertilizer(int value, int value2){
+        if (PlayerMoney.Amount < value || PlayerFertilizer.Amount < value2) return;
+        PlayerMoney.Amount -= value;
+        PlayerFertilizer.Amount -= value2;
+    }
+    
+    public void BuyLimitedItemWithFertilizer(int value){
+        if (PlayerFertilizer.Amount >= value && !alreadyPurchased){
+            PlayerFertilizer.Amount -= value;
+        }
+    }
+    
+    public void BuyLimitedItemWithMoney(int value){
+        if (PlayerMoney.Amount >= value && !alreadyPurchased){
+            PlayerMoney.Amount -= value;
+        }
+    }
+    
+    public void BuyLimitedItemWithMoneyAndFertilizer(int value, int value2){
+        if (PlayerMoney.Amount < value || PlayerFertilizer.Amount < value2) return;
+        PlayerMoney.Amount -= value;
+        PlayerFertilizer.Amount -= value2;
     }
     
 
