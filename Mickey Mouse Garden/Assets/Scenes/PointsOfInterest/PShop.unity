@@ -3233,9 +3233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ee02eea8b2bd547a21ab3943ba5ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountFieldObjects:
-  - {fileID: 5262459459239876453}
-  - {fileID: 5262459459731998455}
+  moneyAmountFieldObjects: {fileID: 5262459459239876453}
+  fertilizerAmountFieldObjects: {fileID: 5262459459731998455}
 --- !u!114 &5262459460126121633
 MonoBehaviour:
   m_ObjectHideFlags: 0
