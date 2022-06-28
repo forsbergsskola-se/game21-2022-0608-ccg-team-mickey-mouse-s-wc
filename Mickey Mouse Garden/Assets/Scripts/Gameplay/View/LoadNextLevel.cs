@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class LoadNextLevel : MonoBehaviour
 {
    public void Continue(){
-      SceneManager.LoadScene("NavigationRoom");
+      SceneManager.UnloadSceneAsync("Arena");
    }
 }
