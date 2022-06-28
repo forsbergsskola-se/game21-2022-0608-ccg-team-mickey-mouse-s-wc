@@ -38,33 +38,22 @@ public class PurchasingSystem : MonoBehaviour{
 
     #region Seeds
 
-    public void BuyItemWithMoney(ShopItemTest SO){
-        if (PlayerMoney.Amount >= SO.money){
-            PlayerMoney.Amount -= SO.money;
-            var message = new AddPlayerCurrencyMessage();
-            message.money = PlayerMoney;
-            Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
-            NewSeed seed = new NewSeed();
-            seed.rarity = SO.rarity;
-            var collectedMessage = new ItemCollectedMessage<NewSeed>(seed);
-            Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);}
-        
+    public void BuyItem(ShopItemTest SO){
+        if (PlayerMoney.Amount < SO.money || PlayerFertilizer.Amount < SO.fertilizer) return;
+        PlayerMoney.Amount -= SO.money;
+        PlayerFertilizer.Amount -= SO.fertilizer;
+        var message = new AddPlayerCurrencyMessage();
+        message.money = PlayerMoney;
+        Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
+        NewSeed seed = new NewSeed();
+        seed.rarity = SO.rarity;
+        var collectedMessage = new ItemCollectedMessage<NewSeed>(seed);
+        Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
     }
-    public void BuyItemWithFertilizer(ShopItemTest SO){
-        if (PlayerFertilizer.Amount >= SO.fertilizer){
-            PlayerFertilizer.Amount -= SO.fertilizer;
-            var message = new AddPlayerCurrencyMessage();
-            message.fertilizer = PlayerFertilizer;
-            Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
-            NewSeed seed = new NewSeed();
-            seed.rarity = SO.rarity;
-            var collectedMessage = new ItemCollectedMessage<NewSeed>(seed);
-            Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
-        }
-    }
-
     #endregion
 
+    
+    
     #region limitedItems
 
     public void BuyLimitedItemWithFertilizer(int value){
@@ -75,25 +64,6 @@ public class PurchasingSystem : MonoBehaviour{
             Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
             
         }
-    }
-    
-    public void BuyLimitedItemWithMoney(int value){
-        if (PlayerMoney.Amount >= value && !alreadyPurchased){
-            PlayerMoney.Amount -= value;
-            var message = new AddPlayerCurrencyMessage();
-            message.money = PlayerMoney;
-            Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
-        }
-    }
-    
-    public void BuyLimitedItemWithMoneyAndFertilizer(int value, int value2){
-        if (PlayerMoney.Amount < value || PlayerFertilizer.Amount < value2) return;
-        PlayerMoney.Amount -= value;
-        PlayerFertilizer.Amount -= value2;
-        var message = new AddPlayerCurrencyMessage();
-        message.money = PlayerMoney;
-        message.fertilizer = PlayerFertilizer;
-        Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
     }
 
     #endregion

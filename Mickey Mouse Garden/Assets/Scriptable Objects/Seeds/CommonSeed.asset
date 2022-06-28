@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdfb27db3653154fa9887cb649c687a, type: 3}
   m_Name: CommonSeed
   m_EditorClassIdentifier: 
-  Name: Common Seed
+  name: Default
   description: Description
   money: 10
-  fertilizer: 5
-  type: 0
+  fertilizer: 0
+  rarity: 0
   icon: {fileID: 21300000, guid: b4fed386dcb93e641b2c22b6ff168d58, type: 3}

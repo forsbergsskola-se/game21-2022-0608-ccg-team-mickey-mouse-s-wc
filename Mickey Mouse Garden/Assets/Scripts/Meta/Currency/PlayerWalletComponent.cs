@@ -50,5 +50,11 @@ namespace Experiment{
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
             UpdateDisplayCurrencies();
         }
+        [ContextMenu("TestAddCurrency")]
+        public void TestAddCurrency(){
+            wallet.Money.AddAmount(10);
+            wallet.Fertilizer.AddAmount(10);
+            UpdateDisplayCurrencies();
+        }
     }
 }

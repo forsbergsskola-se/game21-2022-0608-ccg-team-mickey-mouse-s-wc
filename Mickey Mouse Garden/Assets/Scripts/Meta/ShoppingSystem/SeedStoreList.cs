@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Meta.Seeds;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SeedStoreList : MonoBehaviour{ 
@@ -23,7 +18,8 @@ public class SeedStoreList : MonoBehaviour{
     private void Awake(){
         commonSeedPriceText.text = commonSeed.money.ToString();
         rareSeedPriceText.text = rareSeed.money.ToString();
-        epicSeedPriceText.text = epicSeed.money.ToString();
-        legendarySeedPriceText.text = legendarySeed.money.ToString();
+        epicSeedPriceText.text = epicSeed.fertilizer.ToString();
+        legendarySeedPriceText.text = legendarySeed.fertilizer.ToString();
     }
+    //TODO: Make Items display multiple currency types
 }
