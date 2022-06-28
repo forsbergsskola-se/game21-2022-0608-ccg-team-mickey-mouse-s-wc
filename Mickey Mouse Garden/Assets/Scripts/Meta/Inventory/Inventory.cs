@@ -18,11 +18,11 @@ namespace Meta.Inventory {
 
         public abstract void CollectOperations(T addedItem);         //TODO: Change name to something better
 
-        private void Add(T item) {
+        public virtual void Add(T item) {
             Items.Add(item);
         }
 
-        public void Remove(T item) {
+        public virtual void Remove(T item) {
             Items.Remove(item);
         }
         
