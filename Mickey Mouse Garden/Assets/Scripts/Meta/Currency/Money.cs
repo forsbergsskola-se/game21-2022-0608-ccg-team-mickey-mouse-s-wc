@@ -8,7 +8,7 @@ using UnityEngine;
 public class Money : ICurrency
 {
     public string Name{ get; } = "Money";
-    public int Amount{ get; private set; }
+    public int Amount{ get; internal set; }
     public string SpriteName{ get; } = "Money";
 
     [field: NonSerialized][DoNotSerialize] public Sprite Sprite{ get; set; }
