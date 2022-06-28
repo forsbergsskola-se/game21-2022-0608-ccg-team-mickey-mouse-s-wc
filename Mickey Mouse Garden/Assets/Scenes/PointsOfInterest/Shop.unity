@@ -809,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: 970961408}
     - target: {fileID: 4712268238904345118, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemWithMoney
+      value: BuyItem
       objectReference: {fileID: 0}
     - target: {fileID: 4712268238904345118, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 970961408}
     - target: {fileID: 4712268239032683994, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemWithMoney
+      value: BuyItem
       objectReference: {fileID: 0}
     - target: {fileID: 4712268239032683994, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 970961408}
     - target: {fileID: 4712268239915044862, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemWithMoney
+      value: BuyItem
       objectReference: {fileID: 0}
     - target: {fileID: 4712268239915044862, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -1013,7 +1013,7 @@ PrefabInstance:
       objectReference: {fileID: 970961408}
     - target: {fileID: 4712268240463442391, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemWithMoney
+      value: BuyItem
       objectReference: {fileID: 0}
     - target: {fileID: 4712268240463442391, guid: 4afd1c9f35475414baa4db62e6ca3c6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
