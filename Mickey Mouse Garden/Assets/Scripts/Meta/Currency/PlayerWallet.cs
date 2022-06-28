@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using UnityEngine;
-[Serializable]
+[Serializable][JsonObject]
 public class PlayerWallet : ISaveData
 {
     public Money Money { get; set; }
@@ -29,6 +30,8 @@ public class PlayerWallet : ISaveData
         for (int i = 0; i < propertyInfos.Length; i++){
             gottenType.GetProperty(propertyInfos[i].Name)?.SetValue(this,loadedPropertyInfos[i].GetValue(loadedValue));
         }
+        Debug.Log("Wallet Loading done");
+        Save();
     }
 
     public void Save(){
