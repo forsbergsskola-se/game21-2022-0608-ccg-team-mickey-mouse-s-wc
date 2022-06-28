@@ -24,7 +24,7 @@ public class CombatController : MonoBehaviour{
    }
 
    private void OnFighterTeamReceived(SelectedFighterTeamMessage obj){
-      if (obj.PlayerTeam){
+      if (obj.IsPlayerTeam){
          playerFighters = obj.FighterTeam;
       }
       else{
