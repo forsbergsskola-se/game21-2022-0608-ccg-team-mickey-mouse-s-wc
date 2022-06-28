@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Meta.Cards;
 using Meta.Inventory.NewSeedInventory.Messages;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Meta.Inventory.NewSeedInventory {
@@ -42,8 +41,7 @@ namespace Meta.Inventory.NewSeedInventory {
                 InstantiateGrowSlot(seed);
             }
         }
-        
-        
+
         private void InstantiateGrowSlot(NewSeed seed) {
             var slotToInstantiate = GrowSlotsPrefabs.First(prefab => prefab.rarity == seed.Rarity);
             var slotClone = Instantiate(slotToInstantiate, growSlotItemParent.transform, false);
@@ -102,7 +100,6 @@ namespace Meta.Inventory.NewSeedInventory {
             var spawnMessage = new SpawnCardFromSeed(rarity);
             Broker.InvokeSubscribers(spawnMessage.GetType(), spawnMessage);
         }
-
 
         private void AddToHarvestable(GrowSlotReadyToHarvestMessage growSlotReadyToHarvestMessage) {
             harvestableSlots.Add(growSlotReadyToHarvestMessage.GrowSlot);

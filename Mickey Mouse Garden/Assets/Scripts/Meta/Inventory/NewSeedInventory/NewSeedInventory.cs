@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +15,6 @@ namespace Meta.Inventory.NewSeedInventory {
             } else {
                 //TODO: Implement marc's way, loading in saved file<- For Oliver
                 Instance = this;
-                Debug.Log("New seed inv instance");
             }
         }
 
@@ -25,7 +23,7 @@ namespace Meta.Inventory.NewSeedInventory {
         }
         
         public override void CollectOperations(NewSeed addedItem) {
-            Debug.Log("No collect operation");
+            //TODO: Save
         }
     }
 }
