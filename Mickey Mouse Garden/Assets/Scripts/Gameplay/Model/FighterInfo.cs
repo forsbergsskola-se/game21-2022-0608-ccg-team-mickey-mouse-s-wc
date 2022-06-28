@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class FighterInfo : MonoBehaviour {
-    public int ID { get; set;}
+    public string ID { get; set;}
     public float MaxHealth { get; set;}
     public float Attack { get; set;}
     public float Speed { get; set;}
