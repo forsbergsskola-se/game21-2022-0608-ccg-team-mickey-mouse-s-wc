@@ -106,5 +106,7 @@ namespace Meta.Inventory {
             Broker.Unsubscribe<ReadyToHarvestMessage>(AddToHarvestableList);
             Broker.Unsubscribe<RequestHarvestMessage>(Harvest);
         }
+
+        
     }
 }

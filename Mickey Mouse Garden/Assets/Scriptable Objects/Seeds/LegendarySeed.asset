@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Description
   money: 10
   fertilizer: 10
-  rarity: 0
+  rarity: 3
   icon: {fileID: 21300000, guid: ccc6f9e7ea99aef4197cfaa773c20247, type: 3}
