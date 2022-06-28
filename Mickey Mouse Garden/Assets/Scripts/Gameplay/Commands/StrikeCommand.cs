@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 public class StrikeCommand : ICommand{
@@ -6,13 +7,11 @@ public class StrikeCommand : ICommand{
     private FighterInfo striker;
 
     private float multiplier = 1f;
+    
 
     public StrikeCommand(FighterInfo target, FighterInfo striker){
         this.target = target;
         this.striker = striker;
-    }
-    public void Execute(){
-        Strike();
     }
 
     public Task ExecuteAsync(){
@@ -21,26 +20,23 @@ public class StrikeCommand : ICommand{
     }
 
     private void Strike(){
-        var damageDealt = striker.Attack * CheckAlignment();
+        var damageDealt = striker.Attack * CheckAlignment(striker, target);
         target.MaxHealth -= damageDealt;
         FighterStrikeMessage strikeMessage = new(){TargetID = target.ID, SelfID = striker.ID,Targethealth = target.MaxHealth,DamageDealt = damageDealt};
         Broker.InvokeSubscribers(typeof(FighterStrikeMessage), strikeMessage);
     }
 
-    private float CheckAlignment(){ //TODO: make a dictionary of dictionaries kinda deal ala Marc
-        if (target.Alignment == striker.Alignment) return multiplier;
-        if (striker.Alignment == Alignment.Paper){
-            if (target.Alignment == Alignment.Rock) return multiplier += 0.5f;
-            if (target.Alignment == Alignment.Scissors) return multiplier -= 0.5f;
-        }
-        else if (striker.Alignment == Alignment.Rock){
-            if (target.Alignment == Alignment.Scissors) return multiplier += 0.5f;
-            if (target.Alignment == Alignment.Paper) return multiplier -= 0.5f;
-        }
-        else if (striker.Alignment == Alignment.Scissors)
-            if (target.Alignment == Alignment.Paper) return multiplier += 0.5f;
-            if (target.Alignment == Alignment.Rock) return multiplier -= 0.5f;
-            return multiplier;
+    private float CheckAlignment(FighterInfo striker, FighterInfo target){
+        var strengths = new Dictionary<Alignment, Alignment>{
+            [Alignment.Scissors] = Alignment.Paper,
+            [Alignment.Rock] = Alignment.Scissors,
+            [Alignment.Paper] = Alignment.Rock
+        };
+        if(strengths[striker.Alignment] == target.Alignment)
+            return multiplier += .5f;
+        if(strengths[target.Alignment] == striker.Alignment)
+            return multiplier -= .5f;
+        return multiplier;
     }
 
     public void Undo(){
