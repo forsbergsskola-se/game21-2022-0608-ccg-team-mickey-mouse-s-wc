@@ -30,16 +30,27 @@ public class PurchasingSystem : MonoBehaviour{
     }
     
     public void BuySeedWithMoneyAndFertilizer(int value, int value2){
-        if (PlayerMoney >= value && PlayerFertilizer >= value2){
-            PlayerMoney -= value;
-            PlayerFertilizer -= value2;
-        }
+        if (PlayerMoney < value || PlayerFertilizer < value2) return;
+        PlayerMoney -= value;
+        PlayerFertilizer -= value2;
     }
     
     public void BuyMusicWithFertilizer(int value){
         if (PlayerFertilizer >= value){
             PlayerFertilizer -= value;
         }
+    }
+    
+    public void BuyMusicWithMoney(int value){
+        if (PlayerMoney >= value){
+            PlayerMoney -= value;
+        }
+    }
+    
+    public void BuyMusicWithMoneyAndFertilizer(int value, int value2){
+        if (PlayerMoney < value || PlayerFertilizer < value2) return;
+        PlayerMoney -= value;
+        PlayerFertilizer -= value2;
     }
     
 
