@@ -35,7 +35,7 @@ public class CardContentFiller : MonoBehaviour{
 		ShowDamage(damage);
 	}
 
-	public void AssignTextFields(FighterInfo fighter){
+	public void AssignTextFields(FighterInfo fighter){ //TODO: add discriptive text to the values eg. health: 5
 		id = fighter.ID;
 		nameText.text = fighter.Name;
 		rarityText.text = fighter.Rarity.ToString();
