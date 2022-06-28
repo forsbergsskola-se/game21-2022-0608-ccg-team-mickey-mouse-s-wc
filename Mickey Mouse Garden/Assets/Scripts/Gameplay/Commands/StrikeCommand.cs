@@ -22,7 +22,7 @@ public class StrikeCommand : ICommand{
     private void Strike(){
         var damageDealt = striker.Attack * CheckAlignment(striker, target);
         target.MaxHealth -= damageDealt;
-        FighterStrikeMessage strikeMessage = new(){TargetID = target.ID, SelfID = striker.ID,Targethealth = target.MaxHealth,DamageDealt = damageDealt};
+        FighterStrikeMessage strikeMessage = new(){TargetID = target.ID, SelfID = striker.ID,TargetHealth = target.MaxHealth,DamageDealt = damageDealt};
         Broker.InvokeSubscribers(typeof(FighterStrikeMessage), strikeMessage);
     }
 
