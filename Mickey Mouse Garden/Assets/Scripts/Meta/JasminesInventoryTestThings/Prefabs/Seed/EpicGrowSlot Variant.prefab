@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EpicGrowSlot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3798395372199242350, guid: 8c3cdb1dfd4e44b289ea5bb71b7409d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ec736fdc62b0464b8fc3d26de4646b0, type: 3}
     - target: {fileID: 3798395372340459134, guid: 8c3cdb1dfd4e44b289ea5bb71b7409d3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

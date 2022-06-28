@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Meta.Inventory {
     public abstract class Inventory<T> : MonoBehaviour where T : IInventoryItem {
-        public abstract List<T> InventoryItems { get; set; }
+        public abstract List<T> Items { get; set; }
 
         protected void InitBase() {
             Broker.Subscribe<ItemCollectedMessage<T>>(OnItemCollected);
@@ -22,11 +22,11 @@ namespace Meta.Inventory {
         public abstract void CollectOperations(T addedItem);         //TODO: Change name to something better
 
         public void Add(T item) {
-            InventoryItems.Add(item);
+            Items.Add(item);
         }
 
         public void Remove(T item) {
-            InventoryItems.Remove(item);
+            Items.Remove(item);
         }
         
         private void OnDestroy() {

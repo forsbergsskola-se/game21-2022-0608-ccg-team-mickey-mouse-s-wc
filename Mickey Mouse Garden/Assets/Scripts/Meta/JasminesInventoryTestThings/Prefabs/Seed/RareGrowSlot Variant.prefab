@@ -93,8 +93,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3798395370979913293, guid: 8c3cdb1dfd4e44b289ea5bb71b7409d3, type: 3}
       propertyPath: m_Name
-      value: RareGrowSlot
+      value: RareGrowSlot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3798395372199242350, guid: 8c3cdb1dfd4e44b289ea5bb71b7409d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4db7d00996d47904eaaae657d7181ab3, type: 3}
     - target: {fileID: 3798395372340459134, guid: 8c3cdb1dfd4e44b289ea5bb71b7409d3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

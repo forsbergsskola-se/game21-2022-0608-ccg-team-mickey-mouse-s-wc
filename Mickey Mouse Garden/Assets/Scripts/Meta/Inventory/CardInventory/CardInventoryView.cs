@@ -18,16 +18,16 @@ namespace Meta.Cards {
             var cardInventory = CardInventory.Instance;
             Broker.Subscribe<CardAddedToInventoryMessage>(OnCardAdded);
 
-            if (cardInventory.InventoryItems.Count > 0) {
-                foreach (var card in cardInventory.InventoryItems) {
+            if (cardInventory.Items.Count > 0) {
+                foreach (var card in cardInventory.Items) {
                     OnCardAdded(card);
                 }
             }
         }
 
-        private void OnCardAdded(CardAddedToInventoryMessage cardMessage) {
+        private void OnCardAdded(CardAddedToInventoryMessage message) {
             var cardInstance = Instantiate(cardPrefab, transform);
-            var card = cardMessage.Card;
+            var card = message.Card;
             var cardValues = cardLibrary.cards.Single(it => it.id == card.cardId);
             cardInstance.Configure(cardValues);
         }

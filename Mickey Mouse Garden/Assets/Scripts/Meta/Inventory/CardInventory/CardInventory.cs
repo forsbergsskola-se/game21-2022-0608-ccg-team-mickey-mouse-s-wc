@@ -9,8 +9,7 @@ namespace Meta.Inventory.FighterInventory {
     /// </summary>
     [System.Serializable]
     public class CardInventory : Inventory<Card> {
-        public override List<Card> InventoryItems { get; set; } = new();
-        public IEnumerable<Card> Cards => InventoryItems;
+        public override List<Card> Items { get; set; } = new();
         public static CardInventory Instance { get; private set; }
 
         private void Awake() {
@@ -39,7 +38,7 @@ namespace Meta.Inventory.FighterInventory {
             //TODO: Save
             
             Debug.Log("This was collected" + addedItem.cardId);
-            Debug.Log("Inventory count is" + InventoryItems.Count);
+            Debug.Log("Inventory count is" + Items.Count);
         }
     }
 }

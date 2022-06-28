@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Meta.Inventory {
     public class SeedInventory : Inventory<Seed> {
-        public override List<Seed> InventoryItems { get; set; } = new();
+        public override List<Seed> Items { get; set; } = new();
         public List<Seed> growingSeeds = new();
         
         [SerializeField] private SeedInventoryUI seedInventoryUI;
@@ -40,7 +40,7 @@ namespace Meta.Inventory {
             Seed seedOfRequestedRarity;
 
             try {
-                seedOfRequestedRarity = InventoryItems.First(seed => seed.rarity == rarity);
+                seedOfRequestedRarity = Items.First(seed => seed.rarity == rarity);
             }
             catch (Exception e) {
                 e = new Exception("You have no seeds to plant");
@@ -50,7 +50,7 @@ namespace Meta.Inventory {
             
             //TODO: Remove dependency on seedInventoryUI and use broker instead
 
-            InventoryItems.Remove(seedOfRequestedRarity); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
+            Items.Remove(seedOfRequestedRarity); //Might be inventory responsibility, add OnItemRemoved in inventory if this pattern occurs in several inventories
             seedInventoryUI.UpdateSeedCount(GetSeedCountOfRarity(rarity), rarity);
             
             growingSeeds.Add(seedOfRequestedRarity);
@@ -62,7 +62,7 @@ namespace Meta.Inventory {
         }
 
         private int GetSeedCountOfRarity(Rarity rarity) {
-            return InventoryItems.Count(seed => seed.rarity == rarity);
+            return Items.Count(seed => seed.rarity == rarity);
         }
 
         private void AddToHarvestableList(ReadyToHarvestMessage readyToHarvestMessage) {
