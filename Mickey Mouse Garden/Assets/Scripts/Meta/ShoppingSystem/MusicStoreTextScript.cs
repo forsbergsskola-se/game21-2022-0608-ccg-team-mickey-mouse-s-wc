@@ -8,7 +8,9 @@ public class MusicStoreTextScript : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI song2;
     [SerializeField] private TextMeshProUGUI song3;
     [SerializeField] private TextMeshProUGUI song4;
-    
+
+    #region ChangingTextMethods
+
     public void ChangeSong1TextToOutOfStock(){
         song1.text = "Out of Stock";
     }
@@ -21,4 +23,6 @@ public class MusicStoreTextScript : MonoBehaviour{
     public void ChangeSong4TextToOutOfStock(){
         song4.text = "Out of Stock";
     }
+
+    #endregion
 }
