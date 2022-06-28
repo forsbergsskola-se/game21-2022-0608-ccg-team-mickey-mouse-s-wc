@@ -59,7 +59,6 @@ public class CombatController : MonoBehaviour{
    }
 
    private void OnDeathMessageRecieved(FighterFaintMessage obj){
-      Debug.Log($"{obj.fighterInfo.Name} has died");
       if (obj.wasPlayerFighter){
          if (playerFighters.TryPop(out var temp)){
             playerFighter = temp;

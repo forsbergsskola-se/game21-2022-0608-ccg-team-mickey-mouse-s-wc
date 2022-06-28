@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using UnityEngine;
 
 public class StrikeCommand : ICommand{
     private FighterInfo target;
@@ -24,7 +23,6 @@ public class StrikeCommand : ICommand{
     private void Strike(){
         var damageDealt = striker.Attack * CheckAlignment();
         target.MaxHealth -= damageDealt;
-        Debug.Log($"{target.Name}s health is now {target.MaxHealth}");
         FighterStrikeMessage strikeMessage = new(){ID = target.ID, Targethealth = target.MaxHealth,DamageDealt = damageDealt};
         Broker.InvokeSubscribers(typeof(FighterStrikeMessage), strikeMessage);
     }

@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using UnityEngine;
 
 public class EndOfCombatCommand : ICommand{
 
@@ -12,9 +11,6 @@ public class EndOfCombatCommand : ICommand{
     public Task ExecuteAsync(){
         Broker.InvokeSubscribers(typeof(CreatePostCombatUIMessage), new CreatePostCombatUIMessage());
         if (playerWinner){
-            //TODO: celebrate the win
-            Debug.Log("player wins!");
-            
             SendPostCombatStateMessage(PostCombatState.Victory);
             var message = new CurrencyRewardMessage();
             message.money = reward;
@@ -23,8 +19,6 @@ public class EndOfCombatCommand : ICommand{
         }
 
         if (!playerWinner){
-            //TODO: cry about defeat
-            Debug.Log("enemy wins!");
             SendPostCombatStateMessage(PostCombatState.Defeat);
         }
         return Task.CompletedTask;
