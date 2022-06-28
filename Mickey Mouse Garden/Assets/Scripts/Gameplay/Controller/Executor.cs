@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public interface ICommand{
-    //public void Execute();
     public Task ExecuteAsync();
     public void Undo();
 }
