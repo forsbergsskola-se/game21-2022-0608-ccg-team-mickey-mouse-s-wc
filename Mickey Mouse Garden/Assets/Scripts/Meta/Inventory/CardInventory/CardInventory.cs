@@ -36,9 +36,6 @@ namespace Meta.Inventory.FighterInventory {
             Broker.InvokeSubscribers(cardAddedMessage.GetType(), cardAddedMessage);
             
             //TODO: Save
-            
-            Debug.Log("This was collected" + addedItem.cardId);
-            Debug.Log("Inventory count is" + Items.Count);
         }
     }
 }

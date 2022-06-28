@@ -761,6 +761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1035598178356861572}
   - component: {fileID: 1840170918160427080}
+  - component: {fileID: 1934178424261537524}
   m_Layer: 5
   m_Name: FighterSelectionCard
   m_TagString: Untagged
@@ -808,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc00bbcd1dbeda45af90a88b1280832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faintDelay: 0.5
+  id: 0
   nameText: {fileID: 1035598178585166804}
   rarityText: {fileID: 1035598177881462726}
   levelText: {fileID: 1035598177593677076}
@@ -820,6 +821,18 @@ MonoBehaviour:
   fighterImage: {fileID: 1035598177486613767}
   damageTextTransform: {fileID: 1035598177486613766}
   parent: {fileID: 1035598178356861572}
+--- !u!114 &1934178424261537524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035598178356861579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3416888481218634b805bb0b2935fd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1035598178585166810
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +926,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.25
+  m_fontSize: 12.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

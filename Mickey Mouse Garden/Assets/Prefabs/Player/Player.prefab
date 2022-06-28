@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2488210383294171499}
   - component: {fileID: 2488210383294171496}
-  - component: {fileID: 2488210383294171508}
   - component: {fileID: 2488210383294171509}
   - component: {fileID: 2488210383294171498}
+  - component: {fileID: 5463687790659660716}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -47,20 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3068f65c8a2a9b449915378c3b082cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2488210383294171508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2488210383294171497}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4bf2d073cba4c568868ef466724e806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  growingSeeds: []
-  seedInventoryUI: {fileID: 1701594244920223542, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
 --- !u!114 &2488210383294171509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,5 +72,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6594e9890864d3a4a8c2a32b475cb91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5463687790659660716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488210383294171497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0210b882be2414b8f697f29de899926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

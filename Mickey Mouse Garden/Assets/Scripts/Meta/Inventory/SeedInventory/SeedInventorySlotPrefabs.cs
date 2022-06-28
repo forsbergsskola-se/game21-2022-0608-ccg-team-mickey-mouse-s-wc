@@ -1,8 +1,5 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
 
 namespace Meta.Inventory {
     public class SeedInventorySlotPrefabs : MonoBehaviour {
