@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Meta.Inventory.NewSeedInventory {
     public class SeedInventoryView : MonoBehaviour {
-        public SeedInventorySlotPrefabs[] SeedSlots;
+        public SeedSlotContainer[] SeedSlots;
         [SerializeField] private GameObject growSlotItemParent;
         
         public NewGrowSlot[] GrowSlotsPrefabs;

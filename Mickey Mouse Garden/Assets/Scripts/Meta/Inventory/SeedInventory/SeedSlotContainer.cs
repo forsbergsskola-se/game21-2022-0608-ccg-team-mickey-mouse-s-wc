@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 namespace Meta.Inventory {
-    public class SeedInventorySlotPrefabs : MonoBehaviour {
+    public class SeedSlotContainer : MonoBehaviour {
         public Rarity Rarity;
         [SerializeField] private TextMeshProUGUI rarityText;
         [SerializeField] private TextMeshProUGUI countText;
