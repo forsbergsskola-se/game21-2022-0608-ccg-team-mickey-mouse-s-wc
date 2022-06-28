@@ -1567,9 +1567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ee02eea8b2bd547a21ab3943ba5ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountFieldObjects:
-  - {fileID: 4712268238879647802}
-  - {fileID: 4712268239934040994}
+  moneyAmountFieldObjects: {fileID: 4712268238879647802}
+  fertilizerAmountFieldObjects: {fileID: 4712268239934040994}
 --- !u!114 &4712268238869715707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1629,10 +1628,10 @@ RectTransform:
   m_Father: {fileID: 4712268238869715702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -13.072522}
+  m_SizeDelta: {x: 160, y: 26.145044}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4712268238879647801
 CanvasRenderer:
@@ -1991,13 +1990,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuySeedWithMoney
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 300
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2678,13 +2677,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuySeedWithFertilizer
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 800
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2910,9 +2909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ee02eea8b2bd547a21ab3943ba5ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountFieldObjects:
-  - {fileID: 4712268239492048128}
-  - {fileID: 4712268239431535532}
+  moneyAmountFieldObjects: {fileID: 4712268239492048128}
+  fertilizerAmountFieldObjects: {fileID: 4712268239431535532}
 --- !u!114 &4712268239097661820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3160,9 +3158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ee02eea8b2bd547a21ab3943ba5ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountFieldObjects:
-  - {fileID: 4712268240176139796}
-  - {fileID: 4712268240191305619}
+  moneyAmountFieldObjects: {fileID: 4712268240176139796}
+  fertilizerAmountFieldObjects: {fileID: 4712268240191305619}
 --- !u!114 &4712268239158649873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4610,14 +4607,14 @@ GameObject:
   - component: {fileID: 4712268239370761899}
   - component: {fileID: 4712268239370761897}
   - component: {fileID: 4712268239370761896}
-  - component: {fileID: 4712268239370761902}
+  - component: {fileID: 1022686544}
   m_Layer: 5
   m_Name: SeedStore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4712268239370761899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4686,7 +4683,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4712268239370761902
+--- !u!114 &1022686544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4695,17 +4692,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4712268239370761898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05622c1b05cec44cbfa46d3df8c317c, type: 3}
+  m_Script: {fileID: 11500000, guid: f51d600d63612634284cc9b86369fd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commonSeed: {fileID: 11400000, guid: 045dda817247c544e8cff5cc4b1856bb, type: 2}
+  rareSeed: {fileID: 11400000, guid: 10e4aa152e1692e458ea9d3f4152ad6d, type: 2}
+  epicSeed: {fileID: 11400000, guid: 7832edf3766afc445869637879aba51d, type: 2}
+  legendarySeed: {fileID: 11400000, guid: 84dacf36fa1e8f7429e3a173199e31eb, type: 2}
   commonSeedPriceText: {fileID: 4712268239268531635}
   rareSeedPriceText: {fileID: 4712268239767657851}
   epicSeedPriceText: {fileID: 4712268239956893520}
   legendarySeedPriceText: {fileID: 4712268238550229427}
-  commonSeedPriceValue: 50
-  rareSeedPriceValue: 100
-  epicSeedPriceValue: 50
-  legendarySeedPriceValue: 100
 --- !u!1 &4712268239431535532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,10 +4736,10 @@ RectTransform:
   m_Father: {fileID: 4712268239097661823}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -39.04697}
-  m_SizeDelta: {x: 160, y: 25.803852}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4712268239431535539
 CanvasRenderer:
@@ -4987,13 +4984,14 @@ GameObject:
   - component: {fileID: 4712268239446811303}
   - component: {fileID: 4712268239446811306}
   - component: {fileID: 4712268239446811301}
+  - component: {fileID: 461269087}
   m_Layer: 5
   m_Name: MusicStore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4712268239446811303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5062,6 +5060,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &461269087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712268239446811302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9969ac8b9a8374997189adefb72d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song1: {fileID: 4712268240327409711}
+  song2: {fileID: 4712268239200509701}
+  song3: {fileID: 4712268239743696786}
+  song4: {fileID: 4712268239896856113}
 --- !u!1 &4712268239450001658
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,14 +5200,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 461269087}
+        m_TargetAssemblyTypeName: MusicStoreTextScript, Assembly-CSharp
+        m_MethodName: ChangeSong4TextToOutOfStock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuyMusicWithFertilizer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5231,10 +5257,10 @@ RectTransform:
   m_Father: {fileID: 4712268239097661823}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -13.072522}
-  m_SizeDelta: {x: 160, y: 26.145044}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4712268239492048135
 CanvasRenderer:
@@ -5728,7 +5754,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4712268239531398239}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 461269087}
+        m_TargetAssemblyTypeName: MusicStoreTextScript, Assembly-CSharp
+        m_MethodName: ChangeSong1TextToOutOfStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuyMusicWithFertilizer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4712268239588527695
 GameObject:
   m_ObjectHideFlags: 0
@@ -5853,14 +5903,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 461269087}
+        m_TargetAssemblyTypeName: MusicStoreTextScript, Assembly-CSharp
+        m_MethodName: ChangeSong3TextToOutOfStock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuyMusicWithFertilizer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 200
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7395,7 +7457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8077,13 +8139,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuySeedWithMoney
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1000
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8121,10 +8183,10 @@ RectTransform:
   m_Father: {fileID: 4712268238869715702}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -39.04697}
+  m_SizeDelta: {x: 160, y: 25.803852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4712268239934040993
 CanvasRenderer:
@@ -9237,10 +9299,10 @@ RectTransform:
   m_Father: {fileID: 4712268239158649872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -13.072522}
-  m_SizeDelta: {x: 160, y: 26.145044}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4712268240176139803
 CanvasRenderer:
@@ -9372,10 +9434,10 @@ RectTransform:
   m_Father: {fileID: 4712268239158649872}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -39.04697}
-  m_SizeDelta: {x: 160, y: 25.803852}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4712268240191305622
 CanvasRenderer:
@@ -10239,7 +10301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10735,9 +10797,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4712268240422667901}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.4036255, y: -25.692932, z: -2.0698242}
-  m_LocalScale: {x: 0.74, y: 0.74, z: 0.74}
+  m_LocalScale: {x: 1.9930177, y: 1.9930177, z: 1.9930177}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4712268239370761899}
@@ -11005,14 +11067,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 461269087}
+        m_TargetAssemblyTypeName: MusicStoreTextScript, Assembly-CSharp
+        m_MethodName: ChangeSong2TextToOutOfStock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuyMusicWithFertilizer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11140,4 +11214,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4712268240463442388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PurchasingSystem, Assembly-CSharp
+        m_MethodName: BuySeedWithMoney
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
