@@ -18,8 +18,11 @@ public class CardContentFiller : MonoBehaviour{
 	}
 
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
-		if (id == obj.ID){
+		if (id == obj.TargetID){
 			UpdateHealthUI(obj.Targethealth, obj.DamageDealt);
+		}
+		if (id == obj.SelfID){
+			ShakeCard();
 		}
 	}
 
@@ -32,7 +35,7 @@ public class CardContentFiller : MonoBehaviour{
 		ShowDamage(damage);
 	}
 
-	public void AssignTextFields(FighterInfo fighter){
+	public void AssignTextFields(FighterInfo fighter){ //TODO: add discriptive text to the values eg. health: 5
 		id = fighter.ID;
 		nameText.text = fighter.Name;
 		rarityText.text = fighter.Rarity.ToString();
@@ -51,6 +54,16 @@ public class CardContentFiller : MonoBehaviour{
 	}
 	private IEnumerator Fainting(){
 		yield return new WaitForSeconds(0.75f);
-		faintedImage.SetActive(true);	
+		faintedImage.SetActive(true);
+	}
+
+	private void ShakeCard(){
+		fighterImage.transform.position -= new Vector3(10, 0 ,0);
+		Debug.Log("shaking");
+		StartCoroutine(Shaking());
+	}
+	private IEnumerator Shaking(){
+		fighterImage.transform.position += new Vector3(10, 0 ,0);
+		yield return new WaitForSeconds(0.1f);
 	}
 }
