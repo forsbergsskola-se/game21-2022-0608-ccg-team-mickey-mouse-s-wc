@@ -17,9 +17,10 @@ public class EnterTeamSelection : MonoBehaviour{
 	}
 
 	public void AnswerYes(){
+		Debug.Log("In answer yes");
 		confirmationBox.SetActive(false);
 		shown = false;
-		GoToArena();
+		GoToTeamSelection();
 	}
 
 	public void AnswerNo(){
@@ -27,7 +28,8 @@ public class EnterTeamSelection : MonoBehaviour{
 		shown = false;
 	}
 	
-	private void GoToArena(){
+	private void GoToTeamSelection(){
+		Debug.Log("Should go to team selection");
 		SceneManager.LoadScene("TeamSelection", LoadSceneMode.Additive);
 		SceneManager.UnloadSceneAsync("OpponentSelection");
 	}
