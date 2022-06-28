@@ -7,6 +7,7 @@ namespace Meta.Cards {
     /// </summary>
     [CreateAssetMenu]
     public class CardConfig : ScriptableObject {
+        //TODO: Properties should have capital
         public Sprite image;
         public string name;
         public string id;
