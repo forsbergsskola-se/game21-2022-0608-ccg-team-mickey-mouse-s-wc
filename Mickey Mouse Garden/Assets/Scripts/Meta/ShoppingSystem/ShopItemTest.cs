@@ -11,7 +11,7 @@ public class ShopItemTest : ScriptableObject{
     public string description = "Description";
     public int money;
     public int fertilizer;
-    public ObjectType type;
+    public Rarity rarity;
     public Sprite icon;
     
     #region Getters and Setters
@@ -31,9 +31,9 @@ public class ShopItemTest : ScriptableObject{
         get { return fertilizer; }
         set { fertilizer = value; }
     }
-    public ObjectType Type {
-        get { return type; }
-        set { type = value; }
+    public Rarity Type {
+        get { return rarity; }
+        set { rarity = value; }
     }
     public Sprite Icon {
         get { return icon; }
@@ -47,11 +47,5 @@ public class ShopItemTest : ScriptableObject{
 
 
 
-public enum ObjectType{
-    CommonSeed,
-    RareSeed,
-    EpicSeed,
-    LegendarySeed,
-    Song,
-}
+
 
