@@ -36,7 +36,7 @@ public class PurchasingSystem : MonoBehaviour{
     }
 
 
-    #region Seeds
+    #region MyRegion
 
     public void BuyItemWithMoney(ShopItemTest SO){
         if (PlayerMoney.Amount >= SO.money){

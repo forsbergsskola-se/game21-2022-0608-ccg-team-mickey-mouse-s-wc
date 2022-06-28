@@ -24,4 +24,7 @@ public class PauseMenu : MonoBehaviour{
     public void MainMenu(){
         SceneManager.UnloadSceneAsync("Arena");
     }
+    public void QuitNow(){
+        Application.Quit();
+    }
 }
