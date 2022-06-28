@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinishedScenes/Arena.unity
     guid: bb53e5facf7464c4ba4998f7160ba963
+  - enabled: 1
+    path: Assets/Scenes/TemporaryScenes/TeamSelection.unity
+    guid: e67459b7272ed44a68915613d96b4497
   m_configObjects: {}

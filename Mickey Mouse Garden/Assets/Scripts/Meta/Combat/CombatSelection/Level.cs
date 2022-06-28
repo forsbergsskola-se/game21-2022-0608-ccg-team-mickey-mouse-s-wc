@@ -5,10 +5,10 @@ using Meta.Cards;
 using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
-public class EnemyTeam : MonoBehaviour {
-    public string Level;
-    public CardConfig[] EnemyTeamMembers;
-    
+public class Level : MonoBehaviour {
+    public string levelName;
+    public CardConfig[] enemyTeamMembers;
+
     public void EnterCombat() {
         Stack<FighterInfo> team = ConvertToFighterStack();
         var enemyTeamSelected = new SelectedFighterTeamMessage {FighterTeam = team, IsPlayerTeam = false};
@@ -18,7 +18,7 @@ public class EnemyTeam : MonoBehaviour {
     private Stack<FighterInfo> ConvertToFighterStack() {
         Stack<FighterInfo> team = new Stack<FighterInfo>();
         
-        foreach (var enemy in EnemyTeamMembers) {
+        foreach (var enemy in enemyTeamMembers) {
             FighterInfo fighter = new FighterInfo();
             fighter.ID = enemy.id;
             fighter.MaxHealth = enemy.maxHealth;

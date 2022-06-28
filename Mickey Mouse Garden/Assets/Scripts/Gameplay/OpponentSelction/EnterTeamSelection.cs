@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class ConfirmArena : MonoBehaviour{
+public class EnterTeamSelection : MonoBehaviour{
 
 	[SerializeField] private GameObject confirmationBox;
 	
@@ -17,19 +17,20 @@ public class ConfirmArena : MonoBehaviour{
 	}
 
 	public void AnswerYes(){
+		Debug.Log("In answer yes");
 		confirmationBox.SetActive(false);
 		shown = false;
-		GoToArena();
+		GoToTeamSelection();
 	}
 
 	public void AnswerNo(){
 		confirmationBox.SetActive(false);
 		shown = false;
 	}
-
-	// TODO: Change to teambuilding scene
-	private void GoToArena(){
-		SceneManager.LoadScene("Arena", LoadSceneMode.Additive);
+	
+	private void GoToTeamSelection(){
+		Debug.Log("Should go to team selection");
+		SceneManager.LoadScene("TeamSelection", LoadSceneMode.Additive);
 		SceneManager.UnloadSceneAsync("OpponentSelection");
 	}
 }
