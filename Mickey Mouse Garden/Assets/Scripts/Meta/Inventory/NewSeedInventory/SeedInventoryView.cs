@@ -29,7 +29,7 @@ namespace Meta.Inventory.NewSeedInventory {
         }
         
         private void DisplayInventoryItems() {
-            if (_seedInventory.Items is {Count: > 0})
+            if (_seedInventory.InventoryList.Items is {Count: > 0})
             {
                 foreach (Rarity rarity in Enum.GetValues(typeof(Rarity))) {
                     UpdateSeedCount(rarity);
@@ -50,7 +50,7 @@ namespace Meta.Inventory.NewSeedInventory {
         
         private void UpdateSeedCount(Rarity rarity) {
             var slotToUpdate = SeedSlots.FirstOrDefault(slot => slot.Rarity == rarity);
-            var numberOfSeeds = _seedInventory.Items.Count(seed => seed.Rarity == rarity);
+            var numberOfSeeds = _seedInventory.InventoryList.Items.Count(seed => seed.Rarity == rarity);
             slotToUpdate.UpdateCountText(numberOfSeeds);
         }
         
@@ -63,7 +63,7 @@ namespace Meta.Inventory.NewSeedInventory {
             NewSeed seed;
 
             try {
-                seed = _seedInventory.Items.First(newSeed => newSeed.Rarity == rarityToPlant);
+                seed = _seedInventory.InventoryList.Items.First(newSeed => newSeed.Rarity == rarityToPlant);
             }
             catch (Exception e) {
                 e = new Exception($"You have no {rarityToPlant.ToString()} seeds to plant");

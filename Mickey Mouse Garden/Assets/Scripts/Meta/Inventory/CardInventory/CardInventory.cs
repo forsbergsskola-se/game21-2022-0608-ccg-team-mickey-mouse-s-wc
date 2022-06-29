@@ -9,7 +9,7 @@ namespace Meta.Inventory.FighterInventory {
     /// </summary>
     [System.Serializable]
     public class CardInventory : Inventory<Card> {
-        public override List<Card> Items { get; set; } = new();
+        public override InventoryList<Card> InventoryList { get; set; }
         public static CardInventory Instance { get; private set; }
 
         private void Awake() {
