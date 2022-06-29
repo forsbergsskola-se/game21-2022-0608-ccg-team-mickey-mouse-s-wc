@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Meta.Inventory.NewSeedInventory {
     [System.Serializable]
-    public class Seed :  IInventoryItem, ISaveData {
+    public class Seed : IInventoryItem, ISaveData {
         public Rarity rarity;
 
         public Rarity Rarity{
@@ -19,10 +19,6 @@ namespace Meta.Inventory.NewSeedInventory {
 
         public Seed() {
             ID = new StringGUID().NewGuid();
-        }
-
-        private void Awake() {
-            Rarity = rarity;
         }
 
         public void TryLoadData() {

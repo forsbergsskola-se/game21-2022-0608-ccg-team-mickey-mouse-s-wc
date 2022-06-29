@@ -23,7 +23,7 @@ namespace Meta.Seeds {
 
         //Currently made for the test spheres in the game, this method can be changed, and should be switched from OnMouseDown (unity event function) to something else
         private void OnMouseDown() {
-            var collectedMessage = new ItemCollectedMessage<Seed>(this); //<--- Needed
+            var collectedMessage = new AddItemToInventoryMessage<Seed>(this,1); //<--- Needed
             Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage); //<--- Needed
             Destroy(gameObject); //<--- Not needed
         }
