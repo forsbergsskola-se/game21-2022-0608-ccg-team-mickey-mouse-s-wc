@@ -2032,7 +2032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1375509985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2695,7 +2695,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardButtonPrefab: {fileID: 1768207044258755847, guid: 0d34cc91b4334484f8184293cba08333, type: 3}
-  playerCardTeam: []
 --- !u!1 &1631993671
 GameObject:
   m_ObjectHideFlags: 0
