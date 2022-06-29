@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Meta.Currency;
 using UnityEngine;
 // public abstract class CurrencyMessage : IMessage{ 
 //     public ICurrency Currency{ get; set;}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Meta.Currency;
 using Meta.Interfaces;
 using Meta.Inventory;
 using Meta.Inventory.NewSeedInventory;
@@ -45,13 +46,15 @@ public class PurchasingSystem : MonoBehaviour{
     public void BuyItem(ShopItemTest SO){
         RequestCurrency();
         if (PlayerMoney.Amount < SO.money || PlayerFertilizer.Amount < SO.fertilizer) return;
-        PlayerMoney.Amount -= SO.money;
-        PlayerFertilizer.Amount -= SO.fertilizer;
         var message = new AddPlayerCurrencyMessage();
-        message.money = PlayerMoney;
+        message.money = new Money();
+        message.money.Amount = -SO.money;
+        message.fertilizer = new Fertilizer();
+        message.fertilizer.Amount = -SO.fertilizer;
         Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
         NewSeed seed = new NewSeed();
         seed.rarity = SO.rarity;
+        RequestCurrency();
         var collectedMessage = new ItemCollectedMessage<NewSeed>(seed);
         Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
     }

@@ -46,5 +46,6 @@ namespace Meta.Inventory.NewSeedInventory {
             Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(Items));
         }
         //TODO: Send a number for updating UI instead of a list of seeds. Needs NewSeed to contain amount.
+       
     }
 }

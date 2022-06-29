@@ -15,7 +15,7 @@ public class Money : ICurrency
     [DoNotSerialize] public Sprite Sprite{ get; set; }
 
     public void AddAmount(int value){
-        Amount += value;
+        Mathf.Clamp(Amount += value,0, int.MaxValue);
     }
 
     public void LoadSprite(){
