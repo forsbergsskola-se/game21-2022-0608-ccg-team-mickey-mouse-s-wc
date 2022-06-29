@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using FMOD;
+using Meta.Currency;
+using Meta.Interfaces;
+using Meta.Inventory;
+using Meta.Inventory.NewSeedInventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Thread = System.Threading.Thread;
 
 public class Slot : MonoBehaviour{
-    
+    public PlayerWalletSO playerWalletSo;
     public SlotData SlotData;
     [SerializeField]
     private TextMeshProUGUI itemName;
@@ -28,19 +32,26 @@ public class Slot : MonoBehaviour{
             return;
         }
         RequestCurrency();
-        /*if (PlayerMoney.Amount < SO.money || PlayerFertilizer.Amount < SO.fertilizer) return;
+        if (playerWalletSo.playerWallet.Money.Amount < SlotData.Money || playerWalletSo.playerWallet.Fertilizer.Amount < SlotData.Fertilizer){
+            ChangeTextToNotEnoughCurrency();
+            return;
+        }
+        SendAddPlayerCurrencyMessage();
+        SendAddItemToInventoryMessage();
+    }
+
+    void SendAddItemToInventoryMessage(){
+        var message = new AddItemToInventoryMessage<IInventoryItem>(SlotData.item,1);
+        Broker.InvokeSubscribers(message.GetType(), message);
+    }
+
+    void SendAddPlayerCurrencyMessage(){
         var message = new AddPlayerCurrencyMessage();
         message.money = new Money();
-        message.money.Amount = -SO.money;
+        message.money.Amount = -SlotData.Money;
         message.fertilizer = new Fertilizer();
-        message.fertilizer.Amount = -SO.fertilizer;
-        Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
-        NewSeed seed = new NewSeed();
-        seed.rarity = SO.rarity;
-        RequestCurrency();
-        var collectedMessage = new ItemCollectedMessage<NewSeed>(seed);
-        Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);*/
-
+        message.fertilizer.Amount = -SlotData.Fertilizer;
+        Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
     }
 
     private void ChangeTextToOutOfStock(){
@@ -50,6 +61,6 @@ public class Slot : MonoBehaviour{
     private void ChangeTextToNotEnoughCurrency(){
         itemName.text = "Not Enough Currency";
         Thread.Sleep(1000);
-        itemName.text = SlotData.item.Name;
+       // itemName.text = SlotData.item.Name;
     } 
 }
