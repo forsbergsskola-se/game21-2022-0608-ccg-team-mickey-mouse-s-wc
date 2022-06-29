@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using Meta.Interfaces;
+using Meta.Inventory.NewSeedInventory;
 using UnityEngine;
 
 namespace Meta.Inventory {
     public abstract class Inventory<T> : MonoBehaviour where T : IInventoryItem {
-        public abstract List<T> Items { get; set; }
+        public abstract InventoryList<T> InventoryList { get; set; }
 
         protected void InitBase() {
             Broker.Subscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
@@ -19,11 +20,11 @@ namespace Meta.Inventory {
         public abstract void CollectOperations(T addedItem);         //TODO: Change name to something better
 
         public virtual void Add(T item) {
-            Items.Add(item);
+            InventoryList.Items.Add(item);
         }
 
         public virtual void Remove(T item) {
-            Items.Remove(item);
+            InventoryList.Items.Remove(item);
         }
         
         private void OnDestroy() {
