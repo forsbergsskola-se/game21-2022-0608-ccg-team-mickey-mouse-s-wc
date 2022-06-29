@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1768207044258755844}
   - component: {fileID: 1768207044258755845}
-  - component: {fileID: 5469220346985247724}
   m_Layer: 5
   m_Name: CardButton
   m_TagString: Untagged
@@ -82,31 +81,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5469220346985247724}
-        m_TargetAssemblyTypeName: UITESTER, Assembly-CSharp
-        m_MethodName: SayHello
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5469220346985247724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768207044258755847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef0af93804687945a2c2adf2120b26e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls: []
 --- !u!1001 &234331804533250826
 PrefabInstance:
   m_ObjectHideFlags: 0
