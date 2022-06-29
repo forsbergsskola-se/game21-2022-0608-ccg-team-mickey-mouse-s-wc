@@ -55,7 +55,7 @@ public class PurchasingSystem : MonoBehaviour{
         Seed seed = new Seed();
         seed.rarity = SO.rarity;
         RequestCurrency();
-        var collectedMessage = new ItemCollectedMessage<Seed>(seed);
+        var collectedMessage = new AddItemToInventoryMessage<Seed>(seed,1);
         Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
     }
     #endregion

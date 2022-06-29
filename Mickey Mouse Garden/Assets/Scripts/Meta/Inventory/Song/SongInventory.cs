@@ -11,4 +11,8 @@ public class SongInventory : Inventory<Song>
     public override void CollectOperations(Song addedItem){
         throw new System.NotImplementedException();
     }
+
+    public override void RemoveOperations(Song removedItem){
+        throw new NotImplementedException();
+    }
 }
