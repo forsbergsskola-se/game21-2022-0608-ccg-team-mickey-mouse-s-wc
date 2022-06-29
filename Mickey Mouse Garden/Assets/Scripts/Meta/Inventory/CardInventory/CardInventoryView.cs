@@ -36,7 +36,7 @@ namespace Meta.Cards {
         
         private void InstantiateAndConfigCard(Card card) {
             var cardInstance = Instantiate(cardPrefab, transform);
-            var cardValues = cardLibrary.cards.Single(it => it.id == card.cardId);
+            var cardValues = cardLibrary.cards.Single(it => it.id == card.libraryID);
             cardInstance.Configure(cardValues);
         }
     }

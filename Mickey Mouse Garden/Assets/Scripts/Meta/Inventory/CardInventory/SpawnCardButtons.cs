@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnCardButtons : MonoBehaviour{
    [SerializeField] private GameObject cardButtonPrefab;
-   [SerializeField] private CardConfig[] playerCardTeam;
+   private CardConfig[] playerCardTeam;
 
    private void Awake(){
       playerCardTeam = FindObjectOfType<CardInventoryMockup>().playerCards;

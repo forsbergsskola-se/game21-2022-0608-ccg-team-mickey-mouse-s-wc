@@ -15,6 +15,7 @@ namespace Meta.Inventory.NewSeedInventory {
         public DateTime HarvestTime { get; set; }
         public bool ReadyToHarvest { get; set; } //TODO: Check if timer handles setting bool correctly or if seed needs to set
         public StringGUID ID { get; }
+        public string libraryID{ get; set; }
 
         public Seed() {
             ID = new StringGUID().NewGuid();
@@ -31,5 +32,7 @@ namespace Meta.Inventory.NewSeedInventory {
         public void Save() {
             throw new System.NotImplementedException();
         }
+
+        
     }
 }

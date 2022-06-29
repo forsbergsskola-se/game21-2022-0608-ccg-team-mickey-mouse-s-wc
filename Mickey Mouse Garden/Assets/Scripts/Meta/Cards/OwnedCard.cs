@@ -8,6 +8,7 @@ public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved
             get;
             set;
      }
+     public string libraryID{ get; set; }
     public string Name{ get; set; }
     public Alignment Alignment{ get; set; }
     public string SpriteName{ get; set; }
@@ -60,4 +61,6 @@ public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved
     public void Save(){
         SaveManager.Save(this);
     }
+
+    
 }
