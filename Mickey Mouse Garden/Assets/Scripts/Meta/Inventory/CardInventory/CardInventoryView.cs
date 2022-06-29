@@ -19,8 +19,8 @@ namespace Meta.Cards {
             var cardInventory = CardInventory.Instance;
             Broker.Subscribe<CardAddedToInventoryMessage>(OnCardAdded);
 
-            if (cardInventory.Items.Count > 0) {
-                foreach (var card in cardInventory.Items) {
+            if (cardInventory.InventoryList.Items.Count > 0) {
+                foreach (var card in cardInventory.InventoryList.Items) {
                     OnCardAdded(card);
                 }
             }

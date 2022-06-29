@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Meta.Inventory.NewSeedInventory {
-    public class NewGrowSlot : MonoBehaviour {
+    public class GrowSlot : MonoBehaviour {
         public Rarity rarity;
         [SerializeField] private float growthTimeInSeconds;
         [SerializeField] private Slider timeSlider;
         [SerializeField] private TextMeshProUGUI growthTimerText;
         
         [HideInInspector] public bool ReadyToHarvest;
-        private NewSeed seed;
+        private Seed seed;
         private string rarityText;
 
         private float TimeUntilHarvest {
@@ -23,7 +23,7 @@ namespace Meta.Inventory.NewSeedInventory {
             }
         }
 
-        public void SetUp(NewSeed seedInSlot) {
+        public void SetUp(Seed seedInSlot) {
             if (seedInSlot.HarvestTime == DateTime.MinValue) {
                 seedInSlot.HarvestTime = DateTime.Now + TimeSpan.FromSeconds(growthTimeInSeconds);
             }
