@@ -37,5 +37,9 @@ namespace Meta.Inventory.FighterInventory {
             
             //TODO: Save
         }
+
+        public override void RemoveOperations(Card removedItem) {
+            //Not implemented
+        }
     }
 }

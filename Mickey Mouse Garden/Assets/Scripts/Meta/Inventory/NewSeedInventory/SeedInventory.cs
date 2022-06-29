@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Meta.Inventory.NewSeedInventory {
     [System.Serializable]
     public class SeedInventory : Inventory<Seed> {
-        public override InventoryList<Seed> InventoryList { get; set; }
+        public override InventoryList<Seed> InventoryList { get; set; } = new InventoryList<Seed>();
         public List<Seed> PlantedSeeds { get; set; } = new List<Seed>();
 
         public static SeedInventory Instance { get; private set; }
@@ -31,22 +30,15 @@ namespace Meta.Inventory.NewSeedInventory {
         private void Start() {
             InitBase();
         }
-
-
-
+        
+        //TODO: Send a number for updating UI instead of a list of seeds. Needs NewSeed to contain amount.
         public override void CollectOperations(Seed addedItem) {
+            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
             //TODO: Save
         }
-        public override void Add(Seed item){
-            base.Add(item);
-            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
-        }
 
-        public override void Remove(Seed item){
-            base.Remove(item);
+        public override void RemoveOperations(Seed removedItem) {
             Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }
-        //TODO: Send a number for updating UI instead of a list of seeds. Needs NewSeed to contain amount.
-       
     }
 }

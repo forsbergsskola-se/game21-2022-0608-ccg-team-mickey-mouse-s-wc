@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using Meta.Interfaces;
-using Meta.Inventory.NewSeedInventory;
 using UnityEngine;
 
 namespace Meta.Inventory {
@@ -19,6 +16,8 @@ namespace Meta.Inventory {
 
         public abstract void CollectOperations(T addedItem);         //TODO: Change name to something better
 
+        public abstract void RemoveOperations(T removedItem);
+        
         public virtual void Add(T item) {
             InventoryList.Items.Add(item);
         }
