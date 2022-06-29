@@ -1,8 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using Meta.Interfaces;
 
 namespace Meta.Inventory {
-    public abstract class InventoryList<T> : ISaveData where T : IInventoryItem {
+    public abstract class InventoryList<T> : ISaveData, IEnumerable where T : IInventoryItem {
         public List<T> Items { get; set; }
         public StringGUID ID { get; }
         public void TryLoadData() {
@@ -10,6 +11,10 @@ namespace Meta.Inventory {
         }
 
         public void Save() {
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerator GetEnumerator() {
             throw new System.NotImplementedException();
         }
     }

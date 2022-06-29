@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class UpdateSeedUi : IMessage
 {
-    public InventoryList<NewSeed> Seeds;
+    public List<NewSeed> Seeds;
     
-    public UpdateSeedUi(InventoryList<NewSeed> seeds)
+    public UpdateSeedUi(List<NewSeed> seeds)
     {
         this.Seeds = seeds;
     }

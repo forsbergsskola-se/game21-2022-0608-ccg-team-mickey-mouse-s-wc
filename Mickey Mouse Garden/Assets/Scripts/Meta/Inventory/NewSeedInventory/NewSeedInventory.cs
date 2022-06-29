@@ -25,7 +25,7 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         private void SendUpdateSeedUiMessage(AskForUpdateSeedUi message){
-            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList));
+            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }
 
         private void Start() {
@@ -39,12 +39,12 @@ namespace Meta.Inventory.NewSeedInventory {
         }
         public override void Add(NewSeed item){
             base.Add(item);
-            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList));
+            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }
 
         public override void Remove(NewSeed item){
             base.Remove(item);
-            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList));
+            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }
         //TODO: Send a number for updating UI instead of a list of seeds. Needs NewSeed to contain amount.
        
