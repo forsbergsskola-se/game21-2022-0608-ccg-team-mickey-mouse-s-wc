@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Meta.Currency;
 using UnityEngine;
 using Color = System.Drawing.Color;
 
@@ -42,7 +43,7 @@ namespace Experiment{
             UpdateDisplayCurrencies();
         }
         
-        public void ChangeCurrencies(AddPlayerCurrencyMessage message){ //Doesnt work if not in right order..
+        public void ChangeCurrencies(AddPlayerCurrencyMessage message){
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
             wallet?.Save();
@@ -56,9 +57,14 @@ namespace Experiment{
         }
         [ContextMenu("TestAddCurrency")]
         public void TestAddCurrency(){
-            wallet.Money.AddAmount(10);
-            wallet.Fertilizer.AddAmount(10);
-            UpdateDisplayCurrencies();
+            var money = new Money();
+            money.Amount = 20;
+            var fertilizer = new Fertilizer();
+            fertilizer.Amount = 20;
+            var message = new AddPlayerCurrencyMessage();
+            message.money = money;
+            message.fertilizer = fertilizer;
+            Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
         }
     }
 }
