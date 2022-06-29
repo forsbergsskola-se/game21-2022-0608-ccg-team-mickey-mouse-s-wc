@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JuiceProducer : MonoBehaviour{
@@ -12,6 +9,5 @@ public class JuiceProducer : MonoBehaviour{
 	}
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
 		juice.Play();
-		Debug.Log("splash");
 	}
 }
