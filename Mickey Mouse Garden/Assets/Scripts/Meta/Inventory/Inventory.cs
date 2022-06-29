@@ -8,12 +8,12 @@ namespace Meta.Inventory {
         public abstract List<T> Items { get; set; }
 
         protected void InitBase() {
-            Broker.Subscribe<ItemCollectedMessage<T>>(OnItemCollected);
+            Broker.Subscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
         }
 
-        private void OnItemCollected(ItemCollectedMessage<T> obj) {
-            Add(obj.Item);
-            CollectOperations(obj.Item);
+        private void OnItemCollected(AddItemToInventoryMessage<T> obj) {
+            Add(obj.item);
+            CollectOperations(obj.item);
         }
 
         public abstract void CollectOperations(T addedItem);         //TODO: Change name to something better
@@ -27,7 +27,7 @@ namespace Meta.Inventory {
         }
         
         private void OnDestroy() {
-            Broker.Unsubscribe<ItemCollectedMessage<T>>(OnItemCollected);
+            Broker.Unsubscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Experiment{
     [CustomComponent("Player Wallet Component", "Will be used to store player currencies.",CustomComponentAttributeType.Almost_Finished)]
     public class PlayerWalletComponent : MonoBehaviour{
         public PlayerWallet wallet;
+        public PlayerWalletSO playerWalletSO;
 
         void Awake(){
             var walletID = new StringGUID().CreateStringGuid(13);
@@ -19,6 +20,7 @@ namespace Experiment{
             wallet.Save();
             wallet.Fertilizer.LoadSprite();
             wallet.Money.LoadSprite();
+            playerWalletSO.playerWallet = wallet;
             Debug.Log("Subscribing to AskForPlayerCurrencyMessage",this);
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
@@ -47,12 +49,14 @@ namespace Experiment{
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
             wallet?.Save();
+            playerWalletSO.playerWallet = wallet;
             UpdateDisplayCurrencies();
         }
         void ChangeCurrencies(CurrencyRewardMessage message){
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
             wallet?.Save();
+            playerWalletSO.playerWallet = wallet;
             UpdateDisplayCurrencies();
         }
         [ContextMenu("TestAddCurrency")]

@@ -1,17 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Meta.Interfaces;
 using Newtonsoft.Json;
 using UnityEngine;
 
 [Serializable][JsonObject]
 public class SlotData: ISaveData{
-    public bool isPurchased;
-    public Item item;
+    public bool isPurchased{ get; set; }
+    public IInventoryItem item;
 
+    [NonSerialized]public string Name;
     public StringGUID ID{ get; }
-    public int Money{ get; }
-    public int Fertilizer{ get; }
+    [NonSerialized] public int Money;
+    [NonSerialized] public int Fertilizer;
 
 
     public void TryLoadData(){
