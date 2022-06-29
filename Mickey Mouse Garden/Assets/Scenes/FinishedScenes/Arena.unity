@@ -2960,6 +2960,7 @@ GameObject:
   - component: {fileID: 2004361162}
   - component: {fileID: 2004361161}
   - component: {fileID: 2004361164}
+  - component: {fileID: 2004361166}
   - component: {fileID: 2004361165}
   m_Layer: 0
   m_Name: Main Camera
@@ -3059,6 +3060,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 2
+--- !u!114 &2004361166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004361160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b025ab6429923049ae5aa8768662e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arenaBackground:
+    Guid:
+      Data1: 1533266901
+      Data2: 1197062376
+      Data3: 537703825
+      Data4: 1654610688
+    Path: event:/Arena/Arena Ambi
 --- !u!1 &2122303671
 GameObject:
   m_ObjectHideFlags: 0
