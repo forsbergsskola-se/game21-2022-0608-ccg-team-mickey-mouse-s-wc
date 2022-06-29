@@ -22,7 +22,7 @@ namespace Meta.Inventory.NewSeedInventory {
         }
         
         private void SubscribeToBrokerMessages() {
-            Broker.Subscribe<ItemCollectedMessage<Seed>>(OnSeedAdded);
+            Broker.Subscribe<AddItemToInventoryMessage<Seed>>(OnSeedAdded);
             Broker.Subscribe<PlantSeedMessage>(PlantSeed);
             Broker.Subscribe<GrowSlotReadyToHarvestMessage>(AddToHarvestable);
             Broker.Subscribe<HarvestSlotMessage>(Harvest);
@@ -54,8 +54,8 @@ namespace Meta.Inventory.NewSeedInventory {
             slotToUpdate.UpdateCountText(numberOfSeeds);
         }
         
-        private void OnSeedAdded(ItemCollectedMessage<Seed> message) {
-            UpdateSeedCount(message.Item.Rarity);
+        private void OnSeedAdded(AddItemToInventoryMessage<Seed> message) {
+            UpdateSeedCount(message.item.rarity);
         }
         
         public void PlantSeed(PlantSeedMessage message) {
@@ -118,7 +118,7 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         private void OnDestroy() {
-            Broker.Unsubscribe<ItemCollectedMessage<Seed>>(OnSeedAdded);
+            Broker.Unsubscribe<AddItemToInventoryMessage<Seed>>(OnSeedAdded);
             Broker.Unsubscribe<PlantSeedMessage>(PlantSeed);
             Broker.Unsubscribe<GrowSlotReadyToHarvestMessage>(AddToHarvestable);
             Broker.Unsubscribe<HarvestSlotMessage>(Harvest);

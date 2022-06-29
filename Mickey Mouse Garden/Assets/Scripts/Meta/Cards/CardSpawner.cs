@@ -1,8 +1,6 @@
-using System;
 using Meta.Cards;
 using UnityEngine;
 using Meta.Inventory.FighterInventory;
-using Meta.Seeds;
 using Random = UnityEngine.Random;
 
 namespace Meta.Inventory {
@@ -21,7 +19,7 @@ namespace Meta.Inventory {
                 cardId = cardLibrary.cards[Random.Range(0, cardLibrary.cards.Length)].id
             };
             
-            var cardCollectedMessage = new ItemCollectedMessage<Card>(card);
+            var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card, 1);
             Broker.InvokeSubscribers(cardCollectedMessage.GetType(), cardCollectedMessage);
         }
     }
