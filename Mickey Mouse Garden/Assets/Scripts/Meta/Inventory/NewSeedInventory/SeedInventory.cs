@@ -5,7 +5,7 @@ namespace Meta.Inventory.NewSeedInventory {
     [System.Serializable]
     public class SeedInventory : Inventory<Seed> {
         public override InventoryList<Seed> InventoryList { get; set; } = new InventoryList<Seed>();
-        public List<Seed> PlantedSeeds { get; set; } = new List<Seed>();
+        public InventoryList<Seed> PlantedSeeds { get; set; } = new InventoryList<Seed>();
 
         public static SeedInventory Instance { get; private set; }
 
