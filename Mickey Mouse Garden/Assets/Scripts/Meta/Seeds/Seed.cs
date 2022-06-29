@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Meta.Seeds {
     public abstract class Seed : MonoBehaviour, IInventoryItem {
         public Rarity rarity;
+        public string libraryID{ get; set; }
         public float GrowthTime { get; private set; }
         
         [SerializeField] private Sprite inventorySprite;         //TODO: Hardcode inventory sprite based on rarity
@@ -36,5 +37,6 @@ namespace Meta.Seeds {
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
+        
     }
 }

@@ -18,10 +18,10 @@ namespace Meta.Inventory {
             //Method that does calculation and returns a card should be here
             
             var card = new Card {
-                cardId = cardLibrary.cards[Random.Range(0, cardLibrary.cards.Length)].id
+                libraryID = cardLibrary.cards[Random.Range(0, cardLibrary.cards.Length)].id
             };
             
-            var cardCollectedMessage = new ItemCollectedMessage<Card>(card);
+            var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card,1);
             Broker.InvokeSubscribers(cardCollectedMessage.GetType(), cardCollectedMessage);
         }
     }

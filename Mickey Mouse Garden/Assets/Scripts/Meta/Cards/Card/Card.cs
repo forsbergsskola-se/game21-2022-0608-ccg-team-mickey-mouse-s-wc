@@ -8,7 +8,7 @@ namespace Meta.Inventory.FighterInventory {
     /// </summary>
     [System.Serializable]
     public class Card : IInventoryItem, ISaveData {
-        public string cardId;
+        public string libraryID{ get; set; }
         [SerializeField] private short level;
 
         public short Level {
@@ -75,5 +75,6 @@ namespace Meta.Inventory.FighterInventory {
         public void Save() {
             throw new System.NotImplementedException();
         }
+        
     }
 }
