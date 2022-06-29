@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TemporaryScenes/TeamSelection.unity
     guid: e67459b7272ed44a68915613d96b4497
+  - enabled: 1
+    path: Assets/Scenes/TemporaryScenes/2TeamSel.unity
+    guid: d1cc1969f251c714397bffe61dd4c013
   m_configObjects: {}

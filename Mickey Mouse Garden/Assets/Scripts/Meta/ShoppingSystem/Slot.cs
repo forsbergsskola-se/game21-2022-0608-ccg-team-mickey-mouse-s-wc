@@ -61,6 +61,6 @@ public class Slot : MonoBehaviour{
     private void ChangeTextToNotEnoughCurrency(){
         itemName.text = "Not Enough Currency";
         Thread.Sleep(1000);
-       // itemName.text = SlotData.item.Name;
+        //itemName.text = SlotData.ID;
     } 
 }
