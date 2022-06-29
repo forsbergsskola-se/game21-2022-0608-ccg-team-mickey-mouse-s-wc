@@ -1270,5 +1270,9 @@ PrefabInstance:
       propertyPath: enemyTeamMembers.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 9500fa66a00f048288123d2d1570ad74, type: 2}
+    - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
+      propertyPath: enemyTeamMembers.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9500fa66a00f048288123d2d1570ad74, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
