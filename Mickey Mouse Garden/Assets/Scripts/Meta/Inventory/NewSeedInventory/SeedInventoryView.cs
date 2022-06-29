@@ -36,8 +36,8 @@ namespace Meta.Inventory.NewSeedInventory {
                 }
             }
 
-            if (_seedInventory.PlantedSeeds is not {Count: > 0}) return;
-            foreach (var seed in _seedInventory.PlantedSeeds) {
+            if (_seedInventory.PlantedSeeds.Items is not {Count: > 0}) return;
+            foreach (var seed in _seedInventory.PlantedSeeds.Items) {
                 InstantiateGrowSlot(seed);
             }
         }
@@ -74,7 +74,7 @@ namespace Meta.Inventory.NewSeedInventory {
             _seedInventory.Remove(seed);
             UpdateSeedCount(rarityToPlant);
             
-            _seedInventory.PlantedSeeds.Add(seed);
+            _seedInventory.PlantedSeeds.Items.Add(seed);
             InstantiateGrowSlot(seed);
         }
         
