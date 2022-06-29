@@ -14,9 +14,9 @@ public class UIShop : MonoBehaviour{
         shopItemTemplate.gameObject.SetActive(false);
     }
 
-    private void Start(){
-        CreateItemButton("Seed", Item.GetCost(Item.ItemType.Seed), 0);
-    }
+    // private void Start(){
+    //     CreateItemButton("Seed", Item.GetCost(Item.ItemType.Seed), 0);
+    // }
 
     private void CreateItemButton(string itemName, int itemCost, int positionIndex){
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
