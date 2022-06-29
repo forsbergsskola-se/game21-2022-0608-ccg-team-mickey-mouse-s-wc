@@ -24,23 +24,7 @@ public class CardMovement : MonoBehaviour {
 			MoveTo(combatPosition1, positions[23]);
 			MoveTo(combatPosition2, positions[47]);
 		}
-		
-		// Player Fighter Dead Message
-		if (Input.GetKeyDown(KeyCode.A)){
-			// Stops current movement.
-			deadPlayer[playerNumber] = false;
-			// Goes to next bool.
-			playerNumber++;
-			// Starts next movement.
-			deadPlayer[playerNumber] = true;
-		}
-		// Enemy Fighter Dead Message
-		if (Input.GetKeyDown(KeyCode.S)){
-			deadEnemy[enemyNumber] = false;
-			enemyNumber++;
-			deadEnemy[enemyNumber] = true;
-		}
-		
+
 		// Player Fighter 1 Dead
 		if (deadPlayer[1]){
 			MoveTo(positions[3], positions[23]);
@@ -89,7 +73,6 @@ public class CardMovement : MonoBehaviour {
 
 	private void OnFaintedMessageReceived(FighterFaintMessage obj){
 		StartCoroutine(Fainting(obj));
-		
 	}
 	
 	private IEnumerator Fainting(FighterFaintMessage obj){
@@ -105,5 +88,6 @@ public class CardMovement : MonoBehaviour {
 			deadEnemy[enemyNumber] = false;
 			enemyNumber++;
 			deadEnemy[enemyNumber] = true;
-		}	}
+		}	
+	}
 }

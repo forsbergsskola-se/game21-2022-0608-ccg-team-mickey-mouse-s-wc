@@ -22,7 +22,6 @@ public class CardShaker : MonoBehaviour{
 	private void ShakeCard(){
 		transform.Rotate(0, 0, 7 * directionModifier, Space.World);
 		transform.Translate(Vector3.left * (80 * directionModifier));
-		Debug.Log("shaking");
 		StartCoroutine(Shaking());
 	}
 	private IEnumerator Shaking(){
