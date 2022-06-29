@@ -10,19 +10,19 @@ namespace Meta.Inventory.NewSeedInventory {
         public SeedSlotContainer[] SeedSlots;
         [SerializeField] private GameObject growSlotItemParent;
         
-        public NewGrowSlot[] GrowSlotsPrefabs;
+        public GrowSlot[] GrowSlotsPrefabs;
         
-        private List<NewGrowSlot> harvestableSlots = new List<NewGrowSlot>();
-        private NewSeedInventory _seedInventory;
+        private List<GrowSlot> harvestableSlots = new List<GrowSlot>();
+        private SeedInventory _seedInventory;
 
         private void Start() {
-            _seedInventory = NewSeedInventory.Instance;
+            _seedInventory = SeedInventory.Instance;
             SubscribeToBrokerMessages();
             DisplayInventoryItems();
         }
         
         private void SubscribeToBrokerMessages() {
-            Broker.Subscribe<ItemCollectedMessage<NewSeed>>(OnSeedAdded);
+            Broker.Subscribe<ItemCollectedMessage<Seed>>(OnSeedAdded);
             Broker.Subscribe<PlantSeedMessage>(PlantSeed);
             Broker.Subscribe<GrowSlotReadyToHarvestMessage>(AddToHarvestable);
             Broker.Subscribe<HarvestSlotMessage>(Harvest);
@@ -42,7 +42,7 @@ namespace Meta.Inventory.NewSeedInventory {
             }
         }
 
-        private void InstantiateGrowSlot(NewSeed seed) {
+        private void InstantiateGrowSlot(Seed seed) {
             var slotToInstantiate = GrowSlotsPrefabs.First(prefab => prefab.rarity == seed.Rarity);
             var slotClone = Instantiate(slotToInstantiate, growSlotItemParent.transform, false);
             slotClone.SetUp(seed);
@@ -54,13 +54,13 @@ namespace Meta.Inventory.NewSeedInventory {
             slotToUpdate.UpdateCountText(numberOfSeeds);
         }
         
-        private void OnSeedAdded(ItemCollectedMessage<NewSeed> message) {
+        private void OnSeedAdded(ItemCollectedMessage<Seed> message) {
             UpdateSeedCount(message.Item.Rarity);
         }
         
         public void PlantSeed(PlantSeedMessage message) {
             Rarity rarityToPlant = message.SeedRarity;
-            NewSeed seed;
+            Seed seed;
 
             try {
                 seed = _seedInventory.InventoryList.Items.First(newSeed => newSeed.Rarity == rarityToPlant);
@@ -78,7 +78,7 @@ namespace Meta.Inventory.NewSeedInventory {
             InstantiateGrowSlot(seed);
         }
         
-        private void HarvestOperations(NewGrowSlot growSlot) {
+        private void HarvestOperations(GrowSlot growSlot) {
             RemoveFromHarvestable(growSlot);
             growSlot.Destroy();
             PlantSpawn(growSlot.rarity);
@@ -105,11 +105,11 @@ namespace Meta.Inventory.NewSeedInventory {
             harvestableSlots.Add(growSlotReadyToHarvestMessage.GrowSlot);
         }
         
-        private void RemoveFromHarvestable(NewGrowSlot growSlot) {
+        private void RemoveFromHarvestable(GrowSlot growSlot) {
             harvestableSlots.Remove(growSlot);
         }
         
-        private void Harvest(NewGrowSlot growSlot) {
+        private void Harvest(GrowSlot growSlot) {
             HarvestOperations(growSlot);
         }
         
@@ -118,7 +118,7 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         private void OnDestroy() {
-            Broker.Unsubscribe<ItemCollectedMessage<NewSeed>>(OnSeedAdded);
+            Broker.Unsubscribe<ItemCollectedMessage<Seed>>(OnSeedAdded);
             Broker.Unsubscribe<PlantSeedMessage>(PlantSeed);
             Broker.Unsubscribe<GrowSlotReadyToHarvestMessage>(AddToHarvestable);
             Broker.Unsubscribe<HarvestSlotMessage>(Harvest);

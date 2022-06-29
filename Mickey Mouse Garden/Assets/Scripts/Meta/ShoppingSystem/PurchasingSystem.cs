@@ -52,10 +52,10 @@ public class PurchasingSystem : MonoBehaviour{
         message.fertilizer = new Fertilizer();
         message.fertilizer.Amount = -SO.fertilizer;
         Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
-        NewSeed seed = new NewSeed();
+        Seed seed = new Seed();
         seed.rarity = SO.rarity;
         RequestCurrency();
-        var collectedMessage = new ItemCollectedMessage<NewSeed>(seed);
+        var collectedMessage = new ItemCollectedMessage<Seed>(seed);
         Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
     }
     #endregion

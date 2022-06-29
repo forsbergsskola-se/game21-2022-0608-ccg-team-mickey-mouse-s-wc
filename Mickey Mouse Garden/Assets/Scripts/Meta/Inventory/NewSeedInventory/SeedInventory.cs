@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Meta.Inventory.NewSeedInventory {
     [System.Serializable]
-    public class NewSeedInventory : Inventory<NewSeed> {
-        public override InventoryList<NewSeed> InventoryList { get; set; }
-        public List<NewSeed> PlantedSeeds { get; set; } = new List<NewSeed>();
+    public class SeedInventory : Inventory<Seed> {
+        public override InventoryList<Seed> InventoryList { get; set; }
+        public List<Seed> PlantedSeeds { get; set; } = new List<Seed>();
 
-        public static NewSeedInventory Instance { get; private set; }
+        public static SeedInventory Instance { get; private set; }
 
         private void Awake() {
             if (Instance != null) {
@@ -34,15 +34,15 @@ namespace Meta.Inventory.NewSeedInventory {
 
 
 
-        public override void CollectOperations(NewSeed addedItem) {
+        public override void CollectOperations(Seed addedItem) {
             //TODO: Save
         }
-        public override void Add(NewSeed item){
+        public override void Add(Seed item){
             base.Add(item);
             Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }
 
-        public override void Remove(NewSeed item){
+        public override void Remove(Seed item){
             base.Remove(item);
             Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }

@@ -1,8 +1,8 @@
 namespace Meta.Inventory.NewSeedInventory.Messages {
     public class HarvestSlotMessage : IMessage {
-        public NewGrowSlot GrowSlot;
+        public GrowSlot GrowSlot;
 
-        public HarvestSlotMessage(NewGrowSlot growSlot) {
+        public HarvestSlotMessage(GrowSlot growSlot) {
             GrowSlot = growSlot;
         }
     }
