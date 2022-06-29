@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 132591012}
   - component: {fileID: 132591011}
   - component: {fileID: 132591010}
-  - component: {fileID: 132591013}
   m_Layer: 0
   m_Name: TestSeed
   m_TagString: Untagged
@@ -221,19 +220,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132591007}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &132591013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132591007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac8479c6385453f95845e7de01f2827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rarity: 0
 --- !u!1 &179870787
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +326,6 @@ GameObject:
   - component: {fileID: 343293080}
   - component: {fileID: 343293079}
   - component: {fileID: 343293078}
-  - component: {fileID: 343293077}
   m_Layer: 0
   m_Name: TestSeed (2)
   m_TagString: Untagged
@@ -363,19 +348,6 @@ Transform:
   m_Father: {fileID: 510421768}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &343293077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343293075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac8479c6385453f95845e7de01f2827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rarity: 1
 --- !u!135 &343293078
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -846,7 +818,6 @@ GameObject:
   - component: {fileID: 935325793}
   - component: {fileID: 935325792}
   - component: {fileID: 935325791}
-  - component: {fileID: 935325790}
   m_Layer: 0
   m_Name: TestSeed (4)
   m_TagString: Untagged
@@ -869,19 +840,6 @@ Transform:
   m_Father: {fileID: 510421768}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &935325790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935325788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac8479c6385453f95845e7de01f2827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rarity: 2
 --- !u!135 &935325791
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1087,7 +1045,6 @@ GameObject:
   - component: {fileID: 1696536925}
   - component: {fileID: 1696536924}
   - component: {fileID: 1696536923}
-  - component: {fileID: 1696536922}
   m_Layer: 0
   m_Name: TestSeed (1)
   m_TagString: Untagged
@@ -1110,19 +1067,6 @@ Transform:
   m_Father: {fileID: 510421768}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1696536922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696536920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac8479c6385453f95845e7de01f2827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rarity: 0
 --- !u!135 &1696536923
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1309,7 +1253,6 @@ GameObject:
   - component: {fileID: 1852043135}
   - component: {fileID: 1852043134}
   - component: {fileID: 1852043133}
-  - component: {fileID: 1852043132}
   m_Layer: 0
   m_Name: TestSeed (5)
   m_TagString: Untagged
@@ -1332,19 +1275,6 @@ Transform:
   m_Father: {fileID: 510421768}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1852043132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852043130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac8479c6385453f95845e7de01f2827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rarity: 1
 --- !u!135 &1852043133
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1420,7 +1350,6 @@ GameObject:
   - component: {fileID: 1895780445}
   - component: {fileID: 1895780444}
   - component: {fileID: 1895780443}
-  - component: {fileID: 1895780442}
   m_Layer: 0
   m_Name: TestSeed (3)
   m_TagString: Untagged
@@ -1443,19 +1372,6 @@ Transform:
   m_Father: {fileID: 510421768}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1895780442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895780440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac8479c6385453f95845e7de01f2827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rarity: 3
 --- !u!135 &1895780443
 SphereCollider:
   m_ObjectHideFlags: 0
