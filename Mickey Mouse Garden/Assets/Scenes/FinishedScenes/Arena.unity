@@ -3367,6 +3367,7 @@ GameObject:
   - component: {fileID: 2004361164}
   - component: {fileID: 2004361166}
   - component: {fileID: 2004361165}
+  - component: {fileID: 2004361167}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3475,6 +3476,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b025ab6429923049ae5aa8768662e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2004361167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004361160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b511b7999fa214b439195725d9f7f1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arenaBackground:
