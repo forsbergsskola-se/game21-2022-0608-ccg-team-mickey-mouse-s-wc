@@ -14,6 +14,7 @@ public class ASelectedCard : MonoBehaviour{
    public void WhenClicked(){
       FindCardData();
       CreateSelectedCardMessage();
+      transform.parent.transform.parent.gameObject.SetActive(false);
    }
 
    private void OnSelectedCardMessageReceived(CardSelectionMessage obj){
@@ -21,13 +22,14 @@ public class ASelectedCard : MonoBehaviour{
    }
 
    private void CreateSelectedCardMessage(){
-      var msg = new CardSelectionMessage(){CardConfig = cardData, Position = position};
-      Broker.InvokeSubscribers(typeof(CardSelectionMessage), msg);
+      var msg = new NewCardSelectedMessage{CardConfig = cardData};
+      Broker.InvokeSubscribers(typeof(NewCardSelectedMessage), msg);
    }
 
 
    private void FindCardData(){
-      //crossreference playerinventory with the current card.
+      //crossreference player inventory with the current card.
+      //TODO: dont compare to string compare to unique ID when that is implemented in cardconfig :)
       var name = GetComponentInChildren<CardView>().name.text;
       foreach (var config in playerCardInventory){
          if (name != config.name) continue;

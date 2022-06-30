@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Meta.Cards;
 using UnityEngine;
 
@@ -14,10 +12,12 @@ public class TeamSelectionPanelController : MonoBehaviour {
 
     private void StoreOriginCard(CardSelectionMessage cardSelectionMessage) {
         originCard = cardSelectionMessage.CardConfig;
+        Debug.Log(originCard.name);
     }
 
     private void StoreNewCard(NewCardSelectedMessage newCardSelectedMessage) {
         newCard = newCardSelectedMessage.CardConfig;
+        Debug.Log(newCard.name);
     }
 
     public void SwapCards() {
