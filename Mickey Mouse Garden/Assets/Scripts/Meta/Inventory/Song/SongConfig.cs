@@ -6,10 +6,15 @@ public class SongConfig : ShopItemConfig{
     string theme = "MetaMusic";
     public int parameter;
 
-   // public override ConfigLibrary<ShopItemConfig> ConfigLibrary{ get; set; }
+    public ConfigLibrary<SongConfig> library;
+    
 
-    public override void SendCreateItemMessage(string pathID){
+   public override void SendCreateItemMessage(string pathID){
         var message = new CreateNewInventoryItemMessage<Song>(pathID);
         Broker.InvokeSubscribers(message.GetType(), message);
     }
+
+   public override void AddToLibrary(){
+       library.AddItemConfig(this);
+   }
 }
