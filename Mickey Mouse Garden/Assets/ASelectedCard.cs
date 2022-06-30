@@ -29,10 +29,9 @@ public class ASelectedCard : MonoBehaviour{
 
    public CardConfig FindCardData(){
       //crossreference player inventory with the current card.
-      //TODO: dont compare to string compare to unique ID when that is implemented in cardconfig :)
-      var name = GetComponentInChildren<CardView>().name.text;
+      var id = GetComponentInChildren<CardView>().id;
       foreach (var config in playerCardInventory){
-         if (name != config.name) continue;
+         if (id != config.id) continue;
          return config;
       }
       return cardData;
