@@ -11,6 +11,4 @@ public class InstantiateFullCardCollection : MonoBehaviour{ //TODO: combine with
             instance.GetComponentInChildren<CardView>().Configure(playerCardTeam[i]);
         }
     }
-    
-    
 }
