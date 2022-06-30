@@ -15,16 +15,19 @@ namespace Meta.Cards {
         public TextMeshProUGUI speed;
         public TextMeshProUGUI alignment;
         public TextMeshProUGUI rarity;
-        //TODO: Add level
+        public TextMeshProUGUI level;
+        [HideInInspector] public string id;
 
         public void Configure(CardConfig cardConfig) {
             image.sprite = cardConfig.image;
             name.text = cardConfig.name;
-            maxHealth.text = "Health: " + cardConfig.maxHealth.ToString();
-            attack.text = "Attack: " + cardConfig.attack.ToString();
-            speed.text = "Speed: " + cardConfig.speed.ToString();
-            alignment.text = "Alignment: " + cardConfig.alignment.ToString();
-            rarity.text = "Rarity: " + cardConfig.rarity.ToString();
+            id = cardConfig.id;
+            maxHealth.text = $"Health: {cardConfig.maxHealth}";
+            attack.text = $"Attack: {cardConfig.attack}";
+            speed.text = $"Speed: {cardConfig.speed}";
+            alignment.text = $"Alignment: {cardConfig.alignment}";
+            rarity.text = $"Rarity: {cardConfig.rarity}";
+            //level.text = $"level: {cardConfig.level}"; //TODO: implement when not null
             //TODO: Subscribe to level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }

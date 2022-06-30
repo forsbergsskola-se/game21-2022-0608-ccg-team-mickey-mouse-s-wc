@@ -16,5 +16,6 @@ namespace Meta.Cards {
         public float speed;
         public Alignment alignment;
         public Rarity rarity;
+        public int level;
     }
 }

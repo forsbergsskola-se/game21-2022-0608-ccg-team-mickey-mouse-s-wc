@@ -52,7 +52,7 @@ public class EnterCombat : MonoBehaviour{
             fighter.MaxHealth = enemy.maxHealth;
             fighter.Attack = enemy.attack;
             fighter.Speed = enemy.speed;
-            fighter.Level = 1; //TODO: Implement in card config
+            fighter.Level = enemy.level; 
             fighter.Rarity = enemy.rarity;
             fighter.Name = enemy.name;
             fighter.Alignment = enemy.alignment;
