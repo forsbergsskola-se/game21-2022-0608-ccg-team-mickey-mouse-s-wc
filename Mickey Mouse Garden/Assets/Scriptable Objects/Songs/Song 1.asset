@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bca6cf81840bfe645b49ace0dd88bcfd, type: 3}
-  m_Name: Test
+  m_Name: Song 1
   m_EditorClassIdentifier: 
-  configID: 
-  isPurchased: 0
-  moneyCost: 0
-  fertilizerCost: 0
-  sprite: {fileID: 0}
-  parameter: 0
+  configID: Song1
+  isUnlimited: 1
+  itemAmount: 1
+  moneyCost: 10
+  fertilizerCost: 6
+  sprite: {fileID: 21300000, guid: 478eeb3438149d445ad8dd4ee79d60b3, type: 3}
+  parameter: 1
+  library: {fileID: 11400000, guid: 2ba3158ac6513c148bbb08e739eb72da, type: 2}
