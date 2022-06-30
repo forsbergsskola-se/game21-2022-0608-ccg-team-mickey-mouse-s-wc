@@ -14,8 +14,12 @@ public class ArenaSoundManager : MonoBehaviour {
 		arenaBackgroundInstance = FMODUnity.RuntimeManager.CreateInstance(arenaBackground);
 		arenaBackgroundInstance.start();
 	}
-
-	public void Hit() { 
+	
+	// Rock = 1, Paper = 2, Scissors = 3. Rarity 1 to 4. Not implemented.
+	public void Hit(float damageDealt, string alignment, string rarity){
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("RockPaperScissor", alignment);
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("Rarity", rarity);
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Damage", damageDealt);
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Hits");
 	}
 
