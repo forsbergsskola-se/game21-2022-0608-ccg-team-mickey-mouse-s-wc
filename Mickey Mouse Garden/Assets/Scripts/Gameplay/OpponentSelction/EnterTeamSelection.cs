@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnterTeamSelection : MonoBehaviour{
 
-	[SerializeField] private GameObject confirmationBox, teamSelect;
+	[SerializeField] private GameObject confirmationBox, teamSelectCanvas;
 	
 	private bool shown;
 
@@ -22,6 +22,6 @@ public class EnterTeamSelection : MonoBehaviour{
 	}
 	
 	private void GoToTeamSelection(){
-		teamSelect.GetComponent<Canvas>().enabled = true;
+		teamSelectCanvas.GetComponent<Canvas>().enabled = true;
 	}
 }
