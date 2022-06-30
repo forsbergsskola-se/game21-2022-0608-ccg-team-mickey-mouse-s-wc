@@ -12,7 +12,7 @@ public class ASelectedCard : MonoBehaviour{
    }
 
    public void WhenClicked(){
-      FindCardData();
+      cardData = FindCardData();
       CreateSelectedCardMessage();
       transform.parent.transform.parent.gameObject.SetActive(false);
    }
@@ -27,14 +27,14 @@ public class ASelectedCard : MonoBehaviour{
    }
 
 
-   private void FindCardData(){
+   public CardConfig FindCardData(){
       //crossreference player inventory with the current card.
       //TODO: dont compare to string compare to unique ID when that is implemented in cardconfig :)
       var name = GetComponentInChildren<CardView>().name.text;
       foreach (var config in playerCardInventory){
          if (name != config.name) continue;
-         cardData = config;
-         return;
+         return config;
       }
+      return cardData;
    }
 }
