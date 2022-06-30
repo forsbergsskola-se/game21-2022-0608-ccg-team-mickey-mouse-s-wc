@@ -15,7 +15,7 @@ MonoBehaviour:
   configID: TestSong13
   isPurchased: 0
   moneyCost: 10
-  fertilizerCost: 5
+  fertilizerCost: 6
   sprite: {fileID: 21300000, guid: 478eeb3438149d445ad8dd4ee79d60b3, type: 3}
-  configLibrary: {fileID: 0}
   parameter: 1
+  library: {fileID: 11400000, guid: 2ba3158ac6513c148bbb08e739eb72da, type: 2}

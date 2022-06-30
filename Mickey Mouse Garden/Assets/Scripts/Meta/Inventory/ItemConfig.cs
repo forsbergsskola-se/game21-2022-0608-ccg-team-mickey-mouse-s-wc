@@ -4,4 +4,7 @@ using UnityEngine;
 
 public abstract class ItemConfig : ScriptableObject
 {
+    public string configID;
+    public abstract void SendCreateItemMessage(string pathID);
+    public abstract void AddToLibrary();
 }

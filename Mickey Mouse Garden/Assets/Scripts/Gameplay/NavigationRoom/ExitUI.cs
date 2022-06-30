@@ -40,7 +40,7 @@ public class ExitUI : MonoBehaviour{
 
 			// arena
 			case "Arena":
-				SceneManager.UnloadSceneAsync("OpponentSelection");
+				SceneManager.UnloadSceneAsync("2TeamSel");
 				break;
 			
 			// arena2

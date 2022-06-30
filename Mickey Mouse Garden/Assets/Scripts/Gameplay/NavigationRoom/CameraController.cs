@@ -12,10 +12,12 @@ public class CameraController : MonoBehaviour {
 	private Vector3 velocity = Vector3.zero;
 	private Transform targetTransform, targetView;
 	private float newFOV = 60;
+	private MainSceneSoundManager mainSceneSoundManager;
 	
 	private void Awake() {
 		targetView = lookAt1.transform;
 		targetTransform = viewpoint1.transform;
+		mainSceneSoundManager = GetComponent<MainSceneSoundManager>();
 		Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
 	}
 
@@ -40,7 +42,9 @@ public class CameraController : MonoBehaviour {
 		thisCamera.fieldOfView = Mathf.Lerp(currentFOV, newFOV, cameraZoomSpeed * Time.deltaTime);
 	}
 	
-	public void GoToRightViewPoint() {
+	public void GoToRightViewPoint(){
+		mainSceneSoundManager.MainClick();
+		mainSceneSoundManager.Swoosh();
 		switch (viewPointNumber) {
 			case 1:
 				GoToPosition2();
@@ -57,6 +61,8 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	public void GoToLeftViewPoint() {
+		mainSceneSoundManager.MainClick();
+		mainSceneSoundManager.Swoosh();
 		switch (viewPointNumber) {
 			case 1:
 				GoToPosition3();
@@ -95,16 +101,24 @@ public class CameraController : MonoBehaviour {
 	// Used to transition to store or feature. 
 	private void LookAtSelection(Transform objectTransform){
 		if (!zoomed) {
+			mainSceneSoundManager.MainClick();
 			targetView = objectTransform;
 			newFOV = 20;
 			zoomed = true;
 		}
 	}
 	private void LookAway(){
-		// Resets to previous viewpoint. Stupid but it works.
+		mainSceneSoundManager.MainClick();
 		newFOV = 60;
-		GoToLeftViewPoint(); 
-		GoToRightViewPoint();
+		if (viewPointNumber == 1){
+			GoToPosition1();
+		}
+		if (viewPointNumber == 2){
+			GoToPosition2();
+		}
+		if (viewPointNumber == 3){
+			GoToPosition3();
+		}
 		zoomed = false;
 	}
 }

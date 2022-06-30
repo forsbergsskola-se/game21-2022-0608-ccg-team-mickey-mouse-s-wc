@@ -9,8 +9,8 @@ public class ArenaSoundManager : MonoBehaviour {
 	// Reference to the event after it has started.
 	private EventInstance arenaBackgroundInstance;
 
-	private void Awake() {
-		// Starts the music & attaches it to the InstanceReference
+	// Starts the music & attaches it to the InstanceReference
+	public void PlayMusic(){
 		arenaBackgroundInstance = FMODUnity.RuntimeManager.CreateInstance(arenaBackground);
 		arenaBackgroundInstance.start();
 	}
@@ -35,7 +35,7 @@ public class ArenaSoundManager : MonoBehaviour {
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Defeat");
 	}
 	
-	public void Silence(){
+	public void StopMusic(){
 		arenaBackgroundInstance.stop(STOP_MODE.ALLOWFADEOUT);
 	}
 	public void ModulateMusic(int delta){

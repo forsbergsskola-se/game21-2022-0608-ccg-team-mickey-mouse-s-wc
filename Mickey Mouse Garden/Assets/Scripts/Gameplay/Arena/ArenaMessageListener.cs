@@ -11,6 +11,7 @@ public class ArenaMessageListener : MonoBehaviour{
 		Broker.Subscribe<FighterFaintMessage>(OnFighterFaintMessageReceived);
 		Broker.Subscribe<FighterStrikeMessage>(OnFighterStrikeMessageReceived);
 		Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateReceived);
+		arenaSoundManager.PlayMusic();
 	}
 
 	private void OnFighterStrikeMessageReceived(FighterStrikeMessage obj){
@@ -44,11 +45,11 @@ public class ArenaMessageListener : MonoBehaviour{
 	private void OnPostCombatStateReceived(PostCombatStateMessage obj){
 		if (obj.State == PostCombatState.Victory){
 			arenaSoundManager.Victory();
-			arenaSoundManager.Silence();
+			arenaSoundManager.StopMusic();
 		}  
 		if (obj.State == PostCombatState.Defeat) {
 			arenaSoundManager.Defeat();
-			arenaSoundManager.Silence();
+			arenaSoundManager.StopMusic();
 		}
 	}
 }
