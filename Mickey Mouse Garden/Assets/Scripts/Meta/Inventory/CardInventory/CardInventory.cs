@@ -9,7 +9,7 @@ namespace Meta.Inventory.FighterInventory {
     /// </summary>
     [System.Serializable]
     public class CardInventory : Inventory<Card> {
-        public override InventoryList<Card> InventoryList { get; set; } = new InventoryList<Card>();
+        public override InventoryList<Card> InventoryList { get; set; } = new InventoryList<Card>(new StringGUID().CreateStringGuid(10101));
         public static CardInventory Instance { get; private set; }
 
         private void Awake() {
@@ -26,11 +26,7 @@ namespace Meta.Inventory.FighterInventory {
                 Instance = this;
             }
         }
-
-        private void Start() {
-            InitBase();
-        }
-
+        
         public override void CollectOperations(Card addedItem) {
             var cardAddedMessage = new CardAddedToInventoryMessage(addedItem);
             Broker.InvokeSubscribers(cardAddedMessage.GetType(), cardAddedMessage);
