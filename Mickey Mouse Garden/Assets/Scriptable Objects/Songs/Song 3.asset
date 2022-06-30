@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca6cf81840bfe645b49ace0dd88bcfd, type: 3}
+  m_Name: Song 3
+  m_EditorClassIdentifier: 
+  configID: Song3
+  isUnlimited: 0
+  itemAmount: 0
+  moneyCost: 0
+  fertilizerCost: 100
+  sprite: {fileID: 21300000, guid: 20d95f467ea78974e82ea2e921c32b10, type: 3}
+  parameter: 3
+  library: {fileID: 11400000, guid: 2ba3158ac6513c148bbb08e739eb72da, type: 2}
