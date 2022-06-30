@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Meta.Cards;
 using UnityEngine;
 
