@@ -944,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &460121458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1594,6 +1594,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 978497779}
     m_Modifications:
+    - target: {fileID: -1320658780384223567, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
+      propertyPath: selectionPanel
+      value: 
+      objectReference: {fileID: 460121457}
+    - target: {fileID: 1394729083738825328, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1136462465}
+    - target: {fileID: 1394729083738825328, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OpenPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394729083738825328, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OpenSelectionPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394729083738825328, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8039421768710383685, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2036,6 +2056,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8039421770406397301, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
   m_PrefabInstance: {fileID: 966491887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1136462465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1320658780384223567, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
+  m_PrefabInstance: {fileID: 966491887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a553c49a2619495a8b4e4eb444d9c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1136462466 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8039421770406397302, guid: b9a76e36d20e24511b893358a3affc55, type: 3}
@@ -2082,8 +2113,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1358}
-  m_SizeDelta: {x: 1080, y: 574.8287}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1080, y: 2338.6}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1166486525
 MonoBehaviour:
