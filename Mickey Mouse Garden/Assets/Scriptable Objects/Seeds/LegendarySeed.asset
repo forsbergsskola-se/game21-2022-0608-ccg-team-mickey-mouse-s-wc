@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdfb27db3653154fa9887cb649c687a, type: 3}
   m_Name: LegendarySeed
   m_EditorClassIdentifier: 
-  configID: LegendarySeed
+  libraryID: Legendary Seed
   isUnlimited: 1
   itemAmount: 1
   moneyCost: 0

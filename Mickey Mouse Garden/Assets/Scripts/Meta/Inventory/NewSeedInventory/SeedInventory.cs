@@ -9,7 +9,8 @@ namespace Meta.Inventory.NewSeedInventory {
 
         public static SeedInventory Instance { get; private set; }
 
-        private void Awake() {
+        public override void Awake() {
+            base.Awake();
             if (Instance != null) {
                 Debug.LogWarning("More than one instance of new seed inventory found! This is not allowed.");
             } else {

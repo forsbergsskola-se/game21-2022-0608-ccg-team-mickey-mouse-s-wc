@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca6cf81840bfe645b49ace0dd88bcfd, type: 3}
   m_Name: Song 2
   m_EditorClassIdentifier: 
-  configID: Song2
+  libraryID: Song 2
   isUnlimited: 1
   itemAmount: 1
   moneyCost: 10

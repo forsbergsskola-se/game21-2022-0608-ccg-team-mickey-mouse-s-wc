@@ -10,7 +10,7 @@ namespace Meta.Inventory {
             Broker.Subscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
         }
 
-        void Awake(){
+        public virtual void Awake(){
             LoadList();
         }
 
