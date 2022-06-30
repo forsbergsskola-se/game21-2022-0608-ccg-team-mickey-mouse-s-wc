@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 public class StrikeCommand : ICommand{
-    private FighterInfo target;
-    private FighterInfo striker;
+    private FighterInfo target, striker;
 
     private float multiplier = 1f;
     
@@ -22,7 +21,14 @@ public class StrikeCommand : ICommand{
     private void Strike(){
         var damageDealt = striker.Attack * CheckAlignment(striker, target);
         target.MaxHealth -= damageDealt;
-        FighterStrikeMessage strikeMessage = new(){TargetID = target.ID, SelfID = striker.ID,TargetHealth = target.MaxHealth,DamageDealt = damageDealt};
+        FighterStrikeMessage strikeMessage = new(){
+            DamageDealt = damageDealt,
+            StrikerAlignment = striker.Alignment,
+            StrikerRarity = striker.Rarity,
+            TargetID = target.ID, 
+            SelfID = striker.ID, 
+            TargetHealth = target.MaxHealth
+        };
         Broker.InvokeSubscribers(typeof(FighterStrikeMessage), strikeMessage);
     }
 
@@ -39,7 +45,8 @@ public class StrikeCommand : ICommand{
             return multiplier -= .5f;
         return multiplier;
     }
-
+    
+    
     public void Undo(){
         throw new NotImplementedException();
     }

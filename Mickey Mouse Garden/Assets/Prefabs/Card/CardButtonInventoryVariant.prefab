@@ -102,18 +102,18 @@ PrefabInstance:
     - target: {fileID: 1768207044258755845, guid: 0d34cc91b4334484f8184293cba08333, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3589608850470308109}
+      objectReference: {fileID: 454177401348356292}
     - target: {fileID: 1768207044258755845, guid: 0d34cc91b4334484f8184293cba08333, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1768207044258755845, guid: 0d34cc91b4334484f8184293cba08333, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: IsSelected
+      value: WhenClicked
       objectReference: {fileID: 0}
     - target: {fileID: 1768207044258755845, guid: 0d34cc91b4334484f8184293cba08333, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SelectedCard, Assembly-CSharp
+      value: ASelectedCard, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1768207044258755845, guid: 0d34cc91b4334484f8184293cba08333, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -130,7 +130,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1768207044258755847, guid: 0d34cc91b4334484f8184293cba08333, type: 3}
   m_PrefabInstance: {fileID: 8924261213656473918}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3589608850470308109
+--- !u!114 &454177401348356292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
