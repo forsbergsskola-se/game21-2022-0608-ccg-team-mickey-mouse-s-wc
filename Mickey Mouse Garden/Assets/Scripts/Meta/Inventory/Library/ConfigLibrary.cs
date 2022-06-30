@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ConfigLibrary<T> : ScriptableObject where T: ShopItemConfig{ // Possibly want to move things out of ShopItemConfig into ItemConfig.
+public abstract class ConfigLibrary<T> : ScriptableObject where T: ItemConfig{ // Possibly want to move things out of ShopItemConfig into ItemConfig.
     Dictionary<string, T> itemConfigs = new Dictionary<string, T>();
 
     public virtual T GetItem(string itemID){

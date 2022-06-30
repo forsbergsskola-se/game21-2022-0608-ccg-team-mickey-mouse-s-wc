@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using FMOD;
+
 using Meta.Currency;
-using Meta.Interfaces;
-using Meta.Inventory;
-using Meta.Inventory.NewSeedInventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
