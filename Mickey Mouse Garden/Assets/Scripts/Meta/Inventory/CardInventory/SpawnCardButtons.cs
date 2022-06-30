@@ -7,7 +7,6 @@ public class SpawnCardButtons : MonoBehaviour {
 
    private void Awake(){
       playerCardTeam = FindObjectOfType<CardInventoryMockup>().playerCards;
-      
       for (var i = 0; i < playerCardSlots.Length; i++){
          playerCardSlots[i].Configure(playerCardTeam[i]);
       }

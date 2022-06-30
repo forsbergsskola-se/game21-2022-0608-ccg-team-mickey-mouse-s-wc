@@ -4,6 +4,10 @@ using UnityEngine;
 public class TeamSelectionPanelController : MonoBehaviour {
     private CardConfig originCard;
     private CardConfig newCard;
+
+    private int position;
+
+    [SerializeField] private CardView[] playercards;
     
     private void Start() {
         Broker.Subscribe<CardSelectionMessage>(StoreOriginCard);
@@ -12,15 +16,16 @@ public class TeamSelectionPanelController : MonoBehaviour {
 
     private void StoreOriginCard(CardSelectionMessage cardSelectionMessage) {
         originCard = cardSelectionMessage.CardConfig;
-        Debug.Log(originCard.name);
+        position = cardSelectionMessage.Position;
     }
 
     private void StoreNewCard(NewCardSelectedMessage newCardSelectedMessage) {
         newCard = newCardSelectedMessage.CardConfig;
-        Debug.Log(newCard.name);
+        SwapCards();
     }
 
     public void SwapCards() {
         originCard = newCard;
+        playercards[position].Configure(originCard);
     }
 }
