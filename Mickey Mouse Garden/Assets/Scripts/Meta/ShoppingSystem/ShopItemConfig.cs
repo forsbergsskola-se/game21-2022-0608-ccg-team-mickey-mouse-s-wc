@@ -9,4 +9,9 @@ public abstract class ShopItemConfig : ItemConfig{
     public int moneyCost;
     public int fertilizerCost;
     public Sprite sprite;
+   // public abstract ConfigLibrary<ShopItemConfig> configLibrary;
+    
+
+    public abstract void SendCreateItemMessage(string pathID);
+    
 }

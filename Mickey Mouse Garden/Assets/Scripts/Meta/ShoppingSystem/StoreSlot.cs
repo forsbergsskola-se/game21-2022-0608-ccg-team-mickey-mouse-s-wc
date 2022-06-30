@@ -22,19 +22,25 @@ public class StoreSlot : MonoBehaviour{
 
 
     void Awake(){
-        // image = GetComponent<Image>();
-    }
-
-    void Start(){
+        itemName.text = shopItemConfig.name;
         image.sprite = shopItemConfig.sprite;
         itemMoneyPrice.text = shopItemConfig.moneyCost.ToString();
         itemFertilizerPrice.text = shopItemConfig.fertilizerCost.ToString();
     }
 
+    void Start(){
+        if (shopItemConfig.isPurchased){
+            ChangeTextToOutOfStock();
+        }
+    }
+
     public void RequestCurrency(){
         Broker.InvokeSubscribers(typeof(AskForPlayerCurrencyMessage),new AskForPlayerCurrencyMessage());
     }
-    public void BuyItem(){
+    /// <summary>
+    ///    Called when the player clicks on the slot. If the player has enough currency, the item is purchased.
+    /// </summary>
+    public void BuyItem(){ 
         if (shopItemConfig.isPurchased){
             ChangeTextToOutOfStock();
             return;
@@ -44,23 +50,17 @@ public class StoreSlot : MonoBehaviour{
             ChangeTextToNotEnoughCurrency();
             return;
         }
-       //SendAddPlayerCurrencyMessage();
-        //SendAddItemToInventoryMessage();
+        SendAddPlayerCurrencyMessage();
+        shopItemConfig.SendCreateItemMessage(shopItemConfig.configID);
     }
-
-    // void SendAddItemToInventoryMessage(){
-    //     var message = new AddItemToInventoryMessage<IInventoryItem>(SlotData.item,1);
-    //     Broker.InvokeSubscribers(message.GetType(), message);
-    // }
-
-    // void SendAddPlayerCurrencyMessage(){
-    //     var message = new AddPlayerCurrencyMessage();
-    //     message.money = new Money();
-    //     message.money.Amount = -SlotData.Money;
-    //     message.fertilizer = new Fertilizer();
-    //     message.fertilizer.Amount = -SlotData.Fertilizer;
-    //     Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
-    // }
+    void SendAddPlayerCurrencyMessage(){
+        var message = new AddPlayerCurrencyMessage();
+        message.money = new Money();
+        message.money.Amount = -shopItemConfig.moneyCost;
+        message.fertilizer = new Fertilizer();
+        message.fertilizer.Amount = -shopItemConfig.fertilizerCost;
+        Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
+    }
 
     private void ChangeTextToOutOfStock(){
         itemName.text = "Out of Stock";
@@ -69,6 +69,6 @@ public class StoreSlot : MonoBehaviour{
     private void ChangeTextToNotEnoughCurrency(){
         itemName.text = "Not Enough Currency";
         Thread.Sleep(1000);
-        //itemName.text = SlotData.ID;
+        itemName.text = shopItemConfig.name; //Probably not the right name.
     } 
 }
