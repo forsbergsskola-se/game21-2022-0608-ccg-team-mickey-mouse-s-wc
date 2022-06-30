@@ -68,7 +68,7 @@ public class CardMovement : MonoBehaviour {
 	}
 	
 	private void MoveTo(Transform targetTransform, Transform cardTransform){
-		cardTransform.position = Vector3.MoveTowards(cardTransform.position, targetTransform.position, 500f * Time.deltaTime);
+		cardTransform.position = Vector3.MoveTowards(cardTransform.position, targetTransform.position, 1000f * Time.deltaTime);
 	}
 
 	private void OnFaintedMessageReceived(FighterFaintMessage obj){

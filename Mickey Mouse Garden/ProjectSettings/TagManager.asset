@@ -16,6 +16,7 @@ TagManager:
   - EF2
   - EF3
   - cardslot
+  - Arena2
   layers:
   - Default
   - TransparentFX

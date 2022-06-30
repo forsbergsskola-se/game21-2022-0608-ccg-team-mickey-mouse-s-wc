@@ -7,10 +7,10 @@ public class SoundManager : MonoBehaviour
 {
   [Header("Music and Ambience")] 
   public FMODUnity.EventReference GardenMusicEventReference;
-  public FMODUnity.EventReference AmbienceEventReference;
+  // public FMODUnity.EventReference AmbienceEventReference;
 
   private FMOD.Studio.EventInstance gardenmusicInstance;
-  private FMOD.Studio.EventInstance ambienceInstance; 
+  // private FMOD.Studio.EventInstance ambienceInstance; 
 
   //[Header("UI and Stuff")]
   //private FMOD.Studio.EventInstance ; 
@@ -21,8 +21,8 @@ public class SoundManager : MonoBehaviour
     gardenmusicInstance = FMODUnity.RuntimeManager.CreateInstance(GardenMusicEventReference);
     gardenmusicInstance.start();
     //ambience
-    ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(AmbienceEventReference);
-    ambienceInstance.start();
+    // ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(AmbienceEventReference);
+    // ambienceInstance.start();
   }
   
   public void plantSeeds() 
