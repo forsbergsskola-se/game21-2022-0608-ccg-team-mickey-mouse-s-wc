@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ArenaMessageListener : MonoBehaviour{
 	private ArenaSoundManager arenaSoundManager;
+	private int delta;
 	private void Awake(){
 		arenaSoundManager = GetComponent<ArenaSoundManager>();
 		Broker.Subscribe<FighterFaintMessage>(OnFighterFaintMessageReceived);
@@ -30,6 +31,15 @@ public class ArenaMessageListener : MonoBehaviour{
 	}
 	private void OnFighterFaintMessageReceived(FighterFaintMessage obj){
 		arenaSoundManager.Faint();
+		
+		if (obj.wasPlayerFighter){
+			delta--;
+			arenaSoundManager.ModulateMusic(delta);
+		}
+		if (!obj.wasPlayerFighter){
+			delta++;
+			arenaSoundManager.ModulateMusic(delta);
+		}
 	}
 	private void OnPostCombatStateReceived(PostCombatStateMessage obj){
 		if (obj.State == PostCombatState.Victory){
