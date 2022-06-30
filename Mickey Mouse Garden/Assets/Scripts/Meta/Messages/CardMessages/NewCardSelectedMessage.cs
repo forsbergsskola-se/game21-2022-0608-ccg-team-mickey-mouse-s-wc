@@ -1,5 +1,5 @@
 namespace Meta.Cards {
-    public class NewCardSelectedMessage {
+    public class NewCardSelectedMessage : IMessage {
         public CardConfig CardConfig {get; set; }
     }
 }
