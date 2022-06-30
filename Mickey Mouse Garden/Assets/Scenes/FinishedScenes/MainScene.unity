@@ -7231,6 +7231,7 @@ GameObject:
   - component: {fileID: 651590932}
   - component: {fileID: 651590933}
   - component: {fileID: 651590934}
+  - component: {fileID: 651590935}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7325,7 +7326,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651590928}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
@@ -7343,6 +7344,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc3ed62d2f2ed749bbefe732b8730e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &651590935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651590928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18beeee0d39bb443ac5f4919d6f3313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GardenMusicEventReference:
+    Guid:
+      Data1: 1183302312
+      Data2: 1082488610
+      Data3: -936473410
+      Data4: 1707567148
+    Path: event:/Meta/MetaMusic
 --- !u!1001 &666408173
 PrefabInstance:
   m_ObjectHideFlags: 0
