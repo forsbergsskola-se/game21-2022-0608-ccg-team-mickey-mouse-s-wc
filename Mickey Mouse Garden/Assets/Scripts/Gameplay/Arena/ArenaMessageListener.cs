@@ -3,28 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArenaSoundListener : MonoBehaviour{
-	[SerializeField] private FMODUnity.EventReference arenaBackground;
+public class ArenaMessageListener : MonoBehaviour{
+	private ArenaSoundManager arenaSoundManager;
 	private void Awake(){
+		arenaSoundManager = GetComponent<ArenaSoundManager>();
 		Broker.Subscribe<FighterFaintMessage>(OnFighterFaintMessageReceived);
 		Broker.Subscribe<FighterStrikeMessage>(OnFighterStrikeMessageReceived);
 		Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateReceived);
-		var arenaBackgroundInstance = FMODUnity.RuntimeManager.CreateInstance(arenaBackground);
-		arenaBackgroundInstance.start();
 	}
 
 	private void OnFighterStrikeMessageReceived(FighterStrikeMessage obj){
-		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Hits");
+		arenaSoundManager.Hit();
 	}
 	private void OnFighterFaintMessageReceived(FighterFaintMessage obj){
-		
+		arenaSoundManager.Faint();
 	}
 	private void OnPostCombatStateReceived(PostCombatStateMessage obj){
 		if (obj.State == PostCombatState.Victory){
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Victory");
+			arenaSoundManager.Victory();
+			arenaSoundManager.Silence();
 		}  
 		if (obj.State == PostCombatState.Defeat) {
-			FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Defeat");
+			arenaSoundManager.Defeat();
+			arenaSoundManager.Silence();
 		}
 	}
 }
