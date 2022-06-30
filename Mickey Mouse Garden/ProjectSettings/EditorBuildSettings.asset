@@ -5,31 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FinishedScenes/MainScene.unity
     guid: 5809362996ac6e44193cba9c4f3b6218
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PointsOfInterest/OpponentSelection.unity
     guid: e622c907cd3a33547b12b342200f532b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/InventoryTestScene.unity
     guid: 1d8d75c3154904653b2f9841cb759188
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PointsOfInterest/PShop.unity
     guid: 86e1429aa08f78a4fb34ea490816425f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PointsOfInterest/Shed.unity
     guid: 0c37e57bf67d3c747be641e136dab7c4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PointsOfInterest/Shop.unity
     guid: 4a3df7fb90f82474e884cc8849dded11
   - enabled: 1
     path: Assets/Scenes/FinishedScenes/Arena.unity
     guid: bb53e5facf7464c4ba4998f7160ba963
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TemporaryScenes/TeamSelection.unity
     guid: e67459b7272ed44a68915613d96b4497
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TemporaryScenes/2TeamSel.unity
     guid: d1cc1969f251c714397bffe61dd4c013
   m_configObjects: {}

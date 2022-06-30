@@ -47,6 +47,11 @@ public class NavSceneLauncher : MonoBehaviour {
 			case "Arena":
 				SceneManager.LoadScene("2TeamSel", LoadSceneMode.Additive);
 				break;
+			
+			// arena
+			case "Arena2":
+				SceneManager.LoadScene("Arena", LoadSceneMode.Additive);
+				break;
 		}
 	}
 }

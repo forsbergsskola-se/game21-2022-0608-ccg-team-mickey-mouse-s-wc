@@ -42,6 +42,11 @@ public class ExitUI : MonoBehaviour{
 			case "Arena":
 				SceneManager.UnloadSceneAsync("OpponentSelection");
 				break;
+			
+			// arena2
+			case "Arena2":
+				SceneManager.UnloadSceneAsync("Arena");
+				break;
 		}
 	}
 }
