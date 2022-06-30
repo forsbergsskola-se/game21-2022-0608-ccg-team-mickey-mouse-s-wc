@@ -24,14 +24,22 @@ public class CombatTester : MonoBehaviour{
     private void Update(){
         if (Input.GetKeyDown(KeyCode.F)){
             //when button F is pressed the playerteam is selected and then the message is sent over to actual combat.
-            var playerTeam = MakeAFighterTeam(true);
-            Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), playerTeam);
+            SpawnPlayerTeam();
         }
         if (Input.GetKeyDown(KeyCode.G)){
             //when button G is pressed the enemy team is selected and then the message is sent over to actual combat.
-            var enemyTeam = MakeAFighterTeam(false);
-            Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), enemyTeam);
+            SpawnEnemyTeam();
         }
+    }
+    public void SpawnPlayerTeam(){
+
+        var enemyTeam = MakeAFighterTeam(true);
+        Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), enemyTeam);
+    }
+    public void SpawnEnemyTeam(){
+
+        var playerTeam = MakeAFighterTeam(false);
+        Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), playerTeam);
     }
 
     private FighterInfo createFighterInfo(){
