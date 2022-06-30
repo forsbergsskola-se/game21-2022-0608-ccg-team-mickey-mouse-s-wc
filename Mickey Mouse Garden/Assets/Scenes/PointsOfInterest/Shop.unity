@@ -154,6 +154,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b9608f4b678f4ff468e05f12666b4531, type: 3}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 593328294014508467, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 593328294149326919, guid: 3b35009aa10cd9c48b189ce1c9d67425, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1839,6 +1871,23 @@ MonoBehaviour:
   song2: {fileID: 0}
   song3: {fileID: 0}
   song4: {fileID: 0}
+--- !u!1 &1260429135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2488210383294171497, guid: 5c0e0ed141614e94fa56f45426a2afb9, type: 3}
+  m_PrefabInstance: {fileID: 2138903162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1260429140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260429135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc75dd4d450cd243b89499a424dd1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408286535
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,10 @@
 
 using Meta.Currency;
 using TMPro;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
+using Task = System.Threading.Tasks.Task;
 using Thread = System.Threading.Thread;
 
 public class StoreSlot : MonoBehaviour{
@@ -23,6 +25,7 @@ public class StoreSlot : MonoBehaviour{
     }
 
     void Start(){
+        RequestCurrency();
         if (shopItemConfig.isPurchased){
             ChangeTextToOutOfStock();
         }
@@ -34,16 +37,17 @@ public class StoreSlot : MonoBehaviour{
     /// <summary>
     ///    Called when the player clicks on the slot. If the player has enough currency, the item is purchased.
     /// </summary>
-    public void BuyItem(){ 
+    public async void BuyItem(){
         if (shopItemConfig.isPurchased){
             ChangeTextToOutOfStock();
             return;
         }
-        RequestCurrency();
+        
         if (playerWalletSo.playerWallet.Money.Amount < shopItemConfig.moneyCost || playerWalletSo.playerWallet.Fertilizer.Amount < shopItemConfig.fertilizerCost){
-            ChangeTextToNotEnoughCurrency();
+            await ChangeTextToNotEnoughCurrency();
             return;
         }
+        RequestCurrency();
         SendAddPlayerCurrencyMessage();
         shopItemConfig.SendCreateItemMessage(shopItemConfig.configID);
     }
@@ -60,9 +64,9 @@ public class StoreSlot : MonoBehaviour{
         itemName.text = "Out of Stock";
     }
 
-    private void ChangeTextToNotEnoughCurrency(){
+    private async Task ChangeTextToNotEnoughCurrency(){
         itemName.text = "Not Enough Currency";
-        Thread.Sleep(1000);
+        await Task.Delay(1000);
         itemName.text = shopItemConfig.name; //Probably not the right name.
     } 
 }

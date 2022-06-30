@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,11 @@ public class SongConfig : ShopItemConfig{
     public ConfigLibrary<SongConfig> library;
     
 
-   public override void SendCreateItemMessage(string pathID){
+    void OnEnable(){
+        AddToLibrary();
+    }
+
+    public override void SendCreateItemMessage(string pathID){
         var message = new CreateNewInventoryItemMessage<Song>(pathID);
         Broker.InvokeSubscribers(message.GetType(), message);
     }
