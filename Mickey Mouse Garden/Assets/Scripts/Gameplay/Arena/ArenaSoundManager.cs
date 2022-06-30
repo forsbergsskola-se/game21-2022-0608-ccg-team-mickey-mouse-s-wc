@@ -38,4 +38,7 @@ public class ArenaSoundManager : MonoBehaviour {
 	public void Silence(){
 		arenaBackgroundInstance.stop(STOP_MODE.ALLOWFADEOUT);
 	}
+	public void ModulateMusic(int delta){
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Delta", delta);
+	}
 }
