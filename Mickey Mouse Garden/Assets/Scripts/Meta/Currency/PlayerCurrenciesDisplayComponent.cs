@@ -26,7 +26,6 @@ public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
     }
 
     public void SetCurrency(DisplayPlayerCurrencyMessage message){
-        Debug.Log("Setting Currency",this);
         if (message.money != null)
             moneyTextMeshProUGUI.text = $@"{message?.money?.Amount.ToString()} {message?.money?.Name}";
         if (message.fertilizer != null)

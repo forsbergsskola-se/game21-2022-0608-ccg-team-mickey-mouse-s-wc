@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Meta.Inventory.NewSeedInventory {
     [System.Serializable]
     public class Seed : IInventoryItem, ISaveData {
-        public Rarity rarity;
+        public Rarity rarity; // Can possibly be extracted out now that we have LibraryID.
 
         public Rarity Rarity{
             get => rarity;
@@ -21,12 +21,12 @@ namespace Meta.Inventory.NewSeedInventory {
             ID = new StringGUID().NewGuid();
         }
 
-        public void TryLoadData() {
-            throw new System.NotImplementedException();
+        public async void TryLoadData(){
+            await SaveManager.Load<Seed>(ID);
         }
 
         public void Save() {
-            throw new System.NotImplementedException();
+           SaveManager.Save(this);
         }
 
         

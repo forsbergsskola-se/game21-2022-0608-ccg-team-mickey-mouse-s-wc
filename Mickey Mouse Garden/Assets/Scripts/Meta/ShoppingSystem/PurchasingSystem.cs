@@ -43,21 +43,21 @@ public class PurchasingSystem : MonoBehaviour{
 
     #region Seeds
 
-    public void BuyItem(ShopItemTest SO){
-        RequestCurrency();
-        if (PlayerMoney.Amount < SO.money || PlayerFertilizer.Amount < SO.fertilizer) return;
-        var message = new AddPlayerCurrencyMessage();
-        message.money = new Money();
-        message.money.Amount = -SO.money;
-        message.fertilizer = new Fertilizer();
-        message.fertilizer.Amount = -SO.fertilizer;
-        Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
-        Seed seed = new Seed();
-        seed.rarity = SO.rarity;
-        RequestCurrency();
-        var collectedMessage = new AddItemToInventoryMessage<Seed>(seed,1);
-        Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
-    }
+    // public void BuyItem(ShopItemTest SO){
+    //     RequestCurrency();
+    //     if (PlayerMoney.Amount < SO.money || PlayerFertilizer.Amount < SO.fertilizer) return;
+    //     var message = new AddPlayerCurrencyMessage();
+    //     message.money = new Money();
+    //     message.money.Amount = -SO.money;
+    //     message.fertilizer = new Fertilizer();
+    //     message.fertilizer.Amount = -SO.fertilizer;
+    //     Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
+    //     Seed seed = new Seed();
+    //     seed.rarity = SO.rarity;
+    //     RequestCurrency();
+    //     var collectedMessage = new AddItemToInventoryMessage<Seed>(seed,1);
+    //     Broker.InvokeSubscribers(collectedMessage.GetType(), collectedMessage);
+    // }
     #endregion
 
     

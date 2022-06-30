@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Song 2
   m_EditorClassIdentifier: 
   configID: Song2
-  isUnlimited: 0
-  itemAmount: 0
+  isUnlimited: 1
+  itemAmount: 1
   moneyCost: 10
   fertilizerCost: 0
   sprite: {fileID: 21300000, guid: cc2af296a56a4554fbe912aaff1e3e73, type: 3}

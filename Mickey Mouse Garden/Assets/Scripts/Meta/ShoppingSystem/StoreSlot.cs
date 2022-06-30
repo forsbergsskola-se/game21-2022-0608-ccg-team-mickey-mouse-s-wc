@@ -53,6 +53,7 @@ public class StoreSlot : MonoBehaviour{
         }
         RequestCurrency();
         SendAddPlayerCurrencyMessage();
+        
         shopItemConfig.SendCreateItemMessage(shopItemConfig.configID);
     }
     void SendAddPlayerCurrencyMessage(){

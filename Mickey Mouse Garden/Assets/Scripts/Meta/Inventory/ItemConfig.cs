@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Meta.Interfaces;
 using UnityEngine;
 
 public abstract class ItemConfig : ScriptableObject
