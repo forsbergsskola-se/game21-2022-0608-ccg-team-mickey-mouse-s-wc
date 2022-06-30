@@ -15,12 +15,17 @@ public abstract class ItemConverter<TItemConfig, TInventoryItem> : MonoBehaviour
         Debug.Log($"Converting Item {createNewInventoryItemMessage.PathID}");
         var itemConfig = library.GetItem(createNewInventoryItemMessage.PathID);
         var itemConfigAttributes = itemConfig.GetType().GetFields().ToList();
+        var itemConfigProperties = itemConfig.GetType().GetProperties().ToList();
         var inventoryItem = new TInventoryItem();
         var inventoryItemAttributes = inventoryItem.GetType().GetFields().ToList();
+        var inventoryItemProperties = inventoryItem.GetType().GetProperties().ToList();
         
         foreach (var fieldInfo in itemConfigAttributes){
             if (inventoryItemAttributes.Any(field => field.Name == fieldInfo.Name)){
-                inventoryItem.GetType().GetField(fieldInfo.Name).SetValue(inventoryItem, fieldInfo.GetValue(itemConfig));
+                inventoryItem.GetType().GetField(fieldInfo.Name)?.SetValue(inventoryItem, fieldInfo.GetValue(itemConfig));
+            }
+            if (inventoryItemProperties.Any(property => property.Name == fieldInfo.Name)){
+                inventoryItem.GetType().GetProperty(fieldInfo.Name)?.SetValue(inventoryItem, fieldInfo.GetValue(itemConfig));
             }
         }
         SendAddItemToInventoryMessage(inventoryItem);

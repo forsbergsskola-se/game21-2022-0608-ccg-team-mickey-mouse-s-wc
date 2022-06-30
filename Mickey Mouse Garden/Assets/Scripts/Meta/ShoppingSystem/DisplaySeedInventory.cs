@@ -28,7 +28,6 @@ public class DisplaySeedInventory : MonoBehaviour{
         int legendarySeed = 0;
         
         foreach (var seed in message.Seeds) {
-            Debug.Log(seed.rarity,this);
             switch (seed.Rarity) {
                 case Rarity.Common:
                     commonSeed++;

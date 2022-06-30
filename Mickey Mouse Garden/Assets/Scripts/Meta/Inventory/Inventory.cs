@@ -7,8 +7,11 @@ namespace Meta.Inventory {
         public abstract InventoryList<T> InventoryList { get; set; }
 
         void InitBase(){
-            LoadList();
             Broker.Subscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
+        }
+
+        void Awake(){
+            LoadList();
         }
 
         public virtual void Start(){
