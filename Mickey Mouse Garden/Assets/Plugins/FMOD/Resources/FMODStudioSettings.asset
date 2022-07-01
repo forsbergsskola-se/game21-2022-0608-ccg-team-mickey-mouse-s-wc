@@ -427,7 +427,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: ../../fmodMobileGame/fmodMobileGame.fspro
-  sourceBankPath: FMODAssets
+  sourceBankPath: Assets/StreamingAssets
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
