@@ -1,11 +1,8 @@
-
 using Meta.Currency;
 using TMPro;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using Task = System.Threading.Tasks.Task;
-using Thread = System.Threading.Thread;
 
 public class StoreSlot : MonoBehaviour{
     public PlayerWalletSO playerWalletSo;
