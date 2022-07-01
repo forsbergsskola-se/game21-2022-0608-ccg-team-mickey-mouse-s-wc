@@ -1,3 +1,4 @@
+using System;
 using Meta.Currency;
 using TMPro;
 using UnityEngine;
@@ -22,10 +23,13 @@ public class StoreSlot : MonoBehaviour{
     }
 
     void Start(){
-        RequestCurrency();
         if (shopItemConfig.itemAmount <= 0){
             ChangeTextToOutOfStock();
         }
+    }
+
+    void OnEnable(){
+        RequestCurrency();
     }
 
     public void RequestCurrency(){
@@ -35,6 +39,7 @@ public class StoreSlot : MonoBehaviour{
     ///    Called when the player clicks on the slot. If the player has enough currency, the item is purchased.
     /// </summary>
     public async void BuyItem(){
+        RequestCurrency();
         if (shopItemConfig.itemAmount <= 0){
             ChangeTextToOutOfStock();
             return;
@@ -48,7 +53,7 @@ public class StoreSlot : MonoBehaviour{
         if (!shopItemConfig.isUnlimited){
             shopItemConfig.itemAmount--;
         }
-        RequestCurrency();
+        
         SendAddPlayerCurrencyMessage();
         
         shopItemConfig.SendCreateItemMessage(shopItemConfig.libraryID);
