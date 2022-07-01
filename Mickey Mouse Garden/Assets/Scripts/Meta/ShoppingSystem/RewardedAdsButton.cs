@@ -8,7 +8,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 {
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
-    [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
+    //[SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     [SerializeField] int rewardAmount;
     string _adUnitId = null; // This will remain null for unsupported platforms
  
