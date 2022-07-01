@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Song 1
   m_EditorClassIdentifier: 
   libraryID: Song 1
-  isUnlimited: 1
+  isUnlimited: 0
   itemAmount: 1
   moneyCost: 10
   fertilizerCost: 6
