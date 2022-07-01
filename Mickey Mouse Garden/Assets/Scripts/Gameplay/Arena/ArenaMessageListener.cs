@@ -11,7 +11,13 @@ public class ArenaMessageListener : MonoBehaviour{
 		Broker.Subscribe<FighterFaintMessage>(OnFighterFaintMessageReceived);
 		Broker.Subscribe<FighterStrikeMessage>(OnFighterStrikeMessageReceived);
 		Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateReceived);
-		arenaSoundManager.PlayMusic();
+		Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamMessageReceived);
+
+	}
+	private void OnFighterTeamMessageReceived(SelectedFighterTeamMessage obj){
+		if (!obj.IsPlayerTeam){
+			arenaSoundManager.PlayMusic();
+		}
 	}
 
 	private void OnFighterStrikeMessageReceived(FighterStrikeMessage obj){

@@ -71,7 +71,7 @@ public class CombatController : MonoBehaviour{
       }
       if (playerFighter.MaxHealth <= 0 || enemyFighter.MaxHealth <= 0){
          timer.Dispose();
-         executor.Enqueue(new EndOfCombatCommand(enemyFighter.MaxHealth <= 0 ,new Money()));  
+         executor.Enqueue(new EndOfCombatCommand(enemyFighter.MaxHealth <= 0 ,new Money{Amount = 50}));  
       }
       AssertStrikeOrder();
 
