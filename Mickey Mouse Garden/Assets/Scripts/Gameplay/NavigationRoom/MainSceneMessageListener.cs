@@ -8,6 +8,7 @@ public class MainSceneMessageListener : MonoBehaviour{
         mainSceneSoundManager.PlayMusic();
     }
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
+        mainSceneSoundManager.StopPreCombatMusic();
         mainSceneSoundManager.MainClick();
         switch (obj.ObjectTag){
             // pShop
