@@ -15,8 +15,8 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: fc1cfc2e3307abf47a6af323940c369f, type: 3}
   name: Carrot
   id: carrot
-  maxHealth: 20
-  attack: 12
+  maxHealth: 50
+  attack: 45
   speed: 7
   alignment: 2
   rarity: 0
