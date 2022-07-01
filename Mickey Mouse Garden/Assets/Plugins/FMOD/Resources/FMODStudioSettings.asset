@@ -112,10 +112,10 @@ MonoBehaviour:
       HasValue: 0
     DSPBufferLength:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     DSPBufferCount:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     Plugins:
       Value: []
       HasValue: 1
@@ -426,8 +426,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 0
   HasPlatforms: 0
-  sourceProjectPath: 
-  sourceBankPath: Assets/FMODBank
+  sourceProjectPath: ../../fmodMobileGame/fmodMobileGame.fspro
+  sourceBankPath: FMODAssets
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -451,7 +451,9 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Mobile/Master
-  Banks: []
+  Banks:
+  - Mobile/Master.assets
+  - Mobile/Master.streams
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -459,7 +461,7 @@ MonoBehaviour:
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
-  EnableErrorCallback: 0
+  EnableErrorCallback: 1
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131591
