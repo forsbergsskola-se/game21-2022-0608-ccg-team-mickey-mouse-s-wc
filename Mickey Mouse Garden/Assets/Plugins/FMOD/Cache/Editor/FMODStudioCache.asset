@@ -1,0 +1,777 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9155748764972375863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arena/ArenaMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Arena/ArenaMusic
+  Guid:
+    Data1: 1319339071
+    Data2: 1114670504
+    Data3: 1734031295
+    Data4: -1071821933
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5604023970091786543}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8916543435057772159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODBank/Mobile/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637922732558215124
+  FileSizes:
+  - Name: 
+    Value: 1822
+  Exists: 1
+--- !u!114 &-6889030605214475145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PreBattle/Battel
+  m_EditorClassIdentifier: 
+  Name: Battel
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2725853467
+    data2: 1542828687
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Arena
+  - Choose
+  - Combat S
+  - Tap To
+  - Battel
+  Exists: 1
+--- !u!114 &-6570012497820719544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/MetaMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/MetaMusic
+  Guid:
+    Data1: 1183302312
+    Data2: 1082488610
+    Data3: -936473410
+    Data4: 1707567148
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8923517147947136909}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
+--- !u!114 &-6379320963773480654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arena/Victory
+  m_EditorClassIdentifier: 
+  Path: event:/Arena/Victory
+  Guid:
+    Data1: -1455752278
+    Data2: 1300773561
+    Data3: -659021411
+    Data4: -2039260837
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &-4990203502184908444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/RockPaperScissor
+  m_EditorClassIdentifier: 
+  Name: RockPaperScissor
+  StudioPath: parameter:/RockPaperScissor
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1298524875
+    data2: 825374870
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Rock
+  - Paper
+  - Scissors
+  Exists: 1
+--- !u!114 &-4848096512922957444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/MainClick
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MainClick
+  Guid:
+    Data1: -1705445315
+    Data2: 1098616020
+    Data3: -523933289
+    Data4: 1062866524
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4589093956081654712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hits/RockPaperScissor
+  m_EditorClassIdentifier: 
+  Name: RockPaperScissor
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1298524875
+    data2: 825374870
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Rock
+  - Paper
+  - Scissors
+  Exists: 1
+--- !u!114 &-4444685051363311761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arena/Hits
+  m_EditorClassIdentifier: 
+  Path: event:/Arena/Hits
+  Guid:
+    Data1: -1146453845
+    Data2: 1254271791
+    Data3: -1184953177
+    Data4: -1019587779
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -347365415023104993}
+  - {fileID: -4589093956081654712}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3202161219076892973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/PreBattle
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/PreBattle
+  Guid:
+    Data1: 902593981
+    Data2: 1242532058
+    Data3: -1600810060
+    Data4: 174678787
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6889030605214475145}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
+--- !u!114 &-2990236922060283653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Market/Sell
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Market/Sell
+  Guid:
+    Data1: 796577806
+    Data2: 1269386481
+    Data3: 598218885
+    Data4: 2104817685
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2640724826609343696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Garden
+  m_EditorClassIdentifier: 
+  Name: Garden
+  StudioPath: parameter:/Garden
+  Min: 1
+  Max: 4
+  Default: 1
+  ID:
+    data1: 283710940
+    data2: 1889862198
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1874185684326132394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LevelUp/Rarity
+  m_EditorClassIdentifier: 
+  Name: Rarity
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2049205034
+    data2: 12120533
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1351717211646704604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Market/Purchase
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Market/Purchase
+  Guid:
+    Data1: 784616282
+    Data2: 1101648975
+    Data3: 1189409979
+    Data4: -785313610
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1147083284676485258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Garden/Harvest
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Garden/Harvest
+  Guid:
+    Data1: -1076181467
+    Data2: 1207266230
+    Data3: -1981227635
+    Data4: -1777761233
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-843663101563945418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arena/Defeat
+  m_EditorClassIdentifier: 
+  Path: event:/Arena/Defeat
+  Guid:
+    Data1: -1941293386
+    Data2: 1341906481
+    Data3: 1907016849
+    Data4: 1700791748
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-347365415023104993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hits/Rarity
+  m_EditorClassIdentifier: 
+  Name: Rarity
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2049205034
+    data2: 12120533
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -8916543435057772159}
+  - {fileID: 182053232317082082}
+  EditorEvents:
+  - {fileID: -2990236922060283653}
+  - {fileID: -1147083284676485258}
+  - {fileID: -4848096512922957444}
+  - {fileID: -9155748764972375863}
+  - {fileID: 8839057048490874838}
+  - {fileID: 4481707395849214440}
+  - {fileID: -1351717211646704604}
+  - {fileID: 8390553542973666348}
+  - {fileID: 3001023725669952884}
+  - {fileID: -6570012497820719544}
+  - {fileID: -6379320963773480654}
+  - {fileID: -4444685051363311761}
+  - {fileID: -843663101563945418}
+  - {fileID: -3202161219076892973}
+  - {fileID: 3894063659113572025}
+  - {fileID: 8389875404872075092}
+  EditorParameters:
+  - {fileID: -4990203502184908444}
+  - {fileID: -2640724826609343696}
+  - {fileID: 5282419662635316111}
+  - {fileID: 2617041958242190416}
+  MasterBanks:
+  - {fileID: 182053232317082082}
+  StringsBanks:
+  - {fileID: -8916543435057772159}
+  cacheTime: 637922732558215124
+  cacheVersion: 131591
+--- !u!114 &182053232317082082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Mobile/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODBank/Mobile/Master.bank
+  Name: Mobile/Master
+  StudioPath: bank:/Master
+  lastModified: 637922732558125034
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2617041958242190416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Battel
+  m_EditorClassIdentifier: 
+  Name: Battel
+  StudioPath: parameter:/Battel
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2725853467
+    data2: 1542828687
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Arena
+  - Choose
+  - Combat S
+  - Tap To
+  - Battel
+  Exists: 1
+--- !u!114 &3001023725669952884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Garden/PlantSeeds
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Garden/PlantSeeds
+  Guid:
+    Data1: -96271232
+    Data2: 1281085842
+    Data3: 1320727435
+    Data4: 54727336
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3894063659113572025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arena/ArenaAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/Arena/ArenaAmbience
+  Guid:
+    Data1: 1533266901
+    Data2: 1197062376
+    Data3: 537703825
+    Data4: 1654610688
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
+--- !u!114 &4481707395849214440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Swosh
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Swosh
+  Guid:
+    Data1: -1290898359
+    Data2: 1272303851
+    Data3: -1853693815
+    Data4: 1599520633
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5282419662635316111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Rarity
+  m_EditorClassIdentifier: 
+  Name: Rarity
+  StudioPath: parameter:/Rarity
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2049205034
+    data2: 12120533
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &5604023970091786543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ArenaMusic/Delta
+  m_EditorClassIdentifier: 
+  Name: Delta
+  StudioPath: 
+  Min: -3
+  Max: 3
+  Default: -3
+  ID:
+    data1: 523486782
+    data2: 2447078136
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8389875404872075092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/LevelUp
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/LevelUp
+  Guid:
+    Data1: -600129820
+    Data2: 1201173477
+    Data3: -1189659246
+    Data4: 220105378
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1874185684326132394}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7875
+--- !u!114 &8390553542973666348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Exp
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Exp
+  Guid:
+    Data1: -542923662
+    Data2: 1173689205
+    Data3: 1091938735
+    Data4: -19147696
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &8839057048490874838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meta/Garden/Fusion
+  m_EditorClassIdentifier: 
+  Path: event:/Meta/Garden/Fusion
+  Guid:
+    Data1: 71940673
+    Data2: 1124188879
+    Data3: -947050827
+    Data4: -714496887
+  Banks:
+  - {fileID: 182053232317082082}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &8923517147947136909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MetaMusic/Garden
+  m_EditorClassIdentifier: 
+  Name: Garden
+  StudioPath: 
+  Min: 1
+  Max: 4
+  Default: 1
+  ID:
+    data1: 283710940
+    data2: 1889862198
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
