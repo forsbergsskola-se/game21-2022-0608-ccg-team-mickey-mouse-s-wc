@@ -374,10 +374,8 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Mobile/Master
-  Banks:
-  - Mobile/Arena
-  - Mobile/Meta
+  - Mobile 2/Master
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
