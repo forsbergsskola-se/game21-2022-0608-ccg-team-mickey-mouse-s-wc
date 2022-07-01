@@ -14,6 +14,7 @@ public class ASelectedCard : MonoBehaviour{
    public void WhenClicked(){
       cardData = FindCardData();
       CreateSelectedCardMessage();
+      //finds the parent canvas, then finds the selectionPanel parent of that canvas. then sets that selectionpanel to inactive.
       transform.parent.transform.parent.gameObject.SetActive(false);
    }
 
