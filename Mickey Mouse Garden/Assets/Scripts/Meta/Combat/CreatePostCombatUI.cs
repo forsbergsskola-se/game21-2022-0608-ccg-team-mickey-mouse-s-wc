@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [CustomComponent("Create Post Combat UI", "Listens to CreatePostCombatUIMessage and creates UI when invoked.", CustomComponentAttributeType.Finished)]
 public class CreatePostCombatUI : MonoBehaviour{
-    [SerializeField] GameObject PostCombatUIPrefab;
+    [SerializeField] GameObject PostCombatUICanvas;
 
     void Awake(){
         Broker.Subscribe<CreatePostCombatUIMessage>(CreateUI);
@@ -19,7 +17,7 @@ public class CreatePostCombatUI : MonoBehaviour{
     }
     private IEnumerator DelayUI(){
         yield return new WaitForSeconds(2f);
-        Instantiate(PostCombatUIPrefab, this.transform);
+        PostCombatUICanvas.GetComponent<Canvas>().enabled = true;
     }
    
    

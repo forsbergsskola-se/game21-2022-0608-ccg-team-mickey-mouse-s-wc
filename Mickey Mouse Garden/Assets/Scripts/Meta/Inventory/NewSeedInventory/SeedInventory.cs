@@ -19,6 +19,7 @@ namespace Meta.Inventory.NewSeedInventory {
             }
             Broker.Subscribe<AskForUpdateSeedUi>(SendUpdateSeedUiMessage);
         }
+        
 
         private void OnDisable(){
             Broker.Unsubscribe<AskForUpdateSeedUi>(SendUpdateSeedUiMessage);
