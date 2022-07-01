@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 [CustomComponent("Post Combat UI Component","Small manager to control what UI elements shows up after combat",CustomComponentAttributeType.WIP)]
