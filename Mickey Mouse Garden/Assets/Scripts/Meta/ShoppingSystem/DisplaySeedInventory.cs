@@ -8,14 +8,14 @@ using UnityEngine;
 public class DisplaySeedInventory : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI seedDisplayText;
 
-
-    private void Awake(){
+    void OnEnable(){
         Broker.Subscribe<UpdateSeedUi>(UpdateUi);
     }
 
     private void Start(){
         Broker.InvokeSubscribers(typeof(AskForUpdateSeedUi), new AskForUpdateSeedUi());
     }
+    
 
     private void OnDisable(){
         Broker.Unsubscribe<UpdateSeedUi>(UpdateUi);

@@ -15,9 +15,7 @@ public class EndOfCombatCommand : ICommand{
             var message = new CurrencyRewardMessage();
             message.money = reward;
             Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
-            
         }
-
         if (!playerWinner){
             SendPostCombatStateMessage(PostCombatState.Defeat);
         }

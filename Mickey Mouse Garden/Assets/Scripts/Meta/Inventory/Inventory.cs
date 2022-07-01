@@ -7,6 +7,9 @@ namespace Meta.Inventory {
         public abstract InventoryList<T> InventoryList { get; set; }
 
         void InitBase(){
+        }
+
+        void OnEnable(){
             Broker.Subscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
         }
 
