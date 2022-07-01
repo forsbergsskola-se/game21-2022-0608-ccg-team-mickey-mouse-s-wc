@@ -15,8 +15,9 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 479b3dc02b80fee4c81934fe1a4af9ac, type: 3}
   name: Brocco Lee
   id: broccolee
-  maxHealth: 100
+  maxHealth: 22
   attack: 10
-  speed: 10
+  speed: 6
   alignment: 2
   rarity: 0
+  level: 0

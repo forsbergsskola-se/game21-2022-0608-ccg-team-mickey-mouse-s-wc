@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
-  m_Name: Asparragon
+  m_Name: Cauligula
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 90a1d6d42f0071f4d988ec6f88535818, type: 3}
-  name: Asparragon
-  id: asparragon
-  maxHealth: 80
-  attack: 20
-  speed: 15
-  alignment: 1
-  rarity: 0
+  image: {fileID: 21300000, guid: bcab6e894f87ed74fbf0d51a08891fe6, type: 3}
+  name: Cauligula
+  id: cauligula
+  maxHealth: 35
+  attack: 8
+  speed: 3
+  alignment: 0
+  rarity: 1
+  level: 0
