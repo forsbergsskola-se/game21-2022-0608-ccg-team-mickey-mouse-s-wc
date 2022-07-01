@@ -21,13 +21,16 @@ namespace Experiment{
             wallet.Fertilizer.LoadSprite();
             wallet.Money.LoadSprite();
             playerWalletSO.playerWallet = wallet;
+            
+        }
+
+        void OnEnable(){
             Debug.Log("Subscribing to AskForPlayerCurrencyMessage",this);
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
             Broker.Subscribe<CurrencyRewardMessage>(ChangeCurrencies);
         }
 
-        
 
         void OnDisable(){
             Broker.Unsubscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);

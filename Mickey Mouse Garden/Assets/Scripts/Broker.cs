@@ -20,8 +20,9 @@ public static class Broker{
     }
     public static void InvokeSubscribers(Type type, IMessage data){
         if (listeners.TryGetValue(type, out var listener)){
-            listener.DynamicInvoke(data); //TODO: DynamicInvoke is more expensive than regular invoke, like 20x times more expensive,
+            listener?.DynamicInvoke(data); //TODO: DynamicInvoke is more expensive than regular invoke, like 20x times more expensive,
             //TODO: but when we do not know the type, we have to have it. Check with marc how to use invoke instead
+            
         }
         AnyMessageReceived?.Invoke(data);
     }

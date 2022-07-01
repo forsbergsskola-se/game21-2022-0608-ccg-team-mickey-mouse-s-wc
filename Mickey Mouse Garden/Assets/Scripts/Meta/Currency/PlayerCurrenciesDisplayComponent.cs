@@ -14,12 +14,8 @@ public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
     void Awake(){
         moneyTextMeshProUGUI = moneyAmountFieldObjects.GetComponent<TextMeshProUGUI>();
         fertilizerTextMeshProUGUI =  fertilizerAmountFieldObjects.GetComponent<TextMeshProUGUI>();
-    }
-
-    void OnEnable(){
         Broker.Subscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
     }
-
     void OnDisable(){
         Broker.Unsubscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
     }
