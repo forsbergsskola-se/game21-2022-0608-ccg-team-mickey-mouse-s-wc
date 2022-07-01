@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,9 @@ namespace Meta.Inventory.NewSeedInventory {
                 //TODO: Implement marc's way, loading in saved file<- For Oliver
                 Instance = this;
             }
+        }
+
+        void OnEnable(){
             Broker.Subscribe<AskForUpdateSeedUi>(SendUpdateSeedUiMessage);
         }
 
