@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MainSceneMessageListener : MonoBehaviour{
@@ -5,7 +6,22 @@ public class MainSceneMessageListener : MonoBehaviour{
     private void Awake(){
         mainSceneSoundManager = GetComponent<MainSceneSoundManager>();
         Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
+        Broker.Subscribe<CreatePostCombatUIMessage>(OnPostCombatUIMessageReceived);
+        Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamMessageReceived);
         mainSceneSoundManager.PlayMusic();
+    }
+    private void OnFighterTeamMessageReceived(SelectedFighterTeamMessage obj){
+        if (!obj.IsPlayerTeam){
+            mainSceneSoundManager.StopPreCombatMusic();
+        }
+    }
+    private void OnPostCombatUIMessageReceived(CreatePostCombatUIMessage obj){
+        StartCoroutine(DelaySound());
+    }
+    
+    private IEnumerator DelaySound(){
+        yield return new WaitForSeconds(2f);
+        mainSceneSoundManager.UnPauseMusic();
     }
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
         mainSceneSoundManager.StopPreCombatMusic();

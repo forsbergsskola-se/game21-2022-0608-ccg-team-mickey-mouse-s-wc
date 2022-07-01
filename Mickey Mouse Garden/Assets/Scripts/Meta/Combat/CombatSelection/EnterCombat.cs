@@ -33,12 +33,12 @@ public class EnterCombat : MonoBehaviour{
         var selectedPlayerTeam = new SelectedFighterTeamMessage{FighterTeam = playerTeam, IsPlayerTeam = true};
         Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), selectedPlayerTeam);
         
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         
         var enemyTeam = ConvertToFighterStack(enemyTeamMembers);
         var enemyTeamSelected = new SelectedFighterTeamMessage {FighterTeam = enemyTeam, IsPlayerTeam = false};
         Broker.InvokeSubscribers(enemyTeamSelected.GetType(), enemyTeamSelected);
-
+        
         SceneManager.UnloadSceneAsync("2TeamSel");
         //TODO: change into actual proper scene not the temporary testing one
     }
