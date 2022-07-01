@@ -291,6 +291,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1394729083738825328, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394729083738825328, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5406628030907386091}
+    - target: {fileID: 1394729083738825328, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WhenClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394729083738825328, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ASelectedCard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394729083738825328, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697376365854868130, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697376365854868130, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697376365854868130, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697376365854868130, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2746867045009116739, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -311,5 +347,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8128594692919862311, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -1320658780384223567, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+--- !u!114 &5406628030907386091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2575491328222881730, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+  m_PrefabInstance: {fileID: 7545156909716041513}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b1a71cba43cd34e95648942a670cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
