@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,14 @@ using UnityEngine;
 
 public abstract class ItemConverter<TItemConfig, TInventoryItem> : MonoBehaviour where TItemConfig : ItemConfig where TInventoryItem : IInventoryItem, new(){
     public ConfigLibrary<TItemConfig> library;
-    void Awake(){
+    void OnEnable(){
         Broker.Subscribe<CreateNewInventoryItemMessage<TInventoryItem>>(ConvertItem);
     }
+
+    void OnDisable(){
+        Broker.Unsubscribe<CreateNewInventoryItemMessage<TInventoryItem>>(ConvertItem);
+    }
+
     public void ConvertItem(CreateNewInventoryItemMessage<TInventoryItem> createNewInventoryItemMessage)
     {
         Debug.Log($"Converting Item {createNewInventoryItemMessage.PathID}");

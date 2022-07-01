@@ -8,6 +8,7 @@ public class MainSceneMessageListener : MonoBehaviour{
         mainSceneSoundManager.PlayMusic();
     }
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
+        mainSceneSoundManager.StopPreCombatMusic();
         mainSceneSoundManager.MainClick();
         switch (obj.ObjectTag){
             // pShop
@@ -30,13 +31,13 @@ public class MainSceneMessageListener : MonoBehaviour{
 
             // arena
             case "Arena":
-                mainSceneSoundManager.StopMusic();
+                mainSceneSoundManager.PauseMusic();
                 mainSceneSoundManager.PlayPreCombatMusic();
                 break;
 
             // arena2
             case "Arena2":
-                mainSceneSoundManager.StopMusic();
+                mainSceneSoundManager.PauseMusic();
                 // mainSceneSoundManager.PlayPreCombatMusic();
                 break;
         }

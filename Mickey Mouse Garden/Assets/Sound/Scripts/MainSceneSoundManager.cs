@@ -49,6 +49,12 @@ public class MainSceneSoundManager : MonoBehaviour
   public void StopMusic(){
     ambientMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
   }
+  public void PauseMusic(){
+    ambientMusicInstance.setPaused(true);
+  }
+  public void UnPauseMusic(){
+    ambientMusicInstance.setPaused(false);
+  }
   public void StopPreCombatMusic(){
     preCombatMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
   }

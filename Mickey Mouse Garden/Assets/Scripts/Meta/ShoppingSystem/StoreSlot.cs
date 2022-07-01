@@ -21,6 +21,7 @@ public class StoreSlot : MonoBehaviour{
         itemMoneyPrice.text = shopItemConfig.moneyCost.ToString();
         itemFertilizerPrice.text = shopItemConfig.fertilizerCost.ToString();
     }
+    
 
     void Start(){
         if (shopItemConfig.itemAmount <= 0){

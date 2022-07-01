@@ -41,6 +41,7 @@ public class ExitUI : MonoBehaviour{
 			// arena
 			case "Arena":
 				SceneManager.UnloadSceneAsync("2TeamSel");
+				GetComponent<MainSceneSoundManager>().UnPauseMusic();
 				break;
 			
 			// arena2
