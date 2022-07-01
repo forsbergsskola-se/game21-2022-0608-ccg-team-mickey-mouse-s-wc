@@ -31,13 +31,13 @@ public class MainSceneMessageListener : MonoBehaviour{
 
             // arena
             case "Arena":
-                mainSceneSoundManager.StopMusic();
+                mainSceneSoundManager.PauseMusic();
                 mainSceneSoundManager.PlayPreCombatMusic();
                 break;
 
             // arena2
             case "Arena2":
-                mainSceneSoundManager.StopMusic();
+                mainSceneSoundManager.PauseMusic();
                 // mainSceneSoundManager.PlayPreCombatMusic();
                 break;
         }
