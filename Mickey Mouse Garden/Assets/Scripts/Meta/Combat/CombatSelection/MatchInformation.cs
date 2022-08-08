@@ -2,7 +2,7 @@ using System;
 using Meta.Cards;
 using UnityEngine;
 
-public class Level : MonoBehaviour {
+public class MatchInformation : MonoBehaviour {
     [SerializeField] private float levelNumber, levelMultiplier = 100;
     [SerializeField] private CardConfig[] enemyTeamMembers; //TODO: force amount of elements to be 3, pesky designers.
     private PlayerLevel playerLevelReference;
