@@ -6,13 +6,11 @@ using UnityEngine;
 [Serializable]
 public class PlayerLevel : ISaveData{
     private int level;
+
     public int Level{
-        get => level;
-        private set{
-            level = value;
-            Save();
-        }
-    }
+        get;
+        set;
+    } = 1;
     public StringGUID ID{ get; } = new StringGUID().CreateStringGuid(0010113);
     public async void TryLoadData(){
         var playerLevel = await SaveManager.Load<PlayerLevel>(ID);
@@ -20,10 +18,6 @@ public class PlayerLevel : ISaveData{
             Level = playerLevel.Level;
             Debug.Log("PL" + playerLevel.Level);
         }
-        else{
-            Level = 1;
-        }
-        
     }
 
     public void Save(){
@@ -38,6 +32,7 @@ public class PlayerLevel : ISaveData{
 
     void LevelUp(){
         Level++;
+        Save();
     }
 
     public void CheckLevelUp(int attemptedCombatLevel){
