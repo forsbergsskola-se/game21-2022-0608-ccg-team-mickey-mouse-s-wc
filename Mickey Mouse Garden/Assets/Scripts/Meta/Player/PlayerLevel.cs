@@ -17,8 +17,10 @@ public class PlayerLevel : ISaveData{
         TryLoadData();
     }
     public StringGUID ID{ get; }
-    public void TryLoadData(){
-        Level = SaveManager.Load<PlayerLevel>(ID).Result.Level;
+    public async void TryLoadData(){
+        var playerLevel = await SaveManager.Load<PlayerLevel>(ID);
+        Level= playerLevel.Level;
+        
     }
 
     public void Save(){
