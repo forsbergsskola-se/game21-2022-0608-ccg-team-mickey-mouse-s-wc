@@ -9,7 +9,7 @@ public class EnterTeamSelection : MonoBehaviour{
 	private void OnMouseDown() {
 		confirmationBox.SetActive(true);
 		shown = true;
-		GetComponent<Level>().ConfirmTeam();
+		GetComponent<MatchInformation>().ConfirmTeam();
 	}
 	
 	public void AnswerYes(){
