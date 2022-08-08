@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Meta.Cards;
 using Meta.Currency;
 using UnityEngine;
 using Color = System.Drawing.Color;
@@ -11,6 +12,9 @@ namespace Experiment{
     public class PlayerWalletComponent : MonoBehaviour{
         public PlayerWallet wallet;
         public PlayerWalletSO playerWalletSO;
+
+
+        Money attemptedCombatLedger;
 
         void Awake(){
             var walletID = new StringGUID().CreateStringGuid(13);
@@ -28,14 +32,27 @@ namespace Experiment{
             Debug.Log("Subscribing to AskForPlayerCurrencyMessage",this);
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
-            Broker.Subscribe<CurrencyRewardMessage>(ChangeCurrencies);
+            Broker.Subscribe<LevelMessage>(OnLevelMessageReceived);
+            Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
         }
-
-
         void OnDisable(){
             Broker.Unsubscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Unsubscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
-            Broker.Unsubscribe<CurrencyRewardMessage>(ChangeCurrencies);
+            Broker.Unsubscribe<LevelMessage>(OnLevelMessageReceived);
+            Broker.Unsubscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
+        }
+
+        void OnLevelMessageReceived(LevelMessage message){
+            attemptedCombatLedger = message.Reward;
+        }
+
+        void OnPostCombatStateMessageReceived(PostCombatStateMessage message){
+            if(message.State == PostCombatState.Victory){
+                wallet.Money.AddAmount(attemptedCombatLedger.Amount);
+                wallet?.Save();
+                playerWalletSO.playerWallet = wallet;
+                UpdateDisplayCurrencies();
+            }
         }
         void UpdateDisplayCurrencies(){
             var displayMessage = new DisplayPlayerCurrencyMessage();
@@ -49,13 +66,6 @@ namespace Experiment{
         }
         
         public void ChangeCurrencies(AddPlayerCurrencyMessage message){
-            if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
-            if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
-            wallet?.Save();
-            playerWalletSO.playerWallet = wallet;
-            UpdateDisplayCurrencies();
-        }
-        void ChangeCurrencies(CurrencyRewardMessage message){
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
             wallet?.Save();

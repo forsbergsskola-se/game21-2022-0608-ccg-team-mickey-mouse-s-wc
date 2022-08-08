@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Meta.Cards;
 using UnityEngine;
 
 public class PlayerLevel : ISaveData{
@@ -24,13 +25,19 @@ public class PlayerLevel : ISaveData{
         SaveManager.Save(this);
     }
 
-    public void OnCombatLevelMessageReceived(CombatLevelMessage message){
-        if(message.level == Level){
+    public void OnCombatLevelMessageReceived(LevelMessage message){
+        if(message.Level == Level){
             LevelUp();
         }
     }
 
     void LevelUp(){
         Level++;
+    }
+
+    public void CheckLevelUp(int attemptedCombatLevel){
+        if(attemptedCombatLevel == Level){
+            LevelUp();
+        }
     }
 }
