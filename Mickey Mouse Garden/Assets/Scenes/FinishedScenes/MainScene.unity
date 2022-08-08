@@ -35906,21 +35906,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 311fefb2327fc49a6b372b4e314354ca, type: 2}
   - {fileID: 11400000, guid: 76fdd8aae9cf04b99832509870606da8, type: 2}
   - {fileID: 11400000, guid: 8ed9bb5927d764ad59c80049436f9da1, type: 2}
---- !u!114 &1877168338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877168326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d3a62edaf54c09b4edcfa9a538536b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  opponentLevel: 1
-  playerLevel: 5
-  levelMultiplier: 100
 --- !u!1001 &1877886302
 PrefabInstance:
   m_ObjectHideFlags: 0

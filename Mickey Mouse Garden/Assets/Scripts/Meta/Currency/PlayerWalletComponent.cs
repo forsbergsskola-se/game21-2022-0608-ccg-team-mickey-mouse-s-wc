@@ -52,6 +52,11 @@ namespace Experiment{
                 wallet?.Save();
                 playerWalletSO.playerWallet = wallet;
                 UpdateDisplayCurrencies();
+                
+                CurrencyRewardMessage currencyRewardMessage = new(){
+                    money = attemptedCombatLedger
+                };
+                Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), currencyRewardMessage);
             }
         }
         void UpdateDisplayCurrencies(){
