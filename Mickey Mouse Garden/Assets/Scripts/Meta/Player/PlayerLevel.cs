@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Meta.Cards;
 using UnityEngine;
-
+[Serializable]
 public class PlayerLevel : ISaveData{
     int level;
     public int Level{
@@ -12,15 +13,15 @@ public class PlayerLevel : ISaveData{
             Save();
         }
     }
-
-    internal PlayerLevel(){
-        level = 1;
-        TryLoadData();
-    }
-    public StringGUID ID{ get; }
+    public StringGUID ID{ get; } = new StringGUID().CreateStringGuid(0010113);
     public async void TryLoadData(){
         var playerLevel = await SaveManager.Load<PlayerLevel>(ID);
-        Level= playerLevel.Level;
+        if(playerLevel != null){
+            Level = playerLevel.Level;
+        }
+        else{
+            Level = 1;
+        }
         
     }
 

@@ -9,6 +9,7 @@ public class Player : MonoBehaviour{
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
         playerLevel = new PlayerLevel();
+        playerLevel.TryLoadData();
         Broker.Subscribe<LevelMessage>(OnCombatLevelMessageReceived);
         Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
     }
