@@ -1,9 +1,10 @@
 using Meta.Cards;
+using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
 public class InstantiateFullCardCollection : MonoBehaviour{ //TODO: combine with SpawnCardButtons if time and energy.
     [SerializeField] private GameObject cardButtonPrefab;
-    private CardConfig[] playerCardTeam;
+    private Card[] playerCardTeam;
     private void Awake(){
         playerCardTeam = FindObjectOfType<CardInventoryMockup>().playerCards;
         for (int i = 0; i < playerCardTeam.Length; i++){

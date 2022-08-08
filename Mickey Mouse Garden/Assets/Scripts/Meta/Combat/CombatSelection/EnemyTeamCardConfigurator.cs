@@ -12,7 +12,7 @@ public class EnemyTeamCardConfigurator : MonoBehaviour{
 
     private void OnLevelMessageRecieevved(LevelMessage obj){
         for (var i = 0; i < enemyteam.Length; i++){
-            enemyteam[i].Configure(obj.Team[i]);
+            enemyteam[i].Configure(obj.CardConfigTeam[i]);
         }
     }
 }

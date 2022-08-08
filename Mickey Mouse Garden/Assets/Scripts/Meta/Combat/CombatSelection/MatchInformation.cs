@@ -1,5 +1,6 @@
 using System;
 using Meta.Cards;
+using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
 public class MatchInformation : MonoBehaviour {
@@ -9,7 +10,7 @@ public class MatchInformation : MonoBehaviour {
     private Money reward;
     public void ConfirmTeam(){
         LevelMessage msg = new(){
-            Team = enemyTeamMembers,
+            CardConfigTeam = enemyTeamMembers,
             Reward = reward,
             Level = (int)levelNumber,
             

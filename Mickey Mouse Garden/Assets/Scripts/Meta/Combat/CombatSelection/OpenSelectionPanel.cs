@@ -6,8 +6,8 @@ public class OpenSelectionPanel : MonoBehaviour {
 
     public void OpenPanel() {
         selectionPanel.SetActive(true);
-        var config = GetComponentInChildren<ASelectedCard>().FindCardData();
-        var msg = new CardSelectionMessage{CardConfig = config , Position = position};
+        var card = GetComponentInChildren<ASelectedCard>().FindCardData();
+        var msg = new CardSelectionMessage{Card = card , Position = position};
         Broker.InvokeSubscribers(typeof(CardSelectionMessage), msg);
     }
 }

@@ -1,9 +1,10 @@
 using Meta.Cards;
+using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
 public class SpawnCardButtons : MonoBehaviour {
    public CardView[] playerCardSlots;
-   private CardConfig[] playerCardTeam;
+   private Card[] playerCardTeam;
 
    private void Awake(){
       playerCardTeam = FindObjectOfType<CardInventoryMockup>().playerCards;

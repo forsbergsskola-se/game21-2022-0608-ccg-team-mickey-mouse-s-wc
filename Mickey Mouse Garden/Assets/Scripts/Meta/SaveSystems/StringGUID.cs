@@ -13,7 +13,15 @@ public class StringGUID{
       set => guid = new Guid(value);
    }
    public StringGUID(string stringGuid){
-      GUIDAsString = stringGuid;
+      var guid = new Guid();
+      var guidString = guid.ToString().ToCharArray();
+      for (int i = 0; i < guidString.Length; i++){
+         if(guidString[i] == 'O'){
+            guidString[i] = stringGuid[i];
+         }
+      }
+      Debug.Log(guidString.ToString()); //TODO: FIX
+      GUIDAsString = guidString.ToString();
    }
 
    public StringGUID(){

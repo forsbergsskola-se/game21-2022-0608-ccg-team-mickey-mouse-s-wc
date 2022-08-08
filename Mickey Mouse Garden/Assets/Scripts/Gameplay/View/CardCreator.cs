@@ -28,7 +28,7 @@ public class CardCreator : MonoBehaviour{
     private void InstantiateFighter(FighterInfo fighter, Transform cardSlot){
         var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, cardSlots[0]);
         var componentInChildren = createdCard.GetComponentInChildren<CardContentFiller>();
-        var fighterInfo = createdCard.AddComponent<FighterInfo>();
+        var fighterInfo = new FighterInfo();
         FillInInfo(fighterInfo);
         componentInChildren.AssignTextFields(fighter);
     }
