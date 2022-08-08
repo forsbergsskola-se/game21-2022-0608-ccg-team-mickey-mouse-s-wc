@@ -5,8 +5,6 @@ using Meta.Cards;
 using UnityEngine;
 [Serializable]
 public class PlayerLevel : ISaveData{
-    private int level;
-
     public int Level{
         get;
         set;
