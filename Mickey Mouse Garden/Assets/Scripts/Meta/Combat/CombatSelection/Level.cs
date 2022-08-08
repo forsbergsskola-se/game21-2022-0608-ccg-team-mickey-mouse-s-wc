@@ -19,7 +19,12 @@ public class Level : MonoBehaviour {
 
     private void Start(){
         playerLevelReference = FindObjectOfType<Player>().playerLevel;
-        reward.Amount = (int)(levelNumber / playerLevelReference.Level * levelMultiplier * levelNumber);
+        Debug.Log("Level" + playerLevelReference.Level);
+        
+        reward = new() {
+            Amount = (int) (levelNumber / playerLevelReference.Level * levelMultiplier * levelNumber)
+        };
+        
         Debug.Log(reward);
     }
 }

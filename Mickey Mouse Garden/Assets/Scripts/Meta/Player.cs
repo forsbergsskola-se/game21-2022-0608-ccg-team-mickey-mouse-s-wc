@@ -4,7 +4,7 @@ using UnityEngine;
 [CustomComponent("Player","Makes player dont destroy on load, also has to be loaded first!")]
 public class Player : MonoBehaviour{
 
-    PlayerLevel playerLevel;
+    public PlayerLevel playerLevel;
     int attemptedCombatLevel;
     void Awake(){
         DontDestroyOnLoad(this.gameObject);

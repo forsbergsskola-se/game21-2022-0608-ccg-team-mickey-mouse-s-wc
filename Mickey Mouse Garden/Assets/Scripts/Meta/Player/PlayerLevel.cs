@@ -5,7 +5,7 @@ using Meta.Cards;
 using UnityEngine;
 [Serializable]
 public class PlayerLevel : ISaveData{
-    int level;
+    private int level;
     public int Level{
         get => level;
         private set{
@@ -18,6 +18,7 @@ public class PlayerLevel : ISaveData{
         var playerLevel = await SaveManager.Load<PlayerLevel>(ID);
         if(playerLevel != null){
             Level = playerLevel.Level;
+            Debug.Log("PL" + playerLevel.Level);
         }
         else{
             Level = 1;
