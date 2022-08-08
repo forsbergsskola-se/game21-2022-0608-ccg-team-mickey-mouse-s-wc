@@ -7,13 +7,14 @@ public class PlayerLevel : ISaveData{
     int level;
     public int Level{
         get => level;
-        set{
+        private set{
             level = value;
             Save();
         }
     }
 
     internal PlayerLevel(){
+        level = 1;
         TryLoadData();
     }
     public StringGUID ID{ get; }
