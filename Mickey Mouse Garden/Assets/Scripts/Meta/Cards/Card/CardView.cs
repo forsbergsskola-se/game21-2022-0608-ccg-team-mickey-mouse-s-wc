@@ -16,19 +16,32 @@ namespace Meta.Cards {
         public TextMeshProUGUI alignment;
         public TextMeshProUGUI rarity;
         public TextMeshProUGUI level;
-        [HideInInspector] public string id;
+         [HideInInspector] public StringGUID id;
 
-        public void Configure(CardConfig cardConfig) {
-            image.sprite = cardConfig.image;
-            name.text = cardConfig.name;
-            id = cardConfig.id;
-            maxHealth.text = $"Health: {cardConfig.maxHealth}";
-            attack.text = $"Attack: {cardConfig.attack}";
-            speed.text = $"Speed: {cardConfig.speed}";
-            alignment.text = $"Alignment: {cardConfig.alignment}";
-            rarity.text = $"Rarity: {cardConfig.rarity}";
-            //level.text = $"level: {cardConfig.level}"; //TODO: implement when not null
-            //TODO: Subscribe to level changed message
+        public void Configure(Card card) {
+            image.sprite = card.Image;
+            name.text = card.Name;
+            id = card.ID;
+            maxHealth.text = $"Health: {card.MaxHealth}";
+            attack.text = $"Attack: {card.Attack}";
+            speed.text = $"Speed: {card.Speed}";
+            alignment.text = $"Alignment: {card.Alignment}";
+            rarity.text = $"Rarity: {card.Rarity}";
+            //Level.text = $"Level: {cardConfig.Level}"; //TODO: implement when not null
+            //TODO: Subscribe to Level changed message
+            //TODO: And save after changed value (or just save on closing the game)
+        }
+        public void Configure(CardConfig card) {
+            image.sprite = card.Image;
+            name.text = card.Name;
+            id = new StringGUID().NewGuid();
+            maxHealth.text = $"Health: {card.MaxHealth}";
+            attack.text = $"Attack: {card.Attack}";
+            speed.text = $"Speed: {card.Speed}";
+            alignment.text = $"Alignment: {card.Alignment}";
+            rarity.text = $"Rarity: {card.Rarity}";
+            //Level.text = $"Level: {cardConfig.Level}"; //TODO: implement when not null
+            //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }
     }

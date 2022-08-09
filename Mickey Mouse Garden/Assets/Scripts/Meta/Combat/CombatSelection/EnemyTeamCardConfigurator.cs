@@ -7,12 +7,12 @@ public class EnemyTeamCardConfigurator : MonoBehaviour{
 
     private void Awake(){
         enemyteam = GetComponentsInChildren<CardView>();
-        Broker.Subscribe<LevelMessage>(OnLevelMessageRecieevved);
+        Broker.Subscribe<EnterLevelMessage>(OnLevelMessageRecieevved);
     }
 
-    private void OnLevelMessageRecieevved(LevelMessage obj){
+    private void OnLevelMessageRecieevved(EnterLevelMessage obj){
         for (var i = 0; i < enemyteam.Length; i++){
-            enemyteam[i].Configure(obj.Team[i]);
+            enemyteam[i].Configure(obj.CardConfigTeam[i]);
         }
     }
 }

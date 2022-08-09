@@ -75,6 +75,6 @@ public class StoreSlot : MonoBehaviour{
     private async Task ChangeTextToNotEnoughCurrency(){
         itemName.text = "Not Enough Currency";
         await Task.Delay(400);
-        itemName.text = shopItemConfig.name; //Probably not the right name.
+        itemName.text = shopItemConfig.name; //Probably not the right Name.
     } 
 }

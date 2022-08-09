@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
   m_Name: PotatusMaximus
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: ff68afdc873868243a0ee242579dccb9, type: 3}
-  name: Potatus Maximus
-  id: potatusmaximus
-  maxHealth: 25
-  attack: 30
-  speed: 2
-  alignment: 0
-  rarity: 0
-  level: 0
+  Image: {fileID: 21300000, guid: ff68afdc873868243a0ee242579dccb9, type: 3}
+  Name: PotatusMaximus
+  Id: potatusmaximus
+  MaxHealth: 25
+  Attack: 30
+  Speed: 2
+  Alignment: 0
+  Rarity: 0
+  Level: 1

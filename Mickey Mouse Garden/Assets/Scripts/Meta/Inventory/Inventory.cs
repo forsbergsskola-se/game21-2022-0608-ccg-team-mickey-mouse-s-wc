@@ -24,7 +24,7 @@ namespace Meta.Inventory {
             CollectOperations(obj.item);
         }
 
-        public virtual void CollectOperations(T addedItem){}    //TODO: Change name to something better
+        public virtual void CollectOperations(T addedItem){}    //TODO: Change Name to something better
 
         public virtual void RemoveOperations(T removedItem){} // Suggestion would be to have this method being called In Remove(); and it would only server
         //As a way for us to expand Remove(); Without any risk at all of removing the base function of it, aka removing from list.

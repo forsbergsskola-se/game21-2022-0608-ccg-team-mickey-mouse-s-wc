@@ -12,7 +12,7 @@ public class OwnedCard : ISaveData, IInventoryItem { // This class will be saved
     public string Name{ get; set; }
     public Alignment Alignment{ get; set; }
     public string SpriteName{ get; set; }
-    public Sprite FighterImage{ get; private set; } //TODO: Sprite or image? //TODO: Change to Texture 2D?
+    public Sprite FighterImage{ get; private set; } //TODO: Sprite or Image? //TODO: Change to Texture 2D?
     public Rarity Rarity{ get; set; }
     public short Level{ get; set; }
     public float Attack{ get; set; }

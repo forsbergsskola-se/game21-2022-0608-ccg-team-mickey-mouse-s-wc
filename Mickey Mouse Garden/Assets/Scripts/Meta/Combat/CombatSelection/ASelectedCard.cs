@@ -1,14 +1,15 @@
 using Meta.Cards;
+using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
 public class ASelectedCard : MonoBehaviour{
    private int position;
-   private CardConfig cardData;
-   private CardConfig[] playerCardInventory;
+   private Card cardData;
+   private Card[] playerCardInventory;
    
    private void Awake(){
       Broker.Subscribe<CardSelectionMessage>(OnSelectedCardMessageReceived);
-      playerCardInventory = FindObjectOfType<CardInventoryMockup>().playerCards;
+      playerCardInventory = FindObjectOfType<CardInventoryMockup>().playerCards; //TODO: Replace with actual player card inventory
    }
 
    public void WhenClicked(){
@@ -23,17 +24,17 @@ public class ASelectedCard : MonoBehaviour{
    }
 
    private void CreateSelectedCardMessage(){
-      var msg = new NewCardSelectedMessage{CardConfig = cardData};
+      var msg = new NewCardSelectedMessage{Card = cardData};
       Broker.InvokeSubscribers(typeof(NewCardSelectedMessage), msg);
    }
 
 
-   public CardConfig FindCardData(){
+   public Card FindCardData(){
       //crossreference player inventory with the current card.
       var id = GetComponentInChildren<CardView>().id;
-      foreach (var config in playerCardInventory){
-         if (id != config.id) continue;
-         return config;
+      foreach (var card in playerCardInventory){
+         if (id != card.ID) continue;
+         return card;
       }
       return cardData;
    }

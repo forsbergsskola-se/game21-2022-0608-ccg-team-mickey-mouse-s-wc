@@ -1,9 +1,10 @@
 using Meta.Cards;
+using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
 public class TeamSelectionPanelController : MonoBehaviour {
-    private CardConfig originCard;
-    private CardConfig newCard;
+    private Card originCard;
+    private Card newCard;
 
     private int position;
 
@@ -15,12 +16,12 @@ public class TeamSelectionPanelController : MonoBehaviour {
     }
 
     private void StoreOriginCard(CardSelectionMessage cardSelectionMessage) {
-        originCard = cardSelectionMessage.CardConfig;
+        originCard = cardSelectionMessage.Card;
         position = cardSelectionMessage.Position;
     }
 
     private void StoreNewCard(NewCardSelectedMessage newCardSelectedMessage) {
-        newCard = newCardSelectedMessage.CardConfig;
+        newCard = newCardSelectedMessage.Card;
         SwapCards();
     }
 

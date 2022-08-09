@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CardContentFiller : MonoBehaviour{
-	[HideInInspector] public string id;
+	[HideInInspector] public StringGUID id;
 	private bool faintDelay;
 	public TextMeshProUGUI nameText, rarityText, levelText, attackText, healthText, speedText;
 	public GameObject damageText, faintedImage;

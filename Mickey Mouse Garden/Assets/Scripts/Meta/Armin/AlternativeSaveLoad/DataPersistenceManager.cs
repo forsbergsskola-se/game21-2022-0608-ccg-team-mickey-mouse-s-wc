@@ -46,7 +46,7 @@ public class DataPersistenceManager : MonoBehaviour
         if (overrideSelectedProfileId) 
         {
             this.selectedProfileId = testSelectedProfileId;
-            Debug.LogWarning("Overrode selected profile id with test id: " + testSelectedProfileId);
+            Debug.LogWarning("Overrode selected profile Id with test Id: " + testSelectedProfileId);
         }
     }
 
