@@ -24,12 +24,12 @@ public class CardContentFiller : MonoBehaviour{
 	}
 
 	private void UpdateHealthUI(float health, float damage){
+		ShowDamage(damage);
 		if (health <= 0){
 			healthText.text = "Health: 0";
 			MakeCardFaint();
 		}
 		healthText.text = $"Health: {health.ToString(CultureInfo.InvariantCulture)}";
-		ShowDamage(damage);
 	}
 
 	public void AssignTextFields(FighterInfo fighter){ //TODO: add discriptive text to the values eg. health: 5
@@ -43,8 +43,8 @@ public class CardContentFiller : MonoBehaviour{
 		fighterImage.sprite =spriteLibrary.sprites[fighter.SpriteIndex];
 	}
 	private void ShowDamage(float damage){
-		Instantiate(damageText, damageTextTransform.position, Quaternion.identity, parent);
-		damageText.GetComponent<TextMeshProUGUI>().text = damage.ToString(CultureInfo.InvariantCulture);
+		var damageTextInstance = Instantiate(damageText, damageTextTransform.position, Quaternion.identity, parent);
+		damageTextInstance.GetComponent<TextMeshProUGUI>().text = damage.ToString(CultureInfo.InvariantCulture);
 	}
 	private void MakeCardFaint(){
 		StartCoroutine(Fainting());
