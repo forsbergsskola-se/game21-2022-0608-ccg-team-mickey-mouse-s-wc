@@ -2,14 +2,22 @@ using UnityEngine;
 
 public class EnterTeamSelection : MonoBehaviour{
 
-	[SerializeField] private GameObject confirmationBox, teamSelectCanvas;
+	[SerializeField] private GameObject confirmationBox, teamSelectCanvas, levelNotUnlockedBox;
 	
 	private bool shown;
 
 	private void OnMouseDown() {
-		confirmationBox.SetActive(true);
-		shown = true;
-		GetComponent<MatchInformation>().ConfirmTeam();
+		if (GetComponent<MatchInformation>().isUnlocked) {
+			confirmationBox.SetActive(true);
+			shown = true;
+			GetComponent<MatchInformation>().ConfirmTeam();
+		} else {
+			levelNotUnlockedBox.SetActive(true);
+		}
+	}
+
+	public void AcceptNotUnlocked() {
+		levelNotUnlockedBox.SetActive(false);
 	}
 	
 	public void AnswerYes(){
