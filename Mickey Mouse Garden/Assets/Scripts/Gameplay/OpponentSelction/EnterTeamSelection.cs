@@ -6,8 +6,7 @@ public class EnterTeamSelection : MonoBehaviour{
 	[SerializeField] private GameObject confirmationBox, teamSelectCanvas, levelNotUnlockedBox;
 	
 	private bool shown;
-
-
+	
 	private void Awake(){
 		Broker.Subscribe<UILockMessage>(OnUILockedMessageReceived);
 	}
@@ -57,5 +56,9 @@ public class EnterTeamSelection : MonoBehaviour{
 			Locked = false
 		};
 		Broker.InvokeSubscribers(typeof(UILockMessage), uiLockMessage);
+	}
+
+	private void OnDisable(){
+		Broker.Unsubscribe<UILockMessage>(OnUILockedMessageReceived);
 	}
 }
