@@ -24,34 +24,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-9155748764972375863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Arena/ArenaMusic
-  m_EditorClassIdentifier: 
-  Path: event:/Arena/ArenaMusic
-  Guid:
-    Data1: 1319339071
-    Data2: 1114670504
-    Data3: 1734031295
-    Data4: -1071821933
-  Banks:
-  - {fileID: 6140372714390540477}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 5604023970091786543}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-7025164262493705311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +493,6 @@ MonoBehaviour:
   - {fileID: -2990236922060283653}
   - {fileID: -1147083284676485258}
   - {fileID: -4848096512922957444}
-  - {fileID: -9155748764972375863}
   - {fileID: 8839057048490874838}
   - {fileID: 4481707395849214440}
   - {fileID: -1351717211646704604}
@@ -547,7 +518,7 @@ MonoBehaviour:
   - {fileID: 6140372714390540477}
   StringsBanks:
   - {fileID: 7197064554482430550}
-  cacheTime: 637955502995667854
+  cacheTime: 637956462221563391
   cacheVersion: 131591
 --- !u!114 &2617041958242190416
 MonoBehaviour:
@@ -683,30 +654,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &5604023970091786543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ArenaMusic/Delta
-  m_EditorClassIdentifier: 
-  Name: Delta
-  StudioPath: 
-  Min: -3
-  Max: 3
-  Default: -3
-  ID:
-    data1: 523486782
-    data2: 2447078136
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &6140372714390540477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,7 +669,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile 2/Master.bank
   Name: Mobile 2/Master
   StudioPath: bank:/Master
-  lastModified: 637955502995627846
+  lastModified: 637956462221503372
   FileSizes: []
   Exists: 1
 --- !u!114 &7197064554482430550
@@ -740,10 +687,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile 2/Master.strings.bank
   Name: Mobile 2/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637955502995667854
+  lastModified: 637956462221563391
   FileSizes:
   - Name: 
-    Value: 2104
+    Value: 2020
   Exists: 1
 --- !u!114 &7680886816920383861
 MonoBehaviour:

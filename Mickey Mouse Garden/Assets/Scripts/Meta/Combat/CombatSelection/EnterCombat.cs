@@ -69,7 +69,7 @@ public class EnterCombat : MonoBehaviour{
         var enemyTeamSelected = new SelectedFighterTeamMessage {FighterTeam = enemyTeam, IsPlayerTeam = false};
         Broker.InvokeSubscribers(enemyTeamSelected.GetType(), enemyTeamSelected);
         
-        SceneManager.UnloadSceneAsync("2TeamSel");
+        SceneManager.UnloadSceneAsync("OpponentSelection");
         //TODO: change into actual proper scene not the temporary testing one
     }
 

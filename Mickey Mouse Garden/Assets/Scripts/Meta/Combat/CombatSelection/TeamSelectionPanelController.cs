@@ -29,4 +29,11 @@ public class TeamSelectionPanelController : MonoBehaviour {
         originCard = newCard;
         playercards[position].Configure(originCard);
     }
+    public void Back(){
+        GetComponent<Canvas>().enabled = false;
+        UILockMessage uiLockMessage = new(){
+            Locked = false
+        };
+        Broker.InvokeSubscribers(typeof(UILockMessage), uiLockMessage);
+    }
 }
