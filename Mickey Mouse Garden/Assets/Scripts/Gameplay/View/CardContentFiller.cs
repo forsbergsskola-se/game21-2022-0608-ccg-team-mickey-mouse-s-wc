@@ -11,6 +11,7 @@ public class CardContentFiller : MonoBehaviour{
 	public GameObject damageText, faintedImage;
 	public Image fighterImage;
 	public Transform damageTextTransform, parent;
+	public SpriteLibrarySO spriteLibrary;
 
 	private void Awake(){
 		Broker.Subscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
@@ -39,7 +40,7 @@ public class CardContentFiller : MonoBehaviour{
 		attackText.text = $"Damage: {fighter.Attack.ToString(CultureInfo.InvariantCulture)}";
 		healthText.text = $"Health: {fighter.MaxHealth.ToString(CultureInfo.InvariantCulture)}";
 		speedText.text = $"Speed: {fighter.Speed.ToString(CultureInfo.InvariantCulture)}";
-		fighterImage.sprite = Resources.Load<Sprite>($"Art/Sprites/{fighter.SpriteName}");;
+		fighterImage.sprite =spriteLibrary.sprites[fighter.SpriteIndex];
 	}
 	private void ShowDamage(float damage){
 		Instantiate(damageText, damageTextTransform.position, Quaternion.identity, parent);

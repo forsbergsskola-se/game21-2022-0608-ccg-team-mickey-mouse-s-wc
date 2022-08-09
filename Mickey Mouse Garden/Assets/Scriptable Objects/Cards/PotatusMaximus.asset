@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PotatusMaximus
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: ff68afdc873868243a0ee242579dccb9, type: 3}
-  SpriteName: potatus maximus card
+  spriteIndex: 5
   Name: PotatusMaximus
   Id: potatusmaximus
   MaxHealth: 25

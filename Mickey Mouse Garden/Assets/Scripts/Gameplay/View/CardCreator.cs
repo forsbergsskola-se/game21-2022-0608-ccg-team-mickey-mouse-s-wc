@@ -26,7 +26,7 @@ public class CardCreator : MonoBehaviour{
     }
 
     private void InstantiateFighter(FighterInfo fighter, Transform cardSlot){
-        var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, cardSlots[0]);
+        var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, cardSlots[0]); //TODO: What does the 0 mean?
         var componentInChildren = createdCard.GetComponentInChildren<CardContentFiller>();
         var fighterInfo = new FighterInfo();
         FillInInfo(fighterInfo);
@@ -40,7 +40,7 @@ public class CardCreator : MonoBehaviour{
         fighterInfo.Name = fighter.Name;
         fighterInfo.Rarity = fighter.Rarity;
         fighterInfo.Speed = fighter.Speed;
-        fighterInfo.SpriteName = fighter.SpriteName;
+        fighterInfo.SpriteIndex = fighter.SpriteIndex;
         fighterInfo.ID = fighter.ID;
         fighterInfo.MaxHealth = fighter.MaxHealth;
 

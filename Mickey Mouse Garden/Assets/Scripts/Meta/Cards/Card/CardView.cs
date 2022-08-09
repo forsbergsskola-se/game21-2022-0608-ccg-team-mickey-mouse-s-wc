@@ -1,3 +1,4 @@
+using System.Linq;
 using Meta.Inventory.FighterInventory;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Meta.Cards {
     /// </summary>
     public class CardView : MonoBehaviour {
         public Image image;
+        [SerializeField] public SpriteLibrarySO spriteLibrary;
         public TextMeshProUGUI name;
         public TextMeshProUGUI maxHealth;
         public TextMeshProUGUI attack;
@@ -19,7 +21,8 @@ namespace Meta.Cards {
          [HideInInspector] public StringGUID id;
 
         public void Configure(Card card) {
-            image.sprite = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");
+            // image.sprite = Resources.Load<Sprite>($"Art/CardArt/{card.SpriteName}");
+            image.sprite = spriteLibrary.sprites[card.SpriteIndex];
             name.text = card.Name;
             id = card.ID;
             maxHealth.text = $"Health: {card.MaxHealth}";
@@ -32,7 +35,8 @@ namespace Meta.Cards {
             //TODO: And save after changed value (or just save on closing the game)
         }
         public void Configure(CardConfig card) {
-            image.sprite = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");;
+            // image.sprite = Resources.Load<Sprite>($"Art/CardArt/{card.SpriteName}");
+            image.sprite = spriteLibrary.sprites[card.spriteIndex];
             name.text = card.Name;
             id = new StringGUID().NewGuid();
             maxHealth.text = $"Health: {card.MaxHealth}";

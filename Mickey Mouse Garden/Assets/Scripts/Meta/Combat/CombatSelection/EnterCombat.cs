@@ -39,7 +39,7 @@ public class EnterCombat : MonoBehaviour{
             card.Rarity = cardConfig.Rarity;
             card.Name = cardConfig.Name;
             card.Alignment = cardConfig.Alignment;
-            card.SpriteName = cardConfig.SpriteName;
+            card.SpriteIndex = cardConfig.spriteIndex;
             
             enemyTeamMembers[i] = card;
         }
@@ -86,7 +86,7 @@ public class EnterCombat : MonoBehaviour{
             fighter.Rarity = card.Rarity;
             fighter.Name = card.Name;
             fighter.Alignment = card.Alignment;
-            fighter.SpriteName = card.SpriteName;
+            fighter.SpriteIndex = card.SpriteIndex;
             
             team.Push(fighter);
         }

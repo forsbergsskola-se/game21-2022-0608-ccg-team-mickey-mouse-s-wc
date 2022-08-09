@@ -25,7 +25,7 @@ namespace Meta.Inventory.FighterInventory {
         public float MaxHealth{ get; set; }
         public float Speed{ get; set; }
         public Alignment Alignment{ get; set; }
-        public string SpriteName{ get; set; }
+        public short SpriteIndex{ get; set; }
         // [DoNotSerialize] public Sprite Image{ get; set; } //TODO: Sprite or Image?
         public Rarity Rarity{ get; set; }
 
@@ -33,10 +33,10 @@ namespace Meta.Inventory.FighterInventory {
             libraryID = _libraryID;
         }
         public async void TryLoadData(){
-            var card = await SaveManager.Load<OwnedCard>(ID);
+            var card = await SaveManager.Load<Card>(ID);
             Name = card.Name;
             Alignment = card.Alignment;
-            SpriteName = card.SpriteName;
+            SpriteIndex = card.SpriteIndex;
             Rarity = card.Rarity;
             Level = card.Level;
             Attack = card.Attack;

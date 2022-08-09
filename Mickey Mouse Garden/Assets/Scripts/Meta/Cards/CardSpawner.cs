@@ -28,7 +28,7 @@ namespace Meta.Inventory {
             card.Rarity = libraryCardConfig.Rarity;
             card.Name = libraryCardConfig.Name;
             card.Alignment = libraryCardConfig.Alignment;
-            card.SpriteName = libraryCardConfig.SpriteName;
+            card.SpriteIndex = libraryCardConfig.spriteIndex;
             ;
             var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card,1);
 

@@ -10,6 +10,6 @@ public class FighterInfo{
     public string Name { get; set;}
     public Alignment Alignment { get; set;}
     //public Sprite Sprite { get; set;}
-    public string SpriteName { get; set;}
+    public short SpriteIndex { get; set;}
     
 }

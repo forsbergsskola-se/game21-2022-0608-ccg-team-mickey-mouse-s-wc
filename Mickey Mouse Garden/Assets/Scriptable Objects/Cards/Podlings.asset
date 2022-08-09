@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Podlings
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 50c1eb7adc84660418d26f27f47d17d1, type: 3}
-  SpriteName: podlings card
+  spriteIndex: 4
   Name: Podlings
   Id: podlings
   MaxHealth: 10
