@@ -4,7 +4,7 @@
 // public class CombatTester : MonoBehaviour{
 //     public Sprite sprite;
 //
-//     private int id;
+//     private int Id;
 //
 //     private SelectedFighterTeamMessage MakeAFighterTeam(bool playerteam){
 //         //Creating the message and the stack.
@@ -48,7 +48,7 @@
 //             
 //             //This is where the actual fighter values are assigned, this will be taken from the inventory when selected.
 //             fighterInfo = new FighterInfo{ // this is for testing, dont change even though its recommended.
-//                 ID = $"{id++}",
+//                 ID = $"{Id++}",
 //                 MaxHealth = 10,
 //                 Attack = 5,
 //                 Speed = 10,

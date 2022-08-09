@@ -9,13 +9,13 @@ public class MatchInformation : MonoBehaviour {
     private PlayerLevel playerLevelReference;
     private Money reward;
     public void ConfirmTeam(){
-        LevelMessage msg = new(){
+        EnterLevelMessage msg = new(){
             CardConfigTeam = enemyTeamMembers,
             Reward = reward,
             Level = (int)levelNumber,
             
         };
-        Broker.InvokeSubscribers(typeof(LevelMessage), msg);
+        Broker.InvokeSubscribers(typeof(EnterLevelMessage), msg);
     }
 
     private void Start(){

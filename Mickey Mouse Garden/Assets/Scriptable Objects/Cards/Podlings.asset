@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
   m_Name: Podlings
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 50c1eb7adc84660418d26f27f47d17d1, type: 3}
-  name: Podlings
-  id: podlings
-  maxHealth: 10
-  attack: 15
-  speed: 10
-  alignment: 1
-  rarity: 0
-  level: 0
+  Image: {fileID: 21300000, guid: 50c1eb7adc84660418d26f27f47d17d1, type: 3}
+  Name: Podlings
+  Id: podlings
+  MaxHealth: 10
+  Attack: 15
+  Speed: 10
+  Alignment: 1
+  Rarity: 0
+  Level: 1

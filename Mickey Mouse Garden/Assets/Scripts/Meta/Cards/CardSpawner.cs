@@ -13,10 +13,10 @@ namespace Meta.Inventory {
         }
         
         private void CollectRandomCard(SpawnCardFromSeed spawnCardFromSeed) {
-            //TODO: Based on seed rarity, random chance to spawn card of rarity x
+            //TODO: Based on seed Rarity, random chance to spawn card of Rarity x
             //Method that does calculation and returns a card should be here
             var randomInt = Random.Range(0, cardLibrary.cards.Length);
-            var libraryID = cardLibrary.cards[randomInt].id;
+            var libraryID = cardLibrary.cards[randomInt].Id;
             
             var card = new Card(libraryID);
             
@@ -27,7 +27,7 @@ namespace Meta.Inventory {
             //Copies values from config to card
             for (int i = 0; i < propertyInfos.Length; i++){
                 var propertyName = propertyInfos[i].Name;
-                cardType.GetProperty(propertyName)?.SetValue(card,cardLibrary.cards[randomInt].GetType().GetProperty(propertyName));
+                cardType.GetProperty(propertyName)?.SetValue(card,cardLibrary.cards[randomInt].GetType().GetField(propertyName));
                 Debug.Log("Card property: " + propertyName + " value: " + cardType.GetProperty(propertyName)?.GetValue(card));
             }
             ;

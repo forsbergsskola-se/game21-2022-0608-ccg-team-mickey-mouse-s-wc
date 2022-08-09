@@ -16,12 +16,14 @@ public class StringGUID{
       var guid = new Guid();
       var guidString = guid.ToString().ToCharArray();
       for (int i = 0; i < guidString.Length; i++){
-         if(guidString[i] == 'O'){
+         if(guidString[i].Equals(char.Parse(0.ToString()))){
             guidString[i] = stringGuid[i];
          }
       }
-      Debug.Log(guidString.ToString()); //TODO: FIX
-      GUIDAsString = guidString.ToString();
+      var newString = new string(stringGuid);
+      Debug.Log("StringGUID: " + newString);
+      
+      GUIDAsString = newString;
    }
 
    public StringGUID(){

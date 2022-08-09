@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private string id;
 
-    [ContextMenu("Generate guid for id")]
+    [ContextMenu("Generate guid for Id")]
     private void GenerateGuid() 
     {
         id = System.Guid.NewGuid().ToString();

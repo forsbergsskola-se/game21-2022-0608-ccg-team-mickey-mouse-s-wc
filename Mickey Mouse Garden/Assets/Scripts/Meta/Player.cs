@@ -9,7 +9,7 @@ public class Player : MonoBehaviour{
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
         
-        Broker.Subscribe<LevelMessage>(OnCombatLevelMessageReceived);
+        Broker.Subscribe<EnterLevelMessage>(OnCombatLevelMessageReceived);
         Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
     }
 
@@ -20,12 +20,12 @@ public class Player : MonoBehaviour{
 
 
     void OnDisable(){
-        Broker.Unsubscribe<LevelMessage>(OnCombatLevelMessageReceived);
+        Broker.Unsubscribe<EnterLevelMessage>(OnCombatLevelMessageReceived);
         Broker.Unsubscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
     }
 
 
-    private void OnCombatLevelMessageReceived(LevelMessage message){
+    private void OnCombatLevelMessageReceived(EnterLevelMessage message){
         attemptedCombatLevel = message.Level;
     }
 

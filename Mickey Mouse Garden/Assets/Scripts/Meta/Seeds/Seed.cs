@@ -9,7 +9,7 @@ namespace Meta.Seeds {
         public string libraryID{ get; set; }
         public float GrowthTime { get; private set; }
         
-        [SerializeField] private Sprite inventorySprite;         //TODO: Hardcode inventory sprite based on rarity
+        [SerializeField] private Sprite inventorySprite;         //TODO: Hardcode inventory sprite based on Rarity
         
         
         private void Start() {

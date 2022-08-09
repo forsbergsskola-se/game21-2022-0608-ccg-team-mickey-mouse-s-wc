@@ -19,7 +19,7 @@ namespace Meta.Cards {
          [HideInInspector] public StringGUID id;
 
         public void Configure(Card card) {
-            image.sprite = card.FighterImage;
+            image.sprite = card.Image;
             name.text = card.Name;
             id = card.ID;
             maxHealth.text = $"Health: {card.MaxHealth}";
@@ -27,21 +27,21 @@ namespace Meta.Cards {
             speed.text = $"Speed: {card.Speed}";
             alignment.text = $"Alignment: {card.Alignment}";
             rarity.text = $"Rarity: {card.Rarity}";
-            //level.text = $"level: {cardConfig.level}"; //TODO: implement when not null
-            //TODO: Subscribe to level changed message
+            //Level.text = $"Level: {cardConfig.Level}"; //TODO: implement when not null
+            //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }
         public void Configure(CardConfig card) {
-            image.sprite = card.image;
-            name.text = card.name;
-            id = new StringGUID(card.id);
-            maxHealth.text = $"Health: {card.maxHealth}";
-            attack.text = $"Attack: {card.attack}";
-            speed.text = $"Speed: {card.speed}";
-            alignment.text = $"Alignment: {card.alignment}";
-            rarity.text = $"Rarity: {card.rarity}";
-            //level.text = $"level: {cardConfig.level}"; //TODO: implement when not null
-            //TODO: Subscribe to level changed message
+            image.sprite = card.Image;
+            name.text = card.Name;
+            id = new StringGUID().NewGuid();
+            maxHealth.text = $"Health: {card.MaxHealth}";
+            attack.text = $"Attack: {card.Attack}";
+            speed.text = $"Speed: {card.Speed}";
+            alignment.text = $"Alignment: {card.Alignment}";
+            rarity.text = $"Rarity: {card.Rarity}";
+            //Level.text = $"Level: {cardConfig.Level}"; //TODO: implement when not null
+            //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }
     }

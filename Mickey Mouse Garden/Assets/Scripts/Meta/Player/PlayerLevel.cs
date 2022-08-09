@@ -22,7 +22,7 @@ public class PlayerLevel : ISaveData{
         SaveManager.Save(this);
     }
 
-    public void OnCombatLevelMessageReceived(LevelMessage message){
+    public void OnCombatLevelMessageReceived(EnterLevelMessage message){
         if(message.Level == Level){
             LevelUp();
         }

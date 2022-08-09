@@ -32,17 +32,17 @@ namespace Experiment{
             Debug.Log("Subscribing to AskForPlayerCurrencyMessage",this);
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
-            Broker.Subscribe<LevelMessage>(OnLevelMessageReceived);
+            Broker.Subscribe<EnterLevelMessage>(OnLevelMessageReceived);
             Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
         }
         void OnDisable(){
             Broker.Unsubscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Unsubscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
-            Broker.Unsubscribe<LevelMessage>(OnLevelMessageReceived);
+            Broker.Unsubscribe<EnterLevelMessage>(OnLevelMessageReceived);
             Broker.Unsubscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
         }
 
-        void OnLevelMessageReceived(LevelMessage message){
+        void OnLevelMessageReceived(EnterLevelMessage message){
             attemptedCombatLedger = message.Reward;
         }
 

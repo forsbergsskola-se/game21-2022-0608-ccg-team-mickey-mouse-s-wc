@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
   m_Name: Cauligula
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: bcab6e894f87ed74fbf0d51a08891fe6, type: 3}
-  name: Cauligula
-  id: cauligula
-  maxHealth: 35
-  attack: 8
-  speed: 3
-  alignment: 0
-  rarity: 1
-  level: 0
+  Image: {fileID: 21300000, guid: bcab6e894f87ed74fbf0d51a08891fe6, type: 3}
+  Name: Cauligula
+  Id: cauligula
+  MaxHealth: 35
+  Attack: 8
+  Speed: 3
+  Alignment: 0
+  Rarity: 1
+  Level: 1

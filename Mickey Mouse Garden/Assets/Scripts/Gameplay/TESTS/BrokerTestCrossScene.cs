@@ -4,11 +4,11 @@ using UnityEngine;
 public class BrokerTestCrossScene : MonoBehaviour
 {
     private void Awake(){
-        Broker.Subscribe<LevelMessage>(OnLevelMessageRecieeved);
+        Broker.Subscribe<EnterLevelMessage>(OnLevelMessageRecieeved);
     }
 
-    private void OnLevelMessageRecieeved(LevelMessage obj){
-        Debug.Log(obj.Team[0]);
+    private void OnLevelMessageRecieeved(EnterLevelMessage obj){
+        Debug.Log(obj.CardConfigTeam[0]);
         Debug.Log("Made it!");
     }
 }

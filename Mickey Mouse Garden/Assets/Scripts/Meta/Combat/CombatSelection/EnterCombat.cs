@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Meta.Cards;
@@ -6,19 +7,47 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnterCombat : MonoBehaviour{
-    private CardConfig[] enemyTeamMembers = new CardConfig[3];
+    private Card[] enemyTeamMembers = new Card[3];
     private Card[] playerteamMembers = new Card[3];
 
     [SerializeField] private CardView[] playerCards;
 
     private void Awake(){
-        Broker.Subscribe<LevelMessage>(OnLevelMessageRecieved);
+        Broker.Subscribe<EnterLevelMessage>(OnEnterLevelMessageReceived);
+        Broker.Subscribe<CardSelectionMessage>(OnSelectedCardMessageReceived);
     }
 
-    private void OnLevelMessageRecieved(LevelMessage message){
-        enemyTeamMembers = message.CardConfigTeam;
+    void OnDisable(){
+        Broker.Unsubscribe<EnterLevelMessage>(OnEnterLevelMessageReceived);
+        Broker.Unsubscribe<CardSelectionMessage>(OnSelectedCardMessageReceived);
     }
 
+
+    private void OnEnterLevelMessageReceived(EnterLevelMessage message){
+
+        for (int i = 0; i < message.CardConfigTeam.Length; i++){
+
+            var cardConfig = message.CardConfigTeam[i];
+            
+            Card card = new Card("666");
+            
+            card.ID = new StringGUID().NewGuid();
+            card.MaxHealth = cardConfig.MaxHealth;
+            card.Attack = cardConfig.Attack;
+            card.Speed = cardConfig.Speed;
+            card.Level = cardConfig.Level; 
+            card.Rarity = cardConfig.Rarity;
+            card.Name = cardConfig.Name;
+            card.Alignment = cardConfig.Alignment;
+            card.Image = cardConfig.Image;
+            
+            enemyTeamMembers[i] = card;
+        }
+    }
+    
+    void OnSelectedCardMessageReceived(CardSelectionMessage message){
+        playerteamMembers[message.Position] = message.Card;
+    }
     public void StartFight(){
         SceneManager.LoadScene("Arena", LoadSceneMode.Additive);
         StartCoroutine(PrepareForArena());
@@ -49,7 +78,7 @@ public class EnterCombat : MonoBehaviour{
         
         foreach (var card in cards) {
             FighterInfo fighter = new FighterInfo();
-            fighter.ID = card.ID;
+            fighter.ID = new StringGUID().NewGuid();
             fighter.MaxHealth = card.MaxHealth;
             fighter.Attack = card.Attack;
             fighter.Speed = card.Speed;
@@ -57,27 +86,7 @@ public class EnterCombat : MonoBehaviour{
             fighter.Rarity = card.Rarity;
             fighter.Name = card.Name;
             fighter.Alignment = card.Alignment;
-            fighter.Sprite = card.FighterImage;
-            
-            team.Push(fighter);
-        }
-        return team;
-    }
-    
-    private Stack<FighterInfo> ConvertToFighterStack(CardConfig[] cards) {
-        var team = new Stack<FighterInfo>();
-        
-        foreach (var card in cards) {
-            FighterInfo fighter = new FighterInfo();
-            fighter.ID = new StringGUID(card.id);
-            fighter.MaxHealth = card.maxHealth;
-            fighter.Attack = card.attack;
-            fighter.Speed = card.speed;
-            fighter.Level = card.level; 
-            fighter.Rarity = card.rarity;
-            fighter.Name = card.name;
-            fighter.Alignment = card.alignment;
-            fighter.Sprite = card.image;
+            fighter.Sprite = card.Image;
             
             team.Push(fighter);
         }

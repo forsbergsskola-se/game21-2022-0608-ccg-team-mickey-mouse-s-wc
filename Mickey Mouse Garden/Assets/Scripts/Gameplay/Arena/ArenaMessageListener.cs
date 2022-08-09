@@ -22,12 +22,12 @@ public class ArenaMessageListener : MonoBehaviour{
 
 	private void OnFighterStrikeMessageReceived(FighterStrikeMessage obj){
 
-		// var alignment = obj.StrikerAlignment switch{
+		// var Alignment = obj.StrikerAlignment switch{
 		// 	Alignment.Rock => 1,
 		// 	Alignment.Paper => 2,
 		// 	Alignment.Scissors => 3
 		// };
-		// var rarity = obj.StrikerRarity switch{
+		// var Rarity = obj.StrikerRarity switch{
 		// 	Rarity.Common => 1,
 		// 	Rarity.Rare => 2,
 		// 	Rarity.Epic => 3,

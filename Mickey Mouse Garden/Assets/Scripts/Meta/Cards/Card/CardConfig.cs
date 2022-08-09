@@ -8,14 +8,14 @@ namespace Meta.Cards {
     [CreateAssetMenu]
     public class CardConfig : ScriptableObject {
         //TODO: Properties should have capital
-        public Sprite image;
-        public string name;
-        public string id;
-        public float maxHealth;
-        public float attack;
-        public float speed;
-        public Alignment alignment;
-        public Rarity rarity;
-        public int level;
+        public Sprite Image;
+        public string Name;
+        public string Id;
+        public float MaxHealth;
+        public float Attack;
+        public float Speed;
+        public Alignment Alignment;
+        public Rarity Rarity;
+        public short Level;
     }
 }

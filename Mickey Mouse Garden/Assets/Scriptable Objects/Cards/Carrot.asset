@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: fc1cfc2e3307abf47a6af323940c369f, type: 3}
-  name: Carrot
-  id: carrot
-  maxHealth: 50
-  attack: 45
-  speed: 7
-  alignment: 2
-  rarity: 0
-  level: 0
+  Image: {fileID: 21300000, guid: fc1cfc2e3307abf47a6af323940c369f, type: 3}
+  Name: Carrot
+  Id: carrot
+  MaxHealth: 50
+  Attack: 45
+  Speed: 7
+  Alignment: 2
+  Rarity: 0
+  Level: 5

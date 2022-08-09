@@ -26,20 +26,20 @@ namespace Meta.Inventory.FighterInventory {
         public float Speed{ get; set; }
         public Alignment Alignment{ get; set; }
         public string SpriteName{ get; set; }
-        [DoNotSerialize] public Sprite FighterImage{ get; set; } //TODO: Sprite or image?
+        [DoNotSerialize] public Sprite Image{ get; set; } //TODO: Sprite or Image?
         public Rarity Rarity{ get; set; }        
         
         
-        // public Card(StringGUID stringGuid,string name, Alignment alignment, string spriteName, Rarity rarity, short level, float attack, float maxHealth, float speed){
+        // public Card(StringGUID stringGuid,string Name, Alignment Alignment, string spriteName, Rarity Rarity, short Level, float Attack, float MaxHealth, float Speed){
         //     ID = stringGuid;
-        //     Name = name;
-        //     Alignment = alignment;
+        //     Name = Name;
+        //     Alignment = Alignment;
         //     SpriteName = spriteName;
-        //     Rarity = rarity;
-        //     Level = level;
-        //     Attack = attack;
-        //     MaxHealth = maxHealth;
-        //     Speed = speed;
+        //     Rarity = Rarity;
+        //     Level = Level;
+        //     Attack = Attack;
+        //     MaxHealth = MaxHealth;
+        //     Speed = Speed;
         //     Save();
         // }
 
@@ -51,14 +51,14 @@ namespace Meta.Inventory.FighterInventory {
             Name = card.Name;
             Alignment = card.Alignment;
             SpriteName = card.SpriteName;
-            FighterImage = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");
+            Image = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");
             Rarity = card.Rarity;
             Level = card.Level;
             Attack = card.Attack;
             MaxHealth = card.MaxHealth;
             Speed = card.Speed;
         }
-        public StringGUID ID { get; }
+        public StringGUID ID { get; set; }
 
         public void Save() {
             SaveManager.Save(this);

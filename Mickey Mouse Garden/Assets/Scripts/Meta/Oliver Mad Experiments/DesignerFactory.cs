@@ -26,7 +26,7 @@ namespace Meta.Oliver_Mad_Experiments{
                 ownedCard.Name= EditorGUILayout.TextField("Name", ownedCard.Name);
                 ownedCard.Rarity= (Rarity)EditorGUILayout.EnumPopup("Rarity", ownedCard.Rarity);
                 ownedCard.SpriteName = EditorGUILayout.TextField("SpriteName", ownedCard.SpriteName);
-                //ownedCard.FighterImage = (Sprite) EditorGUILayout.ObjectField("Sprite",  ownedCard.FighterImage, typeof(Sprite), true);
+                //ownedCard.Image = (Sprite) EditorGUILayout.ObjectField("Sprite",  ownedCard.Image, typeof(Sprite), true);
 
                 
                 
