@@ -9,6 +9,7 @@ public class FighterInfo{
     public Rarity Rarity  { get; set;}
     public string Name { get; set;}
     public Alignment Alignment { get; set;}
-    public Sprite Sprite { get; set;}
+    //public Sprite Sprite { get; set;}
+    public string SpriteName { get; set;}
     
 }

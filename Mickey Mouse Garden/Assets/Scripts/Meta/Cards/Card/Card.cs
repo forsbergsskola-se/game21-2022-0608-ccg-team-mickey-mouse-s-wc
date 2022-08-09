@@ -26,22 +26,8 @@ namespace Meta.Inventory.FighterInventory {
         public float Speed{ get; set; }
         public Alignment Alignment{ get; set; }
         public string SpriteName{ get; set; }
-        [DoNotSerialize] public Sprite Image{ get; set; } //TODO: Sprite or Image?
-        public Rarity Rarity{ get; set; }        
-        
-        
-        // public Card(StringGUID stringGuid,string Name, Alignment Alignment, string spriteName, Rarity Rarity, short Level, float Attack, float MaxHealth, float Speed){
-        //     ID = stringGuid;
-        //     Name = Name;
-        //     Alignment = Alignment;
-        //     SpriteName = spriteName;
-        //     Rarity = Rarity;
-        //     Level = Level;
-        //     Attack = Attack;
-        //     MaxHealth = MaxHealth;
-        //     Speed = Speed;
-        //     Save();
-        // }
+        // [DoNotSerialize] public Sprite Image{ get; set; } //TODO: Sprite or Image?
+        public Rarity Rarity{ get; set; }
 
         public Card(string _libraryID){
             libraryID = _libraryID;
@@ -51,7 +37,6 @@ namespace Meta.Inventory.FighterInventory {
             Name = card.Name;
             Alignment = card.Alignment;
             SpriteName = card.SpriteName;
-            Image = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");
             Rarity = card.Rarity;
             Level = card.Level;
             Attack = card.Attack;

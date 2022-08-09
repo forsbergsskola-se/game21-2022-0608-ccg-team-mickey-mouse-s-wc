@@ -8,7 +8,8 @@ namespace Meta.Cards {
     [CreateAssetMenu]
     public class CardConfig : ScriptableObject {
         //TODO: Properties should have capital
-        public Sprite Image;
+        [Tooltip("Only used for to see correct sprite name")]public Sprite Image;
+        public string SpriteName;
         public string Name;
         public string Id;
         public float MaxHealth;

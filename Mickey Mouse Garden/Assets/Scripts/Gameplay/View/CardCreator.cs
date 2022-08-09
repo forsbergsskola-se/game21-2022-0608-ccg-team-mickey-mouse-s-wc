@@ -40,7 +40,7 @@ public class CardCreator : MonoBehaviour{
         fighterInfo.Name = fighter.Name;
         fighterInfo.Rarity = fighter.Rarity;
         fighterInfo.Speed = fighter.Speed;
-        fighterInfo.Sprite = fighter.Sprite;
+        fighterInfo.SpriteName = fighter.SpriteName;
         fighterInfo.ID = fighter.ID;
         fighterInfo.MaxHealth = fighter.MaxHealth;
 

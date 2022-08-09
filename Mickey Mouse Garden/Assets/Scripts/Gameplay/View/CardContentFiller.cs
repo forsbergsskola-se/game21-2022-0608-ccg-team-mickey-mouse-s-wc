@@ -39,7 +39,7 @@ public class CardContentFiller : MonoBehaviour{
 		attackText.text = $"Damage: {fighter.Attack.ToString(CultureInfo.InvariantCulture)}";
 		healthText.text = $"Health: {fighter.MaxHealth.ToString(CultureInfo.InvariantCulture)}";
 		speedText.text = $"Speed: {fighter.Speed.ToString(CultureInfo.InvariantCulture)}";
-		fighterImage.sprite = fighter.Sprite;
+		fighterImage.sprite = Resources.Load<Sprite>($"Art/Sprites/{fighter.SpriteName}");;
 	}
 	private void ShowDamage(float damage){
 		Instantiate(damageText, damageTextTransform.position, Quaternion.identity, parent);

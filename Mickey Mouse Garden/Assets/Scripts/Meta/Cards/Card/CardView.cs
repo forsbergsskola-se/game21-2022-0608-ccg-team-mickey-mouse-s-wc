@@ -19,7 +19,7 @@ namespace Meta.Cards {
          [HideInInspector] public StringGUID id;
 
         public void Configure(Card card) {
-            image.sprite = card.Image;
+            image.sprite = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");
             name.text = card.Name;
             id = card.ID;
             maxHealth.text = $"Health: {card.MaxHealth}";
@@ -32,7 +32,7 @@ namespace Meta.Cards {
             //TODO: And save after changed value (or just save on closing the game)
         }
         public void Configure(CardConfig card) {
-            image.sprite = card.Image;
+            image.sprite = Resources.Load<Sprite>($"Art/Sprites/{card.SpriteName}");;
             name.text = card.Name;
             id = new StringGUID().NewGuid();
             maxHealth.text = $"Health: {card.MaxHealth}";

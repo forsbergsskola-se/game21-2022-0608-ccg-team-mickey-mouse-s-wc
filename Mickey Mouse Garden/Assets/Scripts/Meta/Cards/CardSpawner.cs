@@ -16,20 +16,19 @@ namespace Meta.Inventory {
             //TODO: Based on seed Rarity, random chance to spawn card of Rarity x
             //Method that does calculation and returns a card should be here
             var randomInt = Random.Range(0, cardLibrary.cards.Length);
-            var libraryID = cardLibrary.cards[randomInt].Id;
+            var libraryCardConfig = cardLibrary.cards[randomInt];
             
-            var card = new Card(libraryID);
-            
-            var cardType = card.GetType();
-            
-            var propertyInfos =cardType.GetProperties().Where(x => x.Name != "ID" && x.Name != "LibraryID").ToArray(); //Adds all properties of card to array
-        
-            //Copies values from config to card
-            for (int i = 0; i < propertyInfos.Length; i++){
-                var propertyName = propertyInfos[i].Name;
-                cardType.GetProperty(propertyName)?.SetValue(card,cardLibrary.cards[randomInt].GetType().GetField(propertyName));
-                Debug.Log("Card property: " + propertyName + " value: " + cardType.GetProperty(propertyName)?.GetValue(card));
-            }
+            var card = new Card(libraryCardConfig.Id);
+
+            card.ID = new StringGUID().NewGuid();
+            card.MaxHealth = libraryCardConfig.MaxHealth;
+            card.Attack = libraryCardConfig.Attack;
+            card.Speed = libraryCardConfig.Speed;
+            card.Level = libraryCardConfig.Level; 
+            card.Rarity = libraryCardConfig.Rarity;
+            card.Name = libraryCardConfig.Name;
+            card.Alignment = libraryCardConfig.Alignment;
+            card.SpriteName = libraryCardConfig.SpriteName;
             ;
             var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card,1);
 
