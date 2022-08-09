@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Meta.Cards;
 using Meta.Inventory.FighterInventory;
 using UnityEngine;
@@ -5,11 +6,11 @@ using UnityEngine;
 public class ASelectedCard : MonoBehaviour{
    private int position;
    private Card cardData;
-   private Card[] playerCardInventory;
+   private List<Card> playerCardInventory;
    
    private void Awake(){
       Broker.Subscribe<CardSelectionMessage>(OnSelectedCardMessageReceived);
-      playerCardInventory = FindObjectOfType<CardInventoryMockup>().playerCards; //TODO: Replace with actual player card inventory
+      playerCardInventory = FindObjectOfType<CardInventory>().InventoryList.Items; //TODO: Replace with actual player card inventory
    }
 
    public void WhenClicked(){
