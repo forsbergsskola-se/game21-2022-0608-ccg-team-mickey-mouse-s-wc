@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 6455031883069669775}
+  spriteLibrary: {fileID: 11400000, guid: ab34042816de0194c89b835190f10b8e, type: 2}
   name: {fileID: 8128594692919862311}
   maxHealth: {fileID: 514549155021993317}
   attack: {fileID: 514549153254526440}
@@ -330,7 +331,6 @@ MonoBehaviour:
   alignment: {fileID: 514549153935731751}
   rarity: {fileID: 514549153478286914}
   level: {fileID: 7784076032071110880}
-  id: 
 --- !u!1 &514549153935731749
 GameObject:
   m_ObjectHideFlags: 0
