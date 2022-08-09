@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -89,5 +90,10 @@ public class CardMovement : MonoBehaviour {
 			enemyNumber++;
 			deadEnemy[enemyNumber] = true;
 		}	
+	}
+
+	private void OnDisable(){
+		Broker.Unsubscribe<FighterFaintMessage>(OnFaintedMessageReceived);
+
 	}
 }
