@@ -5,6 +5,8 @@ using UnityEngine;
 public class MatchInformation : MonoBehaviour {
     [SerializeField] private float levelNumber, levelMultiplier = 100;
     [SerializeField] private CardConfig[] enemyTeamMembers; //TODO: force amount of elements to be 3, pesky designers.
+    public bool isUnlocked;
+    
     private PlayerLevel playerLevelReference;
     private Money reward;
     public void ConfirmTeam(){
@@ -26,5 +28,9 @@ public class MatchInformation : MonoBehaviour {
         };
         
         Debug.Log(reward);
+
+        if (playerLevelReference.Level >= levelNumber) {
+            isUnlocked = true;
+        }
     }
 }
