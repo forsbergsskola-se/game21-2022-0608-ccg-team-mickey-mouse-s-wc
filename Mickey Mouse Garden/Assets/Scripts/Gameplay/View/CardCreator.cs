@@ -17,7 +17,6 @@ public class CardCreator : MonoBehaviour{
         FighterInfo[] cards = new FighterInfo[3];
         obj.FighterTeam.CopyTo(cards,0);
         for (int i = cards.Length - 1; i >= 0; i--){
-            Debug.Log(i);
             fighter = cards[i];
             // Spawns card at incremental card slots starting from 1 (not 0).
             InstantiateFighter(fighter, cardSlots[cardCount]);
