@@ -4,9 +4,8 @@ public class EndOfCombatCommand : ICommand{
 
     private bool playerWinner;
     private  Money reward;
-    public EndOfCombatCommand(bool playerWinner, Money reward){
+    public EndOfCombatCommand(bool playerWinner){
         this.playerWinner = playerWinner;
-        this.reward = reward;
     }
     public Task ExecuteAsync(){
         Broker.InvokeSubscribers(typeof(CreatePostCombatUIMessage), new CreatePostCombatUIMessage());

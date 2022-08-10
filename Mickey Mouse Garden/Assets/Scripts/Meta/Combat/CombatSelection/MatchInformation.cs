@@ -4,7 +4,7 @@ using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
 public class MatchInformation : MonoBehaviour {
-    [SerializeField] private float levelNumber, baseReward  = 100, levelMultiplier = 30;
+    [SerializeField] private float levelNumber, baseReward  = 100, levelMultiplier = 0.3f;
     [SerializeField] private CardConfig[] enemyTeamMembers; //TODO: force amount of elements to be 3, pesky designers.
     public bool isUnlocked;
     
