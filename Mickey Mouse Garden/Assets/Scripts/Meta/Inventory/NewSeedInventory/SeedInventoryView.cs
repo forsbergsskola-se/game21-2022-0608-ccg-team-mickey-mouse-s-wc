@@ -80,8 +80,8 @@ namespace Meta.Inventory.NewSeedInventory {
         
         private void HarvestOperations(GrowSlot growSlot) {
             RemoveFromHarvestable(growSlot);
-            growSlot.Destroy();
             RequestCardSpawn(growSlot.rarity);
+            growSlot.Destroy();
         }
         
         public void HarvestAll() {
@@ -89,6 +89,10 @@ namespace Meta.Inventory.NewSeedInventory {
                 for (int i = harvestableSlots.Count - 1; i >= 0; i--) {
                     if (!harvestableSlots[i].ReadyToHarvest) continue;
                     if (harvestableSlots[i] == null) continue;
+                    var seedToRemove =
+                        _seedInventory.PlantedSeeds.Items.FirstOrDefault(seed =>
+                            seed.rarity == harvestableSlots[i].rarity);
+                    _seedInventory.PlantedSeeds.Items.Remove(seedToRemove);
                     HarvestOperations(harvestableSlots[i]);
                 }
             } else {

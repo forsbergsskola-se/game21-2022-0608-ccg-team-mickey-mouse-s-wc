@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Meta.Inventory.FighterInventory;
 using TMPro;
@@ -24,11 +23,15 @@ namespace Meta.Cards {
             UpdateText();
             
             if (isOpen) return;
-            
-            canvas.SetActive(true);
-            cardViewPrefab.Configure(attainedCards[index]);
+
+            DisplayReceivedCard();
             
             isOpen = true;
+        }
+        
+        private void DisplayReceivedCard() {
+            canvas.SetActive(true);
+            cardViewPrefab.Configure(attainedCards[index]);
         }
 
         public void Continue() {
