@@ -46,9 +46,9 @@ public class NavSceneLauncher : MonoBehaviour{
 			case "Shed":
 				SceneManager.LoadScene("Shed", LoadSceneMode.Additive);
 				break;
-			// greenhouse
+			// garden
 			case "Garden":
-				SceneManager.LoadScene("InventoryTestScene", LoadSceneMode.Additive);
+				SceneManager.LoadScene("Garden", LoadSceneMode.Additive);
 				// greenhouseUI.SetActive(true);
 				break;
 				
