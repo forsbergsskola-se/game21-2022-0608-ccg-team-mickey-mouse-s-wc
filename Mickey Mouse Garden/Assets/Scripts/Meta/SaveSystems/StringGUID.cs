@@ -21,7 +21,6 @@ public class StringGUID{
          }
       }
       var newString = new string(stringGuid);
-      Debug.Log("StringGUID: " + newString);
       
       GUIDAsString = newString;
    }
