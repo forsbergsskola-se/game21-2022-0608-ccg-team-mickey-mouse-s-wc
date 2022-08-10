@@ -45,7 +45,7 @@ namespace Meta.Inventory {
         }
         
         private static bool CheckForMaxLevel(Card card1, Card card2){
-            return card1.Rarity != Rarity.Legendary && card1.Level != 10 && card2.Rarity != Rarity.Legendary && card2.Level != 10;
+            return (card1.Rarity != Rarity.Legendary && card1.Level != 10) || (card2.Rarity != Rarity.Legendary && card2.Level != 10);
         }
 
         private void SpawnFusedCard(Card card1, Card card2){
@@ -93,6 +93,7 @@ namespace Meta.Inventory {
         
         private float GenerateNewStats(Card fusedCard){
             var statsIncrease = 0f;
+            // Ideally Library Index
             var statsMultiplier = cardLibrary.cards[fusedCard.SpriteIndex].StatsMultiplier;
             switch (fusedCard.Rarity){
                 case Rarity.Common:
