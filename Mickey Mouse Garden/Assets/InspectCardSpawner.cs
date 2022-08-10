@@ -8,7 +8,7 @@ public class InspectCardSpawner : MonoBehaviour
     private Card inspectedCard;
     private void Awake(){
         //TODO: Find the actual inspected card??
-        var instance = Instantiate(cardButtonPrefab, gameObject.transform);
+        var instance = Instantiate(cardButtonPrefab, new Vector3(124,220,0),Quaternion.identity,gameObject.transform);
         instance.GetComponentInChildren<CardView>().Configure(inspectedCard);
     }
 }
