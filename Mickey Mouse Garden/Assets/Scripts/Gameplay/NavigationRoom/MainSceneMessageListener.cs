@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,12 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Subscribe<CreatePostCombatUIMessage>(OnPostCombatUIMessageReceived);
         Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamMessageReceived);
         mainSceneSoundManager.PlayMusic();
+    }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<UIChangedMessage>(OnUIChangedMessageReceived);
+        Broker.Unsubscribe<CreatePostCombatUIMessage>(OnPostCombatUIMessageReceived);
+        Broker.Unsubscribe<SelectedFighterTeamMessage>(OnFighterTeamMessageReceived);    
     }
     private void OnFighterTeamMessageReceived(SelectedFighterTeamMessage obj){
         if (!obj.IsPlayerTeam){
@@ -49,12 +56,6 @@ public class MainSceneMessageListener : MonoBehaviour{
             case "Arena":
                 mainSceneSoundManager.PauseMusic();
                 mainSceneSoundManager.PlayPreCombatMusic();
-                break;
-
-            // arena2
-            case "Arena2":
-                mainSceneSoundManager.PauseMusic();
-                // mainSceneSoundManager.PlayPreCombatMusic();
                 break;
         }
     }
