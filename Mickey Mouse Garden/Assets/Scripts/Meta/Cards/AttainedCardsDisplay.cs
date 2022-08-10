@@ -17,6 +17,10 @@ namespace Meta.Cards {
         private void Awake() {
             Broker.Subscribe<AddItemToInventoryMessage<Card>>(CardReceived);
         }
+        
+        private void OnDisable(){
+            Broker.Unsubscribe<AddItemToInventoryMessage<Card>>(CardReceived);
+        }
 
         private void CardReceived(AddItemToInventoryMessage<Card> card) {
             attainedCards.Add(card.item);
