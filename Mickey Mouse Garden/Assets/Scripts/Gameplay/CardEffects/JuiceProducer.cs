@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class JuiceProducer : MonoBehaviour{
@@ -9,5 +10,9 @@ public class JuiceProducer : MonoBehaviour{
 	}
 	private void OnStrikeMessageReceived(FighterStrikeMessage obj){
 		juice.Play();
+	}
+
+	private void OnDisable(){
+		Broker.Unsubscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
 	}
 }

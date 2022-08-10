@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,7 +19,11 @@ public class CardShaker : MonoBehaviour{
 			ShakeCard();
 		}
 	}
-	
+
+	private void OnDisable(){
+		Broker.Unsubscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
+	}
+
 	private void ShakeCard(){
 		transform.Rotate(0, 0, 7 * directionModifier, Space.World);
 		transform.Translate(Vector3.left * (80 * directionModifier));
