@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class ExitUI : MonoBehaviour{
 
+	[SerializeField] private GameObject enivronment;
+
 	private string gameObjectTag;
 	private void Awake(){
 		Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
@@ -12,7 +14,6 @@ public class ExitUI : MonoBehaviour{
 	private void OnUIChangedMessageReceived(UIChangedMessage obj){
 		if (obj.TaskToDo == 1){
 			gameObjectTag = obj.ObjectTag;
-			Debug.Log(gameObjectTag);
 		}
 		if (obj.TaskToDo == 2){
 			Debug.Log(gameObjectTag);
@@ -40,10 +41,10 @@ public class ExitUI : MonoBehaviour{
 
 			// arena
 			case "Arena":
+				SceneManager.UnloadSceneAsync("OpponentSelection");
+				enivronment.SetActive(true);
 				GetComponent<MainSceneSoundManager>().UnPauseMusic();
 				break;
-			
-
 		}
 	}
 }
