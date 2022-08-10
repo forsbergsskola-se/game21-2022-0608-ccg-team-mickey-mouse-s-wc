@@ -3,7 +3,7 @@ using Meta.Cards;
 using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
-public class InstantiateFullCardCollection : MonoBehaviour{ //TODO: combine with SpawnCardButtons if time and energy.
+public class InstantiateFullCardCollection : MonoBehaviour{
     [SerializeField] private GameObject cardButtonPrefab;
     private List<Card> playerCardTeam;
     private void Awake(){
