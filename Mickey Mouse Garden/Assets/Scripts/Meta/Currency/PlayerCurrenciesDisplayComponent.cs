@@ -13,7 +13,7 @@ public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
 
     void Awake(){
         moneyTextMeshProUGUI = moneyAmountFieldObjects.GetComponent<TextMeshProUGUI>();
-        fertilizerTextMeshProUGUI =  fertilizerAmountFieldObjects.GetComponent<TextMeshProUGUI>();
+        fertilizerTextMeshProUGUI = fertilizerAmountFieldObjects.GetComponent<TextMeshProUGUI>();
         Broker.Subscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
     }
 

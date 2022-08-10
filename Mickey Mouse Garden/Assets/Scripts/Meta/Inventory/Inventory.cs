@@ -71,8 +71,6 @@ namespace Meta.Inventory {
             Save();
         }
 
-        
-
         public virtual void Remove(T item) {
             InventoryList.Items.Remove(item);
             Debug.Log(item.libraryID + " removed from inventory");
