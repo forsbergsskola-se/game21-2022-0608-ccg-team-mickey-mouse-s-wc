@@ -18,5 +18,6 @@ namespace Meta.Cards {
         public Alignment Alignment;
         public Rarity Rarity;
         public short Level;
+        public float StatsMultiplier;
     }
 }
