@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ASelectedCard : MonoBehaviour{
    private int position;
-   private bool selected;
    private Card cardData;
    private List<Card> playerCardInventory;
    
@@ -15,13 +14,10 @@ public class ASelectedCard : MonoBehaviour{
    }
 
    public void WhenClicked(){
-
       cardData = FindCardData();
       CreateSelectedCardMessage();
       //finds the parent canvas, then finds the selectionPanel parent of that canvas. then sets that selectionpanel to inactive.
       transform.parent.transform.parent.gameObject.SetActive(false);
-      selected = true;
-
    }
 
    private void OnSelectedCardMessageReceived(CardSelectionMessage obj){

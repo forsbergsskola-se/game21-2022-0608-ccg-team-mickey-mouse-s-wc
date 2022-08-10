@@ -333,7 +333,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9026650478527593840}
         m_TargetAssemblyTypeName: StoreSlot, Assembly-CSharp
-        m_MethodName: BuyItem
+        m_MethodName: ButtonInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -861,10 +861,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWalletSo: {fileID: 11400000, guid: 1c01f9a16afca394e92c0184c8daeedd, type: 2}
   shopItemConfig: {fileID: 0}
+  player: {fileID: 0}
+  seedInventory: {fileID: 0}
   itemName: {fileID: 593328294225473087}
   itemMoneyPrice: {fileID: 593328294011255533}
   itemFertilizerPrice: {fileID: 593328294384866270}
   image: {fileID: 593328294639503830}
+  usedForSelling: 0
 --- !u!1 &593328294639503824
 GameObject:
   m_ObjectHideFlags: 0

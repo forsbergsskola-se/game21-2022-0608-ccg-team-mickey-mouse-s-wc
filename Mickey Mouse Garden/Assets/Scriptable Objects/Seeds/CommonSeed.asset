@@ -15,8 +15,10 @@ MonoBehaviour:
   libraryID: Common Seed
   isUnlimited: 1
   itemAmount: 1
-  moneyCost: 10
-  fertilizerCost: 0
+  moneyPurchaseAmount: 10
+  moneySellAmount: 5
+  fertilizerPurchaseAmount: 0
+  fertilizerSellAmount: 0
   sprite: {fileID: 21300000, guid: b4fed386dcb93e641b2c22b6ff168d58, type: 3}
   rarity: 0
   library: {fileID: 11400000, guid: 09e6523093dad2f41959bf447b09a554, type: 2}

@@ -16,12 +16,14 @@ public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
         fertilizerTextMeshProUGUI =  fertilizerAmountFieldObjects.GetComponent<TextMeshProUGUI>();
         Broker.Subscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
     }
-    void OnDisable(){
-        Broker.Unsubscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
-    }
-    void Start(){
+
+    void OnEnable(){
         Debug.Log("Invoking AskForPlayerCurrencyMessage");
         Broker.InvokeSubscribers(typeof(AskForPlayerCurrencyMessage),new AskForPlayerCurrencyMessage());
+    }
+
+    void OnDestroy(){
+        Broker.Unsubscribe<DisplayPlayerCurrencyMessage>(SetCurrency);
     }
 
     public void SetCurrency(DisplayPlayerCurrencyMessage message){

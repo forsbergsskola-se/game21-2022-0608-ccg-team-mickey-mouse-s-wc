@@ -1,5 +1,3 @@
-using Meta.Seeds;
-
 namespace Meta.Inventory {
     public class PlantSeedMessage : IMessage {
         public Rarity SeedRarity;

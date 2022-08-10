@@ -15,8 +15,10 @@ MonoBehaviour:
   libraryID: Rare Seed
   isUnlimited: 1
   itemAmount: 1
-  moneyCost: 50
-  fertilizerCost: 0
+  moneyPurchaseAmount: 20
+  moneySellAmount: 10
+  fertilizerPurchaseAmount: 0
+  fertilizerSellAmount: 0
   sprite: {fileID: 21300000, guid: 4db7d00996d47904eaaae657d7181ab3, type: 3}
   rarity: 1
   library: {fileID: 11400000, guid: 09e6523093dad2f41959bf447b09a554, type: 2}

@@ -15,11 +15,18 @@ public class SongConfig : ShopItemConfig{
     }
 
     public override void SendCreateItemMessage(string pathID){
+        Debug.Log("Invoking Seed Create Message" + " " + pathID);
         var message = new CreateNewInventoryItemMessage<Song>(pathID);
         Broker.InvokeSubscribers(message.GetType(), message);
     }
 
-   public override void AddToLibrary(){
+    public override void SendRemoveItemMessage(string pathID){
+        Debug.Log("Invoking Seed Remove Message" + " " + pathID);
+        var message = new RemoveInventoryItemMessage<Song>(pathID);
+        Broker.InvokeSubscribers(message.GetType(), message);
+    }
+
+    public override void AddToLibrary(){
        library.AddItemConfig(this);
    }
 }

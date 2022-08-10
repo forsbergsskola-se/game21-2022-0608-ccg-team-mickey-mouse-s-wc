@@ -49,8 +49,9 @@ namespace Experiment{
         void OnPostCombatStateMessageReceived(PostCombatStateMessage message){
             if(message.State == PostCombatState.Victory){
                 wallet.Money.AddAmount(attemptedCombatLedger.Amount);
-                wallet?.Save();
+                
                 playerWalletSO.playerWallet = wallet;
+                wallet?.Save();
                 UpdateDisplayCurrencies();
                 
                 CurrencyRewardMessage currencyRewardMessage = new(){
@@ -73,8 +74,8 @@ namespace Experiment{
         public void ChangeCurrencies(AddPlayerCurrencyMessage message){
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
-            wallet?.Save();
             playerWalletSO.playerWallet = wallet;
+            wallet?.Save();
             UpdateDisplayCurrencies();
         }
         [ContextMenu("TestAddCurrency")]

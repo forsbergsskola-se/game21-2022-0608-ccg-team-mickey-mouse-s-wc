@@ -21,8 +21,13 @@ namespace Meta.Inventory.NewSeedInventory {
         }
         
 
-        private void OnDisable(){
+        public override void OnDisable(){
             Broker.Unsubscribe<AskForUpdateSeedUi>(SendUpdateSeedUiMessage);
+        }
+
+        public override void OnRemoveInventoryItemMessageReceived(RemoveInventoryItemMessage<Seed> message){
+            base.OnRemoveInventoryItemMessageReceived(message);
+            Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }
 
         private void SendUpdateSeedUiMessage(AskForUpdateSeedUi message){
@@ -30,12 +35,13 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         //TODO: Send a number for updating UI instead of a list of seeds. Needs NewSeed to contain amount.
-        public override void CollectOperations(Seed addedItem) {
+        public override void CollectOperations(Seed addedItem){
+            base.CollectOperations(addedItem);
             Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
-            //TODO: Save
         }
 
         public override void RemoveOperations(Seed removedItem) {
+            base.RemoveOperations(removedItem);
             Broker.InvokeSubscribers(typeof(UpdateSeedUi), new UpdateSeedUi(InventoryList.Items));
         }
     }

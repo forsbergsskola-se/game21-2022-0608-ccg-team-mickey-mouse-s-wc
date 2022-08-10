@@ -6,8 +6,10 @@ using UnityEngine;
 public abstract class ShopItemConfig : ItemConfig{
     public bool isUnlimited = true;
     public int itemAmount = 1;
-    public int moneyCost;
-    public int fertilizerCost;
+    [Min(0)]public int moneyPurchaseAmount;
+    public int moneySellAmount;
+    public int fertilizerPurchaseAmount;
+    public int fertilizerSellAmount;
     public Sprite sprite;
 }
     

@@ -15,8 +15,10 @@ MonoBehaviour:
   libraryID: Epic Seed
   isUnlimited: 1
   itemAmount: 1
-  moneyCost: 0
-  fertilizerCost: 5
+  moneyPurchaseAmount: 10
+  moneySellAmount: 15
+  fertilizerPurchaseAmount: 5
+  fertilizerSellAmount: 2
   sprite: {fileID: 21300000, guid: 5ec736fdc62b0464b8fc3d26de4646b0, type: 3}
   rarity: 2
   library: {fileID: 11400000, guid: 09e6523093dad2f41959bf447b09a554, type: 2}
