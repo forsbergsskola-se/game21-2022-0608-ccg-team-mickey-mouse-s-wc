@@ -29,7 +29,7 @@ namespace Meta.Inventory {
             card.Name = libraryCardConfig.Name;
             card.Alignment = libraryCardConfig.Alignment;
             card.SpriteIndex = libraryCardConfig.spriteIndex;
-            ;
+            
             var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card,1);
 
             Broker.InvokeSubscribers(cardCollectedMessage.GetType(), cardCollectedMessage);
