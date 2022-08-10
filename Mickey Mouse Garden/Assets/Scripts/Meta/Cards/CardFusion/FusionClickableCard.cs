@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FusionClickableCard : MonoBehaviour
-{
+public class FusionClickableCard : MonoBehaviour{
+    
     public void Clicked(){
-        Debug.Log("Fusion click!");
+        transform.parent.transform.parent.gameObject.SetActive(false);
+        //I DID IT AGAIN
     }
 }
