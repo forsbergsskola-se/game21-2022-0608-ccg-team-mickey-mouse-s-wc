@@ -1,3 +1,4 @@
+using System;
 using Meta.Cards;
 using Meta.Inventory.FighterInventory;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class TeamSelectionPanelController : MonoBehaviour {
     private void Start() {
         Broker.Subscribe<CardSelectionMessage>(StoreOriginCard);
         Broker.Subscribe<NewCardSelectedMessage>(StoreNewCard);
+    }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<CardSelectionMessage>(StoreOriginCard);
+        Broker.Unsubscribe<NewCardSelectedMessage>(StoreNewCard);
     }
 
     private void StoreOriginCard(CardSelectionMessage cardSelectionMessage) {
