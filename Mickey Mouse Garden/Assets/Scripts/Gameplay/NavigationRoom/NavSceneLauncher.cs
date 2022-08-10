@@ -2,11 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NavSceneLauncher : MonoBehaviour {
-	
-	
+public class NavSceneLauncher : MonoBehaviour{
+
+	[SerializeField] private GameObject enivronment;
 	private void Awake(){
 		Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
+		Broker.Subscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
+	}
+	private void OnPostCombatStateMessageReceived(PostCombatStateMessage obj){
+		StartCoroutine(DelayEnvironment());
 	}
 
 	private void OnUIChangedMessageReceived(UIChangedMessage obj){
@@ -23,6 +27,11 @@ public class NavSceneLauncher : MonoBehaviour {
 		Launch(itemTag);
 	}
 
+	private IEnumerator DelayEnvironment(){
+		yield return new WaitForSeconds(2);
+		enivronment.SetActive(true);
+	}
+
 	private void Launch(string itemTag){
 		switch (itemTag) {
 			// pShop
@@ -37,20 +46,16 @@ public class NavSceneLauncher : MonoBehaviour {
 			case "Shed":
 				SceneManager.LoadScene("Shed", LoadSceneMode.Additive);
 				break;
-			// greenhouse
+			// garden
 			case "Garden":
-				SceneManager.LoadScene("InventoryTestScene", LoadSceneMode.Additive);
+				SceneManager.LoadScene("Garden", LoadSceneMode.Additive);
 				// greenhouseUI.SetActive(true);
 				break;
 				
 			// arena
 			case "Arena":
+				enivronment.SetActive(false);
 				SceneManager.LoadScene("OpponentSelection", LoadSceneMode.Additive);
-				break;
-			
-			// arena
-			case "Arena2":
-				SceneManager.LoadScene("Arena", LoadSceneMode.Additive);
 				break;
 		}
 	}

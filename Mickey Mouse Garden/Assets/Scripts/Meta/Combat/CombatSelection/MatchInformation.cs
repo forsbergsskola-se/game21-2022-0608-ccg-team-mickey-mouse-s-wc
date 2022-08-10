@@ -4,7 +4,7 @@ using Meta.Inventory.FighterInventory;
 using UnityEngine;
 
 public class MatchInformation : MonoBehaviour {
-    [SerializeField] private float levelNumber, levelMultiplier = 100;
+    [SerializeField] private float levelNumber, baseReward  = 100, levelMultiplier = 0.3f;
     [SerializeField] private CardConfig[] enemyTeamMembers; //TODO: force amount of elements to be 3, pesky designers.
     public bool isUnlocked;
     
@@ -14,22 +14,18 @@ public class MatchInformation : MonoBehaviour {
         EnterLevelMessage msg = new(){
             CardConfigTeam = enemyTeamMembers,
             Reward = reward,
-            Level = (int)levelNumber,
-            
+            Level = (int)levelNumber
         };
         Broker.InvokeSubscribers(typeof(EnterLevelMessage), msg);
     }
 
     private void Start(){
         playerLevelReference = FindObjectOfType<Player>().playerLevel;
-        Debug.Log("Level" + playerLevelReference.Level);
         
         reward = new() {
-            Amount = (int) (levelNumber / playerLevelReference.Level * levelMultiplier * levelNumber)
+            Amount = (int) (levelNumber / playerLevelReference.Level * (baseReward * (1 + levelMultiplier * (levelNumber - 1))))
         };
         
-        Debug.Log(reward);
-
         if (playerLevelReference.Level >= levelNumber) {
             isUnlocked = true;
         }

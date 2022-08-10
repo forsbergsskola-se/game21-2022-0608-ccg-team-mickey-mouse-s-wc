@@ -53,11 +53,8 @@ namespace Experiment{
                 playerWalletSO.playerWallet = wallet;
                 wallet?.Save();
                 UpdateDisplayCurrencies();
-                
-                CurrencyRewardMessage currencyRewardMessage = new(){
-                    money = attemptedCombatLedger
-                };
-                Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), currencyRewardMessage);
+
+                StartCoroutine(DelayCurrencyDisplay());
             }
         }
         void UpdateDisplayCurrencies(){
@@ -78,12 +75,32 @@ namespace Experiment{
             wallet?.Save();
             UpdateDisplayCurrencies();
         }
+
+        private IEnumerator DelayCurrencyDisplay(){
+            yield return new WaitForSeconds(2.1f);
+            CurrencyRewardMessage currencyRewardMessage = new(){
+                money = attemptedCombatLedger
+            };
+            Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), currencyRewardMessage);
+        }
         [ContextMenu("TestAddCurrency")]
         public void TestAddCurrency(){
             var money = new Money();
             money.Amount = 20;
             var fertilizer = new Fertilizer();
             fertilizer.Amount = 20;
+            var message = new AddPlayerCurrencyMessage();
+            message.money = money;
+            message.fertilizer = fertilizer;
+            Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
+        }
+        
+        [ContextMenu("TestAddALotOfCurrency")]
+        public void TestAddMegaCurrency(){
+            var money = new Money();
+            money.Amount = 600;
+            var fertilizer = new Fertilizer();
+            fertilizer.Amount = 600;
             var message = new AddPlayerCurrencyMessage();
             message.money = money;
             message.fertilizer = fertilizer;

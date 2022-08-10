@@ -59,6 +59,6 @@ public class MainSceneSoundManager : MonoBehaviour
     preCombatMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
   }
   public void ModulateMusic(int sceneNum){
-    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Delta", sceneNum);
+    // FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Delta", sceneNum);
   }
 }

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -23,6 +25,11 @@ public class CombatController : MonoBehaviour{
       Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamReceived);
    }
 
+   private void OnDisable(){
+      Broker.Unsubscribe<FighterFaintMessage>(OnDeathMessageRecieved);
+      Broker.Unsubscribe<SelectedFighterTeamMessage>(OnFighterTeamReceived);
+   }
+
    private void OnFighterTeamReceived(SelectedFighterTeamMessage obj){
       if (obj.IsPlayerTeam){
          playerFighters = obj.FighterTeam;
@@ -32,11 +39,12 @@ public class CombatController : MonoBehaviour{
       }
       
       if (enemyFighters.Count > 1){
-         StartCombat();
+         StartCoroutine(StartCombat());
       }
    }
 
-   private void StartCombat(){
+   private IEnumerator StartCombat(){
+      yield return new WaitForSeconds(0.3f);
       NextFighter();
       AssertStrikeOrder();
       timer = new Timer(Tick, null, 1000* duration,1000* duration);
@@ -71,7 +79,7 @@ public class CombatController : MonoBehaviour{
       }
       if (playerFighter.MaxHealth <= 0 || enemyFighter.MaxHealth <= 0){
          timer.Dispose();
-         executor.Enqueue(new EndOfCombatCommand(enemyFighter.MaxHealth <= 0 ,new Money{Amount = 50}));  
+         executor.Enqueue(new EndOfCombatCommand(enemyFighter.MaxHealth <= 0));  
       }
       AssertStrikeOrder();
 

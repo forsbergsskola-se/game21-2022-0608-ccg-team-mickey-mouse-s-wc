@@ -707,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: enemyTeamMembers.Array.size
@@ -961,7 +961,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1145,7 +1145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: enemyTeamMembers.Array.size
@@ -3557,7 +3557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: enemyTeamMembers.Array.size
