@@ -93,5 +93,17 @@ namespace Experiment{
             message.fertilizer = fertilizer;
             Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
         }
+        
+        [ContextMenu("TestAddALotOfCurrency")]
+        public void TestAddMegaCurrency(){
+            var money = new Money();
+            money.Amount = 100;
+            var fertilizer = new Fertilizer();
+            fertilizer.Amount = 200;
+            var message = new AddPlayerCurrencyMessage();
+            message.money = money;
+            message.fertilizer = fertilizer;
+            Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
+        }
     }
 }
