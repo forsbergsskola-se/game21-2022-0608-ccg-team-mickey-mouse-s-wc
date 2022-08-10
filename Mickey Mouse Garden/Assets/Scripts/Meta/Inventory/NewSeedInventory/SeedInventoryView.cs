@@ -81,7 +81,7 @@ namespace Meta.Inventory.NewSeedInventory {
         private void HarvestOperations(GrowSlot growSlot) {
             RemoveFromHarvestable(growSlot);
             growSlot.Destroy();
-            PlantSpawn(growSlot.rarity);
+            RequestCardSpawn(growSlot.rarity);
         }
         
         public void HarvestAll() {
@@ -96,7 +96,7 @@ namespace Meta.Inventory.NewSeedInventory {
             }
         }
         
-        private void PlantSpawn(Rarity rarity) {
+        private void RequestCardSpawn(Rarity rarity) {
             var spawnMessage = new SpawnCardFromSeed(rarity);
             Broker.InvokeSubscribers(spawnMessage.GetType(), spawnMessage);
         }
