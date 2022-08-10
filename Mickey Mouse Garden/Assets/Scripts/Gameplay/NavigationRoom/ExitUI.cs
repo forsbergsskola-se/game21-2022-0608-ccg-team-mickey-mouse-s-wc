@@ -34,9 +34,9 @@ public class ExitUI : MonoBehaviour{
 			case "Shed":
 				SceneManager.UnloadSceneAsync("Shed");
 				break;
-			// greenhouse
+			// garden
 			case "Garden":
-				SceneManager.UnloadSceneAsync("InventoryTestScene");
+				SceneManager.UnloadSceneAsync("Garden");
 				break;
 
 			// arena

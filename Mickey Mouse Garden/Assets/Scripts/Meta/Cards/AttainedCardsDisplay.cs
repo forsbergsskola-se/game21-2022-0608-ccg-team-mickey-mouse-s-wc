@@ -27,8 +27,7 @@ namespace Meta.Cards {
             
             canvas.SetActive(true);
             cardViewPrefab.Configure(attainedCards[index]);
-
-
+            
             isOpen = true;
         }
 
@@ -37,10 +36,14 @@ namespace Meta.Cards {
                 cardViewPrefab.Configure(attainedCards[++index]);
                 UpdateText();
             } else {
-                isOpen = false;
-                canvas.SetActive(false);
-                attainedCards.Clear();
+                CloseCanvas();
             }
+        }
+
+        public void CloseCanvas() {
+            isOpen = false;
+            canvas.SetActive(false);
+            attainedCards.Clear();
         }
 
         private void UpdateText() {
