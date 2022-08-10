@@ -48,6 +48,10 @@ namespace Meta.Inventory.NewSeedInventory {
 
         private void UpdateTimerText(float timeLeft) {
             growthTimerText.text = $"{rarityText} - {timeLeft.ToString("0")}"; //TODO: Talk w designers for the format
+
+            if (timeLeft <= 0) {
+                growthTimerText.text = "Ready to harvest!";
+            }
         }
 
         private void SendReadyToHarvestMessage() {
