@@ -707,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: enemyTeamMembers.Array.size
@@ -1145,7 +1145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: enemyTeamMembers.Array.size
@@ -3557,7 +3557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: enemyTeamMembers.Array.size
