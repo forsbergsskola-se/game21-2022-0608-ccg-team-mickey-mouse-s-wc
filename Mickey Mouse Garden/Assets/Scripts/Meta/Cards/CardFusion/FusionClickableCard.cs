@@ -5,6 +5,6 @@ using UnityEngine;
 public class FusionClickableCard : MonoBehaviour
 {
     public void Clicked(){
-        
+        Debug.Log("Fusion click!");
     }
 }

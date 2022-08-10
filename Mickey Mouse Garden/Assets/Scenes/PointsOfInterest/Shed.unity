@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698d43b8187c09745bb887c0dcf871ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardButtonPrefab: {fileID: 4071188406701769988, guid: 95da7eba1e478450dbd6e1c54a2d8a84, type: 3}
+  cardButtonPrefab: {fileID: 631743217421326707, guid: f6389eb549b270544b6e7682bff5e83c, type: 3}
 --- !u!114 &5110331301956811510
 MonoBehaviour:
   m_ObjectHideFlags: 0
