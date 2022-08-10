@@ -52,11 +52,8 @@ namespace Experiment{
                 wallet?.Save();
                 playerWalletSO.playerWallet = wallet;
                 UpdateDisplayCurrencies();
-                
-                CurrencyRewardMessage currencyRewardMessage = new(){
-                    money = attemptedCombatLedger
-                };
-                Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), currencyRewardMessage);
+
+                StartCoroutine(DelayCurrencyDisplay());
             }
         }
         void UpdateDisplayCurrencies(){
@@ -76,6 +73,14 @@ namespace Experiment{
             wallet?.Save();
             playerWalletSO.playerWallet = wallet;
             UpdateDisplayCurrencies();
+        }
+
+        private IEnumerator DelayCurrencyDisplay(){
+            yield return new WaitForSeconds(2.1f);
+            CurrencyRewardMessage currencyRewardMessage = new(){
+                money = attemptedCombatLedger
+            };
+            Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), currencyRewardMessage);
         }
         [ContextMenu("TestAddCurrency")]
         public void TestAddCurrency(){
