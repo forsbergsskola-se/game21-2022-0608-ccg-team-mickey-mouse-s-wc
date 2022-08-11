@@ -21,4 +21,8 @@ public class FusionButton : MonoBehaviour{
         var fusionStartMessage = new FusionStartMessage {fusionCard = card}; 
         Broker.InvokeSubscribers(typeof(FusionStartMessage), fusionStartMessage);
     }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<InspectCardMessage>(OnInspectCardMessageReceived);
+    }
 }
