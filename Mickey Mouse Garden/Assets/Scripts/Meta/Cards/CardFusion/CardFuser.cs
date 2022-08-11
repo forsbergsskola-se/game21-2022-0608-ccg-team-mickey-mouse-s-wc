@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using Meta.Cards;
@@ -108,11 +109,11 @@ namespace Meta.Inventory {
         
         private float GenerateNewStats(Card fusedCard, float statsMultiplier, float statComponent, Rarity cardConfigRarity){
             // Get commonBase stats.
-            var commonBaseComponent = statComponent - (int)cardConfigRarity * statsMultiplier; // Needs base card rarity.
+            var commonBaseComponent = statComponent - (int)cardConfigRarity * statsMultiplier;
             // Return the difference from common rarity to current rarity and level.
             var newStats = commonBaseComponent + (fusedCard.Level - 1 + (int)fusedCard.Rarity) * statsMultiplier;
             
-            return newStats;
+            return MathF.Floor(newStats);
         }
     }
 }
