@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SendSacrificeMessage : MonoBehaviour
 {
     public void OnClick(){
+        Broker.InvokeSubscribers(typeof(FusionEndMessage), new FusionEndMessage{fusionCard = GetComponent<ASelectedCard>().FindCardData()});
         FindObjectOfType<CompleteFusionButton>().OnClick();
     }
 }
