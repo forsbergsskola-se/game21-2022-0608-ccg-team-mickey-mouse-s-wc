@@ -20,5 +20,5 @@ MonoBehaviour:
   fertilizerPurchaseAmount: 5
   fertilizerSellAmount: 2
   sprite: {fileID: 21300000, guid: 5ec736fdc62b0464b8fc3d26de4646b0, type: 3}
-  rarity: 2
+  rarity: 20
   library: {fileID: 11400000, guid: 09e6523093dad2f41959bf447b09a554, type: 2}
