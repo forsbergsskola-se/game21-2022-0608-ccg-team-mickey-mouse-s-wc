@@ -1,17 +1,14 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using Meta.Cards;
 using UnityEngine;
 using Meta.Inventory.FighterInventory;
-using Random = UnityEngine.Random;
 
 namespace Meta.Inventory {
     public class CardFuser : MonoBehaviour {
         public CardLibraryConfig cardLibrary;
         private bool rarityIncrease;
 
-        private void Awake() {
+        private void OnEnable() {
             Broker.Subscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
         }
         private void OnDisable(){

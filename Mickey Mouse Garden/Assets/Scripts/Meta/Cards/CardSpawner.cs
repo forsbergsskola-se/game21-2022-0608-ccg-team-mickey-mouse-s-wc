@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using Meta.Cards;
 using UnityEngine;
 using Meta.Inventory.FighterInventory;
@@ -10,7 +8,7 @@ namespace Meta.Inventory {
         public CardLibraryConfig cardLibrary;
         private bool rarityIncrease;
 
-        private void Awake(){
+        private void OnEnable(){
             Broker.Subscribe<SpawnCardFromSeed>(CollectRandomCard);
         }
 
