@@ -30,7 +30,7 @@ namespace Meta.Cards {
             speed.text = $"Speed: {card.Speed}";
             alignment.text = $"Alignment: {card.Alignment}";
             rarity.text = $"Rarity: {card.Rarity}";
-            //Level.text = $"Level: {cardConfig.Level}"; //TODO: implement when not null
+            level.text = $"Level: {card.Level}"; //TODO: implement when not null
             //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }
@@ -44,7 +44,7 @@ namespace Meta.Cards {
             speed.text = $"Speed: {card.Speed}";
             alignment.text = $"Alignment: {card.Alignment}";
             rarity.text = $"Rarity: {card.Rarity}";
-            //Level.text = $"Level: {cardConfig.Level}"; //TODO: implement when not null
+            level.text = $"Level: {card.Level}"; //TODO: implement when not null
             //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }
