@@ -8,16 +8,13 @@ namespace Meta.Inventory.FighterInventory {
     /// The serialized data model of a card.
     /// </summary>
     [System.Serializable]
-    public class Card : IInventoryItem, ISaveData {
+    public class Card : IInventoryItem {
         public string libraryID{ get; set; }
         [SerializeField] private short level;
 
         public short Level {
             get => level;
-            set {
-                level = value;
-                value = level;
-            }
+            set => level = value;
         }
         
        public string Name{ get; set; }
@@ -26,12 +23,13 @@ namespace Meta.Inventory.FighterInventory {
         public float Speed{ get; set; }
         public Alignment Alignment{ get; set; }
         public short SpriteIndex{ get; set; }
-        // [DoNotSerialize] public Sprite Image{ get; set; } //TODO: Sprite or Image?
         public Rarity Rarity{ get; set; }
 
         public Card(string _libraryID){
             libraryID = _libraryID;
         }
+        
+        public StringGUID ID { get; set; }
         public async void TryLoadData(){
             var card = await SaveManager.Load<Card>(ID);
             Name = card.Name;
@@ -43,8 +41,6 @@ namespace Meta.Inventory.FighterInventory {
             MaxHealth = card.MaxHealth;
             Speed = card.Speed;
         }
-        public StringGUID ID { get; set; }
-
         public void Save() {
             SaveManager.Save(this);
         }

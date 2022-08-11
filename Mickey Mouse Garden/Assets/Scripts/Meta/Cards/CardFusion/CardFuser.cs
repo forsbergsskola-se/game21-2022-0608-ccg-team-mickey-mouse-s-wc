@@ -18,17 +18,19 @@ namespace Meta.Inventory {
         }
         
         private Card CreateNewCard(CardConfig libraryCardConfig){
-            var card = new Card(libraryCardConfig.Id);
+            var card = new Card(libraryCardConfig.Id){
+                ID = new StringGUID().NewGuid(),
+                MaxHealth = libraryCardConfig.MaxHealth,
+                Attack = libraryCardConfig.Attack,
+                Speed = libraryCardConfig.Speed,
+                Level = libraryCardConfig.Level,
+                Rarity = libraryCardConfig.Rarity,
+                Name = libraryCardConfig.Name,
+                Alignment = libraryCardConfig.Alignment,
+                SpriteIndex = libraryCardConfig.spriteIndex
+            };
 
-            card.ID = new StringGUID().NewGuid();
-            card.MaxHealth = libraryCardConfig.MaxHealth;
-            card.Attack = libraryCardConfig.Attack;
-            card.Speed = libraryCardConfig.Speed;
-            card.Level = libraryCardConfig.Level;
-            card.Rarity = libraryCardConfig.Rarity;
-            card.Name = libraryCardConfig.Name;
-            card.Alignment = libraryCardConfig.Alignment;
-            card.SpriteIndex = libraryCardConfig.spriteIndex;
+            
             return card;
         }
 
