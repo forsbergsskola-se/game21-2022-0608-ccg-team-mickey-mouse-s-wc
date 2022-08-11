@@ -7,10 +7,14 @@ public class CompleteFusionButton : MonoBehaviour
     private Card card1;
     private Card card2;
 
-    private void Awake(){
+    private void OnEnable(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
         Broker.Subscribe<FusionStartMessage>(OnFusionStartMessageReceived);
     }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<InspectCardMessage>(OnInspectCardMessageReceived);
+        Broker.Unsubscribe<FusionStartMessage>(OnFusionStartMessageReceived);    }
 
     private void OnFusionStartMessageReceived(FusionStartMessage obj){
         card2 = obj.fusionCard;

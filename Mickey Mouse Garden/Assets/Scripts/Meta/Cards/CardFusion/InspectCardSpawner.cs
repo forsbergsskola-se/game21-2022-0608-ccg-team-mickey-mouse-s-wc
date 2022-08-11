@@ -1,3 +1,4 @@
+using System;
 using Meta.Cards;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ public class InspectCardSpawner : MonoBehaviour
 
     private void Awake(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
+    }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<InspectCardMessage>(OnInspectCardMessageReceived);
     }
 
     private void OnInspectCardMessageReceived(InspectCardMessage obj){

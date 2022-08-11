@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using Meta.Cards;
 using UnityEngine;
@@ -46,7 +47,12 @@ namespace Meta.Inventory {
             SpawnFusedCard(card1, card2);
             // DIEEEEEE!!!!
             SacrificeCards(card1);
-            SacrificeCards(card2);
+            StartCoroutine(DelayDestroy(card2));
+        }
+        private IEnumerator DelayDestroy(Card card){
+            yield return new WaitForSeconds(0.1f);
+            SacrificeCards(card);
+
         }
 
         private static bool CheckForMaxLevel(Card card1, Card card2){

@@ -10,6 +10,10 @@ public class EnemyTeamCardConfigurator : MonoBehaviour{
         Broker.Subscribe<EnterLevelMessage>(OnLevelMessageRecieevved);
     }
 
+    private void OnDisable(){
+        Broker.Unsubscribe<EnterLevelMessage>(OnLevelMessageRecieevved);
+    }
+
     private void OnLevelMessageRecieevved(EnterLevelMessage obj){
         for (var i = 0; i < enemyteam.Length; i++){
             enemyteam[i].Configure(obj.CardConfigTeam[i]);
