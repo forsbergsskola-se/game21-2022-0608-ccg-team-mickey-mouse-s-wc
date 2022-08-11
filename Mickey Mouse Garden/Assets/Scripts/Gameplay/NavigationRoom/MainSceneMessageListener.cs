@@ -31,7 +31,6 @@ public class MainSceneMessageListener : MonoBehaviour{
         mainSceneSoundManager.UnPauseMusic();
     }
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
-        mainSceneSoundManager.StopPreCombatMusic();
         mainSceneSoundManager.MainClick();
         switch (obj.ObjectTag){
             // pShop
