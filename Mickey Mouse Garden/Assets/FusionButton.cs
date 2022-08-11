@@ -5,8 +5,12 @@ using UnityEngine;
 public class FusionButton : MonoBehaviour{
     private Card card;
 
-    private void Awake(){
+    private void OnEnable(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
+    }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<InspectCardMessage>(OnInspectCardMessageReceived);
     }
 
     private void OnInspectCardMessageReceived(InspectCardMessage obj){
