@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137f400315210a44b8bac8b914a191dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardButtonPrefab: {fileID: 7543762650362314190, guid: 8ff190889e5af8240bdba0879cd05716, type: 3}
+  cardButtonPrefab: {fileID: 3298891821289139559, guid: eefdde3f906d4b740872066c5810fe20, type: 3}
 --- !u!1 &1028660846
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +951,7 @@ GameObject:
   - component: {fileID: 1257596366}
   - component: {fileID: 1257596368}
   - component: {fileID: 1257596367}
+  - component: {fileID: 1257596369}
   m_Layer: 5
   m_Name: FusionInventory
   m_TagString: Untagged
@@ -1018,6 +1019,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257596365}
   m_CullTransparentMesh: 1
+--- !u!114 &1257596369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257596365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2532aef0602cb740806bdafd8a0e861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1522722788
 GameObject:
   m_ObjectHideFlags: 0
