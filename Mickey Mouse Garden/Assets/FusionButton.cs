@@ -5,7 +5,7 @@ using UnityEngine;
 public class FusionButton : MonoBehaviour{
     private Card card;
 
-    private void Awake(){
+    private void OnEnable(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
     }
 
@@ -16,5 +16,9 @@ public class FusionButton : MonoBehaviour{
     public void OnClick(){
         var fusionStartMessage = new FusionStartMessage {fusionCard = card}; 
         Broker.InvokeSubscribers(typeof(FusionStartMessage), fusionStartMessage);
+    }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<InspectCardMessage>(OnInspectCardMessageReceived);
     }
 }
