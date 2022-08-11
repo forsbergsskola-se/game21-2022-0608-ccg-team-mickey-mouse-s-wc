@@ -54,6 +54,9 @@ namespace Meta.Cards {
         }
 
         private void UpdateText() {
+            if (amountOfCardsText == default){
+                return;
+            }
             amountOfCardsText.text = $"New Cards \n {index + 1} / {attainedCards.Count}";
         }
     }

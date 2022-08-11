@@ -46,14 +46,9 @@ namespace Meta.Inventory {
             if (!CheckForMaxLevel(card1, card2))
                 return;
             SpawnFusedCard(card1, card2);
-            // DIEEEEEE!!!!
+            // Removes card from inventory or in other words.... DIEEEEEE!!!!
             SacrificeCards(card1);
-            StartCoroutine(DelayDestroy(card2));
-        }
-        private IEnumerator DelayDestroy(Card card){
-            yield return new WaitForSeconds(0.1f);
-            SacrificeCards(card);
-
+            SacrificeCards(card2);
         }
 
         private static bool CheckForMaxLevel(Card card1, Card card2){

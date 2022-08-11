@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CompleteFusionButton : MonoBehaviour
 {
+    [SerializeField] private GameObject cardInventory;
     private Card card1;
     private Card card2;
+    
 
     private void OnEnable(){
         Broker.Subscribe<FusionStartMessage>(OnFusionStartMessageReceived);
@@ -28,7 +30,7 @@ public class CompleteFusionButton : MonoBehaviour
     public void OnClick(){
         var cardSacrificedMessage = new CardSacrificedMessage{Card1 = card1, Card2 = card2};
         Broker.InvokeSubscribers(typeof(CardSacrificedMessage), cardSacrificedMessage);
-        Debug.Log(card1.ID);
-        Debug.Log(card2.ID);
+        
+        cardInventory.SetActive(true);
     }
 }
