@@ -2,9 +2,8 @@ using System;
 using Meta.Cards;
 using UnityEngine;
 
-public class InspectCardSpawner : MonoBehaviour
-{
-    [SerializeField] private GameObject cardButtonPrefab;
+public class InspectCardSpawner : MonoBehaviour{
+    [SerializeField] GameObject cardButtonPrefab, spawnPoint;
 
     private void Awake(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
@@ -15,7 +14,7 @@ public class InspectCardSpawner : MonoBehaviour
     }
 
     private void OnInspectCardMessageReceived(InspectCardMessage obj){
-        var instance = Instantiate(cardButtonPrefab, new Vector3(124,220,0),Quaternion.identity,gameObject.transform);
+        var instance = Instantiate(cardButtonPrefab, spawnPoint.transform.position,Quaternion.identity,spawnPoint.transform);
         instance.GetComponentInChildren<CardView>().Configure(obj.card);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Meta.Inventory.FighterInventory;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Meta.Cards {
     public class AttainedCardsDisplay : MonoBehaviour {
@@ -45,6 +46,10 @@ namespace Meta.Cards {
             } else {
                 CloseCanvas();
             }
+        }
+        public void Reload(){ // Hardcoded, Script also should be split up into two different scripts.
+            SceneManager.UnloadSceneAsync("Shed");
+            SceneManager.LoadScene("Shed", LoadSceneMode.Additive);
         }
 
         public void CloseCanvas() {

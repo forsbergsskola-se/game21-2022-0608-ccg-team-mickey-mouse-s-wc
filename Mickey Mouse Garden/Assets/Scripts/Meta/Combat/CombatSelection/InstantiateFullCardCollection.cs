@@ -6,7 +6,7 @@ using UnityEngine;
 public class InstantiateFullCardCollection : MonoBehaviour{
     [SerializeField] private GameObject cardButtonPrefab;
     private List<Card> playerCardTeam;
-    private void Awake(){
+    private void OnEnable(){
         playerCardTeam = FindObjectOfType<CardInventory>().InventoryList.Items;
         for (int i = 0; i < playerCardTeam.Count; i++){
             var instance = Instantiate(cardButtonPrefab, gameObject.transform);

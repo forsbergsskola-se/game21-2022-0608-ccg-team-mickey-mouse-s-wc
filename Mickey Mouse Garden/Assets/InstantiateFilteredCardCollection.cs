@@ -20,7 +20,6 @@ public class InstantiateFilteredCardCollection : MonoBehaviour{
     private void OnFusionStartMessage(FusionStartMessage obj){
         GetComponentInParent<Image>().enabled = true;
         for (var i = 0; i < playerCardTeam.Count; i++){
-            //TODO: should filter on name and rarity and exclude itself
             if (playerCardTeam[i].Name == obj.fusionCard.Name && playerCardTeam[i].Rarity == obj.fusionCard.Rarity && playerCardTeam[i].ID != obj.fusionCard.ID){
                 var instance = Instantiate(cardButtonPrefab, gameObject.transform);
                 instance.GetComponentInChildren<CardView>().Configure(playerCardTeam[i]);
