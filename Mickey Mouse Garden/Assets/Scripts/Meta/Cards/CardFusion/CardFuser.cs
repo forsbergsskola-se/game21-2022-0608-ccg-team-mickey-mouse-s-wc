@@ -41,12 +41,12 @@ namespace Meta.Inventory {
             TryFuseCards(obj.Card1, obj.Card2);
         }
         private void TryFuseCards(Card card1, Card card2){
-            if (CheckForMaxLevel(card1, card2)){
-                SpawnFusedCard(card1, card2);
-                // DIEEEEEE!!!!
-                SacrificeCards(card1);
-                SacrificeCards(card2);
-            }
+            if (!CheckForMaxLevel(card1, card2))
+                return;
+            SpawnFusedCard(card1, card2);
+            // DIEEEEEE!!!!
+            SacrificeCards(card1);
+            SacrificeCards(card2);
         }
 
         private static bool CheckForMaxLevel(Card card1, Card card2){
@@ -57,17 +57,17 @@ namespace Meta.Inventory {
             
             var fusedCard = CreateNewCard(cardLibrary.cards.First(x => x.Id == card1.libraryID));
             
-            var baseCardConfig = cardLibrary.cards[fusedCard.SpriteIndex];
+            var cardConfig = cardLibrary.cards[fusedCard.SpriteIndex];
 
             fusedCard.ID = new StringGUID().NewGuid();
-            fusedCard.Level = IncreaseCardLevel(card1, card2);
-            
-            // Takes base stats adds additional stats
-            fusedCard.MaxHealth = GenerateNewStats(fusedCard, baseCardConfig.HealthMultiplier, fusedCard.MaxHealth);
-            fusedCard.Attack = GenerateNewStats(fusedCard, baseCardConfig.AttackMultiplier, fusedCard.Attack);
-            fusedCard.Speed = GenerateNewStats(fusedCard, baseCardConfig.SpeedMultiplier, fusedCard.Speed);
-            
+            fusedCard.Level = IncreaseCardLevel(card1, card2); 
             fusedCard.Rarity = CheckForRarityIncrease(card1);
+
+            // Takes base stats adds additional stats
+            fusedCard.MaxHealth = GenerateNewStats(fusedCard, cardConfig.HealthMultiplier, fusedCard.MaxHealth, cardConfig.Rarity);
+            fusedCard.Attack = GenerateNewStats(fusedCard, cardConfig.AttackMultiplier, fusedCard.Attack, cardConfig.Rarity);
+            fusedCard.Speed = GenerateNewStats(fusedCard, cardConfig.SpeedMultiplier, fusedCard.Speed, cardConfig.Rarity);
+            
 
             fusedCard.Name = card1.Name;
             fusedCard.Alignment = card1.Alignment;
@@ -100,9 +100,9 @@ namespace Meta.Inventory {
             };
         }
         
-        private float GenerateNewStats(Card fusedCard, float statsMultiplier, float statComponent){
+        private float GenerateNewStats(Card fusedCard, float statsMultiplier, float statComponent, Rarity cardConfigRarity){
             // Get commonBase stats.
-            var commonBaseComponent = statComponent - (int)fusedCard.Rarity * statsMultiplier;
+            var commonBaseComponent = statComponent - (int)cardConfigRarity * statsMultiplier; // Needs base card rarity.
             // Return the difference from common rarity to current rarity and level.
             var newStats = commonBaseComponent + (fusedCard.Level - 1 + (int)fusedCard.Rarity) * statsMultiplier;
             
