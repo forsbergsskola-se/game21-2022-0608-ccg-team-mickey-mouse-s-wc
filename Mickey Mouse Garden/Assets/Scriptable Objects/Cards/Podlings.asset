@@ -22,4 +22,6 @@ MonoBehaviour:
   Alignment: 1
   Rarity: 0
   Level: 1
-  StatsMultiplier: 1
+  HealthMultiplier: 1
+  AttackMultiplier: 1
+  SpeedMultiplier: 1
