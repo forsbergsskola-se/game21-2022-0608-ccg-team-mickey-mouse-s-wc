@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardButtonPrefab: {fileID: 631743217421326707, guid: f6389eb549b270544b6e7682bff5e83c, type: 3}
+  isInspected: 1
 --- !u!114 &250124743
 MonoBehaviour:
   m_ObjectHideFlags: 0

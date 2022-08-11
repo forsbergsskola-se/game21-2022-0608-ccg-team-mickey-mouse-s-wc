@@ -4,6 +4,7 @@ using UnityEngine;
 public class InspectCardSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject cardButtonPrefab;
+
     private void Awake(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
     }
