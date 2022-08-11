@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RemoveInventoryItemMessage<T> : IMessage
 {
-    public string PathID { get;}
+    public short LibraryID { get;}
     public StringGUID StringGuid{ get; }
 
-    internal RemoveInventoryItemMessage(string pathID, StringGUID stringGuid = null)
+    internal RemoveInventoryItemMessage(short libraryID, StringGUID stringGuid = null)
     {
-        PathID = pathID;
+        LibraryID = libraryID;
 
         if (stringGuid != default){
             StringGuid= stringGuid;

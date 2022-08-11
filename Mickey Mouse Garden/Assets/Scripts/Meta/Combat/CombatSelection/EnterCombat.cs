@@ -30,7 +30,7 @@ public class EnterCombat : MonoBehaviour{
 
             var cardConfig = message.CardConfigTeam[i];
             
-            Card card = new Card("666");
+            Card card = new Card(cardConfig.LibraryID); 
             
             card.ID = new StringGUID().NewGuid();
             card.MaxHealth = cardConfig.MaxHealth;

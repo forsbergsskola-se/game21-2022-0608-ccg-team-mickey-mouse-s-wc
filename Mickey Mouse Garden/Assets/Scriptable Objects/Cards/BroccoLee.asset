@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
   m_Name: BroccoLee
   m_EditorClassIdentifier: 
+  libraryID: 4
   Image: {fileID: 21300000, guid: 479b3dc02b80fee4c81934fe1a4af9ac, type: 3}
   spriteIndex: 1
   Name: Brocco Lee
-  Id: broccolee
   MaxHealth: 22
   Attack: 10
   Speed: 6
@@ -25,3 +25,4 @@ MonoBehaviour:
   HealthMultiplier: 1
   AttackMultiplier: 1
   SpeedMultiplier: 1
+  library: {fileID: 11400000, guid: b75d9e3468c857d4b84486e6d5159413, type: 2}

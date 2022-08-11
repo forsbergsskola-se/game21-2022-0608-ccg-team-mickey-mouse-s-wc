@@ -8,8 +8,8 @@ namespace Meta.Inventory.FighterInventory {
     /// The serialized data model of a card.
     /// </summary>
     [System.Serializable]
-    public class Card : IInventoryItem, ISaveData {
-        public string libraryID{ get; set; }
+    public class Card : IInventoryItem {
+        public short libraryID{ get; set; }
         [SerializeField] private short level;
 
         public short Level {
@@ -29,7 +29,7 @@ namespace Meta.Inventory.FighterInventory {
         // [DoNotSerialize] public Sprite Image{ get; set; } //TODO: Sprite or Image?
         public Rarity Rarity{ get; set; }
 
-        public Card(string _libraryID){
+        public Card(short _libraryID){
             libraryID = _libraryID;
         }
         public async void TryLoadData(){

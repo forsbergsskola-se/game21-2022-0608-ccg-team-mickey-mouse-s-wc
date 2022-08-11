@@ -18,7 +18,7 @@ namespace Meta.Inventory {
         }
         
         private Card CreateNewCard(CardConfig libraryCardConfig){
-            var card = new Card(libraryCardConfig.Id);
+            var card = new Card(libraryCardConfig.LibraryID);
 
             card.ID = new StringGUID().NewGuid();
             card.MaxHealth = libraryCardConfig.MaxHealth;
@@ -57,7 +57,7 @@ namespace Meta.Inventory {
 
         private void SpawnFusedCard(Card card1, Card card2){
             
-            var fusedCard = CreateNewCard(cardLibrary.cards.First(x => x.Id == card1.libraryID));
+            var fusedCard = CreateNewCard(cardLibrary.cards.First(x => x.LibraryID == card1.libraryID));
             
             var cardConfig = cardLibrary.cards[fusedCard.SpriteIndex];
 

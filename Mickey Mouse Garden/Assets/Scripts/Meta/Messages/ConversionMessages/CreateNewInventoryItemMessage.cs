@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CreateNewInventoryItemMessage<T> : IMessage
 {
-   public string PathID { get;}
+   public short LibraryID { get;}
 
-   internal CreateNewInventoryItemMessage(string pathID)
+   internal CreateNewInventoryItemMessage(short libraryID)
    {
-      PathID = pathID;
+      LibraryID = libraryID;
    }
 }

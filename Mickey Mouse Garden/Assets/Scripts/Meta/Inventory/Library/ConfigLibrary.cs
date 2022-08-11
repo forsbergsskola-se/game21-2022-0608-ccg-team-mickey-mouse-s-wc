@@ -1,19 +1,33 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ConfigLibrary<T> : ScriptableObject where T: ItemConfig{ // Possibly want to move things out of ShopItemConfig into ItemConfig.
-    public abstract Dictionary<string, T> itemConfigs{ get; set; }
+    public abstract List<T> itemConfigs{ get; set; }
 
-    public virtual T GetItem(string itemID){
+    public virtual T GetItem(short itemID){
         return itemConfigs[itemID];
     }
 
-    public void AddItemConfig(T itemConfig){
-        if(itemConfigs.ContainsKey(itemConfig.libraryID)){
-            Debug.LogError("Trying to add an item to the library that already exists. ItemID: " + itemConfig.libraryID);
+    void Awake(){
+        ClearLibrary();
+    }
+
+    public void AddItemConfigToLibrary(T itemConfig){
+        if (itemConfigs.Contains(itemConfig)){
             return;
         }
-        itemConfigs.Add(itemConfig.libraryID, itemConfig);
+
+        var newLibraryID = itemConfigs.Count;
+        itemConfig.libraryID = (short)newLibraryID;
+        
+        itemConfigs.Add(itemConfig);
+        Debug.Log("Added item to library. LibraryID: " + itemConfig.libraryID);
+    }
+    
+    [ContextMenu("Clear Library")]
+    void ClearLibrary(){
+        itemConfigs.Clear();
     }
 }

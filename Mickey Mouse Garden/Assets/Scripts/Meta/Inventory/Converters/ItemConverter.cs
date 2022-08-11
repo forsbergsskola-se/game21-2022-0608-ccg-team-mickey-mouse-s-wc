@@ -18,8 +18,8 @@ public abstract class ItemConverter<TItemConfig, TInventoryItem> : MonoBehaviour
 
     public void ConvertItem(CreateNewInventoryItemMessage<TInventoryItem> createNewInventoryItemMessage)
     {
-        Debug.Log($"Converting Item {createNewInventoryItemMessage.PathID}");
-        var itemConfig = library.GetItem(createNewInventoryItemMessage.PathID);
+        Debug.Log($"Converting Item {createNewInventoryItemMessage.LibraryID}");
+        var itemConfig = library.GetItem(createNewInventoryItemMessage.LibraryID);
         var itemConfigAttributes = itemConfig.GetType().GetFields().ToList();
         var itemConfigProperties = itemConfig.GetType().GetProperties().ToList();
         var inventoryItem = new TInventoryItem();

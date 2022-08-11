@@ -44,8 +44,8 @@ namespace Meta.Inventory {
         public virtual void OnRemoveInventoryItemMessageReceived(RemoveInventoryItemMessage<T> message){
             if(message.StringGuid == null){
                 //Remove first item by type
-                InventoryList.Items.Remove(InventoryList.Items.First(x=> x.libraryID== message.PathID));
-                Debug.Log(message.PathID + " removed from inventory");
+                InventoryList.Items.Remove(InventoryList.Items.First(x=> x.libraryID== message.LibraryID));
+                Debug.Log(message.LibraryID + " removed from inventory");
                 Save();
                 return;
             }

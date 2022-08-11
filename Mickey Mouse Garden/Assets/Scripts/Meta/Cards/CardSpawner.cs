@@ -22,7 +22,7 @@ namespace Meta.Inventory {
             var randomInt = Random.Range(0, cardLibrary.cards.Length);
             var libraryCardConfig = cardLibrary.cards[randomInt];
 
-            var card = new Card(libraryCardConfig.Id);
+            var card = new Card(libraryCardConfig.LibraryID);
 
             card.ID = new StringGUID().NewGuid();
             card.MaxHealth = libraryCardConfig.MaxHealth;

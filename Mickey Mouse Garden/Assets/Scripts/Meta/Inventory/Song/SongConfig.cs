@@ -11,22 +11,22 @@ public class SongConfig : ShopItemConfig{
     
 
     void OnEnable(){
-        AddToLibrary();
+        TryAddToLibrary();
     }
 
-    public override void SendCreateItemMessage(string pathID){
-        Debug.Log("Invoking Seed Create Message" + " " + pathID);
-        var message = new CreateNewInventoryItemMessage<Song>(pathID);
+    public override void SendCreateItemMessage(short LibraryID){
+        Debug.Log("Invoking Seed Create Message" + " " + LibraryID);
+        var message = new CreateNewInventoryItemMessage<Song>(LibraryID);
         Broker.InvokeSubscribers(message.GetType(), message);
     }
 
-    public override void SendRemoveItemMessage(string pathID){
-        Debug.Log("Invoking Seed Remove Message" + " " + pathID);
-        var message = new RemoveInventoryItemMessage<Song>(pathID);
+    public override void SendRemoveItemMessage(short LibraryID){
+        Debug.Log("Invoking Seed Remove Message" + " " + LibraryID);
+        var message = new RemoveInventoryItemMessage<Song>(LibraryID);
         Broker.InvokeSubscribers(message.GetType(), message);
     }
 
-    public override void AddToLibrary(){
-       library.AddItemConfig(this);
+    public override void TryAddToLibrary(){
+       library.AddItemConfigToLibrary(this);
    }
 }

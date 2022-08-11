@@ -5,7 +5,7 @@ using Meta.Interfaces;
 using UnityEngine;
 [Serializable]
 public class Song : IInventoryItem{
-    public string libraryID{ get; set; }
+    public short libraryID{ get; set; }
     public StringGUID ID{ get; }
     public void TryLoadData(){
         throw new NotImplementedException();

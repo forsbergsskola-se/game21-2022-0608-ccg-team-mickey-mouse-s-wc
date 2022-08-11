@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
+  libraryID: 3
   Image: {fileID: 21300000, guid: fc1cfc2e3307abf47a6af323940c369f, type: 3}
   spriteIndex: 2
   Name: Carrot
-  Id: carrot
   MaxHealth: 50
   Attack: 45
   Speed: 7
@@ -25,3 +25,4 @@ MonoBehaviour:
   HealthMultiplier: 1
   AttackMultiplier: 1
   SpeedMultiplier: 1
+  library: {fileID: 11400000, guid: b75d9e3468c857d4b84486e6d5159413, type: 2}
