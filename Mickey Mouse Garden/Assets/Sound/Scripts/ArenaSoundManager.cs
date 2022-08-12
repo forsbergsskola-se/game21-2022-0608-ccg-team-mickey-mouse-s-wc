@@ -13,13 +13,13 @@ public class ArenaSoundManager : MonoBehaviour {
 	public void PlayMusic(){
 		arenaBackgroundInstance = FMODUnity.RuntimeManager.CreateInstance(arenaBackground);
 		arenaBackgroundInstance.start();
+		Debug.Log("Arena Music");
 	}
 	
 	// Rock = 1, Paper = 2, Scissors = 3. Rarity 1 to 4. Not implemented.
-	public void Hit(float damageDealt, string alignment, string rarity){
+	public void Hit(string alignment, int rarity){
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("RockPaperScissor", alignment);
-		// FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("Rarity", rarity);
-		// FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Damage", damageDealt);
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Rarity", rarity * 0.1f);
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Hits");
 	}
 
