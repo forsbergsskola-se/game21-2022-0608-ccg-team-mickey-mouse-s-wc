@@ -51,5 +51,10 @@ public class MainSceneMessageListener : MonoBehaviour{
 
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
         mainSceneSoundManager.MainClick();
+
+        if (obj.ObjectTag == "Arena"){
+            mainSceneSoundManager.PauseMusic();
+            mainSceneSoundManager.PlayPreCombatMusic();
+        }
     }
 }
