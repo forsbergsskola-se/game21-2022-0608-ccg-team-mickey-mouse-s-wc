@@ -15,14 +15,14 @@ namespace Meta.Cards {
         public CardLibraryConfig cardLibrary; //TODO: Break out in "data manager" (singleton), monobehaviour
 
         //TODO: On open
-        private void Start() {
-            var cardInventory = CardInventory.Instance;
+        private void Awake() {
             Broker.Subscribe<CardAddedToInventoryMessage>(OnCardAdded);
 
-            if (cardInventory.InventoryList.Items.Count > 0) {
-                foreach (var card in cardInventory.InventoryList.Items) {
-                    OnCardAdded(card);
-                }
+            var inventoryList = FindObjectOfType<Player>().GetComponent<CardInventory>().InventoryList.Items;
+            if (inventoryList.Count <= 0) return;
+            
+            foreach (var card in inventoryList) {
+                OnCardAdded(card);
             }
         }
 
