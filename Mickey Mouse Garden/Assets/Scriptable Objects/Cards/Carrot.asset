@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: fc1cfc2e3307abf47a6af323940c369f, type: 3}
   spriteIndex: 2
-  Name: Carrot
+  Name: Corsai Carrot
   Id: carrot
-  MaxHealth: 50
-  Attack: 45
-  Speed: 7
+  MaxHealth: 5
+  Attack: 5
+  Speed: 5
   Alignment: 2
   Rarity: 0
-  Level: 5
-  HealthMultiplier: 1
-  AttackMultiplier: 1
-  SpeedMultiplier: 1
+  Level: 1
+  HealthMultiplier: 0.75
+  AttackMultiplier: 0.75
+  SpeedMultiplier: 0.75

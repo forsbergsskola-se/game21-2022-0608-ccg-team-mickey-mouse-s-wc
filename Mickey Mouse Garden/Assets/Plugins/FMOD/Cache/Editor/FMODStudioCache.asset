@@ -311,9 +311,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Garden
   StudioPath: parameter:/Garden
-  Min: 1
-  Max: 4
-  Default: 1
+  Min: 0
+  Max: 89
+  Default: 0
   ID:
     data1: 283710940
     data2: 1889862198
@@ -518,7 +518,7 @@ MonoBehaviour:
   - {fileID: 6140372714390540477}
   StringsBanks:
   - {fileID: 7197064554482430550}
-  cacheTime: 637958163877924052
+  cacheTime: 637958993034656767
   cacheVersion: 131591
 --- !u!114 &2617041958242190416
 MonoBehaviour:
@@ -669,7 +669,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile 2/Master.bank
   Name: Mobile 2/Master
   StudioPath: bank:/Master
-  lastModified: 637958163877924052
+  lastModified: 637958993034656767
   FileSizes: []
   Exists: 1
 --- !u!114 &7197064554482430550
@@ -812,9 +812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Garden
   StudioPath: 
-  Min: 1
-  Max: 4
-  Default: 1
+  Min: 0
+  Max: 89
+  Default: 0
   ID:
     data1: 283710940
     data2: 1889862198

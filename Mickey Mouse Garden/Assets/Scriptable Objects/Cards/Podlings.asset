@@ -16,12 +16,12 @@ MonoBehaviour:
   spriteIndex: 4
   Name: Podlings
   Id: podlings
-  MaxHealth: 10
-  Attack: 15
-  Speed: 10
+  MaxHealth: 5
+  Attack: 5
+  Speed: 5
   Alignment: 1
   Rarity: 0
   Level: 1
-  HealthMultiplier: 1
+  HealthMultiplier: 0.75
   AttackMultiplier: 1
-  SpeedMultiplier: 1
+  SpeedMultiplier: 0.5
