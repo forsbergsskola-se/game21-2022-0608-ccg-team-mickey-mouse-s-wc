@@ -16,7 +16,7 @@ namespace Meta.Inventory.NewSeedInventory {
         private SeedInventory _seedInventory;
 
         private void Start() {
-            _seedInventory = SeedInventory.Instance;
+            _seedInventory = FindObjectOfType<Player>().GetComponent<SeedInventory>();
             SubscribeToBrokerMessages();
             DisplayInventoryItems();
         }
