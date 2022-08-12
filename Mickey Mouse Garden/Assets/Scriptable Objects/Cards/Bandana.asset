@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
   m_Name: Bandana
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 410ab186ae274474cbdc18fc83d3116f, type: 3}
   spriteIndex: 7
   Name: Bandana
   Id: banana
