@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 7
   Name: Bandana
   Id: banana
-  MaxHealth: 5
-  Attack: 5
-  Speed: 5
+  MaxHealth: 20
+  Attack: 31
+  Speed: 15
   Alignment: 1
   Rarity: 20
   Level: 1

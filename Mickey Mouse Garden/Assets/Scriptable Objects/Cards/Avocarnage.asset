@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 6
   Name: Avocarnage
   Id: avocarnage
-  MaxHealth: 5
-  Attack: 5
-  Speed: 5
+  MaxHealth: 16
+  Attack: 16
+  Speed: 10
   Alignment: 1
   Rarity: 10
   Level: 1

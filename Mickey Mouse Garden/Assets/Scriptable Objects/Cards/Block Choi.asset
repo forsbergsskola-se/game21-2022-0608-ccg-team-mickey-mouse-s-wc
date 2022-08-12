@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 8
   Name: Block Choi
   Id: blockchoi
-  MaxHealth: 5
-  Attack: 5
-  Speed: 5
+  MaxHealth: 31
+  Attack: 15
+  Speed: 20
   Alignment: 0
   Rarity: 20
   Level: 1

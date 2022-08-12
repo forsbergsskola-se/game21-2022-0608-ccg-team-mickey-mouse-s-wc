@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 0
   Name: Asparragon
   Id: asparragon
-  MaxHealth: 5
-  Attack: 5
-  Speed: 5
+  MaxHealth: 28
+  Attack: 43
+  Speed: 28
   Alignment: 2
   Rarity: 30
   Level: 1
