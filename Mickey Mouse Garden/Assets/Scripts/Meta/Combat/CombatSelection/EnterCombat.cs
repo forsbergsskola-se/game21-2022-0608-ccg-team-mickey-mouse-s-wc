@@ -30,17 +30,19 @@ public class EnterCombat : MonoBehaviour{
 
             var cardConfig = message.CardConfigTeam[i];
             
-            Card card = new Card("666");
+            Card card = new Card("666"){
+                ID = new StringGUID().NewGuid(),
+                MaxHealth = cardConfig.MaxHealth,
+                Attack = cardConfig.Attack,
+                Speed = cardConfig.Speed,
+                Level = cardConfig.Level,
+                Rarity = cardConfig.Rarity,
+                Name = cardConfig.Name,
+                Alignment = cardConfig.Alignment,
+                SpriteIndex = cardConfig.spriteIndex
+            };
             
-            card.ID = new StringGUID().NewGuid();
-            card.MaxHealth = cardConfig.MaxHealth;
-            card.Attack = cardConfig.Attack;
-            card.Speed = cardConfig.Speed;
-            card.Level = cardConfig.Level; 
-            card.Rarity = cardConfig.Rarity;
-            card.Name = cardConfig.Name;
-            card.Alignment = cardConfig.Alignment;
-            card.SpriteIndex = cardConfig.spriteIndex;
+            
             
             enemyTeamMembers[i] = card;
         }

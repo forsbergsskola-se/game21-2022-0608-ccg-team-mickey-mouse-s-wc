@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Meta.Inventory.FighterInventory;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Meta.Cards {
     public class AttainedCardsDisplay : MonoBehaviour {
@@ -46,6 +47,10 @@ namespace Meta.Cards {
                 CloseCanvas();
             }
         }
+        public void Reload(){ // Hardcoded, Script also should be split up into two different scripts.
+            SceneManager.UnloadSceneAsync("Shed");
+            SceneManager.LoadScene("Shed", LoadSceneMode.Additive);
+        }
 
         public void CloseCanvas() {
             isOpen = false;
@@ -54,6 +59,9 @@ namespace Meta.Cards {
         }
 
         private void UpdateText() {
+            if (amountOfCardsText == default){
+                return;
+            }
             amountOfCardsText.text = $"New Cards \n {index + 1} / {attainedCards.Count}";
         }
     }
