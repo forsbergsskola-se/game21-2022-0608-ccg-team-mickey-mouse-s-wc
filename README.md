@@ -17,7 +17,7 @@
 
 * Benjamin Ting - [Website](http://benjaminting.com)
 
-* Cecilija Simic Rihtnesberg - [LinkedIn](https://www.linkedin.com/in/cecilija-%C5%A1imi%C4%87-rihtnesberg-53961b33/), [Website](http://cecilijas.com/)
+* Jasmine Öhlin - Armin Afazeli - [LinkedIn](https://www.linkedin.com/in/jasmine-%C3%B6hlin-712840209/)
 
 * Jesper Danielsson - [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
 
