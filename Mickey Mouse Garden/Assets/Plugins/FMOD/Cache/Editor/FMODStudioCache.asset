@@ -518,7 +518,7 @@ MonoBehaviour:
   - {fileID: 6140372714390540477}
   StringsBanks:
   - {fileID: 7197064554482430550}
-  cacheTime: 637959003014687617
+  cacheTime: 637959015912212777
   cacheVersion: 131591
 --- !u!114 &2617041958242190416
 MonoBehaviour:
@@ -669,7 +669,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile 2/Master.bank
   Name: Mobile 2/Master
   StudioPath: bank:/Master
-  lastModified: 637959003014687617
+  lastModified: 637959015912212777
   FileSizes: []
   Exists: 1
 --- !u!114 &7197064554482430550

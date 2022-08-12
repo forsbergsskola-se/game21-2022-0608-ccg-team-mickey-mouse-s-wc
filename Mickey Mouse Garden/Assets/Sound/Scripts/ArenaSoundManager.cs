@@ -17,9 +17,9 @@ public class ArenaSoundManager : MonoBehaviour {
 	}
 	
 	// Rock = 1, Paper = 2, Scissors = 3. Rarity 1 to 4. Not implemented.
-	public void Hit(string alignment, string rarity){
+	public void Hit(string alignment, int rarity){
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("RockPaperScissor", alignment);
-		// FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("Rarity", rarity);
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Rarity", rarity * 0.1f);
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Hits");
 	}
 

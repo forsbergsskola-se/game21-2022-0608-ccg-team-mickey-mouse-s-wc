@@ -26,7 +26,7 @@ public class ArenaMessageListener : MonoBehaviour{
 
 	private void OnFighterStrikeMessageReceived(FighterStrikeMessage obj){
 		
-		arenaSoundManager.Hit(obj.StrikerAlignment.ToString(), obj.StrikerRarity.ToString());
+		arenaSoundManager.Hit(obj.StrikerAlignment.ToString(), (int)obj.StrikerRarity);
 	}
 	private void OnFighterFaintMessageReceived(FighterFaintMessage obj){
 		arenaSoundManager.Faint();
