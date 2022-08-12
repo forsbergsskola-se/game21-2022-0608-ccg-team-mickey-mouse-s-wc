@@ -35,11 +35,21 @@ public class CameraController : MonoBehaviour {
 		position = Vector3.SmoothDamp(position, targetTransform.position, ref velocity, cameraMoveSpeed);
 		transform.position = position;
 
+
+		var distanceTo3 = Vector3.Distance(position, viewpoint3.transform.position);
+		SendXPosition(distanceTo3);
+
+
 		var targetRotation = Quaternion.LookRotation(targetView.position - position);
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, cameraRotateSpeed * Time.deltaTime);
 
 		var currentFOV = thisCamera.fieldOfView;
 		thisCamera.fieldOfView = Mathf.Lerp(currentFOV, newFOV, cameraZoomSpeed * Time.deltaTime);
+	}
+
+	private void SendXPosition(float xPosition){
+		CamPositionMessage camPositionMessage = new(){Distance = xPosition};
+		Broker.InvokeSubscribers(typeof(CamPositionMessage), camPositionMessage);
 	}
 	
 	public void GoToRightViewPoint(){

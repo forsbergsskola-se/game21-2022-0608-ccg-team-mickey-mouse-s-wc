@@ -17,7 +17,7 @@ public class MainSceneSoundManager : MonoBehaviour
     preCombatMusicInstance = FMODUnity.RuntimeManager.CreateInstance(preCombatMusic);
     preCombatMusicInstance.start();
   }
-  public void plantSeeds() 
+  public void PlantSeed() 
   { 
     FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/PlantSeeds");
   }
@@ -40,7 +40,7 @@ public class MainSceneSoundManager : MonoBehaviour
     FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Market/Sell");
   }
 
-  public void harvest()
+  public void Harvest()
   {
     FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Market");
   }
@@ -58,7 +58,7 @@ public class MainSceneSoundManager : MonoBehaviour
   public void StopPreCombatMusic(){
     preCombatMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
   }
-  public void ModulateMusic(int sceneNum){
-    // FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Delta", sceneNum);
+  public void ModulateMusic(float distance){
+    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Garden", distance);
   }
 }
