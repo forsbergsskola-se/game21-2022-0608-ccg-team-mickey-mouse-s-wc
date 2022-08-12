@@ -51,7 +51,7 @@ namespace Meta.Inventory.NewSeedInventory {
         private void UpdateSeedCount(Rarity rarity) {
             var slotToUpdate = SeedSlots.FirstOrDefault(slot => slot.Rarity == rarity);
             var numberOfSeeds = _seedInventory.InventoryList.Items.Count(seed => seed.Rarity == rarity);
-            if (slotToUpdate is not null) slotToUpdate.UpdateCountText(numberOfSeeds);
+            slotToUpdate.UpdateCountText(numberOfSeeds); //If null ref occur, make sure the seed slots have set rarity in inspector
         }
         
         private void OnSeedAdded(AddItemToInventoryMessage<Seed> message) {

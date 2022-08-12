@@ -630,6 +630,7 @@ GameObject:
   - component: {fileID: 7878520570127484776}
   - component: {fileID: 7878520570127484775}
   - component: {fileID: 7878520570127484774}
+  - component: {fileID: 4770786300130736921}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -719,6 +720,36 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4770786300130736921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878520570127484772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1076181467
+      Data2: 1207266230
+      Data3: -1981227635
+      Data4: -1777761233
+    Path: event:/Meta/Garden/Harvest
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7878520570250636632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1159,10 @@ PrefabInstance:
     - target: {fileID: 7932579282087039656, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
       propertyPath: m_SizeDelta.y
       value: -521.9138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128594692919862311, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1e4bcfee30941198078390da434fa2, type: 3}

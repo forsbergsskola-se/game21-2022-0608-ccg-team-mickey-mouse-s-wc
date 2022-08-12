@@ -16,12 +16,12 @@ MonoBehaviour:
   spriteIndex: 1
   Name: Brocco Lee
   Id: broccolee
-  MaxHealth: 22
-  Attack: 10
-  Speed: 6
+  MaxHealth: 5
+  Attack: 5
+  Speed: 5
   Alignment: 2
-  Rarity: 0
+  Rarity: 20
   Level: 1
   HealthMultiplier: 1
   AttackMultiplier: 1
-  SpeedMultiplier: 1
+  SpeedMultiplier: 0.75

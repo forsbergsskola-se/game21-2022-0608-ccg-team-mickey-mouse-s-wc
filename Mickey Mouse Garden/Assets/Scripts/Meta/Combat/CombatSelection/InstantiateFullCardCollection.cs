@@ -13,4 +13,10 @@ public class InstantiateFullCardCollection : MonoBehaviour{
             instance.GetComponentInChildren<CardView>().Configure(playerCardTeam[i]);
         }
     }
+    private void OnDisable(){
+        var cards = GetComponentsInChildren<CardView>();
+        foreach (var card in cards){
+            Destroy(card.gameObject);
+        }
+    }
 }
