@@ -12581,9 +12581,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starterCardConfigs:
+  - {fileID: 11400000, guid: 437c631b22965f14686dde07aba61c7d, type: 2}
+  - {fileID: 11400000, guid: 854fa2cbae3b86c4eb94c8ebec0b2e98, type: 2}
   - {fileID: 11400000, guid: 311fefb2327fc49a6b372b4e314354ca, type: 2}
-  - {fileID: 11400000, guid: 76fdd8aae9cf04b99832509870606da8, type: 2}
-  - {fileID: 11400000, guid: 9500fa66a00f048288123d2d1570ad74, type: 2}
+  - {fileID: 11400000, guid: 8ed9bb5927d764ad59c80049436f9da1, type: 2}
   cardInventory: {fileID: 1877168338}
 --- !u!4 &649766790
 Transform:
