@@ -15,7 +15,6 @@ namespace Meta.Cards {
         public TextMeshProUGUI maxHealth;
         public TextMeshProUGUI attack;
         public TextMeshProUGUI speed;
-        public TextMeshProUGUI alignment;
         public TextMeshProUGUI rarity;
         public TextMeshProUGUI level;
          [HideInInspector] public StringGUID id;
@@ -28,7 +27,6 @@ namespace Meta.Cards {
             maxHealth.text = $"Health: {card.MaxHealth}";
             attack.text = $"Attack: {card.Attack}";
             speed.text = $"Speed: {card.Speed}";
-            alignment.text = $"Alignment: {card.Alignment}";
             rarity.text = $"Rarity: {card.Rarity}";
             level.text = $"Level: {card.Level}"; //TODO: implement when not null
             //TODO: Subscribe to Level changed message
@@ -42,7 +40,6 @@ namespace Meta.Cards {
             maxHealth.text = $"Health: {card.MaxHealth}";
             attack.text = $"Attack: {card.Attack}";
             speed.text = $"Speed: {card.Speed}";
-            alignment.text = $"Alignment: {card.Alignment}";
             rarity.text = $"Rarity: {card.Rarity}";
             level.text = $"Level: {card.Level}"; //TODO: implement when not null
             //TODO: Subscribe to Level changed message
