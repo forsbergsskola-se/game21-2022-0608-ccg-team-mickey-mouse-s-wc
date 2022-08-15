@@ -17,4 +17,9 @@ public static class ExtensionMethods
         int randomIndex = Random.Range(0, list.Items.Count);
         return list.Items[randomIndex];
     }
+    
+    public static void Invoke(this IMessage message)
+    {
+        Broker.InvokeSubscribers(message.GetType(), message);
+    }
 }
