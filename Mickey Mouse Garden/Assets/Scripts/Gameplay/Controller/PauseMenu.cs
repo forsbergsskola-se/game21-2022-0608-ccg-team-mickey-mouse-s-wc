@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour{
-    public Canvas pauseMenu;
-    public Canvas pauseButton;
+    [SerializeField] Canvas pauseMenu, pauseButton;
+    [SerializeField] private GameObject loginBonusCanvas, loginBonusButton;
 
     public void Start(){
         pauseMenu.enabled = false;
@@ -26,5 +26,14 @@ public class PauseMenu : MonoBehaviour{
     }
     public void QuitNow(){
         Application.Quit();
+    }
+    
+    public void LaunchBonus(){
+        loginBonusCanvas.SetActive(true);
+        loginBonusButton.SetActive(false);
+    }
+    public void UnlaunchBonus(){
+        loginBonusCanvas.SetActive(false);
+        loginBonusButton.SetActive(true);
     }
 }

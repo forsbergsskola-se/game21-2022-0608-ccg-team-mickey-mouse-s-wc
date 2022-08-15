@@ -59,7 +59,7 @@ public class MainSceneSoundManager : MonoBehaviour
     preCombatMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
   }
   public void ModulateMusic(float distance){
-    Debug.Log(distance);
+    // Debug.Log(distance);
     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Garden", distance);
   }
 }
