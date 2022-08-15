@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnterTeamSelection : MonoBehaviour{
 
-	[SerializeField] private GameObject confirmationBox, teamSelectCanvas, levelNotUnlockedBox;
+	[SerializeField] private GameObject teamSelectCanvas, levelNotUnlockedBox;
 	
 	private bool shown;
 	
@@ -16,9 +16,9 @@ public class EnterTeamSelection : MonoBehaviour{
 
 	private void OnMouseDown() {
 		if (GetComponent<MatchInformation>().isUnlocked && !shown) {
-			confirmationBox.SetActive(true);
-			LockUI(); 
 			GetComponent<MatchInformation>().ConfirmTeam();
+			GoToTeamSelection();
+
 		} else if (!shown) {
 			levelNotUnlockedBox.SetActive(true);
 			LockUI();
@@ -27,16 +27,6 @@ public class EnterTeamSelection : MonoBehaviour{
 
 	public void AcceptNotUnlocked() {
 		levelNotUnlockedBox.SetActive(false);
-		UnLockUI();
-	}
-	
-	public void AnswerYes(){
-		confirmationBox.SetActive(false);
-		GoToTeamSelection();
-	}
-
-	public void AnswerNo(){
-		confirmationBox.SetActive(false);
 		UnLockUI();
 	}
 	

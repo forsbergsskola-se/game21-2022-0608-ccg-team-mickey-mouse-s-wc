@@ -2267,7 +2267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1310792881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2282,6 +2282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1840184075}
   pauseButton: {fileID: 1310792884}
+  loginBonusCanvas: {fileID: 0}
+  loginBonusButton: {fileID: 0}
 --- !u!114 &1310792882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3449,6 +3451,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1840184075}
   pauseButton: {fileID: 1310792884}
+  loginBonusCanvas: {fileID: 0}
+  loginBonusButton: {fileID: 0}
 --- !u!1 &1871518796
 GameObject:
   m_ObjectHideFlags: 0

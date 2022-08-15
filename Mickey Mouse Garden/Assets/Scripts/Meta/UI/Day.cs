@@ -16,7 +16,7 @@ public class Day : ISaveData
         
         if (loadedDay.claimableDay == default){
             Debug.Log("Reset To " + claimableDay);
-            claimableDay = 1;
+            claimableDay = 0;
             Save();
         }
     }

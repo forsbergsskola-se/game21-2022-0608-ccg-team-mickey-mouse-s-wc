@@ -35,10 +35,13 @@ namespace Meta.Inventory.NewSeedInventory {
                     UpdateSeedCount(rarity);
                 }
             }
+            
+            _seedInventory.PlantedSeeds.TryLoadData();
 
-            if (_seedInventory.PlantedSeeds.Items is not {Count: > 0}) return;
-            foreach (var seed in _seedInventory.PlantedSeeds.Items) {
-                InstantiateGrowSlot(seed);
+            if (_seedInventory.PlantedSeeds.Items is {Count: > 0}) {
+                foreach (var seed in _seedInventory.PlantedSeeds.Items) {
+                    InstantiateGrowSlot(seed);
+                }
             }
         }
 
@@ -46,6 +49,8 @@ namespace Meta.Inventory.NewSeedInventory {
             var slotToInstantiate = GrowSlotsPrefabs.First(prefab => prefab.rarity == seed.Rarity);
             var slotClone = Instantiate(slotToInstantiate, growSlotItemParent.transform, false);
             slotClone.SetUp(seed);
+
+            _seedInventory.PlantedSeeds.Save();
         }
         
         private void UpdateSeedCount(Rarity rarity) {
@@ -74,8 +79,10 @@ namespace Meta.Inventory.NewSeedInventory {
             _seedInventory.Remove(seed);
             UpdateSeedCount(rarityToPlant);
             
-            _seedInventory.PlantedSeeds.Items.Add(seed);
             InstantiateGrowSlot(seed);
+            
+            _seedInventory.PlantedSeeds.Items.Add(seed);
+            _seedInventory.PlantedSeeds.Save();
         }
         
         private void HarvestOperations(GrowSlot growSlot) {
@@ -85,7 +92,10 @@ namespace Meta.Inventory.NewSeedInventory {
             var seedToRemove =
                 _seedInventory.PlantedSeeds.Items.FirstOrDefault(seed =>
                     seed.rarity == growSlot.rarity);
+            
             _seedInventory.PlantedSeeds.Items.Remove(seedToRemove);
+            _seedInventory.PlantedSeeds.Save();
+
             
             growSlot.Destroy();
         }
