@@ -13,6 +13,12 @@ public class Day : ISaveData
         var loadedDay = await SaveManager.Load<Day>(ID);
         claimableDay = loadedDay.claimableDay;
         dateOfClaim = loadedDay.dateOfClaim;
+        
+        if (loadedDay.claimableDay == default){
+            Debug.Log("Reset To " + claimableDay);
+            claimableDay = 1;
+            Save();
+        }
     }
 
     public void Save(){
