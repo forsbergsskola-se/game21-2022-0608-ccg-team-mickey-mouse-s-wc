@@ -95,7 +95,6 @@ namespace Meta.Inventory.NewSeedInventory {
             
             _seedInventory.PlantedSeeds.Items.Remove(seedToRemove);
             _seedInventory.PlantedSeeds.Save();
-
             
             growSlot.Destroy();
         }

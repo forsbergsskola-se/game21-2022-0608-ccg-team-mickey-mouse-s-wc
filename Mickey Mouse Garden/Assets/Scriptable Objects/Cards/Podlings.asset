@@ -17,8 +17,8 @@ MonoBehaviour:
   Name: Podlings
   Id: podlings
   MaxHealth: 5
-  Attack: 5
-  Speed: 5
+  Attack: 7
+  Speed: 3
   Alignment: 1
   Rarity: 0
   Level: 1

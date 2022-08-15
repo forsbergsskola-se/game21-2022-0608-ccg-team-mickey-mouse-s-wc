@@ -16,8 +16,8 @@ MonoBehaviour:
   spriteIndex: 12
   Name: Mega Melon
   Id: megamelon
-  MaxHealth: 5
-  Attack: 5
+  MaxHealth: 7
+  Attack: 3
   Speed: 5
   Alignment: 0
   Rarity: 0

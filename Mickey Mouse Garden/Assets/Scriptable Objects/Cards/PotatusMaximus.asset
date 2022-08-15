@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 5
   Name: PotatusMaximus
   Id: potatusmaximus
-  MaxHealth: 36
-  Attack: 36
-  Speed: 36
+  MaxHealth: 40
+  Attack: 39
+  Speed: 39
   Alignment: 0
   Rarity: 30
   Level: 1

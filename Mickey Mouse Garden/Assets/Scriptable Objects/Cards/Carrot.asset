@@ -16,8 +16,8 @@ MonoBehaviour:
   spriteIndex: 2
   Name: Corsai Carrot
   Id: carrot
-  MaxHealth: 5
-  Attack: 5
+  MaxHealth: 4
+  Attack: 6
   Speed: 5
   Alignment: 2
   Rarity: 0

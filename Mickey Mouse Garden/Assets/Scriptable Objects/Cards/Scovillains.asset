@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 14
   Name: Scovillains
   Id: scovillains
-  MaxHealth: 15
-  Attack: 31
-  Speed: 20
+  MaxHealth: 12
+  Attack: 33
+  Speed: 26
   Alignment: 1
   Rarity: 20
   Level: 1

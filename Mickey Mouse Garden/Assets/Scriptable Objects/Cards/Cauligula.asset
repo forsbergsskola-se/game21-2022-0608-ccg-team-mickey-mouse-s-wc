@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 3
   Name: Cauligula
   Id: cauligula
-  MaxHealth: 16
-  Attack: 13
-  Speed: 10
+  MaxHealth: 20
+  Attack: 15
+  Speed: 9
   Alignment: 0
   Rarity: 10
   Level: 1
