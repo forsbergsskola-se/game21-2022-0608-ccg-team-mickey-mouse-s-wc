@@ -1,12 +1,20 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ClickZoom : MonoBehaviour {
-	
-	// Invokes event when object is clicked or touched (needs testing).
+public class ClickZoom : MonoBehaviour{
+
+	private bool canClick = true;
+	private void OnEnable(){
+		Broker.Subscribe<ClickBlockerMessage>(OnClickBlockerMessageReceived);
+	}
+	private void OnClickBlockerMessageReceived(ClickBlockerMessage obj){
+		canClick = !obj.UIActive;
+	}
 	private void OnMouseUp() {
-		UIChangedMessage uiChanged = new(){TaskToDo = 1, ObjectTransform = transform, ObjectTag = gameObject.tag};
-		Broker.InvokeSubscribers(typeof(UIChangedMessage), uiChanged);
-		
+		if (canClick){
+			UIChangedMessage uiChanged = new(){TaskToDo = 1, ObjectTransform = transform, ObjectTag = gameObject.tag};
+			Broker.InvokeSubscribers(typeof(UIChangedMessage), uiChanged);
+		}
 	}
 }
