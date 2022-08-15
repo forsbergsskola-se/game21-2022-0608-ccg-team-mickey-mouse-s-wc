@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 9
   Name: Cornifer
   Id: cornifer
-  MaxHealth: 10
-  Attack: 16
-  Speed: 16
+  MaxHealth: 7
+  Attack: 17
+  Speed: 17
   Alignment: 0
   Rarity: 10
   Level: 1

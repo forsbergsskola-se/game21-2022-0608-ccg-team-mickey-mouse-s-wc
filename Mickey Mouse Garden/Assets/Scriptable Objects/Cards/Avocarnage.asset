@@ -17,8 +17,8 @@ MonoBehaviour:
   Name: Avocarnage
   Id: avocarnage
   MaxHealth: 16
-  Attack: 16
-  Speed: 10
+  Attack: 18
+  Speed: 8
   Alignment: 1
   Rarity: 10
   Level: 1

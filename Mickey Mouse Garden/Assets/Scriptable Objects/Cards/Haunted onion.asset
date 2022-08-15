@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 11
   Name: Haunted Onion
   Id: hauntedonion
-  MaxHealth: 18
-  Attack: 10
-  Speed: 10
+  MaxHealth: 23
+  Attack: 11
+  Speed: 9
   Alignment: 1
   Rarity: 10
   Level: 1

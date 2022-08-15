@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 15
   Name: Tempest Radish
   Id: tempestradish
-  MaxHealth: 5
+  MaxHealth: 3
   Attack: 5
-  Speed: 5
+  Speed: 7
   Alignment: 2
   Rarity: 0
   Level: 1

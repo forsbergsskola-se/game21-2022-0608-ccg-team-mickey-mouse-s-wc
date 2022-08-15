@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 13
   Name: Mr. Peanut
   Id: mrpeanut
-  MaxHealth: 20
+  MaxHealth: 22
   Attack: 26
-  Speed: 26
+  Speed: 29
   Alignment: 2
   Rarity: 20
   Level: 1

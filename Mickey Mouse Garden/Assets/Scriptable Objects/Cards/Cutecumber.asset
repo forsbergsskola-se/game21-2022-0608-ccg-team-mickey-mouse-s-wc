@@ -16,8 +16,8 @@ MonoBehaviour:
   spriteIndex: 10
   Name: Cutecumber
   Id: cutecumber
-  MaxHealth: 16
-  Attack: 13
+  MaxHealth: 18
+  Attack: 11
   Speed: 13
   Alignment: 2
   Rarity: 10

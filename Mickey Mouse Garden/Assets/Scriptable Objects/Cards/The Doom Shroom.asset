@@ -16,9 +16,9 @@ MonoBehaviour:
   spriteIndex: 16
   Name: The Doom Shroom
   Id: thedoomshroom
-  MaxHealth: 43
-  Attack: 28
-  Speed: 28
+  MaxHealth: 51
+  Attack: 29
+  Speed: 29
   Alignment: 0
   Rarity: 30
   Level: 1
