@@ -28,7 +28,7 @@ public class NavSceneLauncher : MonoBehaviour{
 	}
 
 	private IEnumerator DelayEnvironment(){
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		enivronment.SetActive(true);
 	}
 

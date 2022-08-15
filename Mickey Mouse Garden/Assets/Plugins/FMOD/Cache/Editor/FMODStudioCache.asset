@@ -311,9 +311,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Garden
   StudioPath: parameter:/Garden
-  Min: 0
-  Max: 89
-  Default: 0
+  Min: 1
+  Max: 4
+  Default: 1
   ID:
     data1: 283710940
     data2: 1889862198
@@ -360,7 +360,7 @@ MonoBehaviour:
   Name: Rarity
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 2
   Default: 0
   ID:
     data1: 2049205034
@@ -465,7 +465,7 @@ MonoBehaviour:
   Name: Rarity
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 2
   Default: 0
   ID:
     data1: 2049205034
@@ -518,7 +518,7 @@ MonoBehaviour:
   - {fileID: 6140372714390540477}
   StringsBanks:
   - {fileID: 7197064554482430550}
-  cacheTime: 637959015912212777
+  cacheTime: 637959103951345334
   cacheVersion: 131591
 --- !u!114 &2617041958242190416
 MonoBehaviour:
@@ -645,7 +645,7 @@ MonoBehaviour:
   Name: Rarity
   StudioPath: parameter:/Rarity
   Min: 0
-  Max: 3
+  Max: 2
   Default: 0
   ID:
     data1: 2049205034
@@ -669,7 +669,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile 2/Master.bank
   Name: Mobile 2/Master
   StudioPath: bank:/Master
-  lastModified: 637959015912212777
+  lastModified: 637959103951305328
   FileSizes: []
   Exists: 1
 --- !u!114 &7197064554482430550
@@ -687,7 +687,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile 2/Master.strings.bank
   Name: Mobile 2/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637956462221563391
+  lastModified: 637959103951345334
   FileSizes:
   - Name: 
     Value: 2020
@@ -797,7 +797,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
+  Length: 2362
 --- !u!114 &8923517147947136909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,9 +812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Garden
   StudioPath: 
-  Min: 0
-  Max: 89
-  Default: 0
+  Min: 1
+  Max: 4
+  Default: 1
   ID:
     data1: 283710940
     data2: 1889862198
