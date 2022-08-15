@@ -15,12 +15,12 @@ namespace Meta.Inventory {
         }
         
         public async void TryLoadData() {
-            await SaveManager.Load<InventoryList<T>>(ID);
+            var loadedList = await SaveManager.Load<InventoryList<T>>(ID);
+            Items = loadedList.Items;
         }
 
         public void Save() {
             SaveManager.Save(this);
         }
-        
     }
 }

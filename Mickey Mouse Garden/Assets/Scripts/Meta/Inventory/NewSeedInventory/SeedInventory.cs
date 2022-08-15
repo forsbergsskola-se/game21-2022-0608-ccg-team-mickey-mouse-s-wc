@@ -17,7 +17,10 @@ namespace Meta.Inventory.NewSeedInventory {
                 //TODO: Implement marc's way, loading in saved file<- For Oliver
                 Instance = this;
             }
+            
             Broker.Subscribe<AskForUpdateSeedUi>(SendUpdateSeedUiMessage);
+            
+            PlantedSeeds.TryLoadData();
         }
         
 

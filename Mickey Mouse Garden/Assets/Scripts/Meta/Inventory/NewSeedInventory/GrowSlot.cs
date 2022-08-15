@@ -24,14 +24,19 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         public void SetUp(Seed seedInSlot) {
+            timeSlider.maxValue = growthTimeInSeconds;
+            seed = seedInSlot;
+            seed.HarvestTime = seedInSlot.HarvestTime;
+            rarityText = rarity.ToString();
+            
             if (seedInSlot.HarvestTime == DateTime.MinValue) {
                 seedInSlot.HarvestTime = DateTime.Now + TimeSpan.FromSeconds(growthTimeInSeconds);
-            }
 
-            seed = seedInSlot;
-            rarityText = rarity.ToString();
-            timeSlider.maxValue = growthTimeInSeconds;
-            timeSlider.value = growthTimeInSeconds;
+                timeSlider.value = growthTimeInSeconds;
+                
+            } else {
+                timeSlider.value = TimeUntilHarvest;
+            }
         }
 
         private void Update() {
