@@ -2,10 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.UI;
-using Button = UnityEngine.UIElements.Button;
+
 
 public class LoginDay : MonoBehaviour{ 
     private DateTime date;
