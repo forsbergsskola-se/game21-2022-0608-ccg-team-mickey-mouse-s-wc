@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoginDay : MonoBehaviour{
      DateTime date;
@@ -10,6 +11,7 @@ public class LoginDay : MonoBehaviour{
     [SerializeField] int amountMoney;
     [SerializeField] GameObject claimedSymbol;
     [SerializeField] int dayNumber;
+    [SerializeField] GameObject grayPanel;
 
     CurrentDay currentDay;
     
@@ -29,8 +31,8 @@ public class LoginDay : MonoBehaviour{
         Money money = new Money();
         money.Amount = amountMoney;
         Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), new AddPlayerCurrencyMessage{money = money});
-
         ActivateClaimedSymbol(false);
+        currentDay.day.claimableDay++;
     }
 
     void ActivateClaimedSymbol(bool buul){
@@ -38,11 +40,16 @@ public class LoginDay : MonoBehaviour{
     }
 
     void CheckRewardValidity(){
-        if(dayNumber <= currentDay.day.claimedDay){
+        //Checkmarks previous claimed days
+        if(dayNumber < currentDay.day.claimableDay){
             ActivateClaimedSymbol(true);
         }
-        if(date.Date == currentDay.day.dateOfClaim){
-            ActivateClaimedSymbol(false);
+        //Grays out future days.
+        if(dayNumber > currentDay.day.claimableDay ){
+            grayPanel.SetActive(true);
+        }
+        if(date == currentDay.day.dateOfClaim){
+           ActivateClaimedSymbol(true);
         }
     }
 }
