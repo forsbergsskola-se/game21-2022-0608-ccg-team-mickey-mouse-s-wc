@@ -12,6 +12,8 @@ namespace Meta.Inventory.FighterInventory {
         public override InventoryList<Card> InventoryList { get; set; } = new InventoryList<Card>(new StringGUID().CreateStringGuid(10101));
         public static CardInventory Instance { get; private set; }
         public override void CollectOperations(Card addedItem) {
+            base.CollectOperations(addedItem);
+            
             var cardAddedMessage = new CardAddedToInventoryMessage(addedItem);
             Broker.InvokeSubscribers(cardAddedMessage.GetType(), cardAddedMessage);
         }
