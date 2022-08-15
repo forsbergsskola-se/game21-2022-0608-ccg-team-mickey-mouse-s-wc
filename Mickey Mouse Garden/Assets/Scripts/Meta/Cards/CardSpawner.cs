@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Meta.Cards;
 using UnityEngine;
 using Meta.Inventory.FighterInventory;
@@ -6,6 +9,12 @@ using Random = UnityEngine.Random;
 namespace Meta.Inventory {
     public class CardSpawner : MonoBehaviour{
         public CardLibraryConfig cardLibrary;
+
+        [Tooltip("Enter chance in decimals")]
+        [SerializeField] private float commonChanceToSpawnHigher;
+        [SerializeField] private float rareChanceToSpawnHigher;
+        [SerializeField] private float epicChanceToSpawnHigher;
+
         private bool rarityIncrease;
 
         private void OnEnable(){
@@ -16,22 +25,55 @@ namespace Meta.Inventory {
             Broker.Unsubscribe<SpawnCardFromSeed>(CollectRandomCard);
         }
 
-        private void CollectRandomCard(SpawnCardFromSeed spawnCardFromSeed){
-            //TODO: Based on seed Rarity, random chance to spawn card of Rarity x
-            //Method that does calculation and returns a card should be here
-            var randomInt = Random.Range(0, cardLibrary.cards.Length);
-            var libraryCardConfig = cardLibrary.cards[randomInt];
+        private void CollectRandomCard(SpawnCardFromSeed spawnCardFromSeed) {
+            float randomNumber = Random.Range(0, 1);
+            float chance;
+            Rarity rarityToSpawn;
+            
+            switch (spawnCardFromSeed.Rarity) {
+                case Rarity.Common:
+                    rarityToSpawn = Rarity.Common;
+                    chance = 1 - commonChanceToSpawnHigher;
+                    if (randomNumber > chance) {
+                        rarityToSpawn = Rarity.Rare;
+                    }
+                    break;
+                case Rarity.Rare:
+                    rarityToSpawn = Rarity.Rare;
+                    chance = 1 - rareChanceToSpawnHigher;
+                    if (randomNumber > chance) {
+                        rarityToSpawn = Rarity.Epic;
+                    }
+                    break;
+                case Rarity.Epic:
+                    rarityToSpawn = Rarity.Epic;
+                    chance = 1 - epicChanceToSpawnHigher;
+                    if (randomNumber > chance) {
+                        rarityToSpawn = Rarity.Legendary;
+                    }
+                    break;
+                case Rarity.Legendary:
+                    rarityToSpawn = Rarity.Legendary;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
 
-            var card = new Card(libraryCardConfig.Id){
+            var cardsOfRarity = cardLibrary.cards.Where(libraryCard => libraryCard.Rarity == rarityToSpawn).ToList();
+
+            var randomInt = Random.Range(0, cardsOfRarity.Count);
+            var randomSpawnCard = cardsOfRarity[randomInt];
+
+            var card = new Card(randomSpawnCard.Id){
                 ID = new StringGUID().NewGuid(),
-                MaxHealth = libraryCardConfig.MaxHealth,
-                Attack = libraryCardConfig.Attack,
-                Speed = libraryCardConfig.Speed,
-                Level = libraryCardConfig.Level,
-                Rarity = libraryCardConfig.Rarity,
-                Name = libraryCardConfig.Name,
-                Alignment = libraryCardConfig.Alignment,
-                SpriteIndex = libraryCardConfig.spriteIndex
+                MaxHealth = randomSpawnCard.MaxHealth,
+                Attack = randomSpawnCard.Attack,
+                Speed = randomSpawnCard.Speed,
+                Level = randomSpawnCard.Level,
+                Rarity = randomSpawnCard.Rarity,
+                Name = randomSpawnCard.Name,
+                Alignment = randomSpawnCard.Alignment,
+                SpriteIndex = randomSpawnCard.spriteIndex
             };
 
             var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card, 1);

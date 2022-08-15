@@ -19,7 +19,10 @@ namespace Meta.Inventory.NewSeedInventory {
             }
             
             Broker.Subscribe<AskForUpdateSeedUi>(SendUpdateSeedUiMessage);
-            
+        }
+
+        public override void Start() {
+            base.Start();
             PlantedSeeds.TryLoadData();
         }
         
