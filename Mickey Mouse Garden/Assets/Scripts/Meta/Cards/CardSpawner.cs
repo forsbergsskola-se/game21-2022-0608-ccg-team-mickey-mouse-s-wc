@@ -60,9 +60,7 @@ namespace Meta.Inventory {
             }
 
             var cardsOfRarity = cardLibrary.cards.Where(libraryCard => libraryCard.Rarity == rarityToSpawn).ToList();
-
-            var randomInt = Random.Range(0, cardsOfRarity.Count);
-            var randomSpawnCard = cardsOfRarity[randomInt];
+            var randomSpawnCard = cardsOfRarity.GetRandom();
 
             var card = new Card(randomSpawnCard.Id){
                 ID = new StringGUID().NewGuid(),
