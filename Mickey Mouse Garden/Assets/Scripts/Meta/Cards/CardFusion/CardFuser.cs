@@ -45,7 +45,7 @@ namespace Meta.Inventory {
             TryFuseCards(obj.Card1, obj.Card2);
         }
         private void TryFuseCards(Card card1, Card card2){
-            if (!CheckForMaxLevel(card1, card2))
+            if (IsMaxLevel(card1, card2))
                 return;
             SpawnFusedCard(card1, card2);
             // Removes card from inventory or in other words.... DIEEEEEE!!!!
@@ -53,8 +53,8 @@ namespace Meta.Inventory {
             SacrificeCards(card2);
         }
 
-        private static bool CheckForMaxLevel(Card card1, Card card2){
-            return (card1.Rarity != Rarity.Legendary && card1.Level != 10) || (card2.Rarity != Rarity.Legendary && card2.Level != 10);
+        private static bool IsMaxLevel(Card card1, Card card2){
+            return (card1.Rarity == Rarity.Legendary && card1.Level == 10) || (card2.Rarity == Rarity.Legendary && card2.Level == 10);
         }
 
         private void SpawnFusedCard(Card card1, Card card2){
