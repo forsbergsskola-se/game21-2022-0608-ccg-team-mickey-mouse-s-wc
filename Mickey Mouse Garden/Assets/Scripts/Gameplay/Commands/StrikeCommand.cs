@@ -19,7 +19,7 @@ public class StrikeCommand : ICommand{
     }
 
     private void Strike(){
-        var damageDealt = striker.Attack * CheckAlignment(striker, target);
+        var damageDealt = Math.Clamp(striker.Attack * CheckAlignment(striker, target), 0f, target.MaxHealth);
         target.MaxHealth -= damageDealt;
         FighterStrikeMessage strikeMessage = new(){
             DamageDealt = damageDealt,

@@ -77,7 +77,7 @@ namespace Experiment{
         }
 
         private IEnumerator DelayCurrencyDisplay(){
-            yield return new WaitForSeconds(2.1f);
+            yield return new WaitForSeconds(1f);
             CurrencyRewardMessage currencyRewardMessage = new(){
                 money = attemptedCombatLedger
             };
