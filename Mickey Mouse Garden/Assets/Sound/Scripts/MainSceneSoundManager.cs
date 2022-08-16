@@ -19,32 +19,30 @@ public class MainSceneSoundManager : MonoBehaviour
   }
   public void PlantSeed() 
   { 
-    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/PlantSeeds");
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Garden/PlantSeeds");
   }
 
   public void MainClick() {
     FMODUnity.RuntimeManager.PlayOneShot("event:/UI/MainClick");
   }
-  
-  public void purchase()
+
+  public void Purchase()
   { 
-    FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Market/Purchase");
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Market/Purchase");
   }
   
   public void Swoosh() { 
     FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Swosh");
   }
 
-  public void sell()
+  public void Sell()
   {
-    FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Market/Sell");
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Market/Sell");
   }
-
-  public void Harvest()
-  {
-    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Market");
+  
+  public void Fusion(){
+    FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Garden/Fusion");
   }
-
 
   public void StopMusic(){
     ambientMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);

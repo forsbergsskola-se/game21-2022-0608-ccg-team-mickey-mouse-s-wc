@@ -42,9 +42,9 @@ namespace Meta.Inventory {
         
         // and fusion...
         private void OnCardSacrificedMessageReceived(CardSacrificedMessage obj){
-            TryFuseCards(obj.Card1, obj.Card2);
+            FuseCards(obj.Card1, obj.Card2);
         }
-        private void TryFuseCards(Card card1, Card card2){
+        private void FuseCards(Card card1, Card card2){
             SpawnFusedCard(card1, card2);
             // Removes card from inventory or in other words.... DIEEEEEE!!!!
             SacrificeCards(card1);
