@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Meta.Interfaces;
 using Unity.VisualScripting;
@@ -17,7 +18,7 @@ namespace Meta.Inventory.FighterInventory {
             set => level = value;
         }
         
-       public string Name{ get; set; }
+        public string Name{ get; set; }
         public float Attack{ get; set; }
         public float MaxHealth{ get; set; }
         public float Speed{ get; set; }
@@ -35,14 +36,7 @@ namespace Meta.Inventory.FighterInventory {
             if (loadedCard == null){
                 return;
             }
-            Name = loadedCard.Name;
-            Alignment = loadedCard.Alignment;
-            SpriteIndex = loadedCard.SpriteIndex;
-            Rarity = loadedCard.Rarity;
-            Level = loadedCard.Level;
-            Attack = loadedCard.Attack;
-            MaxHealth = loadedCard.MaxHealth;
-            Speed = loadedCard.Speed;
+            this.CopyAllValuesFrom(loadedCard);
         }
         public void Save() {
             SaveManager.Save(this);

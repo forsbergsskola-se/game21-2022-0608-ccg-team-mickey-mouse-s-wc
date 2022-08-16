@@ -28,23 +28,11 @@ public class CardCreator : MonoBehaviour{
         var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, cardSlots[0]); //TODO: What does the 0 mean?
         var componentInChildren = createdCard.GetComponentInChildren<CardContentFiller>();
         var fighterInfo = new FighterInfo();
-        FillInInfo(fighterInfo);
+        
+        fighterInfo.CopyAllValuesFrom(fighter);
+        
         componentInChildren.AssignTextFields(fighter);
     }
-
-    private void FillInInfo(FighterInfo fighterInfo){
-        fighterInfo.Alignment = fighter.Alignment;
-        fighterInfo.Attack = fighter.Attack;
-        fighterInfo.Level = fighter.Level;
-        fighterInfo.Name = fighter.Name;
-        fighterInfo.Rarity = fighter.Rarity;
-        fighterInfo.Speed = fighter.Speed;
-        fighterInfo.SpriteIndex = fighter.SpriteIndex;
-        fighterInfo.ID = fighter.ID;
-        fighterInfo.MaxHealth = fighter.MaxHealth;
-
-    }
-
     private void OnDestroy(){
         Broker.Unsubscribe<SelectedFighterTeamMessage>(OnFighterMessageReceived);
     }
