@@ -11,8 +11,10 @@ public class AdDay : ISaveData
     public StringGUID ID{ get; } = new StringGUID().CreateStringGuid(555555);
     public async void TryLoadData(){
         var loadedDay = await SaveManager.Load<AdDay>(ID);
+        if (loadedDay == null){
+            return;
+        }
         dateOfAdWatch = loadedDay.dateOfAdWatch;
-        Debug.Log(loadedDay.dateOfAdWatch);
     }
 
     public void Save(){
