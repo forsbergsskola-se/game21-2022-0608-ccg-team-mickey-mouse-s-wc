@@ -16,7 +16,7 @@ public class CreatePostCombatUI : MonoBehaviour{
         StartCoroutine(DelayUI());
     }
     private IEnumerator DelayUI(){
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         PostCombatUICanvas.GetComponent<Canvas>().enabled = true;
     }
    
