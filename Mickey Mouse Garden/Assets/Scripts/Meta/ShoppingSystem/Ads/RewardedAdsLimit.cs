@@ -3,23 +3,19 @@ using UnityEngine;
 
 namespace Meta.ShoppingSystem.Ads {
     public class RewardedAdsLimit : MonoBehaviour {
-        public Day day;
+        public AdDay adDay;
         
         private void OnEnable() {
-            day = new Day();
-            day.TryLoadData();
+            adDay = new AdDay();
+            adDay.TryLoadData();
         }
 
-        public bool CanWatchAdd() {
-            if (day.dateOfAdWatch < DateTime.Today) {
-                return true;
-            }
-
-            return false;
+        public bool CanWatchAdd(){
+            return adDay.dateOfAdWatch < DateTime.Today;
         }
 
         public void Save() {
-            day.Save();
+            adDay.Save();
         }
     }
 }
