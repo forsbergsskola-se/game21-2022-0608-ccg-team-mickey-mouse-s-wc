@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FusionButton : MonoBehaviour{
     private Card card;
+    [SerializeField] private GameObject backButton;
 
     private void OnEnable(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
@@ -18,6 +19,7 @@ public class FusionButton : MonoBehaviour{
     }
 
     public void OnClick(){
+        backButton.SetActive(true);
         var fusionStartMessage = new FusionStartMessage {fusionCard = card}; 
         Broker.InvokeSubscribers(typeof(FusionStartMessage), fusionStartMessage);
     }
