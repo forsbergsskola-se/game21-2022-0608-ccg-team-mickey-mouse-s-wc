@@ -230,6 +230,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 544062943908673173, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4288537254
+      objectReference: {fileID: 0}
     - target: {fileID: 544062943908673175, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_IsActive
       value: 1
