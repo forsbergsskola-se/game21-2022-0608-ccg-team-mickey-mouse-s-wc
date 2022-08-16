@@ -33,7 +33,6 @@ public class PlayerWallet : ISaveData
         }
         
         Save();
-        Debug.Log("Wallet Loading done");
     }
 
     public void Save(){

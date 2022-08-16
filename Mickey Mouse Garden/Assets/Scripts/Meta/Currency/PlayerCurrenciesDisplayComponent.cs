@@ -18,7 +18,6 @@ public class PlayerCurrenciesDisplayComponent : MonoBehaviour{
     }
 
     void OnEnable(){
-        Debug.Log("Invoking AskForPlayerCurrencyMessage");
         Broker.InvokeSubscribers(typeof(AskForPlayerCurrencyMessage),new AskForPlayerCurrencyMessage());
     }
 

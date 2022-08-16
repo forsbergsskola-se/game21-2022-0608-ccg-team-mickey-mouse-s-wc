@@ -13,8 +13,7 @@ namespace Experiment{
         public PlayerWallet wallet;
         public PlayerWalletSO playerWalletSO;
 
-
-        Money attemptedCombatLedger;
+        private Money attemptedCombatLedger;
 
         void Awake(){
             var walletID = new StringGUID().CreateStringGuid(13);
@@ -25,11 +24,9 @@ namespace Experiment{
             wallet.Fertilizer.LoadSprite();
             wallet.Money.LoadSprite();
             playerWalletSO.playerWallet = wallet;
-            
         }
 
         void OnEnable(){
-            Debug.Log("Subscribing to AskForPlayerCurrencyMessage",this);
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
             Broker.Subscribe<EnterLevelMessage>(OnLevelMessageReceived);
@@ -57,13 +54,14 @@ namespace Experiment{
                 StartCoroutine(DelayCurrencyDisplay());
             }
         }
+        
         void UpdateDisplayCurrencies(){
             var displayMessage = new DisplayPlayerCurrencyMessage();
             displayMessage.money = wallet.Money;
             displayMessage.fertilizer = wallet.Fertilizer;
-            Debug.Log("Invoking DisplayPlayerCurrencyMessage",this);
             Broker.InvokeSubscribers(typeof(DisplayPlayerCurrencyMessage), displayMessage);
         }
+        
         public void SendDisplayInfo(AskForPlayerCurrencyMessage message){
             UpdateDisplayCurrencies();
         }
@@ -83,6 +81,7 @@ namespace Experiment{
             };
             Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), currencyRewardMessage);
         }
+        
         [ContextMenu("TestAddCurrency")]
         public void TestAddCurrency(){
             var money = new Money();
