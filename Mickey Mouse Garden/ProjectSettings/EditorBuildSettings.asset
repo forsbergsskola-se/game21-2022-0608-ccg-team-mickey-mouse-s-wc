@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PointsOfInterest/PShop.unity
     guid: 86e1429aa08f78a4fb34ea490816425f
   - enabled: 1
-    path: Assets/Scenes/PointsOfInterest/Shed.unity
+    path: Assets/Scenes/Shed.unity
     guid: 0c37e57bf67d3c747be641e136dab7c4
   - enabled: 1
     path: Assets/Scenes/PointsOfInterest/Shop.unity
