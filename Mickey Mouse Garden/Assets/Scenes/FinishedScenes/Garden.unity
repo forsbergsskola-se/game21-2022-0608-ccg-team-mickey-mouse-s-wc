@@ -368,6 +368,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -46.40796
       objectReference: {fileID: 0}
+    - target: {fileID: 1701594244893083283, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701594244893083283, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 1701594244920223539, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
       propertyPath: m_Name
       value: NewInventoryUI
