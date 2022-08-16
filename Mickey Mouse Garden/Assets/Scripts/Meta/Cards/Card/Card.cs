@@ -31,15 +31,18 @@ namespace Meta.Inventory.FighterInventory {
         
         public StringGUID ID { get; set; }
         public async void TryLoadData(){
-            var card = await SaveManager.Load<Card>(ID);
-            Name = card.Name;
-            Alignment = card.Alignment;
-            SpriteIndex = card.SpriteIndex;
-            Rarity = card.Rarity;
-            Level = card.Level;
-            Attack = card.Attack;
-            MaxHealth = card.MaxHealth;
-            Speed = card.Speed;
+            var loadedCard = await SaveManager.Load<Card>(ID);
+            if (loadedCard == null){
+                return;
+            }
+            Name = loadedCard.Name;
+            Alignment = loadedCard.Alignment;
+            SpriteIndex = loadedCard.SpriteIndex;
+            Rarity = loadedCard.Rarity;
+            Level = loadedCard.Level;
+            Attack = loadedCard.Attack;
+            MaxHealth = loadedCard.MaxHealth;
+            Speed = loadedCard.Speed;
         }
         public void Save() {
             SaveManager.Save(this);

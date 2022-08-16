@@ -22,7 +22,11 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         public async void TryLoadData(){
-            await SaveManager.Load<Seed>(ID);
+            var loadedSeed = await SaveManager.Load<Seed>(ID);
+            if (loadedSeed == null){
+                return;
+            }
+            
         }
 
         public void Save() {
