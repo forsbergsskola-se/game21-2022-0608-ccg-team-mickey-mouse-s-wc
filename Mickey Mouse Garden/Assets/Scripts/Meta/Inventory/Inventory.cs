@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Meta.Inventory {
     public abstract class Inventory<T> : MonoBehaviour where T : IInventoryItem {
         public abstract InventoryList<T> InventoryList { get; set; }
+
         
         public virtual void Awake(){
             LoadList();
@@ -19,25 +20,24 @@ namespace Meta.Inventory {
             Broker.Unsubscribe<RemoveInventoryItemMessage<T>>(OnRemoveInventoryItemMessageReceived);
             Broker.Unsubscribe<AskForUIUpdateMessage<T>>(OnAskForUIUpdateMessageReceived);
         }
-
-        private async void LoadList(){
+        
+        public async void LoadList(){
             var loadedInventoryList = await SaveManager.Load<InventoryList<T>>(InventoryList.ID);
             if (loadedInventoryList != null) {
                 InventoryList = loadedInventoryList;
             }
         }
-
-        private void InitBase(){
+        void InitBase(){
             Broker.Subscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
             Broker.Subscribe<RemoveInventoryItemMessage<T>>(OnRemoveInventoryItemMessageReceived);
             Broker.Subscribe<AskForUIUpdateMessage<T>>(OnAskForUIUpdateMessageReceived);
         }
-
-        private void OnAskForUIUpdateMessageReceived(AskForUIUpdateMessage<T> obj){
+        
+        void OnAskForUIUpdateMessageReceived(AskForUIUpdateMessage<T> obj){
             SendUIUpdateMessage();
         }
 
-        private void SendUIUpdateMessage(){
+        void SendUIUpdateMessage(){
             Broker.InvokeSubscribers(typeof(UpdateUIMessage<T>), new UpdateUIMessage<T>(InventoryList.Items));
         }
 
@@ -45,11 +45,13 @@ namespace Meta.Inventory {
             if(message.StringGuid == null){
                 //Remove first item by type
                 InventoryList.Items.Remove(InventoryList.Items.First(x=> x.libraryID== message.PathID));
+                Debug.Log(message.PathID + " removed from inventory");
                 Save();
                 return;
             }
             //Remove specific item by string guid
             InventoryList.Items.Remove(InventoryList.Items.Find(x=> x.ID == message.StringGuid));
+            Debug.Log(message.StringGuid+ " removed from inventory");
             Save();
         }
         
@@ -63,17 +65,18 @@ namespace Meta.Inventory {
         public virtual void RemoveOperations(T removedItem){} // Suggestion would be to have this method being called In Remove(); and it would only server
         //As a way for us to expand Remove(); Without any risk at all of removing the base function of it, aka removing from list.
 
-        public void Add(T item) {
+        public virtual void Add(T item) {
             InventoryList.Items.Add(item);
+            Debug.Log(item.libraryID + " added to inventory");
             Save();
         }
 
-        public void Remove(T item) {
+        public virtual void Remove(T item) {
             InventoryList.Items.Remove(item);
+            Debug.Log(item.libraryID + " removed from inventory");
             Save();
         }
-
-        private void Save(){
+        void Save(){
             SaveManager.Save(InventoryList);
             SendUIUpdateMessage();
         }

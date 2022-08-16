@@ -30,7 +30,10 @@ public class DisplaySeedInventory : MonoBehaviour{
         int rareSeed = 0;
         int epicSeed = 0;
         int legendarySeed = 0;
-        
+
+        foreach (var seed in message.Content){
+            Debug.Log(seed.libraryID);
+        }
         if (message.Content == null){
             DisplayUi(commonSeed, rareSeed, epicSeed, legendarySeed);
             return;
