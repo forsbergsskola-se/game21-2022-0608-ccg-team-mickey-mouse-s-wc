@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: productId
-      value: 120xFertilizer
+      value: fertilizer_120
       objectReference: {fileID: 0}
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
@@ -652,7 +652,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: productId
-      value: 650xFertilizer
+      value: fertilizer_650
       objectReference: {fileID: 0}
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
@@ -1116,7 +1116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: productId
-      value: 60xFertilizer
+      value: fertilizer_60
       objectReference: {fileID: 0}
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
@@ -2624,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: productId
-      value: 10xFertilizer
+      value: fertilizer_10
       objectReference: {fileID: 0}
     - target: {fileID: 1494293444411311803, guid: b7335145958e6f348844c9ae9cd23022, type: 3}
       propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
