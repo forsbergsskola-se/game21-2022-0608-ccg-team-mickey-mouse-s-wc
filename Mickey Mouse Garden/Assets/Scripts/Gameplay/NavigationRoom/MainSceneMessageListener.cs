@@ -41,7 +41,6 @@ public class MainSceneMessageListener : MonoBehaviour{
     }
 
     private void OnPlantSeedMessageReceived(PlantSeedMessage obj){
-        Debug.Log("Plant");
         mainSceneSoundManager.PlantSeed();
     }
     
