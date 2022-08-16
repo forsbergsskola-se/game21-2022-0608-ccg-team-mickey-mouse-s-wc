@@ -16,6 +16,9 @@ namespace Meta.Inventory {
         
         public async void TryLoadData() {
             var loadedList = await SaveManager.Load<InventoryList<T>>(ID);
+            if (loadedList == null){
+                return;
+            }
             Items = loadedList.Items;
         }
 
