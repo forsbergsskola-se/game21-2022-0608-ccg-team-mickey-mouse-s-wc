@@ -95,6 +95,8 @@ namespace Meta.Inventory {
                 Rarity.Common => Rarity.Rare,
                 Rarity.Rare => Rarity.Epic,
                 Rarity.Epic => Rarity.Legendary,
+                Rarity.Legendary => Rarity.Legendary,
+                _ => throw new ArgumentOutOfRangeException()
             };
         }
         
