@@ -18,6 +18,7 @@ public class EnterTeamSelection : MonoBehaviour{
 		if (GetComponent<MatchInformation>().isUnlocked && !shown) {
 			GetComponent<MatchInformation>().ConfirmTeam();
 			GoToTeamSelection();
+			LockUI();
 
 		} else if (!shown) {
 			levelNotUnlockedBox.SetActive(true);
