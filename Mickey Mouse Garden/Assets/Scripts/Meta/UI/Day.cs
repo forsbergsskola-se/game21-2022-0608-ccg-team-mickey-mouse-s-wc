@@ -7,12 +7,14 @@ public class Day : ISaveData
 {
     public int claimableDay; // day of the week (1-7)
     public DateTime dateOfClaim;
+    public DateTime dateOfAdWatch;
 
     public StringGUID ID{ get; } = new StringGUID().CreateStringGuid(995599);
     public async void TryLoadData(){
         var loadedDay = await SaveManager.Load<Day>(ID);
         claimableDay = loadedDay.claimableDay;
         dateOfClaim = loadedDay.dateOfClaim;
+        dateOfAdWatch = loadedDay.dateOfAdWatch;
         
         if (loadedDay.claimableDay == default){
             Debug.Log("Reset To " + claimableDay);

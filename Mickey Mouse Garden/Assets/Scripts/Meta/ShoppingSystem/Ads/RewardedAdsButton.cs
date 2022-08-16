@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Meta.Currency;
+using Meta.ShoppingSystem.Ads;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
@@ -11,6 +13,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     //[SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     [SerializeField] int rewardAmount;
     string _adUnitId = null; // This will remain null for unsupported platforms
+    private RewardedAdsLimit rewardedAdsLimit;
  
     void Awake()
     {   
@@ -42,14 +45,16 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             // Configure the button to call the ShowAd() method when clicked:
             _showAdButton.onClick.AddListener(ShowAd);
+            
+            if (!rewardedAdsLimit.CanWatchAdd()) return;
+            
             // Enable the button for users to click:
             _showAdButton.interactable = true;
         }
     }
  
     // Implement a method to execute when the user clicks the button:
-    public void ShowAd()
-    {
+    public void ShowAd() {
         // Disable the button:
         _showAdButton.interactable = false;
         // Then show the ad:
@@ -72,6 +77,10 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
+            
+            // Set time when the ad was watched.
+            rewardedAdsLimit.day.dateOfAdWatch = DateTime.Today;
+            rewardedAdsLimit.Save();
         }
     }
  
