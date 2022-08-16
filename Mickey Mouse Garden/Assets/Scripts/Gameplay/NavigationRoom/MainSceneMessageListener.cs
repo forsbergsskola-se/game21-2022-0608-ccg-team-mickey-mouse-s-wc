@@ -13,7 +13,8 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamMessageReceived);
         Broker.Subscribe<PlantSeedMessage>(OnPlantSeedMessageReceived);
         Broker.Subscribe<CamPositionMessage>(OnCamPositionMessageReceived);
-        // Fusion to be implemented
+        Broker.Subscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
+        Broker.Subscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
         mainSceneSoundManager.PlayMusic();
     }
 
@@ -23,10 +24,24 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Unsubscribe<SelectedFighterTeamMessage>(OnFighterTeamMessageReceived);
         Broker.Unsubscribe<PlantSeedMessage>(OnPlantSeedMessageReceived);
         Broker.Unsubscribe<CamPositionMessage>(OnCamPositionMessageReceived);
+        Broker.Unsubscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
+        Broker.Unsubscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
 
+    }
+    private void OnAddPlayerCurrencyMessageReceived(AddPlayerCurrencyMessage obj){
+        if (obj.money.Amount <= 0){
+            mainSceneSoundManager.Purchase();
+        }
+        else{
+            mainSceneSoundManager.Sell();
+        }
+    }
+    private void OnCardSacrificedMessageReceived(CardSacrificedMessage obj){
+        mainSceneSoundManager.Fusion();
     }
 
     private void OnPlantSeedMessageReceived(PlantSeedMessage obj){
+        Debug.Log("Plant");
         mainSceneSoundManager.PlantSeed();
     }
     
