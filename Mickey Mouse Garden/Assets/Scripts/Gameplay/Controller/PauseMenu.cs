@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PauseMenu : MonoBehaviour{
     [SerializeField] Canvas pauseMenu, pauseButton;
-    [SerializeField] private GameObject loginBonusCanvas, loginBonusButton;
+    [SerializeField] private GameObject loginBonusCanvas;
+    private GameObject loginBonusButton;
 
     private void LockClicks(){
         ClickBlockerMessage clickBlockerMessage = new(){UIActive = true};
@@ -19,7 +22,22 @@ public class PauseMenu : MonoBehaviour{
     
     public void Start(){
         pauseMenu.enabled = false;
+        loginBonusButton = GameObject.FindWithTag("DailyLogin");
         UnLockClicks();
+        Broker.Subscribe<UIChangedMessage>(OnUIChangedMessageReceived);
+    }
+
+    private void OnDisable(){
+        Broker.Unsubscribe<UIChangedMessage>(OnUIChangedMessageReceived);
+
+    }
+    private void OnUIChangedMessageReceived(UIChangedMessage obj){
+        if (obj.TaskToDo == 1){
+            loginBonusButton.GetComponent<Canvas>().enabled = false;
+        }
+        if (obj.TaskToDo == 2){
+            loginBonusButton.GetComponent<Canvas>().enabled = true;
+        }
     }
     public void Pause(){
         pauseMenu.enabled = true;

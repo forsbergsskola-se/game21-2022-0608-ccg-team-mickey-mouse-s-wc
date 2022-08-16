@@ -8,6 +8,11 @@ public class ClickZoom : MonoBehaviour{
 	private void OnEnable(){
 		Broker.Subscribe<ClickBlockerMessage>(OnClickBlockerMessageReceived);
 	}
+
+	private void OnDisable(){
+		Broker.Subscribe<ClickBlockerMessage>(OnClickBlockerMessageReceived);
+
+	}
 	private void OnClickBlockerMessageReceived(ClickBlockerMessage obj){
 		canClick = !obj.UIActive;
 	}

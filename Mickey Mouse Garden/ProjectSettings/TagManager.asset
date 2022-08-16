@@ -17,6 +17,7 @@ TagManager:
   - EF3
   - cardslot
   - Arena2
+  - DailyLogin
   layers:
   - Default
   - TransparentFX
