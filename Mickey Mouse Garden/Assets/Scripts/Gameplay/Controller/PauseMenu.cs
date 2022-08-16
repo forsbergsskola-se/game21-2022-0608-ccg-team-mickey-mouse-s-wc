@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UIElements.Button;
 
 public class PauseMenu : MonoBehaviour{
     [SerializeField] Canvas pauseMenu, pauseButton;
@@ -33,10 +36,10 @@ public class PauseMenu : MonoBehaviour{
     }
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
         if (obj.TaskToDo == 1){
-            loginBonusButton.GetComponent<Canvas>().enabled = false;
+            loginBonusButton.SetActive(false);
         }
         if (obj.TaskToDo == 2){
-            loginBonusButton.GetComponent<Canvas>().enabled = true;
+            loginBonusButton.SetActive(true);
         }
     }
     public void Pause(){
