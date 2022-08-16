@@ -24,6 +24,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         _adUnitId = _androidAdUnitId;
 #endif
 
+        rewardedAdsLimit = GetComponent<RewardedAdsLimit>();
+        
         //Disable the button until the ad is ready to show: 
         _showAdButton.interactable = false;
     }
@@ -79,7 +81,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             Advertisement.Load(_adUnitId, this);
             
             // Set time when the ad was watched.
-            rewardedAdsLimit.day.dateOfAdWatch = DateTime.Today;
+            rewardedAdsLimit.adDay.dateOfAdWatch = DateTime.Today;
             rewardedAdsLimit.Save();
         }
     }
