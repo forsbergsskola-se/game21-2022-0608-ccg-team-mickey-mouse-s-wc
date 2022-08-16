@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Meta.Cards;
 using Meta.Inventory.FighterInventory;
@@ -11,6 +12,10 @@ public class ASelectedCard : MonoBehaviour{
    private void Awake(){
       Broker.Subscribe<CardSelectionMessage>(OnSelectedCardMessageReceived);
       playerCardInventory = FindObjectOfType<CardInventory>().InventoryList.Items; //TODO: Replace with actual player card inventory
+   }
+
+   private void OnDisable(){
+      Broker.Unsubscribe<CardSelectionMessage>(OnSelectedCardMessageReceived);
    }
 
    public void WhenClicked(){
