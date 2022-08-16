@@ -15,7 +15,6 @@ public class AddStarterCards : MonoBehaviour
     }
     public void AddStarterCardsToInventory()
     {
-        Debug.Log("Adding starter cards to inventory");
         foreach (var cardConfig in starterCardConfigs){
             var newCard = new Card(cardConfig.Id){
                 Alignment = cardConfig.Alignment,
@@ -33,17 +32,9 @@ public class AddStarterCards : MonoBehaviour
     }
 
     IEnumerator Delay(){
-            yield return new WaitForSeconds(1);
-           if(cardInventory.InventoryList.Items.Count == default)
-           {
-                AddStarterCardsToInventory();
-           }
-           else{
-               foreach (var card in cardInventory.InventoryList.Items){
-                   Debug.Log("Card In Inventory: " + card.Name);
-               }
-                Debug.Log("Inventory already populated" + cardInventory.InventoryList);
-           }
+        yield return new WaitForSeconds(1);
+        if (cardInventory.InventoryList.Items.Count == default){
+            AddStarterCardsToInventory();
+        }
     }
-
 }
