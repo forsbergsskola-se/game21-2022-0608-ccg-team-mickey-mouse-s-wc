@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FinishedScenes/Arena.unity
     guid: bb53e5facf7464c4ba4998f7160ba963
   - enabled: 1
-    path: Assets/Scenes/TemporaryScenes/OpponentSelection.unity
+    path: Assets/Scenes/FinishedScenes/OpponentSelection.unity
     guid: d1cc1969f251c714397bffe61dd4c013
   m_configObjects: {}

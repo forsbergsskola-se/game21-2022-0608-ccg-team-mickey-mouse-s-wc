@@ -706,6 +706,10 @@ PrefabInstance:
       value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
+      propertyPath: baseReward
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
       value: 2
       objectReference: {fileID: 0}
@@ -1142,6 +1146,10 @@ PrefabInstance:
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelName
       value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
+      propertyPath: baseReward
+      value: 3500
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
@@ -3698,6 +3706,10 @@ PrefabInstance:
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelName
       value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
+      propertyPath: baseReward
+      value: 3500
       objectReference: {fileID: 0}
     - target: {fileID: 6571873280782201851, guid: 89e68806643ae4c84ae4328988876f8b, type: 3}
       propertyPath: levelNumber
