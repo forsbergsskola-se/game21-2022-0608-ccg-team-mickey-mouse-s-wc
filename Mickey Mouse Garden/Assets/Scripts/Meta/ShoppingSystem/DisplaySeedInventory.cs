@@ -58,7 +58,7 @@ public class DisplaySeedInventory : MonoBehaviour{
     }
     
     private void DisplayUi(int commonSeed, int rareSeed, int epicSeed, int legendarySeed){
-            seedDisplayText.text = @"Seeds:
+            seedDisplayText.text = @"Your Seeds:
 Common: " + commonSeed + " | Rare: " + rareSeed + " | Epic: " + epicSeed + " | Legendary: " + legendarySeed;
         }
     }

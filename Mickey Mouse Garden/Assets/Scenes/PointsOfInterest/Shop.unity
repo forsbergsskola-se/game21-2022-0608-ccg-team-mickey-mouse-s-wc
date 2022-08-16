@@ -707,14 +707,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2462801988063819952, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1.2550049
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462801988063819952, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.7249756
-      objectReference: {fileID: 0}
     - target: {fileID: 2462801988230996294, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3663,6 +3655,10 @@ PrefabInstance:
     - target: {fileID: 4443874487197076700, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
       propertyPath: m_Name
       value: AwardedAdsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443874487197076700, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4443874487197076705, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
       propertyPath: m_Type
