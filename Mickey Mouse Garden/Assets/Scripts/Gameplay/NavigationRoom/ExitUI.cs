@@ -16,7 +16,6 @@ public class ExitUI : MonoBehaviour{
 			gameObjectTag = obj.ObjectTag;
 		}
 		if (obj.TaskToDo == 2){
-			Debug.Log(gameObjectTag);
 			UnLaunch(gameObjectTag);
 		}
 	}

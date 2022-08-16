@@ -22,7 +22,7 @@ public class CurrentDay : MonoBehaviour{
     }
     private IEnumerator SetClaimableDay(){
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("CurrentDay " + day.claimableDay);
+
         // If you claimed at least 1 day before
         if (day.dateOfClaim < DateTime.Today){
             day.claimableDay++;

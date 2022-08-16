@@ -20,10 +20,8 @@ public static class SaveManager{
                 completeReadString += _string;
             }
            
-            var dataBaseObject = JsonConvert.DeserializeObject<T>(completeReadString); 
-            foreach (var propertyInfo in dataBaseObject.GetType().GetProperties()){
-                Debug.Log(propertyInfo.GetValue(dataBaseObject));
-            }
+            var dataBaseObject = JsonConvert.DeserializeObject<T>(completeReadString);
+
             return dataBaseObject;
         }
         catch (Exception e){
@@ -32,9 +30,7 @@ public static class SaveManager{
     }
    
     public static async void Save(ISaveData saveData){
-        Debug.Log("Saving!");
         if (!Directory.Exists(SavePath)){
-            Debug.Log($"Directory {SavePath}: does not exist, Creating New Directory.");
             Directory.CreateDirectory(SavePath);
             Save(saveData);
             return;
@@ -42,16 +38,13 @@ public static class SaveManager{
         try{
             var stringSerialized = JsonConvert.SerializeObject(saveData);
             await System.IO.File.WriteAllTextAsync(@$"{SavePath}\{saveData.ID}", stringSerialized);
-            Debug.Log("Saved Successfully!");
         }
         catch (Exception e){
             Debug.Log("Failed to save.");
             throw e;
         }
     }
-    
-    
-    
+
     /// <summary>
     /// Deletes Local save Directory with all saved files.
     /// </summary>
