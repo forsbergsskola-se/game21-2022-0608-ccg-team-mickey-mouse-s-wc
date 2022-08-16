@@ -28,7 +28,6 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
  
     public void OnInitializationComplete()
     {
-        Debug.Log("Unity Ads initialization complete.");
         // Set up the button to show Unity Ads
         rewardedAdsButton.LoadAd();
         //interstitialAdsButton.LoadAd();
