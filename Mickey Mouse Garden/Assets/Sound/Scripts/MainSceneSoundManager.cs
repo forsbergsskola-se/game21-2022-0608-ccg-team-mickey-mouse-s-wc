@@ -56,7 +56,9 @@ public class MainSceneSoundManager : MonoBehaviour
     ambientMusicInstance.setPaused(false);
   }
   public void StopPreCombatMusic(){
-    preCombatMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
+    if (preCombatMusicInstance.isValid()){
+      preCombatMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
+    }
   }
   public void ModulateMusic(float distance){
     // Debug.Log(distance);
