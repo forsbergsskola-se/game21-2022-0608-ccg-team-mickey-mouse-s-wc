@@ -56,6 +56,7 @@ namespace Meta.Cards {
             isOpen = false;
             canvas.SetActive(false);
             attainedCards.Clear();
+            index = 0;
         }
 
         private void UpdateText() {
