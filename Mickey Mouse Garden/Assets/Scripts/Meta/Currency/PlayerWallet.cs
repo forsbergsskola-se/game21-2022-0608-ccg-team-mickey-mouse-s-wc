@@ -1,11 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Meta.Currency;
 using Newtonsoft.Json;
-using UnityEngine;
+
 [Serializable][JsonObject]
 public class PlayerWallet : ISaveData
 {
@@ -28,12 +25,11 @@ public class PlayerWallet : ISaveData
         var gottenType = GetType();
         var propertyInfos =gottenType.GetProperties().Where(x => x.Name != "ID").ToArray();
         
-        for (int i = 0; i < propertyInfos.Length; i++){
+        for (var i = 0; i < propertyInfos.Length; i++){
             gottenType.GetProperty(propertyInfos[i].Name)?.SetValue(this,loadedPropertyInfos[i].GetValue(loadedValue));
         }
         
         Save();
-        Debug.Log("Wallet Loading done");
     }
 
     public void Save(){
