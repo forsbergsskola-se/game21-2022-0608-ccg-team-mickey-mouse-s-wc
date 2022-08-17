@@ -257,7 +257,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.bank
   Name: Mobile/Master
   StudioPath: bank:/Master
-  lastModified: 637962386223179990
+  lastModified: 637963724100932250
   FileSizes: []
   Exists: 1
 --- !u!114 &-3202161219076892973
@@ -330,7 +330,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.strings.bank
   Name: Mobile/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637962386223270022
+  lastModified: 637963724100952213
   FileSizes:
   - Name: 
     Value: 2020
@@ -349,8 +349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Garden
   StudioPath: parameter:/Garden
-  Min: 1
-  Max: 95
+  Min: 0
+  Max: 92.75
   Default: 1
   ID:
     data1: 283710940
@@ -457,7 +457,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -62493919275061186}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -499,6 +500,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Hits/Rarity
+  m_EditorClassIdentifier: 
+  Name: Rarity
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2049205034
+    data2: 12120533
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-62493919275061186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Harvest/Rarity
   m_EditorClassIdentifier: 
   Name: Rarity
   StudioPath: 
@@ -556,7 +581,7 @@ MonoBehaviour:
   - {fileID: -3508254783758374574}
   StringsBanks:
   - {fileID: -2740185149517830489}
-  cacheTime: 637962386223270022
+  cacheTime: 637963724100952213
   cacheVersion: 131591
 --- !u!114 &2617041958242190416
 MonoBehaviour:
@@ -640,7 +665,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 16000
+  Length: 30000
 --- !u!114 &4481707395849214440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,8 +837,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Garden
   StudioPath: 
-  Min: 1
-  Max: 95
+  Min: 0
+  Max: 92.75
   Default: 1
   ID:
     data1: 283710940
