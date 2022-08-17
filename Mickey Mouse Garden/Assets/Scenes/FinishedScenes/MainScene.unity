@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26893,6 +26893,7 @@ GameObject:
   - component: {fileID: 1334062502}
   - component: {fileID: 1334062504}
   - component: {fileID: 1334062503}
+  - component: {fileID: 1334062505}
   m_Layer: 5
   m_Name: SoundSettingsPanel
   m_TagString: Untagged
@@ -26963,6 +26964,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334062501}
   m_CullTransparentMesh: 1
+--- !u!114 &1334062505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334062501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2ca5d8098a4a17b79210cfe60e80f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToggles:
+  - {fileID: 1343245752}
+  - {fileID: 1711898575}
 --- !u!1 &1334764594
 GameObject:
   m_ObjectHideFlags: 0
@@ -27116,7 +27132,7 @@ GameObject:
   - component: {fileID: 1343245752}
   - component: {fileID: 1343245753}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: MusicToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34656,7 +34672,7 @@ GameObject:
   - component: {fileID: 1711898575}
   - component: {fileID: 1711898576}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: SFXToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36936,7 +36952,7 @@ GameObject:
   - component: {fileID: 1809012229}
   - component: {fileID: 1809012230}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: AllToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37010,9 +37026,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1809012230}
-        m_TargetAssemblyTypeName: Sound.Scripts.SoundToggle, Assembly-CSharp
-        m_MethodName: SendSoundToggleMessage
+      - m_Target: {fileID: 1334062505}
+        m_TargetAssemblyTypeName: Sound.Scripts.SoundSettings, Assembly-CSharp
+        m_MethodName: MuteAll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
