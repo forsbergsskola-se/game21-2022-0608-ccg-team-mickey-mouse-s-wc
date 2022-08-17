@@ -37,9 +37,9 @@ public class MainSceneMessageListener : MonoBehaviour{
             case 1:
                 mainSceneSoundManager.ControlSFX(obj.Toggle);
                 break;
-            case 2:
-                mainSceneSoundManager.ControlAll(obj.Toggle);
-                break;
+            // case 2:
+            //     mainSceneSoundManager.ControlAll(obj.Toggle);
+            //     break;
         }
     }
     

@@ -382,6 +382,7 @@ MonoBehaviour:
   soundToggles:
   - {fileID: 268616806959437517}
   - {fileID: 268616807665722554}
+  - {fileID: 268616807576194416}
 --- !u!1 &268616807035147713
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +505,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 268616807541825656}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: UnPause
         m_Mode: 1
@@ -833,7 +834,6 @@ GameObject:
   - component: {fileID: 268616807541825662}
   - component: {fileID: 268616807541825663}
   - component: {fileID: 268616807541825660}
-  - component: {fileID: 268616807541825656}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -924,21 +924,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &268616807541825656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268616807541825661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f421047441f4bdf47825f1dd6bf195bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 268616807541825662}
-  pauseButton: {fileID: 0}
-  loginBonusCanvas: {fileID: 0}
 --- !u!1 &268616807576194422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,9 +1010,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 268616806968604380}
-        m_TargetAssemblyTypeName: Sound.Scripts.SoundSettings, Assembly-CSharp
-        m_MethodName: MuteAll
+      - m_Target: {fileID: 268616807576194419}
+        m_TargetAssemblyTypeName: Sound.Scripts.SoundToggle, Assembly-CSharp
+        m_MethodName: SendSoundToggleMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
