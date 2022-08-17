@@ -1,4 +1,3 @@
-using System;
 using FMOD.Studio;
 using UnityEngine;
 
@@ -13,7 +12,6 @@ public class ArenaSoundManager : MonoBehaviour {
 	public void PlayMusic(){
 		arenaBackgroundInstance = FMODUnity.RuntimeManager.CreateInstance(arenaBackground);
 		arenaBackgroundInstance.start();
-		Debug.Log("Arena Music");
 	}
 	
 	// Rock = 1, Paper = 2, Scissors = 3. Rarity 1 to 4. Not implemented.
@@ -23,10 +21,6 @@ public class ArenaSoundManager : MonoBehaviour {
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Hits");
 	}
 
-	public void Faint(){
-		Debug.Log("FaintSound");
-	}
-  
 	public void Victory() { 
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Victory");
 	}

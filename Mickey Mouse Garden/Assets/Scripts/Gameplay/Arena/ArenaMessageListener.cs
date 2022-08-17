@@ -29,7 +29,6 @@ public class ArenaMessageListener : MonoBehaviour{
 		arenaSoundManager.Hit(obj.StrikerAlignment.ToString(), (int)obj.StrikerRarity);
 	}
 	private void OnFighterFaintMessageReceived(FighterFaintMessage obj){
-		arenaSoundManager.Faint();
 		switch (obj.wasPlayerFighter){
 			case true:
 				delta--;
