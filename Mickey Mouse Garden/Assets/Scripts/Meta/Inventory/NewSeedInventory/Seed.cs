@@ -26,7 +26,7 @@ namespace Meta.Inventory.NewSeedInventory {
             if (loadedSeed == null){
                 return;
             }
-            
+            this.CopyAllValuesFrom(loadedSeed);
         }
 
         public void Save() {
