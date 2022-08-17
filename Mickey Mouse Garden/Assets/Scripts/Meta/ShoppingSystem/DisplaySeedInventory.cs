@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Meta.Inventory;
 using Meta.Inventory.NewSeedInventory;
 using TMPro;
 using UnityEngine;
@@ -9,11 +5,11 @@ using UnityEngine;
 public class DisplaySeedInventory : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI seedDisplayText;
 
-    void Awake(){
+    private void Awake(){
         Broker.Subscribe<UpdateUIMessage<Seed>>(UpdateUI);
     }
 
-    void OnEnable(){
+    private void OnEnable(){
         Broker.InvokeSubscribers(typeof(AskForUIUpdateMessage<Seed>), new AskForUIUpdateMessage<Seed>());
     }
     private void OnDestroy(){
@@ -26,14 +22,11 @@ public class DisplaySeedInventory : MonoBehaviour{
     /// </summary>
     /// <param name="message"></param>
     private void UpdateUI(UpdateUIMessage<Seed> message){
-        int commonSeed = 0;
-        int rareSeed = 0;
-        int epicSeed = 0;
-        int legendarySeed = 0;
-
-        foreach (var seed in message.Content){
-            Debug.Log(seed.libraryID);
-        }
+        var commonSeed = 0;
+        var rareSeed = 0;
+        var epicSeed = 0;
+        var legendarySeed = 0;
+        
         if (message.Content == null){
             DisplayUi(commonSeed, rareSeed, epicSeed, legendarySeed);
             return;
