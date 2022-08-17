@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class FighterInfo{
     public StringGUID ID { get; set;}
     public float MaxHealth { get; set;}
@@ -9,7 +7,6 @@ public class FighterInfo{
     public Rarity Rarity  { get; set;}
     public string Name { get; set;}
     public Alignment Alignment { get; set;}
-    //public Sprite Sprite { get; set;}
     public short SpriteIndex { get; set;}
     
 }

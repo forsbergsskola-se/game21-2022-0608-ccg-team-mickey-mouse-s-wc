@@ -32,7 +32,7 @@ public class CardContentFiller : MonoBehaviour{
 		healthText.text = $"Health: {health.ToString(CultureInfo.InvariantCulture)}";
 	}
 
-	public void AssignTextFields(FighterInfo fighter){ //TODO: add discriptive text to the values eg. health: 5
+	public void AssignTextFields(FighterInfo fighter){
 		id = fighter.ID;
 		nameText.text = fighter.Name;
 		rarityText.text = fighter.Rarity.ToString();

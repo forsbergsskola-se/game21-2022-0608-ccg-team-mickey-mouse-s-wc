@@ -1,4 +1,3 @@
-using System;
 using FMOD.Studio;
 using UnityEngine;
 
@@ -22,10 +21,6 @@ public class ArenaSoundManager : MonoBehaviour {
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Hits");
 	}
 
-	public void Faint(){
-		Debug.Log("FaintSound");
-	}
-  
 	public void Victory() { 
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Arena/Victory");
 	}

@@ -1,6 +1,4 @@
-using System;
 using Meta.Cards;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 

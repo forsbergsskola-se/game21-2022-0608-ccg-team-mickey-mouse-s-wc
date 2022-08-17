@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using Meta.Inventory;
-using Meta.Inventory.NewSeedInventory.Messages;
 using UnityEngine;
 
 public class MainSceneMessageListener : MonoBehaviour{
@@ -85,9 +83,8 @@ public class MainSceneMessageListener : MonoBehaviour{
         mainSceneSoundManager.MainClick();
         mainSceneSoundManager.StopPreCombatMusic();
 
-        if (obj.ObjectTag == "Arena"){
-            mainSceneSoundManager.PauseMusic();
-            mainSceneSoundManager.PlayPreCombatMusic();
-        }
+        if (obj.ObjectTag != "Arena") return;
+        mainSceneSoundManager.PauseMusic();
+        mainSceneSoundManager.PlayPreCombatMusic();
     }
 }

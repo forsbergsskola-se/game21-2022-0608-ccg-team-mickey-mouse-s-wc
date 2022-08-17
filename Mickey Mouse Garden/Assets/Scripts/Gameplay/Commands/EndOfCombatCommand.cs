@@ -21,11 +21,7 @@ public class EndOfCombatCommand : ICommand{
         return Task.CompletedTask;
     }
 
-    public void Undo(){
-        throw new System.NotImplementedException();
-    }
-
-    void SendPostCombatStateMessage(PostCombatState state){
+    private void SendPostCombatStateMessage(PostCombatState state){
         var postCombatMessage = new PostCombatStateMessage();
         postCombatMessage.State = state;
         Broker.InvokeSubscribers(typeof(PostCombatStateMessage),postCombatMessage);
