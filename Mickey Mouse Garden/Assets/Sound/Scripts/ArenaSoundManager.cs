@@ -13,7 +13,6 @@ public class ArenaSoundManager : MonoBehaviour {
 	public void PlayMusic(){
 		arenaBackgroundInstance = FMODUnity.RuntimeManager.CreateInstance(arenaBackground);
 		arenaBackgroundInstance.start();
-		Debug.Log("Arena Music");
 	}
 	
 	// Rock = 1, Paper = 2, Scissors = 3. Rarity 1 to 4. Not implemented.

@@ -8,15 +8,16 @@ public class MainSceneSoundManager : MonoBehaviour
 
   private EventInstance ambientMusicInstance, preCombatMusicInstance;
   
-  
   public void PlayMusic(){
     ambientMusicInstance = FMODUnity.RuntimeManager.CreateInstance(ambientMusic);
     ambientMusicInstance.start();
   }
+  
   public void PlayPreCombatMusic(){
     preCombatMusicInstance = FMODUnity.RuntimeManager.CreateInstance(preCombatMusic);
     preCombatMusicInstance.start();
   }
+  
   public void PlantSeed() 
   { 
     FMODUnity.RuntimeManager.PlayOneShot("event:/Meta/Garden/PlantSeeds");
@@ -47,19 +48,36 @@ public class MainSceneSoundManager : MonoBehaviour
   public void StopMusic(){
     ambientMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
   }
+  
   public void PauseMusic(){
     ambientMusicInstance.setPaused(true);
   }
+  
   public void UnPauseMusic(){
     ambientMusicInstance.setPaused(false);
   }
+  
   public void StopPreCombatMusic(){
     if (preCombatMusicInstance.isValid()){
       preCombatMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
     }
   }
+  
   public void ModulateMusic(float distance){
     // Debug.Log(distance);
     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Garden", distance);
+  }
+
+  public void ControlMusic(bool on) {
+    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicMain", @on ? 100 : 0);
+    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("AmbiMain", @on ? 100 : 0);
+  }
+  
+  public void ControlSFX(bool on) {
+    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("UiMain", @on ? 100 : 0);
+  }
+  
+  public void ControlAll(bool on) {
+    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MainSound", @on ? 0 : 100);
   }
 }

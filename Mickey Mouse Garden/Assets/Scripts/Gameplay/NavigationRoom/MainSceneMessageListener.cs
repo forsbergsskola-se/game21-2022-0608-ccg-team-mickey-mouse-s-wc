@@ -15,6 +15,8 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Subscribe<CamPositionMessage>(OnCamPositionMessageReceived);
         Broker.Subscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
         Broker.Subscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
+        Broker.Subscribe<SoundToggleMessage>(OnSoundToggleMessageReceived);
+
         mainSceneSoundManager.PlayMusic();
     }
 
@@ -26,8 +28,23 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Unsubscribe<CamPositionMessage>(OnCamPositionMessageReceived);
         Broker.Unsubscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
         Broker.Unsubscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
-
+        Broker.Unsubscribe<SoundToggleMessage>(OnSoundToggleMessageReceived);
     }
+    
+    private void OnSoundToggleMessageReceived(SoundToggleMessage obj) {
+        switch (obj.Option) {
+            case 0:
+                mainSceneSoundManager.ControlMusic(obj.Toggle);
+                break;
+            case 1:
+                mainSceneSoundManager.ControlSFX(obj.Toggle);
+                break;
+            case 2:
+                mainSceneSoundManager.ControlAll(obj.Toggle);
+                break;
+        }
+    }
+    
     private void OnAddPlayerCurrencyMessageReceived(AddPlayerCurrencyMessage obj){
         if (obj.money.Amount <= 0){
             mainSceneSoundManager.Purchase();
@@ -36,12 +53,12 @@ public class MainSceneMessageListener : MonoBehaviour{
             mainSceneSoundManager.Sell();
         }
     }
+    
     private void OnCardSacrificedMessageReceived(CardSacrificedMessage obj){
         mainSceneSoundManager.Fusion();
     }
 
     private void OnPlantSeedMessageReceived(PlantSeedMessage obj){
-        Debug.Log("Plant");
         mainSceneSoundManager.PlantSeed();
     }
     
@@ -50,6 +67,7 @@ public class MainSceneMessageListener : MonoBehaviour{
             mainSceneSoundManager.StopPreCombatMusic();
         }
     }
+    
     private void OnPostCombatUIMessageReceived(CreatePostCombatUIMessage obj){
         StartCoroutine(DelaySound());
     }
@@ -62,8 +80,7 @@ public class MainSceneMessageListener : MonoBehaviour{
     private void OnCamPositionMessageReceived(CamPositionMessage obj){
         mainSceneSoundManager.ModulateMusic(obj.Distance);
     }
-
-
+    
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
         mainSceneSoundManager.MainClick();
         mainSceneSoundManager.StopPreCombatMusic();
