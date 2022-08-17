@@ -15,14 +15,11 @@ public class CheckForFaintedCommand : ICommand{
             FighterFaintMessage faintMessage = new(){fighterInfo = playerFighter, wasPlayerFighter = true};
             Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
         }
-        if (enemyFighter.MaxHealth <= 0){
+        if (!(enemyFighter.MaxHealth <= 0)) return Task.CompletedTask;
+        {
             FighterFaintMessage faintMessage = new(){fighterInfo = enemyFighter, wasPlayerFighter = false};
             Broker.InvokeSubscribers(typeof(FighterFaintMessage), faintMessage);
         }
         return Task.CompletedTask;
-    }
-
-    public void Undo(){
-        throw new NotImplementedException();
     }
 }

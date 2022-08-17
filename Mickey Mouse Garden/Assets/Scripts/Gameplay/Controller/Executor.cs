@@ -4,12 +4,9 @@ using UnityEngine;
 
 public interface ICommand{
     public Task ExecuteAsync();
-    public void Undo();
 }
 public class Executor : MonoBehaviour{
-    private Queue<ICommand> queue = new Queue<ICommand>();
-    private Stack<ICommand> undo = new Stack<ICommand>();
-
+    private Queue<ICommand> queue = new();
     public void Enqueue(ICommand command){
         queue.Enqueue(command);
     }
@@ -22,7 +19,6 @@ public class Executor : MonoBehaviour{
         while(queue.Count > 0){
             var command = queue.Dequeue();
             await command.ExecuteAsync();
-            undo.Push(command);
         }
     }
 }

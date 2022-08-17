@@ -28,11 +28,13 @@ public class PauseMenu : MonoBehaviour{
 
     }
     private void OnUIChangedMessageReceived(UIChangedMessage obj){
-        if (obj.TaskToDo == 1){
-            loginBonusButton.SetActive(false);
-        }
-        if (obj.TaskToDo == 2){
-            loginBonusButton.SetActive(true);
+        switch (obj.TaskToDo){
+            case 1:
+                loginBonusButton.SetActive(false);
+                break;
+            case 2:
+                loginBonusButton.SetActive(true);
+                break;
         }
     }
     public void Pause(){
