@@ -17,7 +17,9 @@ public class CameraMovement : MonoBehaviour{
 		transform.position = position;
 	}
 	public void StepForward() {
-		targetPosition += new Vector3(0, 0, 5);
+		if (targetPosition.z <= 40){
+			targetPosition += new Vector3(0, 0, 5);
+		}
 	}
 	public void StepBackward() {
 		if (targetPosition.z >= 1){
