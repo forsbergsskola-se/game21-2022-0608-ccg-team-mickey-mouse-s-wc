@@ -22,11 +22,13 @@ public class CameraController : MonoBehaviour {
 	}
 
 	private void OnUIChangedMessageReceived(UIChangedMessage obj){
-		if (obj.TaskToDo == 1){
-			LookAtSelection(obj.ObjectTransform);
-		}
-		if (obj.TaskToDo == 2){
-			LookAway();
+		switch (obj.TaskToDo){
+			case 1:
+				LookAtSelection(obj.ObjectTransform);
+				break;
+			case 2:
+				LookAway();
+				break;
 		}
 	}
 
@@ -110,12 +112,11 @@ public class CameraController : MonoBehaviour {
 	
 	// Used to transition to store or feature. 
 	private void LookAtSelection(Transform objectTransform){
-		if (!zoomed) {
-			mainSceneSoundManager.MainClick();
-			targetView = objectTransform;
-			newFOV = 20;
-			zoomed = true;
-		}
+		if (zoomed) return;
+		mainSceneSoundManager.MainClick();
+		targetView = objectTransform;
+		newFOV = 20;
+		zoomed = true;
 	}
 	private void LookAway(){
 		mainSceneSoundManager.MainClick();
