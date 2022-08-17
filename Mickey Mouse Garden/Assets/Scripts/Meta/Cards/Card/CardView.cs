@@ -1,4 +1,3 @@
-using System.Linq;
 using Meta.Inventory.FighterInventory;
 using TMPro;
 using UnityEngine;

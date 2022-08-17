@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ActiveFighterUI : MonoBehaviour{
 
@@ -21,7 +17,6 @@ public class ActiveFighterUI : MonoBehaviour{
 			activeFighter3.GetComponent<PlayerFighterSimulator>().playerActiveEvent.AddListener(ShowActive);
 	}
 	private void ShowDeath(string fighterTag){
-		Debug.Log(fighterTag);
 		switch (fighterTag){
 			case "FF1":
 				fainted1.SetActive(true);
@@ -56,7 +51,6 @@ public class ActiveFighterUI : MonoBehaviour{
 		}
 	}
 	private void ShowActive(string fighterTag) {
-		Debug.Log("Active");
 		switch (fighterTag){
 			case "FF1":
 				greyMask1.SetActive(false);

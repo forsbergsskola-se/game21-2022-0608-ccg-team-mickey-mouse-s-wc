@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardCreator : MonoBehaviour{
@@ -7,6 +5,8 @@ public class CardCreator : MonoBehaviour{
     private FighterInfo fighter;
     private Transform[] cardSlots;
     [HideInInspector] public int cardCount = 1;
+    private const int ParentTransform = 0;
+
     private void Awake(){
         Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterMessageReceived);
         // Gets cardSlots from Child GameObjects
@@ -14,9 +14,9 @@ public class CardCreator : MonoBehaviour{
     }
 
     private void OnFighterMessageReceived(SelectedFighterTeamMessage obj){
-        FighterInfo[] cards = new FighterInfo[3];
+        var cards = new FighterInfo[3];
         obj.FighterTeam.CopyTo(cards,0);
-        for (int i = cards.Length - 1; i >= 0; i--){
+        for (var i = cards.Length - 1; i >= 0; i--){
             fighter = cards[i];
             // Spawns card at incremental card slots starting from 1 (not 0).
             InstantiateFighter(fighter, cardSlots[cardCount]);
@@ -25,7 +25,7 @@ public class CardCreator : MonoBehaviour{
     }
 
     private void InstantiateFighter(FighterInfo fighter, Transform cardSlot){
-        var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, cardSlots[0]); //TODO: What does the 0 mean?
+        var createdCard = Instantiate(card, cardSlot.position, Quaternion.identity, cardSlots[ParentTransform]); 
         var componentInChildren = createdCard.GetComponentInChildren<CardContentFiller>();
         var fighterInfo = new FighterInfo();
         

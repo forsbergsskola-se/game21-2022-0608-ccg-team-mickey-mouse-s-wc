@@ -1,5 +1,3 @@
-using System;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,12 +15,13 @@ public class ExitUI : MonoBehaviour{
 	}
 
 	private void OnUIChangedMessageReceived(UIChangedMessage obj){
-		if (obj.TaskToDo == 1){
-			gameObjectTag = obj.ObjectTag;
-		}
-		if (obj.TaskToDo == 2){
-			Debug.Log(gameObjectTag);
-			UnLaunch(gameObjectTag);
+		switch (obj.TaskToDo){
+			case 1:
+				gameObjectTag = obj.ObjectTag;
+				break;
+			case 2:
+				UnLaunch(gameObjectTag);
+				break;
 		}
 	}
 	private void UnLaunch(string itemTag){

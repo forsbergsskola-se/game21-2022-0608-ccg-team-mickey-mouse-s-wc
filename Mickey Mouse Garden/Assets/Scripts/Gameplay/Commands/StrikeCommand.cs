@@ -45,9 +45,4 @@ public class StrikeCommand : ICommand{
             return multiplier -= .5f;
         return multiplier;
     }
-    
-    
-    public void Undo(){
-        throw new NotImplementedException();
-    }
 }

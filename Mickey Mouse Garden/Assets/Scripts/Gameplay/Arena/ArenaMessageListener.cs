@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ArenaMessageListener : MonoBehaviour{
@@ -30,25 +29,27 @@ public class ArenaMessageListener : MonoBehaviour{
 		arenaSoundManager.Hit(obj.StrikerAlignment.ToString(), (int)obj.StrikerRarity);
 	}
 	private void OnFighterFaintMessageReceived(FighterFaintMessage obj){
-		arenaSoundManager.Faint();
-		
-		if (obj.wasPlayerFighter){
-			delta--;
-			arenaSoundManager.ModulateMusic(delta);
-		}
-		if (!obj.wasPlayerFighter){
-			delta++;
-			arenaSoundManager.ModulateMusic(delta);
+		switch (obj.wasPlayerFighter){
+			case true:
+				delta--;
+				arenaSoundManager.ModulateMusic(delta);
+				break;
+			case false:
+				delta++;
+				arenaSoundManager.ModulateMusic(delta);
+				break;
 		}
 	}
 	private void OnPostCombatStateReceived(PostCombatStateMessage obj){
-		if (obj.State == PostCombatState.Victory){
-			arenaSoundManager.Victory();
-			arenaSoundManager.StopMusic();
-		}  
-		if (obj.State == PostCombatState.Defeat) {
-			arenaSoundManager.Defeat();
-			arenaSoundManager.StopMusic();
+		switch (obj.State){
+			case PostCombatState.Victory:
+				arenaSoundManager.Victory();
+				arenaSoundManager.StopMusic();
+				break;
+			case PostCombatState.Defeat:
+				arenaSoundManager.Defeat();
+				arenaSoundManager.StopMusic();
+				break;
 		}
 	}
 }

@@ -12,21 +12,22 @@ public class UIHider : MonoBehaviour {
 	}
 
 	private void OnUIChangedMessageReceived(UIChangedMessage obj){
-		if (obj.TaskToDo == 1){
-			DisableButton();
-		}
-		if (obj.TaskToDo == 2){
-			EnableButton();
+		switch (obj.TaskToDo){
+			case 1:
+				DisableButton();
+				break;
+			case 2:
+				EnableButton();
+				break;
 		}
 	}
 
 	// Disables navigation buttons when zoomed in.
 	private void DisableButton(){
-		if (!selected){
-			buttonLeft.SetActive(false);
-			buttonRight.SetActive(false);
-			selected = true;
-		}
+		if (selected) return;
+		buttonLeft.SetActive(false);
+		buttonRight.SetActive(false);
+		selected = true;
 	}
 	private void EnableButton(){
 		buttonLeft.SetActive(true);
