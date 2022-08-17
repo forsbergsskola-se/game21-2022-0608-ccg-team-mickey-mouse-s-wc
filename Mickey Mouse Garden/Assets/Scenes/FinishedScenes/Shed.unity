@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137f400315210a44b8bac8b914a191dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardButtonPrefab: {fileID: 3298891821289139559, guid: eefdde3f906d4b740872066c5810fe20, type: 3}
+  cardButtonPrefab: {fileID: 4386000441848553184, guid: 9da312dffa805084cbcbbb2f5be59785, type: 3}
   noCardsAvailable: {fileID: 2126868839}
 --- !u!1001 &1072113055
 PrefabInstance:
