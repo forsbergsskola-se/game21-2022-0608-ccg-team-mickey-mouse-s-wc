@@ -168,11 +168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 544062942480667364, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 145.507
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 544062942480667364, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50.965
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 544062942480667364, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 544062942480667364, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 367
+      value: 388.4
       objectReference: {fileID: 0}
     - target: {fileID: 544062942480667364, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -229,6 +229,26 @@ PrefabInstance:
     - target: {fileID: 544062942480667365, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 544062943908673173, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 544062943908673173, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
+      propertyPath: m_margin.w
+      value: -11.892148
+      objectReference: {fileID: 0}
+    - target: {fileID: 544062943908673173, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
+      propertyPath: m_margin.y
+      value: -9.281142
+      objectReference: {fileID: 0}
+    - target: {fileID: 544062943908673173, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
+      propertyPath: m_margin.z
+      value: 16.953163
+      objectReference: {fileID: 0}
+    - target: {fileID: 544062943908673173, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 544062943908673173, guid: f6bc3db33e631bb40af284f27c78aeb1, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -3938,6 +3958,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4443874487197076703, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
+      propertyPath: rewardAmount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4443874487197076705, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
       propertyPath: m_Type
       value: 0
@@ -4038,11 +4062,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Watch an AD
 
-        To get X Fertilizer'
+        To get 20 Fertilizer'
       objectReference: {fileID: 0}
     - target: {fileID: 4443874487948247927, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
       propertyPath: m_fontSize
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4443874487948247927, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
       propertyPath: m_fontAsset
@@ -4062,7 +4086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4443874487948247927, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
       propertyPath: m_fontSizeBase
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4443874487948247927, guid: 6a212678c7b08c9459f4c2259fb62277, type: 3}
       propertyPath: m_sharedMaterial
