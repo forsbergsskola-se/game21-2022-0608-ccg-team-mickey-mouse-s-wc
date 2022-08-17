@@ -1,4 +1,3 @@
-using System;
 using Meta.Cards;
 using Meta.Inventory.FighterInventory;
 using UnityEngine;
@@ -30,16 +29,14 @@ public class TeamSelectionPanelController : MonoBehaviour {
     private void StoreNewCard(NewCardSelectedMessage newCardSelectedMessage) {
         // Prevent duplicate cards from being selected.
         foreach (var cardView in playercards){
-            if (cardView.id == newCardSelectedMessage.Card.ID){
-                Debug.Log("Same ID");
-                return;
-            }
+            if (cardView.id != newCardSelectedMessage.Card.ID) continue;
+            return;
         }
         newCard = newCardSelectedMessage.Card;
         SwapCards();
     }
 
-    public void SwapCards() {
+    private void SwapCards() {
         originCard = newCard;
         playercards[position].Configure(originCard);
     }
