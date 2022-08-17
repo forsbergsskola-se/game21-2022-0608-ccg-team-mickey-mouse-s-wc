@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137f400315210a44b8bac8b914a191dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardButtonPrefab: {fileID: 4386000441848553184, guid: 9da312dffa805084cbcbbb2f5be59785, type: 3}
+  cardButtonPrefab: {fileID: 1585231784874394284, guid: 7ff7b018d546cdf459af819143fa0313, type: 3}
   noCardsAvailable: {fileID: 2126868839}
 --- !u!1 &972616333
 GameObject:
