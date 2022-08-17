@@ -62,10 +62,9 @@ public class CardMovement : MonoBehaviour {
 	}
 	
 	private void GetPositions(){
-		if (!positionsGotten){
-			positions = GetComponentsInChildren<Transform>();
-			positionsGotten = true;
-		}
+		if (positionsGotten) return;
+		positions = GetComponentsInChildren<Transform>();
+		positionsGotten = true;
 	}
 	
 	private void MoveTo(Transform targetTransform, Transform cardTransform){
