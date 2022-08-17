@@ -18,12 +18,14 @@ namespace Meta.Inventory.FighterInventory {
             base.Awake();
             Broker.Subscribe<SortCardInventoryByRarityMessage>(SortByRarity);
             Broker.Subscribe<SortCardInventoryByAlignmentMessage>(SortByAlignment);
+            Broker.Subscribe<SortCardInventoryByNameMessage>(SortByName);
         }
 
         public override void OnDisable(){
             base.OnDisable();
             Broker.Unsubscribe<SortCardInventoryByRarityMessage>(SortByRarity);
-            Broker.Subscribe<SortCardInventoryByAlignmentMessage>(SortByAlignment);
+            Broker.Unsubscribe<SortCardInventoryByAlignmentMessage>(SortByAlignment);
+            Broker.Unsubscribe<SortCardInventoryByNameMessage>(SortByName);
         }
 
         public override void CollectOperations(Card addedItem) {
@@ -35,12 +37,16 @@ namespace Meta.Inventory.FighterInventory {
 
 
         public void SortByRarity(SortCardInventoryByRarityMessage sortCardInventoryByRarityMessage){
-            InventoryList.SortByRarity(0, InventoryList.Items.Count - 1);
+            InventoryList.SortByRarity();
             InventoryList.Save();
         }
 
         public void SortByAlignment(SortCardInventoryByAlignmentMessage sortCardInventoryByAlignmentMessage){
-            InventoryList.SortByAlignment(0, InventoryList.Items.Count - 1);
+            InventoryList.SortByAlignment();
+            InventoryList.Save();
+        }
+        public void SortByName(SortCardInventoryByNameMessage sortCardInventoryByNameMessage){
+            InventoryList.SortByName();
             InventoryList.Save();
         }
     }
@@ -48,77 +54,15 @@ namespace Meta.Inventory.FighterInventory {
 
 public static class CardInventoryExtensions {
     
-    /// <summary>
-    /// Quicksort. Left index should be 0, right index should be lenght of list - 1.
-    /// </summary>
-    /// <param name="inventory"></param>
-    /// <param name="leftIndex"></param>
-    /// <param name="rightIndex"></param>
-    /// <exception cref="Exception"></exception>
-    public static void SortByRarity(this InventoryList<Card> inventory, int leftIndex, int rightIndex) {
-        var i = leftIndex; 
-        var j = rightIndex;
-        var pivot = inventory.Items[leftIndex].Rarity;
-
-        while (i <= j){
-            while(inventory.Items[i].Rarity < pivot) {
-                i++;
-            }
-            while(inventory.Items[j].Rarity > pivot) {
-                j--;
-            }
-
-            if (i <= j){
-                //Swaps the cards
-                (inventory.Items[i], inventory.Items[j]) = (inventory.Items[j], inventory.Items[i]);
-                i++;
-                j--;
-            }
-        }
-        
-        if(leftIndex < j) {
-            SortByRarity(inventory, leftIndex, j);
-        }
-        
-        if(i < rightIndex) {
-            SortByRarity(inventory, i, rightIndex);
-        }
+    public static void SortByRarity(this InventoryList<Card> inventory) {
+        inventory.Items.Sort((x,y) => y.Rarity.CompareTo(x.Rarity));
     }
     
-    /// <summary>
-    /// Quicksort. Left index should be 0, right index should be lenght of list - 1.
-    /// </summary>
-    /// <param name="inventory"></param>
-    /// <param name="leftIndex"></param>
-    /// <param name="rightIndex"></param>
-    /// <exception cref="Exception"></exception>
-    public static void SortByAlignment(this InventoryList<Card> inventory, int leftIndex, int rightIndex) {
-        var i = leftIndex; 
-        var j = rightIndex;
-        var pivot = inventory.Items[leftIndex].Alignment;
-
-        while (i <= j){
-            while(inventory.Items[i].Alignment < pivot) {
-                i++;
-            }
-            while(inventory.Items[j].Alignment > pivot) {
-                j--;
-            }
-
-            if (i <= j){
-                //Swaps the cards
-                (inventory.Items[i], inventory.Items[j]) = (inventory.Items[j], inventory.Items[i]);
-                i++;
-                j--;
-            }
-        }
-        
-        if(leftIndex < j) {
-            SortByAlignment(inventory, leftIndex, j);
-        }
-        
-        if(i < rightIndex) {
-            SortByAlignment(inventory, i, rightIndex);
-        }
+    public static void SortByAlignment(this InventoryList<Card> inventory) {
+        inventory.Items.Sort((x,y) => x.Alignment.CompareTo(y.Alignment));
+    }
+    
+    public static void SortByName(this InventoryList<Card> inventory) {
+        inventory.Items.Sort((x, y) => x.Name.CompareTo(y.Name));
     }
 }
