@@ -21,8 +21,8 @@ public class InspectCardSpawner : MonoBehaviour{
         instance.GetComponentInChildren<CardView>().Configure(obj.card);
         
         quitBackButton.SetActive(false);
-        fusionText.GetComponent<TextMeshProUGUI>().color = Color.white;
         fusionButton.GetComponent<Image>().color = Color.white;
+        fusionText.SetActive(true);
         fusionButton.GetComponent<Button>().interactable = true;
         backToSceneButton.SetActive(true);
     }
