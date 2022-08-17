@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Meta.Cards;
 using Meta.Inventory.FighterInventory;
 using UnityEngine;
@@ -13,36 +14,28 @@ public class AddStarterCards : MonoBehaviour
     public void Start(){
         StartCoroutine(Delay());
     }
-    public void AddStarterCardsToInventory()
-    {
-        Debug.Log("Adding starter cards to inventory");
-        foreach (var cardConfig in starterCardConfigs){
-            var newCard = new Card(cardConfig.Id){
-                Alignment = cardConfig.Alignment,
-                Attack = cardConfig.Attack,
-                ID = new StringGUID().NewGuid(),
-                Level = cardConfig.Level,
-                MaxHealth = cardConfig.MaxHealth,
-                Name = cardConfig.Name,
-                Rarity = cardConfig.Rarity,
-                Speed = cardConfig.Speed,
-                SpriteIndex = cardConfig.spriteIndex
-            };
+
+    private void AddStarterCardsToInventory(){
+        foreach (var newCard in starterCardConfigs.Select(cardConfig => new Card(cardConfig.Id){
+                     Alignment = cardConfig.Alignment,
+                     Attack = cardConfig.Attack,
+                     ID = new StringGUID().NewGuid(),
+                     Level = cardConfig.Level,
+                     MaxHealth = cardConfig.MaxHealth,
+                     Name = cardConfig.Name,
+                     Rarity = cardConfig.Rarity,
+                     Speed = cardConfig.Speed,
+                     SpriteIndex = cardConfig.spriteIndex
+                 })){
             Broker.InvokeSubscribers(typeof(AddItemToInventoryMessage<Card>), new AddItemToInventoryMessage<Card>(newCard,1));
         }
     }
 
-    IEnumerator Delay(){
+    private IEnumerator Delay(){
             yield return new WaitForSeconds(1);
            if(cardInventory.InventoryList.Items.Count == default)
            {
                 AddStarterCardsToInventory();
-           }
-           else{
-               foreach (var card in cardInventory.InventoryList.Items){
-                   Debug.Log("Card In Inventory: " + card.Name);
-               }
-                Debug.Log("Inventory already populated" + cardInventory.InventoryList);
            }
     }
 
