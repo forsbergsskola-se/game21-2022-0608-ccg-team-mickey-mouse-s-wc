@@ -62,8 +62,8 @@ namespace Meta.Inventory.NewSeedInventory {
         private void OnSeedAdded(AddItemToInventoryMessage<Seed> message) {
             UpdateSeedCount(message.item.rarity);
         }
-        
-        public void PlantSeed(PlantSeedMessage message) {
+
+        private void PlantSeed(PlantSeedMessage message) {
             Rarity rarityToPlant = message.SeedRarity;
             Seed seed;
 
@@ -71,8 +71,6 @@ namespace Meta.Inventory.NewSeedInventory {
                 seed = _seedInventory.InventoryList.Items.First(newSeed => newSeed.Rarity == rarityToPlant);
             }
             catch (Exception e) {
-                e = new Exception($"You have no {rarityToPlant.ToString()} seeds to plant");
-                Debug.LogException(e);
                 return;
             }
 
@@ -99,15 +97,12 @@ namespace Meta.Inventory.NewSeedInventory {
             growSlot.Destroy();
         }
         
-        public void HarvestAll() {
-            if (harvestableSlots.Count > 0) {
-                for (int i = harvestableSlots.Count - 1; i >= 0; i--) {
-                    if (!harvestableSlots[i].ReadyToHarvest) continue;
-                    if (harvestableSlots[i] == null) continue;
-                    HarvestOperations(harvestableSlots[i]);
-                }
-            } else {
-                Debug.Log("No seeds to harvest");
+        public void HarvestAll(){
+            if (harvestableSlots.Count <= 0) return;
+            for (var i = harvestableSlots.Count - 1; i >= 0; i--) {
+                if (!harvestableSlots[i].ReadyToHarvest) continue;
+                if (harvestableSlots[i] == null) continue;
+                HarvestOperations(harvestableSlots[i]);
             }
         }
         
@@ -123,11 +118,6 @@ namespace Meta.Inventory.NewSeedInventory {
         private void RemoveFromHarvestable(GrowSlot growSlot) {
             harvestableSlots.Remove(growSlot);
         }
-        
-        private void Harvest(GrowSlot growSlot) {
-            HarvestOperations(growSlot);
-        }
-        
         private void Harvest(HarvestSlotMessage message) {
             HarvestOperations(message.GrowSlot);
         }

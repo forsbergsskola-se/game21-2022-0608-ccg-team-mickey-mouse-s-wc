@@ -1,10 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Meta.Cards;
 using Meta.Currency;
 using UnityEngine;
-using Color = System.Drawing.Color;
 
 
 namespace Experiment{
@@ -19,7 +16,6 @@ namespace Experiment{
         void Awake(){
             var walletID = new StringGUID().CreateStringGuid(13);
             wallet = new PlayerWallet(walletID);
-            
             wallet.TryLoadData();
             wallet.Save();
             wallet.Fertilizer.LoadSprite();
@@ -29,7 +25,6 @@ namespace Experiment{
         }
 
         void OnEnable(){
-            Debug.Log("Subscribing to AskForPlayerCurrencyMessage",this);
             Broker.Subscribe<AskForPlayerCurrencyMessage>(SendDisplayInfo);
             Broker.Subscribe<AddPlayerCurrencyMessage>(ChangeCurrencies);
             Broker.Subscribe<EnterLevelMessage>(OnLevelMessageReceived);
@@ -61,14 +56,14 @@ namespace Experiment{
             var displayMessage = new DisplayPlayerCurrencyMessage();
             displayMessage.money = wallet.Money;
             displayMessage.fertilizer = wallet.Fertilizer;
-            Debug.Log("Invoking DisplayPlayerCurrencyMessage",this);
             Broker.InvokeSubscribers(typeof(DisplayPlayerCurrencyMessage), displayMessage);
         }
-        public void SendDisplayInfo(AskForPlayerCurrencyMessage message){
+
+        private void SendDisplayInfo(AskForPlayerCurrencyMessage message){
             UpdateDisplayCurrencies();
         }
-        
-        public void ChangeCurrencies(AddPlayerCurrencyMessage message){
+
+        private void ChangeCurrencies(AddPlayerCurrencyMessage message){
             if (message.money != null) wallet?.Money.AddAmount(message.money.Amount);
             if (message.fertilizer != null) wallet?.Fertilizer.AddAmount(message.fertilizer.Amount);
             playerWalletSO.playerWallet = wallet;

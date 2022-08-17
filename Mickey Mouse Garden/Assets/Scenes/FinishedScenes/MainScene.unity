@@ -1141,6 +1141,10 @@ PrefabInstance:
       propertyPath: dayNumber
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
+      propertyPath: amountMoney
+      value: 15250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
 --- !u!224 &39625909 stripped
@@ -12309,6 +12313,10 @@ PrefabInstance:
       propertyPath: dayNumber
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
+      propertyPath: amountMoney
+      value: 9800
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
 --- !u!224 &595292239 stripped
@@ -14767,6 +14775,10 @@ PrefabInstance:
     - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
       propertyPath: dayNumber
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
+      propertyPath: amountMoney
+      value: 6250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
@@ -26952,6 +26964,10 @@ PrefabInstance:
     - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
       propertyPath: dayNumber
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
+      propertyPath: amountMoney
+      value: 7800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
@@ -41107,6 +41123,10 @@ PrefabInstance:
       propertyPath: dayNumber
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
+      propertyPath: amountMoney
+      value: 20000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
 --- !u!224 &1980975249 stripped
@@ -41476,6 +41496,10 @@ PrefabInstance:
     - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
       propertyPath: dayNumber
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
+      propertyPath: amountMoney
+      value: 12200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
@@ -45029,6 +45053,10 @@ PrefabInstance:
     - target: {fileID: 1685971189742675495, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 4.8723145
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798420780988553002, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
+      propertyPath: amountMoney
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6947f8d714e3aaa41a2681e8c640e6db, type: 3}
