@@ -1,11 +1,12 @@
 using System;
 using Meta.Cards;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InspectCardSpawner : MonoBehaviour{
     [SerializeField] GameObject cardButtonPrefab, spawnPoint, backToSceneButton, quitBackButton;
-    [SerializeField] private Image fusionButton;
+    [SerializeField] private GameObject fusionButton, fusionText;
 
     private void Awake(){
         Broker.Subscribe<InspectCardMessage>(OnInspectCardMessageReceived);
@@ -20,7 +21,9 @@ public class InspectCardSpawner : MonoBehaviour{
         instance.GetComponentInChildren<CardView>().Configure(obj.card);
         
         quitBackButton.SetActive(false);
-        fusionButton.color = Color.white;
+        fusionText.GetComponent<TextMeshProUGUI>().color = Color.white;
+        fusionButton.GetComponent<Image>().color = Color.white;
+        fusionButton.GetComponent<Button>().interactable = true;
         backToSceneButton.SetActive(true);
     }
 }
