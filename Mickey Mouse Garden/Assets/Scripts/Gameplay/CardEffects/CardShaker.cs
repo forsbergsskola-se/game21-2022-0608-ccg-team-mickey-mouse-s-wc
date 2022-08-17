@@ -5,9 +5,7 @@ public class CardShaker : MonoBehaviour{
 	private CardContentFiller cardContentFiller;
 	private int directionModifier = 1;
 	private bool player;
-	private Transform origin;
 	private void Awake(){
-		origin = transform;
 		Broker.Subscribe<FighterStrikeMessage>(OnStrikeMessageReceived);
 		cardContentFiller = GetComponent<CardContentFiller>();
 		if (transform.position.x < 200){
