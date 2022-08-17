@@ -10,4 +10,7 @@ public class SortInventoryButton : MonoBehaviour
     public void SortInventoryByAlignment(){
         new SortCardInventoryByAlignmentMessage().Invoke();
     }
+    public void SortInventoryByName(){
+        new SortCardInventoryByNameMessage().Invoke();
+    }
 }

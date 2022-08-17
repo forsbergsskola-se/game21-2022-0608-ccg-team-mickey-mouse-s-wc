@@ -18,12 +18,14 @@ namespace Meta.Inventory.FighterInventory {
             base.Awake();
             Broker.Subscribe<SortCardInventoryByRarityMessage>(SortByRarity);
             Broker.Subscribe<SortCardInventoryByAlignmentMessage>(SortByAlignment);
+            Broker.Subscribe<SortCardInventoryByNameMessage>(SortByName);
         }
 
         public override void OnDisable(){
             base.OnDisable();
             Broker.Unsubscribe<SortCardInventoryByRarityMessage>(SortByRarity);
-            Broker.Subscribe<SortCardInventoryByAlignmentMessage>(SortByAlignment);
+            Broker.Unsubscribe<SortCardInventoryByAlignmentMessage>(SortByAlignment);
+            Broker.Unsubscribe<SortCardInventoryByNameMessage>(SortByName);
         }
 
         public override void CollectOperations(Card addedItem) {
@@ -41,6 +43,10 @@ namespace Meta.Inventory.FighterInventory {
 
         public void SortByAlignment(SortCardInventoryByAlignmentMessage sortCardInventoryByAlignmentMessage){
             InventoryList.SortByAlignment(0, InventoryList.Items.Count - 1);
+            InventoryList.Save();
+        }
+        public void SortByName(SortCardInventoryByNameMessage sortCardInventoryByNameMessage){
+            InventoryList.SortByName();
             InventoryList.Save();
         }
     }
@@ -120,5 +126,9 @@ public static class CardInventoryExtensions {
         if(i < rightIndex) {
             SortByAlignment(inventory, i, rightIndex);
         }
+    }
+    
+    public static void SortByName(this InventoryList<Card> inventory) {
+        inventory.Items.Sort((x, y) => x.Name.CompareTo(y.Name));
     }
 }
