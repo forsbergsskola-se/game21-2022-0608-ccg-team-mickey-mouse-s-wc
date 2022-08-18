@@ -520,6 +520,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c3445f35d670f72489ba7e88381981ca, type: 3}
+    - target: {fileID: 7030057766164417107, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2007.0029
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030057766164417107, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 3568.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030057766164417107, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7188924443241634517, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
