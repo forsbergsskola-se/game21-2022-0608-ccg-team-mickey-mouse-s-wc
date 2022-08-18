@@ -1,4 +1,4 @@
-using Meta.Inventory.NewSeedInventory;
+using Meta.Inventory.SeedInventory;
 using TMPro;
 using UnityEngine;
 

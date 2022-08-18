@@ -1,8 +1,5 @@
-using System;
-using System.Linq;
 using Meta.Currency;
-using Meta.Inventory.NewSeedInventory;
-using Meta.ShoppingSystem;
+using Meta.Inventory.SeedInventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

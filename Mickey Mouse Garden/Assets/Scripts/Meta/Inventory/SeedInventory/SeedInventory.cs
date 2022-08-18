@@ -1,13 +1,13 @@
-namespace Meta.Inventory.NewSeedInventory {
+namespace Meta.Inventory.SeedInventory {
     [System.Serializable]
     public class SeedInventory : Inventory<Seed> {
         public override InventoryList<Seed> InventoryList { get; set; } = new(new StringGUID().CreateStringGuid(20202));
         public InventoryList<Seed> PlantedSeeds { get; set; } = new(new StringGUID().CreateStringGuid(30303));
-
         public static SeedInventory Instance { get; private set; }
 
         public override void Awake() {
             base.Awake();
+            
             if (Instance != null) {
             } else {
                 Instance = this;
@@ -21,7 +21,6 @@ namespace Meta.Inventory.NewSeedInventory {
             PlantedSeeds.TryLoadData();
         }
         
-
         public override void OnDisable(){
             Broker.Unsubscribe<AskForUpdateSeedUi>(SendUpdateSeedUiMessage);
         }

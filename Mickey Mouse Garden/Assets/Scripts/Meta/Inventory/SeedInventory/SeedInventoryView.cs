@@ -2,45 +2,45 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Meta.Cards;
+using Meta.Inventory.NewSeedInventory;
 using Meta.Inventory.NewSeedInventory.Messages;
 using UnityEngine;
 
-namespace Meta.Inventory.NewSeedInventory {
+namespace Meta.Inventory.SeedInventory {
     public class SeedInventoryView : MonoBehaviour {
         public SeedSlotContainer[] SeedSlots;
         [SerializeField] private GameObject growSlotItemParent;
         
         public GrowSlot[] GrowSlotsPrefabs;
         
-        private List<GrowSlot> harvestableSlots = new List<GrowSlot>();
-        private SeedInventory _seedInventory;
+        private List<GrowSlot> harvestableSlots = new();
+        private SeedInventory seedInventory;
 
         private void Start() {
-            _seedInventory = FindObjectOfType<Player>().GetComponent<SeedInventory>();
+            seedInventory = FindObjectOfType<Player>().GetComponent<SeedInventory>();
             SubscribeToBrokerMessages();
             DisplayInventoryItems();
         }
-        
-        private void SubscribeToBrokerMessages() {
-            Broker.Subscribe<AddItemToInventoryMessage<Seed>>(OnSeedAdded);
-            Broker.Subscribe<PlantSeedMessage>(PlantSeed);
-            Broker.Subscribe<GrowSlotReadyToHarvestMessage>(AddToHarvestable);
-            Broker.Subscribe<HarvestSlotMessage>(Harvest);
-        }
-        
+
         private void DisplayInventoryItems() {
-            if (_seedInventory.InventoryList.Items is {Count: > 0})
-            {
+            DisplayInventorySeedCount();
+            DisplayPlantedSeeds();
+        }
+
+        private void DisplayPlantedSeeds() {
+            seedInventory.PlantedSeeds.TryLoadData();
+
+            if (seedInventory.PlantedSeeds.Items is not {Count: > 0}) return;
+
+            foreach (var seed in seedInventory.PlantedSeeds.Items) {
+                InstantiateGrowSlot(seed);
+            }
+        }
+
+        private void DisplayInventorySeedCount() {
+            if (seedInventory.InventoryList.Items is {Count: > 0}) {
                 foreach (Rarity rarity in Enum.GetValues(typeof(Rarity))) {
                     UpdateSeedCount(rarity);
-                }
-            }
-            
-            _seedInventory.PlantedSeeds.TryLoadData();
-
-            if (_seedInventory.PlantedSeeds.Items is {Count: > 0}) {
-                foreach (var seed in _seedInventory.PlantedSeeds.Items) {
-                    InstantiateGrowSlot(seed);
                 }
             }
         }
@@ -50,12 +50,12 @@ namespace Meta.Inventory.NewSeedInventory {
             var slotClone = Instantiate(slotToInstantiate, growSlotItemParent.transform, false);
             slotClone.SetUp(seed);
 
-            _seedInventory.PlantedSeeds.Save();
+            seedInventory.PlantedSeeds.Save();
         }
         
         private void UpdateSeedCount(Rarity rarity) {
             var slotToUpdate = SeedSlots.FirstOrDefault(slot => slot.Rarity == rarity);
-            var numberOfSeeds = _seedInventory.InventoryList.Items.Count(seed => seed.Rarity == rarity);
+            var numberOfSeeds = seedInventory.InventoryList.Items.Count(seed => seed.Rarity == rarity);
             slotToUpdate.UpdateCountText(numberOfSeeds); //If null ref occur, make sure the seed slots have set rarity in inspector
         }
         
@@ -68,19 +68,20 @@ namespace Meta.Inventory.NewSeedInventory {
             Seed seed;
 
             try {
-                seed = _seedInventory.InventoryList.Items.First(newSeed => newSeed.Rarity == rarityToPlant);
+                seed = seedInventory.InventoryList.Items.First(newSeed => newSeed.Rarity == rarityToPlant);
             }
             catch (Exception e) {
+                Debug.Log("No seed of the rarity was found to plant");
                 return;
             }
 
-            _seedInventory.Remove(seed);
+            seedInventory.Remove(seed);
             UpdateSeedCount(rarityToPlant);
             
             InstantiateGrowSlot(seed);
             
-            _seedInventory.PlantedSeeds.Items.Add(seed);
-            _seedInventory.PlantedSeeds.Save();
+            seedInventory.PlantedSeeds.Items.Add(seed);
+            seedInventory.PlantedSeeds.Save();
         }
         
         private void HarvestOperations(GrowSlot growSlot) {
@@ -88,24 +89,15 @@ namespace Meta.Inventory.NewSeedInventory {
             RequestCardSpawn(growSlot.rarity);
             
             var seedToRemove =
-                _seedInventory.PlantedSeeds.Items.FirstOrDefault(seed =>
+                seedInventory.PlantedSeeds.Items.FirstOrDefault(seed =>
                     seed.rarity == growSlot.rarity);
             
-            _seedInventory.PlantedSeeds.Items.Remove(seedToRemove);
-            _seedInventory.PlantedSeeds.Save();
+            seedInventory.PlantedSeeds.Items.Remove(seedToRemove);
+            seedInventory.PlantedSeeds.Save();
             
             growSlot.Destroy();
         }
-        
-        public void HarvestAll(){
-            if (harvestableSlots.Count <= 0) return;
-            for (var i = harvestableSlots.Count - 1; i >= 0; i--) {
-                if (!harvestableSlots[i].ReadyToHarvest) continue;
-                if (harvestableSlots[i] == null) continue;
-                HarvestOperations(harvestableSlots[i]);
-            }
-        }
-        
+
         private void RequestCardSpawn(Rarity rarity) {
             var spawnMessage = new SpawnCardFromSeed(rarity);
             Broker.InvokeSubscribers(spawnMessage.GetType(), spawnMessage);
@@ -118,8 +110,16 @@ namespace Meta.Inventory.NewSeedInventory {
         private void RemoveFromHarvestable(GrowSlot growSlot) {
             harvestableSlots.Remove(growSlot);
         }
+        
         private void Harvest(HarvestSlotMessage message) {
             HarvestOperations(message.GrowSlot);
+        }
+        
+        private void SubscribeToBrokerMessages() {
+            Broker.Subscribe<AddItemToInventoryMessage<Seed>>(OnSeedAdded);
+            Broker.Subscribe<PlantSeedMessage>(PlantSeed);
+            Broker.Subscribe<GrowSlotReadyToHarvestMessage>(AddToHarvestable);
+            Broker.Subscribe<HarvestSlotMessage>(Harvest);
         }
 
         private void OnDestroy() {

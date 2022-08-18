@@ -1,4 +1,4 @@
-using Meta.Inventory.NewSeedInventory;
+using Meta.Inventory.SeedInventory;
 using Meta.ShoppingSystem;
 
 namespace Meta.Inventory.Converters{

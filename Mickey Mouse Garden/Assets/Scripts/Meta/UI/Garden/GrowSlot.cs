@@ -1,5 +1,6 @@
 using System;
 using Meta.Inventory.NewSeedInventory.Messages;
+using Meta.Inventory.SeedInventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
