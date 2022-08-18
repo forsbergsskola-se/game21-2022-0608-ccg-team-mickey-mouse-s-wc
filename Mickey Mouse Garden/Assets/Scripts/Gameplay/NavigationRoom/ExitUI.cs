@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,24 +27,18 @@ public class ExitUI : MonoBehaviour{
 	}
 	private void UnLaunch(string itemTag){
 		switch (itemTag){
-			// pShop
 			case "PShop":
 				SceneManager.UnloadSceneAsync("PShop");
 				break;
-			// shop
 			case "Shop":
 				SceneManager.UnloadSceneAsync("Shop");
 				break;
-			// shed
 			case "Shed":
 				SceneManager.UnloadSceneAsync("Shed");
 				break;
-			// garden
 			case "Garden":
 				SceneManager.UnloadSceneAsync("Garden");
 				break;
-
-			// arena
 			case "Arena":
 				if (SceneManager.GetSceneByName("OpponentSelection").isLoaded){
 					SceneManager.UnloadSceneAsync("OpponentSelection");
@@ -51,6 +46,8 @@ public class ExitUI : MonoBehaviour{
 				enivronment.SetActive(true);
 				GetComponent<MainSceneSoundManager>().UnPauseMusic();
 				break;
+			default:
+				throw new SwitchExpressionException();
 		}
 	}
 }

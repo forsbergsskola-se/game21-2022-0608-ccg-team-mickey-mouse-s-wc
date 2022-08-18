@@ -20,12 +20,12 @@ public class CombatController : MonoBehaviour{
 
    private void Awake(){
       executor = FindObjectOfType<Executor>();
-      Broker.Subscribe<FighterFaintMessage>(OnDeathMessageRecieved);
+      Broker.Subscribe<FighterFaintMessage>(OnDeathMessageReceived);
       Broker.Subscribe<SelectedFighterTeamMessage>(OnFighterTeamReceived);
    }
 
    private void OnDisable(){
-      Broker.Unsubscribe<FighterFaintMessage>(OnDeathMessageRecieved);
+      Broker.Unsubscribe<FighterFaintMessage>(OnDeathMessageReceived);
       Broker.Unsubscribe<SelectedFighterTeamMessage>(OnFighterTeamReceived);
    }
 
@@ -65,7 +65,7 @@ public class CombatController : MonoBehaviour{
       }
    }
 
-   private void OnDeathMessageRecieved(FighterFaintMessage obj){
+   private void OnDeathMessageReceived(FighterFaintMessage obj){
       if (obj.wasPlayerFighter){
          if (playerFighters.TryPop(out var temp)){
             playerFighter = temp;

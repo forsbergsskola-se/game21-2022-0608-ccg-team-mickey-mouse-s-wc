@@ -19,63 +19,55 @@ public class ActiveFighterUI : MonoBehaviour{
 	private void ShowDeath(string fighterTag){
 		switch (fighterTag){
 			case "FF1":
-				fainted1.SetActive(true);
-				greyMask1.SetActive(true);
-				activeFighter1.GetComponent<PlayerFighterSimulator>().playerDedEvent.RemoveListener(ShowDeath);
+				DisplayDeath(fainted1, greyMask1, activeFighter1);
 				break;
 			case "FF2":
-				fainted2.SetActive(true);
-				greyMask2.SetActive(true);
-				activeFighter2.GetComponent<PlayerFighterSimulator>().playerDedEvent.RemoveListener(ShowDeath);
+				DisplayDeath(fainted2, greyMask2, activeFighter2);
 				break;
 			case "FF3":
-				fainted3.SetActive(true);
-				greyMask3.SetActive(true);
-				activeFighter3.GetComponent<PlayerFighterSimulator>().playerDedEvent.RemoveListener(ShowDeath);
+				DisplayDeath(fainted3, greyMask3, activeFighter3);
 				break;
 			case "EF1":
-				fainted1.SetActive(true);
-				greyMask1.SetActive(true);
-				activeFighter1.GetComponent<PlayerFighterSimulator>().playerDedEvent.RemoveListener(ShowDeath);
+				DisplayDeath(fainted1, greyMask1, activeFighter1);
 				break;
 			case "EF2":
-				fainted2.SetActive(true);
-				greyMask2.SetActive(true);
-				activeFighter2.GetComponent<PlayerFighterSimulator>().playerDedEvent.RemoveListener(ShowDeath);
+				DisplayDeath(fainted2, greyMask2, activeFighter2);
 				break;
 			case "EF3":
-				fainted3.SetActive(true);
-				greyMask3.SetActive(true);
-				activeFighter3.GetComponent<PlayerFighterSimulator>().playerDedEvent.RemoveListener(ShowDeath);
+				DisplayDeath(fainted3, greyMask3, activeFighter3);
 				break;
 		}
 	}
 	private void ShowActive(string fighterTag) {
 		switch (fighterTag){
 			case "FF1":
-				greyMask1.SetActive(false);
-				activeFighter1.GetComponent<PlayerFighterSimulator>().playerActiveEvent.RemoveListener(ShowActive);
+				DisplayDeath(greyMask1,activeFighter1);
 				break;
 			case "FF2":
-				greyMask2.SetActive(false);
-				activeFighter2.GetComponent<PlayerFighterSimulator>().playerActiveEvent.RemoveListener(ShowActive);
+				DisplayDeath(greyMask2,activeFighter2);
 				break;
 			case "FF3":
-				greyMask3.SetActive(false);
-				activeFighter3.GetComponent<PlayerFighterSimulator>().playerActiveEvent.RemoveListener(ShowActive);
+				DisplayDeath(greyMask3,activeFighter3);
 				break;
 			case "EF1":
-				greyMask1.SetActive(false);
-				activeFighter1.GetComponent<PlayerFighterSimulator>().playerActiveEvent.RemoveListener(ShowActive);
+				DisplayDeath(greyMask1,activeFighter1);
 				break;
 			case "EF2":
-				greyMask2.SetActive(false);
-				activeFighter2.GetComponent<PlayerFighterSimulator>().playerActiveEvent.RemoveListener(ShowActive);
+				DisplayDeath(greyMask2,activeFighter2);
 				break;
 			case "EF3":
-				greyMask3.SetActive(false);
-				activeFighter3.GetComponent<PlayerFighterSimulator>().playerActiveEvent.RemoveListener(ShowActive);
+				DisplayDeath(greyMask3,activeFighter3);
 				break;
 		}
+	}
+	
+	private void DisplayDeath(GameObject fainted, GameObject greyMask,GameObject activeFighter){
+		fainted.SetActive(true);
+		greyMask.SetActive(true);
+		activeFighter.GetComponent<PlayerFighterSimulator>().playerDedEvent.RemoveListener(ShowDeath);
+	}
+	private void DisplayDeath(GameObject greyMask,GameObject activeFighter){
+		greyMask1.SetActive(false);
+		activeFighter1.GetComponent<PlayerFighterSimulator>().playerActiveEvent.RemoveListener(ShowActive);
 	}
 }
