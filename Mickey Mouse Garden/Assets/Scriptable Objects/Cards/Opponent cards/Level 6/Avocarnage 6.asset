@@ -21,7 +21,7 @@ MonoBehaviour:
   Speed: 10
   Alignment: 1
   Rarity: 10
-  Level: 1
+  Level: 6
   HealthMultiplier: 1
   AttackMultiplier: 1
   SpeedMultiplier: 0.5
