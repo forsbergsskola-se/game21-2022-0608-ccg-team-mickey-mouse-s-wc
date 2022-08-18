@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
+  m_Name: Carrot 6
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: fc1cfc2e3307abf47a6af323940c369f, type: 3}
+  spriteIndex: 2
+  Name: Corsai Carrot
+  Id: carrot
+  MaxHealth: 7
+  Attack: 9
+  Speed: 8
+  Alignment: 2
+  Rarity: 0
+  Level: 1
+  HealthMultiplier: 0.75
+  AttackMultiplier: 0.75
+  SpeedMultiplier: 0.75
