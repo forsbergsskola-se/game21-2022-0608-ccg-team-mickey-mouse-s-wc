@@ -12,9 +12,8 @@ namespace Meta.Cards {
     public class CardInventoryView : MonoBehaviour {
         public CardView cardPrefab;
         public List<CardView> cards;
-        public CardLibraryConfig cardLibrary; //TODO: Break out in "data manager" (singleton), monobehaviour
-
-        //TODO: On open
+        public CardLibraryConfig cardLibrary;
+        
         private void Awake() {
             Broker.Subscribe<CardAddedToInventoryMessage>(OnCardAdded);
 

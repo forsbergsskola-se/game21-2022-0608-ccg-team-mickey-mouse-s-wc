@@ -26,17 +26,15 @@ public class AddStarterCards : MonoBehaviour
                      Rarity = cardConfig.Rarity,
                      Speed = cardConfig.Speed,
                      SpriteIndex = cardConfig.spriteIndex
-                 })){
+                 })) {
             Broker.InvokeSubscribers(typeof(AddItemToInventoryMessage<Card>), new AddItemToInventoryMessage<Card>(newCard,1));
         }
     }
 
     private IEnumerator Delay(){
-            yield return new WaitForSeconds(1);
-           if(cardInventory.InventoryList.Items.Count == default)
-           {
-                AddStarterCardsToInventory();
-           }
+        yield return new WaitForSeconds(1);
+        if (cardInventory.InventoryList.Items.Count == default) {
+            AddStarterCardsToInventory();
+        }
     }
-
 }
