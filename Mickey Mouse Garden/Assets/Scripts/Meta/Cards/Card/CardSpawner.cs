@@ -26,7 +26,7 @@ namespace Meta.Inventory {
         }
 
         private void CollectRandomCard(SpawnCardFromSeed spawnCardFromSeed) {
-            float randomNumber = Random.Range(0, 1);
+            float randomNumber = Random.Range(0f, 1f);
             float chance;
             Rarity rarityToSpawn;
             
