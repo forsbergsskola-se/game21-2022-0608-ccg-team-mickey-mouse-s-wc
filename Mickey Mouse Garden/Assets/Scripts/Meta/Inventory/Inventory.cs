@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Meta.Inventory {
     public abstract class Inventory<T> : MonoBehaviour where T : IInventoryItem {
         public abstract InventoryList<T> InventoryList { get; set; }
-
         
         public virtual void Awake(){
             LoadList();
@@ -14,6 +13,7 @@ namespace Meta.Inventory {
         public virtual void Start(){
             InitBase();
         }
+        
         public virtual void OnDisable() {
             Broker.Unsubscribe<AddItemToInventoryMessage<T>>(OnItemCollected);
             Broker.Unsubscribe<RemoveInventoryItemMessage<T>>(OnRemoveInventoryItemMessageReceived);
@@ -46,8 +46,10 @@ namespace Meta.Inventory {
                 //Remove first item by type
                 InventoryList.Items.Remove(InventoryList.Items.First(x=> x.libraryID== message.PathID));
                 Save();
+                
                 return;
             }
+            
             //Remove specific item by string guid
             InventoryList.Items.Remove(InventoryList.Items.Find(x=> x.ID == message.StringGuid));
             Save();

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Meta.Interfaces;
 using Newtonsoft.Json;
@@ -19,6 +18,7 @@ namespace Meta.Inventory {
             if (loadedList == null){
                 return;
             }
+            
             Items = loadedList.Items;
         }
 
