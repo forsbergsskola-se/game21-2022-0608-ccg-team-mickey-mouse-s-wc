@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Meta.Cards;
 using Meta.Inventory.FighterInventory;
@@ -7,10 +6,12 @@ using UnityEngine;
 public class InstantiateFullCardCollection : MonoBehaviour{
     [SerializeField] private GameObject cardButtonPrefab;
     private List<Card> playerCardTeam;
+    
     private void OnEnable(){
         Broker.Subscribe<SortCardInventoryByRarityMessage>(OnSortCardInventoryByRarityMessageReceived);
         Broker.Subscribe<SortCardInventoryByAlignmentMessage>(OnSortCardInventoryByAlignmentMessageReceived);
         Broker.Subscribe<SortCardInventoryByNameMessage>(OnSortCardInventoryByNameMessageReceived);
+        
         playerCardTeam = FindObjectOfType<CardInventory>().InventoryList.Items;
         for (int i = 0; i < playerCardTeam.Count; i++){
             var instance = Instantiate(cardButtonPrefab, gameObject.transform);
@@ -37,6 +38,7 @@ public class InstantiateFullCardCollection : MonoBehaviour{
         Broker.Unsubscribe<SortCardInventoryByRarityMessage>(OnSortCardInventoryByRarityMessageReceived);
         Broker.Unsubscribe<SortCardInventoryByAlignmentMessage>(OnSortCardInventoryByAlignmentMessageReceived);
         Broker.Unsubscribe<SortCardInventoryByNameMessage>(OnSortCardInventoryByNameMessageReceived);
+        
         var cards = GetComponentsInChildren<CardView>();
         foreach (var card in cards){
             Destroy(card.gameObject);
