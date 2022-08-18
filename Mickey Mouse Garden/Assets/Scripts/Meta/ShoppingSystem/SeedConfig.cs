@@ -23,7 +23,7 @@ namespace Meta.ShoppingSystem{
             Broker.InvokeSubscribers(message.GetType(), message);
         }
 
-        public override void AddToLibrary(){
+        public virtual void AddToLibrary(){
             library.AddItemConfig(this);
         }
     }
