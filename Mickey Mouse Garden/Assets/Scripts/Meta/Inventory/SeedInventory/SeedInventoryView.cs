@@ -97,6 +97,16 @@ namespace Meta.Inventory.SeedInventory {
             
             growSlot.Destroy();
         }
+        
+        public void HarvestAll(){
+            if (harvestableSlots.Count <= 0) return;
+            
+            for (var i = harvestableSlots.Count - 1; i >= 0; i--) {
+                if (!harvestableSlots[i].ReadyToHarvest) continue;
+                if (harvestableSlots[i] == null) continue;
+                HarvestOperations(harvestableSlots[i]);
+            }
+        }
 
         private void RequestCardSpawn(Rarity rarity) {
             var spawnMessage = new SpawnCardFromSeed(rarity);
