@@ -47,16 +47,16 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             // Configure the button to call the ShowAd() method when clicked:
             _showAdButton.onClick.AddListener(ShowAd);
-            
-            if (!rewardedAdsLimit.CanWatchAdd()) return;
-            
-            // Enable the button for users to click:
+        }
+        
+        // Enable the button for users to click if they can watch an ad today:
+        if (rewardedAdsLimit.CanWatchAdd()) {
             _showAdButton.interactable = true;
         }
     }
  
     // Implement a method to execute when the user clicks the button:
-    public void ShowAd() {
+    private void ShowAd() {
         // Disable the button:
         _showAdButton.interactable = false;
         // Then show the ad:
@@ -69,10 +69,12 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
+            
             // Grant a reward.
             var PremiumCurrency = new Fertilizer();
             Debug.Log($"You have gained {rewardAmount} {PremiumCurrency.Name}!");
             PremiumCurrency.AddAmount(rewardAmount);
+            
             var message = new AddPlayerCurrencyMessage();
             message.fertilizer = PremiumCurrency;
             Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage),message);
