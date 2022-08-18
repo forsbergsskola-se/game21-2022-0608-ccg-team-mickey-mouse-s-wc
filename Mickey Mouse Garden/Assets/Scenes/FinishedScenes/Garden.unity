@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -432,6 +432,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1701594245126144330, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701594245126144330, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701594245126144330, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 791722906}
+    - target: {fileID: 1701594245126144330, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701594245126144330, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701594245126144330, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SendClickSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701594245126144330, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2278702390972765512, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -530,6 +558,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+--- !u!1 &791722905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1701594245126144328, guid: 2be8707db4980497b9cff06ffba9c62c, type: 3}
+  m_PrefabInstance: {fileID: 791722904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &791722906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791722905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8ea9fdd43244829e23abbc2e983e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395378083
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,9 +1007,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1395378085}
     - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1395378085}
+    - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7878520568507989746}
+    - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SendClickSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878520569498916961, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7878520570127484772, guid: e67fe8794df7b42b4816df503851147e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1099,3 +1172,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+--- !u!1 &7878520568507989745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7878520569498916991, guid: e67fe8794df7b42b4816df503851147e, type: 3}
+  m_PrefabInstance: {fileID: 7878520568507989744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7878520568507989746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878520568507989745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8ea9fdd43244829e23abbc2e983e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

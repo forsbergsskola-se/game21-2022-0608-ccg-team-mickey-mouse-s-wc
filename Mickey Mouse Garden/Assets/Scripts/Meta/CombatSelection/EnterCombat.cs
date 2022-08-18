@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Meta.Cards;
 using Meta.Inventory.FighterInventory;
 using UnityEngine;
@@ -22,15 +20,12 @@ public class EnterCombat : MonoBehaviour{
         Broker.Unsubscribe<EnterLevelMessage>(OnEnterLevelMessageReceived);
         Broker.Unsubscribe<CardSelectionMessage>(OnSelectedCardMessageReceived);
     }
-
-
+    
     private void OnEnterLevelMessageReceived(EnterLevelMessage message){
-
         for (int i = 0; i < message.CardConfigTeam.Length; i++){
-
             var cardConfig = message.CardConfigTeam[i];
             
-            Card card = new Card("666"){
+            var card = new Card("666"){
                 ID = new StringGUID().NewGuid(),
                 MaxHealth = cardConfig.MaxHealth,
                 Attack = cardConfig.Attack,
@@ -41,9 +36,7 @@ public class EnterCombat : MonoBehaviour{
                 Alignment = cardConfig.Alignment,
                 SpriteIndex = cardConfig.spriteIndex
             };
-            
-            
-            
+
             enemyTeamMembers[i] = card;
         }
     }
@@ -58,10 +51,12 @@ public class EnterCombat : MonoBehaviour{
 
     private IEnumerator PrepareForArena(){
         yield return new WaitForSeconds(0.1f);
+        
         for (var i = 0; i < playerCards.Length; i++){
             var card = playerCards[i].GetComponentInChildren<ASelectedCard>().FindCardData();
             playerteamMembers[i] = card;
         }
+        
         var playerTeam = ConvertToFighterStack(playerteamMembers);
         var selectedPlayerTeam = new SelectedFighterTeamMessage{FighterTeam = playerTeam, IsPlayerTeam = true};
         Broker.InvokeSubscribers(typeof(SelectedFighterTeamMessage), selectedPlayerTeam);
@@ -71,7 +66,6 @@ public class EnterCombat : MonoBehaviour{
         Broker.InvokeSubscribers(enemyTeamSelected.GetType(), enemyTeamSelected);
         
         SceneManager.UnloadSceneAsync("OpponentSelection");
-        //TODO: change into actual proper scene not the temporary testing one
     }
 
     private Stack<FighterInfo> ConvertToFighterStack(Card[] cards) {
@@ -91,6 +85,7 @@ public class EnterCombat : MonoBehaviour{
             
             team.Push(fighter);
         }
+        
         return team;
     }
 }

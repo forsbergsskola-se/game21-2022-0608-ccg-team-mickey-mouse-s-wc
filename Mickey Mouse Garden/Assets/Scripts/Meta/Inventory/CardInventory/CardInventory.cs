@@ -35,7 +35,6 @@ namespace Meta.Inventory.FighterInventory {
             Broker.InvokeSubscribers(cardAddedMessage.GetType(), cardAddedMessage);
         }
 
-
         public void SortByRarity(SortCardInventoryByRarityMessage sortCardInventoryByRarityMessage){
             InventoryList.SortByRarity();
             InventoryList.Save();
@@ -53,7 +52,6 @@ namespace Meta.Inventory.FighterInventory {
 }
 
 public static class CardInventoryExtensions {
-    
     public static void SortByRarity(this InventoryList<Card> inventory) {
         inventory.Items.Sort((x,y) => y.Rarity.CompareTo(x.Rarity));
     }
