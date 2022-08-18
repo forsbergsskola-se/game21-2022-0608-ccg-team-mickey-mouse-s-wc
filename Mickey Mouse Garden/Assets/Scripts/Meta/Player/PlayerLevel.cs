@@ -8,9 +8,11 @@ public class PlayerLevel : ISaveData{
         set;
     } = 1;
     public StringGUID ID{ get; } = new StringGUID().CreateStringGuid(0010113);
+    
     public async void TryLoadData(){
         var playerLevel = await SaveManager.Load<PlayerLevel>(ID);
         if (playerLevel == null) return;
+        
         Level = playerLevel.Level;
     }
 

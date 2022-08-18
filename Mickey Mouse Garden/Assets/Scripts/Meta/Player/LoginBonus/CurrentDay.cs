@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class CurrentDay : MonoBehaviour{
+public class CurrentDay : MonoBehaviour {
     public Day day;
     
     void OnEnable(){
         Broker.Subscribe<AddPlayerCurrencyMessage>(OnCurrencyRewardMessageReceived);
+        
         day = new Day();
         day.TryLoadData();
+        
         StartCoroutine(SetClaimableDay());
     }
     
@@ -20,12 +22,14 @@ public class CurrentDay : MonoBehaviour{
     private void OnDisable(){
         Broker.Unsubscribe<AddPlayerCurrencyMessage>(OnCurrencyRewardMessageReceived);
     }
+    
     private IEnumerator SetClaimableDay(){
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("CurrentDay " + day.claimableDay);
+
         // If you claimed at least 1 day before
         if (day.dateOfClaim < DateTime.Today){
             day.claimableDay++;
+            
             if (day.claimableDay == 8){
                 day.claimableDay = 1;
             }

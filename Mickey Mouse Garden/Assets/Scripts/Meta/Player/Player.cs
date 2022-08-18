@@ -3,9 +3,9 @@ using Meta.Cards;
 using UnityEngine;
 [CustomComponent("Player","Makes player dont destroy on load, also has to be loaded first!")]
 public class Player : MonoBehaviour{
-
     public PlayerLevel playerLevel;
     int attemptedCombatLevel;
+    
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
         
@@ -18,12 +18,10 @@ public class Player : MonoBehaviour{
         playerLevel.TryLoadData();
     }
 
-
     void OnDisable(){
         Broker.Unsubscribe<EnterLevelMessage>(OnCombatLevelMessageReceived);
         Broker.Unsubscribe<PostCombatStateMessage>(OnPostCombatStateMessageReceived);
     }
-
 
     private void OnCombatLevelMessageReceived(EnterLevelMessage message){
         attemptedCombatLevel = message.Level;
@@ -41,6 +39,4 @@ public class Player : MonoBehaviour{
         SaveManager.DeleteAllSaves();
     }
 #endif
-
-   
 }
