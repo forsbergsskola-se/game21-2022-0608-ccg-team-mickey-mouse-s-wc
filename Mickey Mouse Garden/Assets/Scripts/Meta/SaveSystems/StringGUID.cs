@@ -12,16 +12,18 @@ public class StringGUID{
       get => guid.ToString();
       set => guid = new Guid(value);
    }
+   
    public StringGUID(string stringGuid){
       var guid = new Guid();
       var guidString = guid.ToString().ToCharArray();
+      
       for (int i = 0; i < guidString.Length; i++){
          if(guidString[i].Equals(char.Parse(0.ToString()))){
             guidString[i] = stringGuid[i];
          }
       }
-      var newString = new string(stringGuid);
       
+      var newString = new string(stringGuid);
       GUIDAsString = newString;
    }
 
@@ -37,6 +39,7 @@ public class StringGUID{
    public StringGUID CreateStringGuid(int value){
       var newGuid = new StringGUID();
       char[] newCharArray = newGuid.GUIDAsString.ToCharArray();
+      
       for (int i = 0; i < value.ToString().Length; i++){
          newCharArray[i] = value.ToString()[i];
       }
@@ -49,20 +52,18 @@ public class StringGUID{
       return GUIDAsString;
    }
 }
+
 [JsonObject]
 public class StringGuidConverter : TypeConverter{
-   public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
-   {
+   public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType) {
       return sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
       
    }
-   public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
-   {
+   public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value) {
       return value is string s ? new StringGUID(s) : base.ConvertFrom(context, culture, value);
    }
 
-   public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
-   {
+   public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType) {
       return destinationType == typeof(string) && value is StringGUID stringGuid
          ? stringGuid.ToString()
          : base.ConvertTo(context, culture, value, destinationType);
