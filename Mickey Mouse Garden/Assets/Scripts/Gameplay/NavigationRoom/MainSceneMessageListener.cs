@@ -55,7 +55,7 @@ public class MainSceneMessageListener : MonoBehaviour{
     }
     
     private void OnAddPlayerCurrencyMessageReceived(AddPlayerCurrencyMessage obj){
-        if (obj.money.Amount <= 0){
+        if (obj?.money?.Amount <= 0){
             mainSceneSoundManager.Purchase();
         }
         else{
