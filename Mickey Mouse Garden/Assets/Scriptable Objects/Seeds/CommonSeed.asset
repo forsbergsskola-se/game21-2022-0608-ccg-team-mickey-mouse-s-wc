@@ -19,6 +19,6 @@ MonoBehaviour:
   moneySellAmount: 500
   fertilizerPurchaseAmount: 0
   fertilizerSellAmount: 0
-  sprite: {fileID: 21300000, guid: b4fed386dcb93e641b2c22b6ff168d58, type: 3}
+  sprite: {fileID: 21300000, guid: ddd21e029d0044f44a65e18b5b363c11, type: 3}
   rarity: 0
   library: {fileID: 11400000, guid: 09e6523093dad2f41959bf447b09a554, type: 2}

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Meta.Cards;
 using UnityEngine;
@@ -25,39 +24,8 @@ namespace Meta.Inventory {
             Broker.Unsubscribe<SpawnCardFromSeed>(CollectRandomCard);
         }
 
-        private void CollectRandomCard(SpawnCardFromSeed spawnCardFromSeed) {
-            float randomNumber = Random.Range(0f, 1f);
-            float chance;
-            Rarity rarityToSpawn;
-            
-            switch (spawnCardFromSeed.Rarity) {
-                case Rarity.Common:
-                    rarityToSpawn = Rarity.Common;
-                    chance = 1 - commonChanceToSpawnHigher;
-                    if (randomNumber > chance) {
-                        rarityToSpawn = Rarity.Rare;
-                    }
-                    break;
-                case Rarity.Rare:
-                    rarityToSpawn = Rarity.Rare;
-                    chance = 1 - rareChanceToSpawnHigher;
-                    if (randomNumber > chance) {
-                        rarityToSpawn = Rarity.Epic;
-                    }
-                    break;
-                case Rarity.Epic:
-                    rarityToSpawn = Rarity.Epic;
-                    chance = 1 - epicChanceToSpawnHigher;
-                    if (randomNumber > chance) {
-                        rarityToSpawn = Rarity.Legendary;
-                    }
-                    break;
-                case Rarity.Legendary:
-                    rarityToSpawn = Rarity.Legendary;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+        private void CollectRandomCard(SpawnCardFromSeed seed) {
+            Rarity rarityToSpawn = CalcRarityByChance(seed);
 
             var cardsOfRarity = cardLibrary.cards.Where(libraryCard => libraryCard.Rarity == rarityToSpawn).ToList();
             var randomSpawnCard = cardsOfRarity.GetRandom();
@@ -75,8 +43,47 @@ namespace Meta.Inventory {
             };
 
             var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card, 1);
-
             Broker.InvokeSubscribers(cardCollectedMessage.GetType(), cardCollectedMessage);
+        }
+
+        private Rarity CalcRarityByChance(SpawnCardFromSeed spawnCardFromSeed) {
+            float randomNumber = Random.Range(0f, 1f);
+            float chance;
+            Rarity rarityToSpawn;
+
+            switch (spawnCardFromSeed.Rarity) {
+                case Rarity.Common:
+                    rarityToSpawn = Rarity.Common;
+                    chance = 1 - commonChanceToSpawnHigher;
+                    if (randomNumber > chance) {
+                        rarityToSpawn = Rarity.Rare;
+                    }
+
+                    break;
+                case Rarity.Rare:
+                    rarityToSpawn = Rarity.Rare;
+                    chance = 1 - rareChanceToSpawnHigher;
+                    if (randomNumber > chance) {
+                        rarityToSpawn = Rarity.Epic;
+                    }
+
+                    break;
+                case Rarity.Epic:
+                    rarityToSpawn = Rarity.Epic;
+                    chance = 1 - epicChanceToSpawnHigher;
+                    if (randomNumber > chance) {
+                        rarityToSpawn = Rarity.Legendary;
+                    }
+
+                    break;
+                case Rarity.Legendary:
+                    rarityToSpawn = Rarity.Legendary;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return rarityToSpawn;
         }
     }
 }

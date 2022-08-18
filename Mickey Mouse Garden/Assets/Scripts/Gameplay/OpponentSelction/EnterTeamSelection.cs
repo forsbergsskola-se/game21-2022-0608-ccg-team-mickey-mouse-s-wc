@@ -14,6 +14,10 @@ public class EnterTeamSelection : MonoBehaviour{
 	}
 
 	private void OnMouseDown() {
+		
+		SoundClickMessage soundClickMessage = new();
+		Broker.InvokeSubscribers(typeof(SoundClickMessage), soundClickMessage);
+		
 		if (GetComponent<MatchInformation>().isUnlocked && !shown) {
 			GetComponent<MatchInformation>().ConfirmTeam();
 			GoToTeamSelection();

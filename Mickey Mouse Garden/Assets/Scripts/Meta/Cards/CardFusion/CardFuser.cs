@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Linq;
 using Meta.Cards;
 using UnityEngine;
@@ -29,32 +28,26 @@ namespace Meta.Inventory {
                 Alignment = libraryCardConfig.Alignment,
                 SpriteIndex = libraryCardConfig.spriteIndex
             };
-
             
             return card;
         }
 
-        // !!! SACRIFICE !!!!
         private void SacrificeCards(Card card){
             var removeInventoryItemMessage = new RemoveInventoryItemMessage<Card>(card.libraryID, card.ID);
             Broker.InvokeSubscribers(removeInventoryItemMessage.GetType(), removeInventoryItemMessage);
         }
         
-        // and fusion...
         private void OnCardSacrificedMessageReceived(CardSacrificedMessage obj){
             FuseCards(obj.Card1, obj.Card2);
         }
         private void FuseCards(Card card1, Card card2){
             SpawnFusedCard(card1, card2);
-            // Removes card from inventory or in other words.... DIEEEEEE!!!!
             SacrificeCards(card1);
             SacrificeCards(card2);
         }
 
         private void SpawnFusedCard(Card card1, Card card2){
-            
             var fusedCard = CreateNewCard(cardLibrary.cards.First(x => x.Id == card1.libraryID));
-            
             var cardConfig = cardLibrary.cards[fusedCard.SpriteIndex];
 
             fusedCard.ID = new StringGUID().NewGuid();
@@ -66,7 +59,6 @@ namespace Meta.Inventory {
             fusedCard.Attack = GenerateNewStats(fusedCard, cardConfig.AttackMultiplier, fusedCard.Attack, cardConfig.Rarity);
             fusedCard.Speed = GenerateNewStats(fusedCard, cardConfig.SpeedMultiplier, fusedCard.Speed, cardConfig.Rarity);
             
-
             fusedCard.Name = card1.Name;
             fusedCard.Alignment = card1.Alignment;
             fusedCard.SpriteIndex = card1.SpriteIndex;
@@ -82,8 +74,10 @@ namespace Meta.Inventory {
             if (newLevel > 10) {
                 newLevel = 1;
                 rarityIncrease = true;
+                
                 return newLevel;
             }
+            
             return newLevel;
         }
 

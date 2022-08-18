@@ -15,6 +15,7 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Subscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
         Broker.Subscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
         Broker.Subscribe<SoundToggleMessage>(OnSoundToggleMessageReceived);
+        Broker.Subscribe<SoundClickMessage>(OnSoundClickMessageReceived);
     }
 
     private void Start(){
@@ -30,7 +31,14 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Unsubscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
         Broker.Unsubscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
         Broker.Unsubscribe<SoundToggleMessage>(OnSoundToggleMessageReceived);
+        Broker.Unsubscribe<SoundClickMessage>(OnSoundClickMessageReceived);
     }
+
+    private void OnSoundClickMessageReceived(SoundClickMessage obj){
+        Debug.Log("clickmessage");
+        mainSceneSoundManager.MainClick();
+    }
+
     
     private void OnSoundToggleMessageReceived(SoundToggleMessage obj) {
         switch (obj.Option) {

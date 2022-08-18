@@ -1,7 +1,4 @@
-using System.Linq;
-using System.Threading.Tasks;
 using Meta.Interfaces;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Meta.Inventory.FighterInventory {
@@ -38,9 +35,9 @@ namespace Meta.Inventory.FighterInventory {
             }
             this.CopyAllValuesFrom(loadedCard);
         }
+        
         public void Save() {
             SaveManager.Save(this);
         }
-        
     }
 }

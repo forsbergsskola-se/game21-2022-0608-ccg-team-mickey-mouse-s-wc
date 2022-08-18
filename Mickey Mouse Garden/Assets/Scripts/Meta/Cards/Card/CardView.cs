@@ -19,7 +19,6 @@ namespace Meta.Cards {
          [HideInInspector] public StringGUID id;
 
         public void Configure(Card card) {
-            // image.sprite = Resources.Load<Sprite>($"Art/CardArt/{card.SpriteName}");
             image.sprite = spriteLibrary.sprites[card.SpriteIndex];
             name.text = card.Name;
             id = card.ID;
@@ -31,8 +30,8 @@ namespace Meta.Cards {
             //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }
+        
         public void Configure(CardConfig card) {
-            // image.sprite = Resources.Load<Sprite>($"Art/CardArt/{card.SpriteName}");
             image.sprite = spriteLibrary.sprites[card.spriteIndex];
             name.text = card.Name;
             id = new StringGUID().NewGuid();

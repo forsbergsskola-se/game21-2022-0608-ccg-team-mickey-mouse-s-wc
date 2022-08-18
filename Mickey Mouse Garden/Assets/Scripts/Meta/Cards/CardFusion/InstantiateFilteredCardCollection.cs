@@ -9,6 +9,7 @@ public class InstantiateFilteredCardCollection : MonoBehaviour{
     [SerializeField] private GameObject cardButtonPrefab, noCardsAvailable;
     private List<Card> playerCardTeam;
     private int cardsInstantiated;
+    
     private void OnEnable(){
         playerCardTeam = FindObjectOfType<CardInventory>().InventoryList.Items;
         Broker.Subscribe<FusionStartMessage>(OnFusionStartMessage);
@@ -27,6 +28,7 @@ public class InstantiateFilteredCardCollection : MonoBehaviour{
                 cardsInstantiated++;
             }
         }
+        
         if (cardsInstantiated == 0){
             noCardsAvailable.SetActive(true);
         }
