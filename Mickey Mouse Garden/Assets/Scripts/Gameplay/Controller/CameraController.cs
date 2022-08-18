@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
@@ -33,20 +34,35 @@ public class CameraController : MonoBehaviour {
 	}
 
 	private void Update() {
+		var position = MoveCamera();
+		
+		CalculatingSoundParameter(position);
+
+		RotateCamera(position);
+
+		AssignFOV();
+	}
+
+	void AssignFOV(){
+		var currentFOV = thisCamera.fieldOfView;
+		thisCamera.fieldOfView = Mathf.Lerp(currentFOV, newFOV, cameraZoomSpeed * Time.deltaTime);
+	}
+
+	void RotateCamera(Vector3 position){
+		var targetRotation = Quaternion.LookRotation(targetView.position - position);
+		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, cameraRotateSpeed * Time.deltaTime);
+	}
+
+	Vector3 MoveCamera(){
 		var position = transform.position;
 		position = Vector3.SmoothDamp(position, targetTransform.position, ref velocity, cameraMoveSpeed);
 		transform.position = position;
+		return position;
+	}
 
-
+	void CalculatingSoundParameter(Vector3 position){
 		var distanceTo3 = Vector3.Distance(position, viewpoint3.transform.position);
 		SendXPosition(distanceTo3);
-
-
-		var targetRotation = Quaternion.LookRotation(targetView.position - position);
-		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, cameraRotateSpeed * Time.deltaTime);
-
-		var currentFOV = thisCamera.fieldOfView;
-		thisCamera.fieldOfView = Mathf.Lerp(currentFOV, newFOV, cameraZoomSpeed * Time.deltaTime);
 	}
 
 	private void SendXPosition(float xPosition){
@@ -121,14 +137,19 @@ public class CameraController : MonoBehaviour {
 	private void LookAway(){
 		mainSceneSoundManager.MainClick();
 		newFOV = 60;
-		if (viewPointNumber == 1){
-			GoToPosition1();
-		}
-		if (viewPointNumber == 2){
-			GoToPosition2();
-		}
-		if (viewPointNumber == 3){
-			GoToPosition3();
+		switch (viewPointNumber){
+			case 1:
+				GoToPosition1();
+				break;
+			case 2:
+				GoToPosition2();
+				break;
+			case 3:
+				GoToPosition3();
+				break;
+			default:
+				throw new SwitchExpressionException();
+
 		}
 		zoomed = false;
 	}
