@@ -36,6 +36,7 @@ public class MainSceneSoundManager : MonoBehaviour
 
   public void MainClick() {
     FMODUnity.RuntimeManager.PlayOneShot("event:/UI/MainClick");
+    Debug.Log("click");
   }
 
   public void Purchase()
