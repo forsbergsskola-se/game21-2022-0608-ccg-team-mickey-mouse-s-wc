@@ -36,11 +36,11 @@ namespace Meta.Cards {
             image.sprite = spriteLibrary.sprites[card.spriteIndex];
             name.text = card.Name;
             id = new StringGUID().NewGuid();
-            maxHealth.text = $"Health: {card.MaxHealth}";
-            attack.text = $"Attack: {card.Attack}";
-            speed.text = $"Speed: {card.Speed}";
-            rarity.text = $"Rarity: {card.Rarity}";
-            level.text = $"Level: {card.Level}"; //TODO: implement when not null
+            maxHealth.text = $"Health: {card.maxHealth}";
+            attack.text = $"Attack: {card.attack}";
+            speed.text = $"Speed: {card.speed}";
+            rarity.text = $"Rarity: {card.rarity}";
+            level.text = $"Level: {card.level}"; //TODO: implement when not null
             //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
         }

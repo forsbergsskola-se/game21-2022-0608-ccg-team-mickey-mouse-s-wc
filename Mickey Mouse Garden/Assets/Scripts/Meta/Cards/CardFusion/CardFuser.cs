@@ -18,15 +18,15 @@ namespace Meta.Inventory {
         }
         
         private Card CreateNewCard(CardConfig libraryCardConfig){
-            var card = new Card(libraryCardConfig.Id){
+            var card = new Card(libraryCardConfig.id){
                 ID = new StringGUID().NewGuid(),
-                MaxHealth = libraryCardConfig.MaxHealth,
-                Attack = libraryCardConfig.Attack,
-                Speed = libraryCardConfig.Speed,
-                Level = libraryCardConfig.Level,
-                Rarity = libraryCardConfig.Rarity,
+                MaxHealth = libraryCardConfig.maxHealth,
+                Attack = libraryCardConfig.attack,
+                Speed = libraryCardConfig.speed,
+                Level = libraryCardConfig.level,
+                Rarity = libraryCardConfig.rarity,
                 Name = libraryCardConfig.Name,
-                Alignment = libraryCardConfig.Alignment,
+                Alignment = libraryCardConfig.alignment,
                 SpriteIndex = libraryCardConfig.spriteIndex
             };
 
@@ -53,7 +53,7 @@ namespace Meta.Inventory {
 
         private void SpawnFusedCard(Card card1, Card card2){
             
-            var fusedCard = CreateNewCard(cardLibrary.cards.First(x => x.Id == card1.libraryID));
+            var fusedCard = CreateNewCard(cardLibrary.cards.First(x => x.id == card1.libraryID));
             
             var cardConfig = cardLibrary.cards[fusedCard.SpriteIndex];
 
@@ -62,9 +62,9 @@ namespace Meta.Inventory {
             fusedCard.Rarity = CheckForRarityIncrease(card1);
 
             // Takes base stats adds additional stats
-            fusedCard.MaxHealth = GenerateNewStats(fusedCard, cardConfig.HealthMultiplier, fusedCard.MaxHealth, cardConfig.Rarity);
-            fusedCard.Attack = GenerateNewStats(fusedCard, cardConfig.AttackMultiplier, fusedCard.Attack, cardConfig.Rarity);
-            fusedCard.Speed = GenerateNewStats(fusedCard, cardConfig.SpeedMultiplier, fusedCard.Speed, cardConfig.Rarity);
+            fusedCard.MaxHealth = GenerateNewStats(fusedCard, cardConfig.healthMultiplier, fusedCard.MaxHealth, cardConfig.rarity);
+            fusedCard.Attack = GenerateNewStats(fusedCard, cardConfig.attackMultiplier, fusedCard.Attack, cardConfig.rarity);
+            fusedCard.Speed = GenerateNewStats(fusedCard, cardConfig.speedMultiplier, fusedCard.Speed, cardConfig.rarity);
             
 
             fusedCard.Name = card1.Name;

@@ -32,13 +32,13 @@ public class EnterCombat : MonoBehaviour{
             
             Card card = new Card("666"){
                 ID = new StringGUID().NewGuid(),
-                MaxHealth = cardConfig.MaxHealth,
-                Attack = cardConfig.Attack,
-                Speed = cardConfig.Speed,
-                Level = cardConfig.Level,
-                Rarity = cardConfig.Rarity,
+                MaxHealth = cardConfig.maxHealth,
+                Attack = cardConfig.attack,
+                Speed = cardConfig.speed,
+                Level = cardConfig.level,
+                Rarity = cardConfig.rarity,
                 Name = cardConfig.Name,
-                Alignment = cardConfig.Alignment,
+                Alignment = cardConfig.alignment,
                 SpriteIndex = cardConfig.spriteIndex
             };
             

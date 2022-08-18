@@ -16,15 +16,15 @@ public class AddStarterCards : MonoBehaviour
     }
 
     private void AddStarterCardsToInventory(){
-        foreach (var newCard in starterCardConfigs.Select(cardConfig => new Card(cardConfig.Id){
-                     Alignment = cardConfig.Alignment,
-                     Attack = cardConfig.Attack,
+        foreach (var newCard in starterCardConfigs.Select(cardConfig => new Card(cardConfig.id){
+                     Alignment = cardConfig.alignment,
+                     Attack = cardConfig.attack,
                      ID = new StringGUID().NewGuid(),
-                     Level = cardConfig.Level,
-                     MaxHealth = cardConfig.MaxHealth,
+                     Level = cardConfig.level,
+                     MaxHealth = cardConfig.maxHealth,
                      Name = cardConfig.Name,
-                     Rarity = cardConfig.Rarity,
-                     Speed = cardConfig.Speed,
+                     Rarity = cardConfig.rarity,
+                     Speed = cardConfig.speed,
                      SpriteIndex = cardConfig.spriteIndex
                  })){
             Broker.InvokeSubscribers(typeof(AddItemToInventoryMessage<Card>), new AddItemToInventoryMessage<Card>(newCard,1));

@@ -59,18 +59,18 @@ namespace Meta.Inventory {
                     throw new ArgumentOutOfRangeException();
             }
 
-            var cardsOfRarity = cardLibrary.cards.Where(libraryCard => libraryCard.Rarity == rarityToSpawn).ToList();
+            var cardsOfRarity = cardLibrary.cards.Where(libraryCard => libraryCard.rarity == rarityToSpawn).ToList();
             var randomSpawnCard = cardsOfRarity.GetRandom();
 
-            var card = new Card(randomSpawnCard.Id){
+            var card = new Card(randomSpawnCard.id){
                 ID = new StringGUID().NewGuid(),
-                MaxHealth = randomSpawnCard.MaxHealth,
-                Attack = randomSpawnCard.Attack,
-                Speed = randomSpawnCard.Speed,
-                Level = randomSpawnCard.Level,
-                Rarity = randomSpawnCard.Rarity,
+                MaxHealth = randomSpawnCard.maxHealth,
+                Attack = randomSpawnCard.attack,
+                Speed = randomSpawnCard.speed,
+                Level = randomSpawnCard.level,
+                Rarity = randomSpawnCard.rarity,
                 Name = randomSpawnCard.Name,
-                Alignment = randomSpawnCard.Alignment,
+                Alignment = randomSpawnCard.alignment,
                 SpriteIndex = randomSpawnCard.spriteIndex
             };
 
