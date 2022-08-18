@@ -23,6 +23,7 @@ public class PostCombatUIComponent : MonoBehaviour{
     void ToggleCorrectUI(PostCombatStateMessage message){
         if (message.State == PostCombatState.Defeat){
             stateUITextMeshProUgui.text = "Defeat";
+            rewardUI.SetActive(false);
         }
         else{
             stateUITextMeshProUgui.text = "Victory";
@@ -31,30 +32,11 @@ public class PostCombatUIComponent : MonoBehaviour{
     }
     
     public void SetCurrency(CurrencyRewardMessage message){
-        amountFieldObjecttextMeshPro.text = $@"{message?.money?.Amount.ToString()} {message?.money?.Name}";
+        if (message?.money?.Amount != 0 ){
+            rewardUI.SetActive(true);
+            amountFieldObjecttextMeshPro.text = $@"{message?.money?.Amount.ToString()} {message?.money?.Name}";
+            return;
+        }
+        rewardUI.SetActive(false);
     }
-
-    #region Tests
-#if UNITY_EDITOR
-    [ContextMenu("TestPostCombatStateMessage")]
-    public void TestPostCombatStateMessage(){
-        
-        var message = new PostCombatStateMessage();
-        message.State = PostCombatState.Victory;
-
-        Broker.InvokeSubscribers(typeof(PostCombatStateMessage), message);
-    }
-    
-    // [ContextMenu("TestSendDisplayPlayerCurrencyMessage")]
-    // public void TestSendCurrencyRewardMessage(){
-    //     var moneh = new Money();
-    //     moneh.AddAmount(150);
-    //     var message = new CurrencyRewardMessage();
-    //     message.Currency = moneh;
-    //
-    //     Broker.InvokeSubscribers(typeof(CurrencyRewardMessage), message);
-    // }
-#endif
-
-    #endregion
 }
