@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Meta.Cards;
 using UnityEngine;
@@ -44,7 +43,6 @@ namespace Meta.Inventory {
             };
 
             var cardCollectedMessage = new AddItemToInventoryMessage<Card>(card, 1);
-
             Broker.InvokeSubscribers(cardCollectedMessage.GetType(), cardCollectedMessage);
         }
 
