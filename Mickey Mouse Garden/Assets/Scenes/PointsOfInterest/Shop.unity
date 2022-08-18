@@ -1542,6 +1542,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSize
+      value: 21.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_margin.w
+      value: -0.7620642
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7154240288500936570, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1653,6 +1669,26 @@ PrefabInstance:
     - target: {fileID: 7154240288517244529, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
       propertyPath: m_Name
       value: Seed Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSize
+      value: 20.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_margin.w
+      value: -0.2686863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7154240288553796054, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
       propertyPath: m_AnchorMax.y
