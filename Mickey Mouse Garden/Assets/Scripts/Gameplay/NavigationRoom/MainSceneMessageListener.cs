@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Meta.Inventory;
 using UnityEngine;
@@ -14,7 +15,9 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Subscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
         Broker.Subscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
         Broker.Subscribe<SoundToggleMessage>(OnSoundToggleMessageReceived);
+    }
 
+    private void Start(){
         mainSceneSoundManager.PlayMusic();
     }
 
