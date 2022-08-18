@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
-  m_Name: mr
+  m_Name: mr. Peanut 4
   m_EditorClassIdentifier: 
   Image: {fileID: 0}
   spriteIndex: 13
