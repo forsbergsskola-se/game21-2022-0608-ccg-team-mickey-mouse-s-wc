@@ -15,7 +15,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     string _adUnitId = null; // This will remain null for unsupported platforms
     private RewardedAdsLimit rewardedAdsLimit;
  
-    void Awake()
+    void OnEnable()
     {   
         // Get the Ad Unit ID for the current platform:
 #if UNITY_IOS
@@ -104,7 +104,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void OnUnityAdsShowStart(string adUnitId) { }
     public void OnUnityAdsShowClick(string adUnitId) { }
  
-    void OnDestroy()
+    void OnDisable()
     {
         // Clean up the button listeners:
         _showAdButton.onClick.RemoveAllListeners();
