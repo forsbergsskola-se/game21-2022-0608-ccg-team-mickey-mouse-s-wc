@@ -17,8 +17,8 @@ MonoBehaviour:
   Name: PotatusMaximus
   Id: potatusmaximus
   MaxHealth: 40
-  Attack: 39
-  Speed: 39
+  Attack: 37
+  Speed: 38
   Alignment: 0
   Rarity: 30
   Level: 1
