@@ -15703,6 +15703,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 26.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3742208653670213953, guid: 7019a57b11551c84eb68b6f9ff3b164e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763272021}
+    - target: {fileID: 3742208653670213953, guid: 7019a57b11551c84eb68b6f9ff3b164e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlaunchBonus
+      objectReference: {fileID: 0}
     - target: {fileID: 3742208653859438669, guid: 7019a57b11551c84eb68b6f9ff3b164e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
