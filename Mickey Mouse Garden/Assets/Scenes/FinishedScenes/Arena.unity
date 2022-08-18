@@ -2804,7 +2804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1413856735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2852,7 +2852,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413856734}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -3482,6 +3482,10 @@ PrefabInstance:
     - target: {fileID: 4149195313653012410, guid: 10534e8ab74444f4e987aa5038987748, type: 3}
       propertyPath: m_Name
       value: Post Combat Result Panel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149195313653012410, guid: 10534e8ab74444f4e987aa5038987748, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4149195313653012411, guid: 10534e8ab74444f4e987aa5038987748, type: 3}
       propertyPath: m_Pivot.x
