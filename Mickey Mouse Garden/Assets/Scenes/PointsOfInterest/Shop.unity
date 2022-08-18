@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -638,6 +638,14 @@ PrefabInstance:
     - target: {fileID: 6531578856950033356, guid: 31be34e27818434418c70d6519af1a93, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531578856950033357, guid: 31be34e27818434418c70d6519af1a93, type: 3}
+      propertyPath: _iOSGameId
+      value: 4887936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531578856950033357, guid: 31be34e27818434418c70d6519af1a93, type: 3}
+      propertyPath: _androidGameId
+      value: 4887937
       objectReference: {fileID: 0}
     - target: {fileID: 6531578856950033357, guid: 31be34e27818434418c70d6519af1a93, type: 3}
       propertyPath: rewardedAdsButton
