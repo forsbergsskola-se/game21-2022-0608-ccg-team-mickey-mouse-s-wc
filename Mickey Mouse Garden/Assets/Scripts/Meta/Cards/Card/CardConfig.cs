@@ -7,16 +7,17 @@ namespace Meta.Cards {
     /// </summary>
     [CreateAssetMenu]
     public class CardConfig : ScriptableObject {
+        //TODO: Properties should have capital
         [Tooltip("Only used for to see correct sprite name")]public Sprite Image;
         public short spriteIndex;
         public string Name;
-        public string id;
-        public float maxHealth;
-        public float attack;
-        public float speed;
-        public Alignment alignment;
-        public Rarity rarity;
-        public short level;
-        public float healthMultiplier, attackMultiplier, speedMultiplier;
+        public string Id;
+        public float MaxHealth;
+        public float Attack;
+        public float Speed;
+        public Alignment Alignment;
+        public Rarity Rarity;
+        public short Level;
+        public float HealthMultiplier, AttackMultiplier, SpeedMultiplier;
     }
 }
