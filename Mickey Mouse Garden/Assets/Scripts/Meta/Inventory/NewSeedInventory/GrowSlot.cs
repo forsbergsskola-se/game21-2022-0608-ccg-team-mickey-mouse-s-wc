@@ -18,7 +18,7 @@ namespace Meta.Inventory.NewSeedInventory {
         private float TimeUntilHarvest {
             get {
                 TimeSpan timeSpanRemaining = seed.HarvestTime.Subtract(DateTime.Now);
-                float secondsRemaining = (float)timeSpanRemaining.TotalSeconds; //TODO: Might need to be changed to other than seconds
+                float secondsRemaining = (float)timeSpanRemaining.TotalSeconds;
                 return Mathf.Max(secondsRemaining, 0);
             }
         }
@@ -52,7 +52,7 @@ namespace Meta.Inventory.NewSeedInventory {
         }
 
         private void UpdateTimerText(float timeLeft) {
-            growthTimerText.text = $"{rarityText} - Time left: {timeLeft.ToString("0")}"; //TODO: Talk w designers for the format
+            growthTimerText.text = $"{rarityText} - Time left: {timeLeft.ToString("0")}";
 
             if (timeLeft <= 0) {
                 growthTimerText.text = "Ready to harvest!";
