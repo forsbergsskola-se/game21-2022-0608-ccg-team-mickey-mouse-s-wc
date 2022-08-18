@@ -93,9 +93,9 @@ namespace Experiment{
         [ContextMenu("TestAddALotOfCurrency")]
         public void TestAddMegaCurrency(){
             var money = new Money();
-            money.Amount = 600;
+            money.Amount = 10000;
             var fertilizer = new Fertilizer();
-            fertilizer.Amount = 600;
+            fertilizer.Amount = 6000;
             var message = new AddPlayerCurrencyMessage();
             message.money = money;
             message.fertilizer = fertilizer;
