@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Meta.Inventory;
 using UnityEngine;
@@ -14,7 +15,9 @@ public class MainSceneMessageListener : MonoBehaviour{
         Broker.Subscribe<CardSacrificedMessage>(OnCardSacrificedMessageReceived);
         Broker.Subscribe<AddPlayerCurrencyMessage>(OnAddPlayerCurrencyMessageReceived);
         Broker.Subscribe<SoundToggleMessage>(OnSoundToggleMessageReceived);
+    }
 
+    private void Start(){
         mainSceneSoundManager.PlayMusic();
     }
 
@@ -61,9 +64,9 @@ public class MainSceneMessageListener : MonoBehaviour{
     }
     
     private void OnFighterTeamMessageReceived(SelectedFighterTeamMessage obj){
-        if (!obj.IsPlayerTeam){
-            mainSceneSoundManager.StopPreCombatMusic();
-        }
+        // if (!obj.IsPlayerTeam){
+        //     mainSceneSoundManager.StopPreCombatMusic();
+        // }
     }
     
     private void OnPostCombatUIMessageReceived(CreatePostCombatUIMessage obj){
@@ -72,6 +75,7 @@ public class MainSceneMessageListener : MonoBehaviour{
     
     private IEnumerator DelaySound(){
         yield return new WaitForSeconds(2f);
+        mainSceneSoundManager.StopPreCombatMusic();
         mainSceneSoundManager.UnPauseMusic();
     }
     

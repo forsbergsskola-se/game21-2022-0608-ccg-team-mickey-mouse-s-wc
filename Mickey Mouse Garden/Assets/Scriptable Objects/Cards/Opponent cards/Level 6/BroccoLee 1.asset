@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1142d1ad694670946ccb0aa1d4c9a1, type: 3}
+  m_Name: BroccoLee 1
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 479b3dc02b80fee4c81934fe1a4af9ac, type: 3}
+  spriteIndex: 1
+  Name: Brocco Lee
+  Id: broccolee
+  MaxHealth: 30
+  Attack: 31
+  Speed: 16
+  Alignment: 2
+  Rarity: 20
+  Level: 1
+  HealthMultiplier: 1
+  AttackMultiplier: 1
+  SpeedMultiplier: 0.75
