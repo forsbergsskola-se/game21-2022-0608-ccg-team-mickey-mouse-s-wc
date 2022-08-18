@@ -1,3 +1,4 @@
+using System.Collections;
 using FMOD.Studio;
 using UnityEngine;
 
@@ -10,11 +11,21 @@ public class MainSceneSoundManager : MonoBehaviour
   
   public void PlayMusic(){
     ambientMusicInstance = FMODUnity.RuntimeManager.CreateInstance(ambientMusic);
+    StartCoroutine(DelayMusicStart());
+  }
+
+  private IEnumerator DelayMusicStart(){
+    yield return new WaitForSeconds(0.1f);
     ambientMusicInstance.start();
   }
   
   public void PlayPreCombatMusic(){
     preCombatMusicInstance = FMODUnity.RuntimeManager.CreateInstance(preCombatMusic);
+    StartCoroutine(DelayPreCombatStart());
+  }
+  
+  private IEnumerator DelayPreCombatStart(){
+    yield return new WaitForSeconds(0.1f);
     preCombatMusicInstance.start();
   }
   

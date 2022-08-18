@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1542,6 +1542,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSize
+      value: 21.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_margin.w
+      value: -0.7620642
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288500936549, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7154240288500936570, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1653,6 +1669,26 @@ PrefabInstance:
     - target: {fileID: 7154240288517244529, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
       propertyPath: m_Name
       value: Seed Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSize
+      value: 20.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_margin.w
+      value: -0.2686863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154240288553796049, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7154240288553796054, guid: e8eef992b2cc44e41b23dbda93ca3326, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2867,7 +2903,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718348433}
-  - component: {fileID: 1718348432}
   - component: {fileID: 1718348434}
   m_Layer: 0
   m_Name: Converters
@@ -2876,19 +2911,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1718348432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718348431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfae492fe9b62f246830c06c8d3e2147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  library: {fileID: 11400000, guid: 2ba3158ac6513c148bbb08e739eb72da, type: 2}
 --- !u!4 &1718348433
 Transform:
   m_ObjectHideFlags: 0

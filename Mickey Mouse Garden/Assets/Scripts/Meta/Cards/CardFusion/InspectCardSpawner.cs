@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InspectCardSpawner : MonoBehaviour{
-    [SerializeField] GameObject cardButtonPrefab, spawnPoint, backToSceneButton, quitBackButton;
+    [SerializeField] GameObject cardButtonPrefab, spawnPoint, backToSceneButton, quitBackButton, sortButton;
     [SerializeField] private GameObject fusionButton, fusionText;
 
     private void Awake(){
@@ -18,6 +18,7 @@ public class InspectCardSpawner : MonoBehaviour{
         var instance = Instantiate(cardButtonPrefab, spawnPoint.transform.position,Quaternion.identity,spawnPoint.transform);
         instance.GetComponentInChildren<CardView>().Configure(obj.card);
         
+        sortButton.GetComponent<Canvas>().enabled = false;
         quitBackButton.SetActive(false);
         fusionButton.GetComponent<Image>().color = Color.white;
         fusionText.SetActive(true);

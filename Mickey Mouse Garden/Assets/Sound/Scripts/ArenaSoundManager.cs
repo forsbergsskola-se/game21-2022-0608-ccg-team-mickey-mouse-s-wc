@@ -1,3 +1,4 @@
+using System.Collections;
 using FMOD.Studio;
 using UnityEngine;
 
@@ -11,6 +12,10 @@ public class ArenaSoundManager : MonoBehaviour {
 	// Starts the music & attaches it to the InstanceReference
 	public void PlayMusic(){
 		arenaBackgroundInstance = FMODUnity.RuntimeManager.CreateInstance(arenaBackground);
+		StartCoroutine(DelayMusicStart());
+	}
+	private IEnumerator DelayMusicStart(){
+		yield return new WaitForSeconds(0.1f);
 		arenaBackgroundInstance.start();
 	}
 	

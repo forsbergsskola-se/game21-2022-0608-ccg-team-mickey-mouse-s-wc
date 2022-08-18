@@ -455,7 +455,7 @@ MonoBehaviour:
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
-  AndroidUseOBB: 0
+  AndroidUseOBB: 1
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0

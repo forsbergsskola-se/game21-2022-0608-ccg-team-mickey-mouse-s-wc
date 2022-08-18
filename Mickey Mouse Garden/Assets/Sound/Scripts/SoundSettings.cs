@@ -5,7 +5,6 @@ using UnityEngine.UI;
 namespace Sound.Scripts {
     public class SoundSettings : MonoBehaviour {
         [SerializeField] private Toggle[] soundToggles;
-        private bool muteLock = true;
         private void OnEnable(){
             Broker.Subscribe<SoundToggleMessage>(OnSoundToggleMessageReceived);
         }
