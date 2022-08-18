@@ -1,3 +1,5 @@
+using Meta.Messages.PlantMessages;
+
 namespace Meta.Inventory.SeedInventory {
     [System.Serializable]
     public class SeedInventory : Inventory<Seed> {
