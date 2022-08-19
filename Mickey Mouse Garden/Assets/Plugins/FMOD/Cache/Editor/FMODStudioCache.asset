@@ -257,7 +257,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Mobile/Master.bank
   Name: Mobile/Master
   StudioPath: bank:/Master
-  lastModified: 637964208914177815
+  lastModified: 637965096966255687
   FileSizes: []
   Exists: 1
 --- !u!114 &-3202161219076892973
@@ -350,7 +350,7 @@ MonoBehaviour:
   Name: Garden
   StudioPath: parameter:/Garden
   Min: 0
-  Max: 92.75
+  Max: 65.71
   Default: 1
   ID:
     data1: 283710940
@@ -581,7 +581,7 @@ MonoBehaviour:
   - {fileID: -3508254783758374574}
   StringsBanks:
   - {fileID: -2740185149517830489}
-  cacheTime: 637964208914247833
+  cacheTime: 637965096966255687
   cacheVersion: 131591
 --- !u!114 &2617041958242190416
 MonoBehaviour:
@@ -838,7 +838,7 @@ MonoBehaviour:
   Name: Garden
   StudioPath: 
   Min: 0
-  Max: 92.75
+  Max: 65.71
   Default: 1
   ID:
     data1: 283710940
