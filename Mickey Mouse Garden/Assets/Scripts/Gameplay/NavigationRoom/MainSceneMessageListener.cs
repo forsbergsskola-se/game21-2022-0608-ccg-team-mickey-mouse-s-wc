@@ -35,7 +35,6 @@ public class MainSceneMessageListener : MonoBehaviour{
     }
 
     private void OnSoundClickMessageReceived(SoundClickMessage obj){
-        Debug.Log("clickmessage");
         mainSceneSoundManager.MainClick();
     }
 

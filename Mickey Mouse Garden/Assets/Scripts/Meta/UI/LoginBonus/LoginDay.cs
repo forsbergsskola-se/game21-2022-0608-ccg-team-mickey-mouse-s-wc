@@ -33,7 +33,6 @@ public class LoginDay : MonoBehaviour{
 
     void ShowValidReward(){
         // Checkmarks previous claimed days
-        Debug.Log(currentDay.day.claimableDay);
         if(dayNumber < currentDay.day.claimableDay){
             claimedSymbol.SetActive(true);
         }
