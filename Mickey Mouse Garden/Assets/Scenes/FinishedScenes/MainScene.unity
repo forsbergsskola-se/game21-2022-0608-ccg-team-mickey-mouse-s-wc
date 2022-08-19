@@ -10266,6 +10266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PShop
       objectReference: {fileID: 0}
+    - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
+      propertyPath: m_TagString
+      value: PShop
+      objectReference: {fileID: 0}
     - target: {fileID: 2781538818008339646, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
       propertyPath: camera
       value: 
@@ -21128,6 +21132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shed
       objectReference: {fileID: 0}
+    - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
+      propertyPath: m_TagString
+      value: Shed
+      objectReference: {fileID: 0}
     - target: {fileID: 2781538818008339646, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
       propertyPath: camera
       value: 
@@ -22796,6 +22804,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
       propertyPath: m_Name
+      value: Arena
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
+      propertyPath: m_TagString
       value: Arena
       objectReference: {fileID: 0}
     - target: {fileID: 2781538818008339646, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
@@ -27563,6 +27575,10 @@ PrefabInstance:
     - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
       propertyPath: m_Name
       value: Greenhouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
+      propertyPath: m_TagString
+      value: Garden
       objectReference: {fileID: 0}
     - target: {fileID: 2781538818008339646, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
       propertyPath: camera
@@ -51666,6 +51682,10 @@ PrefabInstance:
     - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
       propertyPath: m_Name
       value: SeedShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781538818008339643, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
+      propertyPath: m_TagString
+      value: Shop
       objectReference: {fileID: 0}
     - target: {fileID: 2781538818008339646, guid: 202bfb3a7bef41741b499f2d5399cd67, type: 3}
       propertyPath: camera
