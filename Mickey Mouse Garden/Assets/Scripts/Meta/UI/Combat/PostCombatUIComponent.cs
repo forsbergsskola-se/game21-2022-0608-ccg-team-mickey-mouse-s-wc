@@ -8,7 +8,7 @@ public class PostCombatUIComponent : MonoBehaviour{
 
     TextMeshProUGUI stateUITextMeshProUgui;
     TextMeshProUGUI amountFieldObjecttextMeshPro;
-    void Awake(){
+    void OnEnable(){
         stateUITextMeshProUgui = stateText.GetComponent<TextMeshProUGUI>();
         amountFieldObjecttextMeshPro = rewardAmountFieldObject.GetComponent<TextMeshProUGUI>();
         Broker.Subscribe<PostCombatStateMessage>(ToggleCorrectUI);
