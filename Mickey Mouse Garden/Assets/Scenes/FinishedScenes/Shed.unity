@@ -2177,7 +2177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1897337627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2859,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 454978819258468001, guid: 0c35130aa50500248a98c62192bce5c8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 454978819258468012, guid: 0c35130aa50500248a98c62192bce5c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2949,7 +2953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454978819258468013, guid: 0c35130aa50500248a98c62192bce5c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1287504050618158563, guid: 0c35130aa50500248a98c62192bce5c8, type: 3}
       propertyPath: m_AnchorMax.x
