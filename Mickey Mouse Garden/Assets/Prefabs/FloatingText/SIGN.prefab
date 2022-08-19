@@ -222,7 +222,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2781538818008339641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.2798004, y: 1.4703262}
+  m_Size: {x: 8.087715, y: 2.9010677}
   m_EdgeRadius: 0
 --- !u!1 &4693307156840609072
 GameObject:
