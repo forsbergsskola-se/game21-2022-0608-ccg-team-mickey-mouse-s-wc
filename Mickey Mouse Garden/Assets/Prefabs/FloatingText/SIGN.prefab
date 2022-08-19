@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0}
-  m_SizeDelta: {x: 3.4583, y: 1.0989}
+  m_SizeDelta: {x: 6.0764, y: 1.9308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2781538817740638682
 CanvasRenderer:
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
+  m_fontSize: 0.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6959087249334000187}
   - component: {fileID: 599215431223132500}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: SIGN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,8 +176,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -86.62, y: -0.51}
-  m_SizeDelta: {x: 3.1166, y: 1.2087}
+  m_AnchoredPosition: {x: -86.619995, y: -0.51000977}
+  m_SizeDelta: {x: 7.9798, y: 3.0948}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2781538818008339647
 Canvas:
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2781538818008339641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4.2533, y: 1.482}
+  m_SizeDelta: {x: 7.8713, y: 2.7426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &400959128488606276
 CanvasRenderer:
