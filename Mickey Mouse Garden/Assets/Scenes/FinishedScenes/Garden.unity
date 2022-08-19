@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -916,8 +916,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardLibrary: {fileID: 11400000, guid: 34d27c790cd4f416fa3cf92864bd81a9, type: 2}
-  commonChanceToSpawnHigher: 0.15
-  rareChanceToSpawnHigher: 0.1
+  commonChanceToSpawnHigher: 0.05
+  rareChanceToSpawnHigher: 0.05
   epicChanceToSpawnHigher: 0.05
 --- !u!1001 &7878520568507989744
 PrefabInstance:

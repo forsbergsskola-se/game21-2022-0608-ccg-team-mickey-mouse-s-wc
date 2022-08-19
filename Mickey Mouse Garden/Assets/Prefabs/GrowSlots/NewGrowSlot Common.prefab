@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: 0
-  growthTimeInSeconds: 6
+  growthTimeInSeconds: 10
   timeSlider: {fileID: 3331281931255841281}
   growthTimerText: {fileID: 1255833460532656745}
   ReadyToHarvest: 0
