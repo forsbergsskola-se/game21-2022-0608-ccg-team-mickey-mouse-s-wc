@@ -25,7 +25,7 @@ namespace Meta.Cards {
             maxHealth.text = $"Health: {card.MaxHealth}";
             attack.text = $"Attack: {card.Attack}";
             speed.text = $"Speed: {card.Speed}";
-            rarity.text = $"Rarity: {card.Rarity}";
+            rarity.text = $"{card.Rarity}";
             level.text = $"Level: {card.Level}"; //TODO: implement when not null
             //TODO: Subscribe to Level changed message
             //TODO: And save after changed value (or just save on closing the game)
