@@ -47,39 +47,57 @@ public class StoreSlot : MonoBehaviour{
         if (usedForSelling){
             SellItem();
         }
-        else{
-            BuyItem();
-        }
     }
 
     private void RequestCurrency(){
         Broker.InvokeSubscribers(typeof(AskForPlayerCurrencyMessage),new AskForPlayerCurrencyMessage());
     }
-    /// <summary>
-    ///  Called when the player clicks on the slot. If the player has enough currency, the item is purchased.
-    /// </summary>
-    private async void BuyItem(){
+    public async void BuyWithMoney(){
+        RequestCurrency();
+        if (shopItemConfig.itemAmount <= 0){
+            ChangeTextToOutOfStock();
+            return;
+        }
+        if (playerWalletSo.playerWallet.Money.Amount < shopItemConfig.moneyPurchaseAmount){
+            await TemporarilyChangeSlotName("Not enough Money");
+            return;
+        }
+        if (shopItemConfig.moneyPurchaseAmount<=0){
+            await TemporarilyChangeSlotName("Can not buy with Money");
+            return;
+        }
+        SendAddPlayerCurrencyMessage(-shopItemConfig.moneyPurchaseAmount,0);
+        
+        if (!shopItemConfig.isUnlimited){
+            shopItemConfig.itemAmount--;
+        }
+        
+        shopItemConfig.SendCreateItemMessage(shopItemConfig.libraryID);
+    }
+    public async void BuyWithFertilizer(){
         RequestCurrency();
         if (shopItemConfig.itemAmount <= 0){
             ChangeTextToOutOfStock();
             return;
         }
         
-        if (playerWalletSo.playerWallet.Money.Amount < shopItemConfig.moneyPurchaseAmount || playerWalletSo.playerWallet.Fertilizer.Amount < shopItemConfig.fertilizerPurchaseAmount){
-            await TemporarilyChangeSlotName("Not enough currency");
+        if (playerWalletSo.playerWallet.Fertilizer.Amount < shopItemConfig.fertilizerPurchaseAmount){
+            await TemporarilyChangeSlotName("Not enough Fertilizer");
             return;
         }
-
+        if (shopItemConfig.fertilizerPurchaseAmount<=0){
+            await TemporarilyChangeSlotName("Can not buy with Fertilizer");
+            return;
+        }
+        SendAddPlayerCurrencyMessage(0,-shopItemConfig.fertilizerPurchaseAmount);
+        
         if (!shopItemConfig.isUnlimited){
             shopItemConfig.itemAmount--;
         }
-        
-        SendAddPlayerCurrencyMessage(-shopItemConfig.moneyPurchaseAmount,-shopItemConfig.fertilizerPurchaseAmount);
-        
         shopItemConfig.SendCreateItemMessage(shopItemConfig.libraryID);
     }
 
-    private async void SellItem(){
+    public async void SellItem(){
 
         if (seedInventory == null){
             seedInventory = player.GetComponent<SeedInventory>();
@@ -95,14 +113,17 @@ public class StoreSlot : MonoBehaviour{
         SendAddPlayerCurrencyMessage(shopItemConfig.moneySellAmount,shopItemConfig.fertilizerSellAmount); 
     }
     
+    
 
     private void SendAddPlayerCurrencyMessage(int moneyAmount, int fertilizerAmount){
         var message = new AddPlayerCurrencyMessage();
-        message.money = new Money();
-        message.money.Amount = moneyAmount;
-        message.fertilizer = new Fertilizer();
-        message.fertilizer.Amount = fertilizerAmount;
-        Broker.InvokeSubscribers(typeof(AddPlayerCurrencyMessage), message);
+        message.money = new Money(){
+            Amount = moneyAmount
+        };
+        message.fertilizer = new Fertilizer(){
+            Amount = fertilizerAmount
+        };
+        message.Invoke();
     }
 
     private void ChangeTextToOutOfStock(){
