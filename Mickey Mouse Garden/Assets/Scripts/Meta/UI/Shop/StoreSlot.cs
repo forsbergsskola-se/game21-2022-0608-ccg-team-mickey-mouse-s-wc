@@ -10,6 +10,7 @@ public class StoreSlot : MonoBehaviour{
     public ShopItemConfig shopItemConfig;
     public Player player;
     public SeedInventory seedInventory;
+    public ToggleDropDown selectPaymentMethodDropDown;
     
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI itemMoneyPrice;
@@ -46,7 +47,29 @@ public class StoreSlot : MonoBehaviour{
     public void ButtonInteraction(){
         if (usedForSelling){
             SellItem();
+            return;
         }
+        RequestCurrency();
+        //Caching
+        var canAffordWithMoney = CanAffordWithMoney();
+        var canAffordWithFertilizer = CanAffordWithFertilizer();
+
+        if (canAffordWithMoney && !canAffordWithFertilizer) BuyWithMoney();
+        
+        else if (canAffordWithFertilizer && !canAffordWithMoney) BuyWithFertilizer();
+        
+        else if(canAffordWithMoney && canAffordWithFertilizer)  selectPaymentMethodDropDown.ToggleDropDownMenu();
+        
+        else TemporarilyChangeSlotName("Can not afford!");
+    }
+
+    bool CanAffordWithMoney(){
+        return playerWalletSo.playerWallet.Money.Amount  >= shopItemConfig.moneyPurchaseAmount 
+               && shopItemConfig.moneyPurchaseAmount > 0;
+    }
+    bool CanAffordWithFertilizer(){
+        return playerWalletSo.playerWallet.Fertilizer.Amount >= shopItemConfig.fertilizerPurchaseAmount 
+               && shopItemConfig.fertilizerPurchaseAmount > 0;
     }
 
     private void RequestCurrency(){
@@ -60,10 +83,12 @@ public class StoreSlot : MonoBehaviour{
         }
         if (playerWalletSo.playerWallet.Money.Amount < shopItemConfig.moneyPurchaseAmount){
             await TemporarilyChangeSlotName("Not enough Money");
+            selectPaymentMethodDropDown.DeactivateDropDownMenu();
             return;
         }
         if (shopItemConfig.moneyPurchaseAmount<=0){
             await TemporarilyChangeSlotName("Can not buy with Money");
+            selectPaymentMethodDropDown.DeactivateDropDownMenu();
             return;
         }
         SendAddPlayerCurrencyMessage(-shopItemConfig.moneyPurchaseAmount,0);
@@ -83,10 +108,12 @@ public class StoreSlot : MonoBehaviour{
         
         if (playerWalletSo.playerWallet.Fertilizer.Amount < shopItemConfig.fertilizerPurchaseAmount){
             await TemporarilyChangeSlotName("Not enough Fertilizer");
+            selectPaymentMethodDropDown.DeactivateDropDownMenu();
             return;
         }
         if (shopItemConfig.fertilizerPurchaseAmount<=0){
             await TemporarilyChangeSlotName("Can not buy with Fertilizer");
+            selectPaymentMethodDropDown.DeactivateDropDownMenu();
             return;
         }
         SendAddPlayerCurrencyMessage(0,-shopItemConfig.fertilizerPurchaseAmount);

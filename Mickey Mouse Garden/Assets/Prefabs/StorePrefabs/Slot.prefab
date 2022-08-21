@@ -345,18 +345,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8194604227773329885}
-        m_TargetAssemblyTypeName: ToggleDropDown, Assembly-CSharp
-        m_MethodName: ToggleDropDownMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8194604227773329885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +879,7 @@ MonoBehaviour:
   shopItemConfig: {fileID: 0}
   player: {fileID: 0}
   seedInventory: {fileID: 0}
+  selectPaymentMethodDropDown: {fileID: 8194604227773329885}
   itemName: {fileID: 593328294225473087}
   itemMoneyPrice: {fileID: 593328294011255533}
   itemFertilizerPrice: {fileID: 593328294384866270}
@@ -1442,18 +1431,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5194301799267133008}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &5194301799267133008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,18 +1593,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: StoreSlot, Assembly-CSharp
         m_MethodName: BuyWithMoney
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5194301799267133008}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
