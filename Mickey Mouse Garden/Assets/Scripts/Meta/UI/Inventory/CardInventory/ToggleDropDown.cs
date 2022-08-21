@@ -14,4 +14,19 @@ public class ToggleDropDown : MonoBehaviour{
             }
         }
     }
+    public void DeactivateDropDownMenu(){
+        for(int i = 0; i < buttons.Length; i++){
+            if(buttons[i].activeSelf){
+                buttons[i].SetActive(false);
+            }
+        }
+    }
+    
+    public void ActivateDropDownMenu(){
+        for(int i = 0; i < buttons.Length; i++){
+            if(!buttons[i].activeSelf){
+                buttons[i].SetActive(true);
+            }
+        }
+    }
 }
