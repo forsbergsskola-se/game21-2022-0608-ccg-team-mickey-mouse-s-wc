@@ -1,12 +1,12 @@
-# {game-title}
+# Garden Gambit
 
-{video}
+Prepare for the next evolution of gardening!
 
-{description}
+In the real world, you grow fruit & vegetable for food. But in the world of "Garden Gambit" you will grow them to become ruthless, brutal, and fearless plant gladiators with different looks and personalities.
 
-## Team Name
+Take care of your harvest, build your plant team, and face them against even meaner opponents!
 
-{team members and roles}
+
 ### Designers:
 
 ### Artists:
