@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using Timer = System.Threading.Timer;
 
 public class CombatController : MonoBehaviour{
    private Stack<FighterInfo> playerFighters = new();
    private Stack<FighterInfo> enemyFighters = new();
-
-   [SerializeField] private int duration;
 
    private FighterInfo playerFighter;
    private FighterInfo enemyFighter;
