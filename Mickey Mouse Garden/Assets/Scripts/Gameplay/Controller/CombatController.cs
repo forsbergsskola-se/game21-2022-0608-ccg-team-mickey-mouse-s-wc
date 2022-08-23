@@ -14,9 +14,9 @@ public class CombatController : MonoBehaviour{
    private FighterInfo enemyFighter;
    
    private bool playerGoesFirst;
+   private bool combatEnded;
    
    private Executor executor;
-   private Timer timer;
 
    private void Awake(){
       executor = FindObjectOfType<Executor>();
@@ -46,11 +46,14 @@ public class CombatController : MonoBehaviour{
       yield return new WaitForSeconds(0.3f);
       NextFighter();
       AssertStrikeOrder();
-      timer = new Timer(Tick, null, 1000* duration,1000* duration);
+      StartCoroutine(CombatLoop());
    }
 
-   private void Tick(object state){
-      StrikeInOrder();
+   private IEnumerator CombatLoop(){
+      while (!combatEnded){
+         yield return new WaitForSeconds(2);
+         StrikeInOrder();
+      }
    }
    private void StrikeInOrder(){
       if (playerGoesFirst){
@@ -77,7 +80,7 @@ public class CombatController : MonoBehaviour{
          }
       }
       if (playerFighter.MaxHealth <= 0 || enemyFighter.MaxHealth <= 0){
-         timer.Dispose();
+         combatEnded = true;
          executor.Enqueue(new EndOfCombatCommand(enemyFighter.MaxHealth <= 0));  
       }
       AssertStrikeOrder();
