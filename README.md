@@ -9,6 +9,8 @@ Take care of your harvest, build your plant team, and face them against even mea
 
 ### Designers:
 
+* Max Deurell Kent - [LinkedIn](https://www.linkedin.com/in/Max-DK) 
+
 ### Artists:
 
 ### Engineers:
