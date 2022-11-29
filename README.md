@@ -13,6 +13,8 @@ Take care of your harvest, build your plant team, and face them against even mea
 
 ### Artists:
 
+* Jonathan Tesfamichale - [LinkedIn](https://www.linkedin.com/in/jonathan-tesfamichale-957a3a191/) [Portfolio](https://www.artstation.com/smoothcrim)
+
 ### Engineers:
 
 * Armin Afazeli - [LinkedIn](https://www.linkedin.com/in/arminafazeli/)
